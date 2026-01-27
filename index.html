@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AJ Accounting Solutions | Premium Accounting Support</title>
+<title>AJ Accounting Solutions | Corporate Accounting Support</title>
 
 <style>
 *{box-sizing:border-box;scroll-behavior:smooth}
@@ -11,11 +11,11 @@
 body{
 margin:0;
 font-family:'Poppins',Segoe UI,Arial,sans-serif;
-background:#0b0d12;
-color:#e5e7eb;
+background:#f5f8fc;
+color:#1f2933;
 }
 
-/* NAVBAR */
+/* NAV */
 nav{
 position:fixed;
 top:0;width:100%;
@@ -23,132 +23,153 @@ padding:16px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(11,13,18,0.9);
-backdrop-filter: blur(10px);
+background:white;
+box-shadow:0 10px 25px rgba(0,0,0,0.08);
 z-index:1000;
 }
 
 .logo{
 font-size:22px;
 font-weight:800;
-color:#f5d08c;
-letter-spacing:0.5px;
+color:#c89b2c;
 }
 
 nav a{
-color:#e5e7eb;
+color:#1f2933;
 margin-left:22px;
 text-decoration:none;
 font-weight:500;
-opacity:0.85;
 }
 
-nav a:hover{color:#f5d08c}
+nav a:hover{color:#c89b2c}
 
 /* HERO */
 header{
-min-height:100vh;
+min-height:95vh;
 display:grid;
 grid-template-columns:1.2fr 0.8fr;
 align-items:center;
-gap:50px;
-padding:120px 8%;
-background:
-radial-gradient(circle at top right,#5b1a22,transparent 60%),
-radial-gradient(circle at bottom left,#1a1f3c,transparent 60%);
+gap:60px;
+padding:130px 8% 90px;
+background:linear-gradient(120deg,#ffffff,#eef4fb);
 }
 
 header h1{
-font-size:54px;
+font-size:52px;
 line-height:1.15;
-margin-bottom:16px;
+margin-bottom:14px;
 }
 
-header span{color:#f5d08c}
+header span{color:#c89b2c}
 
 header p{
 font-size:20px;
-color:#cbd5e1;
-max-width:620px;
+color:#4b5563;
+max-width:640px;
 }
 
 .btn{
 display:inline-block;
-margin-top:28px;
-background:linear-gradient(135deg,#f5d08c,#c79a2b);
-color:#0b0d12;
-padding:14px 30px;
-border-radius:40px;
-font-weight:800;
-letter-spacing:0.4px;
+margin-top:26px;
+background:#c89b2c;
+color:white;
+padding:14px 34px;
+border-radius:8px;
+font-weight:700;
 text-decoration:none;
-box-shadow:0 15px 40px rgba(245,208,140,0.35);
+box-shadow:0 12px 30px rgba(200,155,44,0.35);
 }
 
 .hero-img img{
 width:100%;
 max-width:360px;
-border-radius:24px;
-box-shadow:0 30px 80px rgba(0,0,0,0.7);
-border:3px solid rgba(245,208,140,0.5);
+border-radius:18px;
+box-shadow:0 30px 70px rgba(0,0,0,0.18);
 }
 
 /* SECTIONS */
 section{
-padding:110px 8%;
+padding:100px 8%;
 max-width:1250px;
 margin:auto;
 }
 
 h2{
 font-size:36px;
-margin-bottom:14px;
-color:#f5d08c;
+margin-bottom:12px;
+color:#1f2933;
 }
 
-.sub{
-color:#9ca3af;
-max-width:650px;
-}
+.sub{color:#6b7280;max-width:720px}
 
 .grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:28px;
-margin-top:50px;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:26px;
+margin-top:40px;
 }
 
 .box{
-background:linear-gradient(180deg,#121622,#0e111b);
-padding:28px;
-border-radius:22px;
-box-shadow:0 25px 60px rgba(0,0,0,0.6);
-border:1px solid rgba(255,255,255,0.05);
-transition:0.35s;
+background:white;
+padding:26px;
+border-radius:16px;
+box-shadow:0 18px 40px rgba(0,0,0,0.08);
+border-left:5px solid #c89b2c;
 }
 
-.box:hover{
-transform:translateY(-10px);
-border-color:rgba(245,208,140,0.5);
+/* IMAGE STRIP */
+.strip{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:24px;
+margin-top:50px;
 }
 
-.box strong{color:#f5d08c}
+.strip img{
+width:100%;
+border-radius:16px;
+box-shadow:0 20px 50px rgba(0,0,0,0.15);
+}
 
-/* CTA */
-.cta{
-background:linear-gradient(135deg,#5b1a22,#161b34);
-border-radius:30px;
+/* CONTACT */
+.contact{
+background:linear-gradient(120deg,#ffffff,#eef4fb);
+border-radius:24px;
 text-align:center;
-box-shadow:0 30px 90px rgba(0,0,0,0.7);
+box-shadow:0 25px 60px rgba(0,0,0,0.12);
 }
+
+.contact-line{
+display:flex;
+flex-wrap:wrap;
+justify-content:center;
+gap:22px;
+font-size:17px;
+font-weight:600;
+margin-top:22px;
+}
+
+.contact-line span{
+display:flex;
+align-items:center;
+gap:8px;
+}
+
+.contact-line a{
+text-decoration:none;
+color:#1f2933;
+}
+
+.contact-line a:hover{color:#c89b2c}
 
 /* FOOTER */
 footer{
-background:#07080c;
+background:white;
 text-align:center;
 padding:40px;
-color:#9ca3af;
+color:#6b7280;
 margin-top:80px;
+border-top:1px solid #e5e7eb;
 }
 
 @media(max-width:900px){
@@ -164,74 +185,66 @@ header h1{font-size:42px}
 <nav>
 <div class="logo">AJ Accounting Solutions</div>
 <div>
-<a href="#about">About</a>
+<a href="about.html">About</a>
 <a href="#services">Services</a>
-<a href="#projects">Projects</a>
-<a href="#testimonials">Testimonials</a>
-<a href="certifications.html">Certifications</a>
 <a href="#contact">Contact</a>
+<a href="certifications.html">Certifications</a>
 </div>
 </nav>
 
 <header>
 <div>
-<h1>Premium Accounting Support<br><span>Built for Growing Businesses</span></h1>
+<h1>Corporate-Grade <span>Accounting Support</span><br>for Modern Businesses</h1>
 <p>
-AJ Accounting Solutions delivers high-precision bookkeeping and accounting support for businesses that demand clarity, control, and confidence in their finances.
+AJ Accounting Solutions provides structured bookkeeping and accounting support to property managers, small businesses, and accounting firms worldwide.
 </p>
-<a class="btn" href="#contact">Schedule a Free Consultation</a>
+<a class="btn" href="#contact">Schedule a Discussion</a>
 </div>
 
 <div class="hero-img">
-<img src="12993.jpg" alt="Founder AJ Accounting Solutions">
+<img src="12993.jpg" alt="AJ Accounting Solutions">
 </div>
 </header>
 
-<section id="about">
-<h2>Redefining Remote Accounting Support</h2>
+<section>
+<h2>Professional Accounting Services</h2>
 <p class="sub">
-With 5+ years of experience, AJ Accounting Solutions partners with businesses worldwide to build clean financial systems, improve reporting accuracy, and support long-term growth.
+Delivering accuracy-driven accounting support, financial system management, and reporting solutions.
 </p>
-</section>
 
-<section id="services">
-<h2>Premium Services</h2>
-<div class="grid">
-<div class="box"><strong>Bookkeeping Excellence</strong><br><br>Daily accounting, clean-ups, reconciliations, and financial control systems.</div>
-<div class="box"><strong>AP & AR Management</strong><br><br>Optimized vendor and customer workflows with accuracy and transparency.</div>
-<div class="box"><strong>Payroll & Compliance</strong><br><br>Structured payroll processing and reporting support.</div>
-<div class="box"><strong>Financial Reporting</strong><br><br>Management-ready financial statements and monthly close systems.</div>
+<div class="grid" id="services">
+<div class="box"><strong>Bookkeeping & Day-to-Day Accounting</strong><br><br>Structured transaction processing and ledger maintenance.</div>
+<div class="box"><strong>Real Estate Accounting</strong><br><br>Property systems, trust accounting, owner and portfolio reporting.</div>
+<div class="box"><strong>QuickBooks Setup & Migration</strong><br><br>System conversions, rebuilds, and historical data migrations.</div>
+<div class="box"><strong>Bank & Credit Card Reconciliations</strong><br><br>Monthly and historical reconciliations ensuring financial accuracy.</div>
+<div class="box"><strong>Financial Clean-Ups</strong><br><br>Backlog recovery, balance corrections, and structured close processes.</div>
+<div class="box"><strong>Financial Reporting</strong><br><br>Monthly statements and management-ready financial reports.</div>
+<div class="box"><strong>Monthly Close & Compliance Support</strong><br><br>Supporting structured period closes and audit-ready records.</div>
+<div class="box"><strong>Management Reporting & Analysis</strong><br><br>Performance insights, reconciled reports, and decision support.</div>
+<div class="box"><strong>Process Improvement & Controls</strong><br><br>Workflow optimization and internal accounting structure design.</div>
 </div>
 </section>
 
-<section id="projects">
-<h2>Impactful Projects</h2>
-<div class="grid">
-<div class="box">
-<strong>Real Estate Accounting System</strong><br><br>
-Rebuilt multi-property accounting systems, reconciled 20+ accounts, and optimized AppFolio reporting.
-</div>
+<section>
+<h2>Corporate Accounting Environment</h2>
+<p class="sub">A professional, system-driven approach to financial operations.</p>
 
-<div class="box">
-<strong>Business Financial Cleanup</strong><br><br>
-Resolved major backlogs, rebuilt QuickBooks records, and implemented structured monthly closes.
-</div>
+<div class="strip">
+<img src="office.jpg" alt="">
+<img src="accounting.jpg" alt="">
+<img src="teamwork.jpg" alt="">
 </div>
 </section>
 
-<section id="testimonials">
-<h2>Client Trust</h2>
-<div class="grid">
-<div class="box">“Professional, reliable, and extremely precise. Our financial operations are now fully under control.”</div>
-<div class="box">“Clear communication, strong systems, and trustworthy accounting support. Highly recommended.”</div>
-</div>
-</section>
+<section class="contact" id="contact">
+<h2>Contact</h2>
+<p class="sub">Let’s discuss how I can support your accounting operations.</p>
 
-<section class="cta" id="contact">
-<h2>Let’s Build Financial Confidence</h2>
-<p class="sub">Partner with AJ Accounting Solutions and bring clarity, structure, and confidence into your business finances.</p>
-<br>
-<a class="btn" href="mailto:slachamanjotsingh@gmail.com">slachamanjotsingh@gmail.com</a>
+<div class="contact-line">
+<span>📞 +91 991 115 5541</span>
+<span>✉️ <a href="mailto:Slachamanjotsingh@gmail.com">Slachamanjotsingh@gmail.com</a></span>
+<span>📍 Mohali, Punjab, India</span>
+</div>
 </section>
 
 <footer>
