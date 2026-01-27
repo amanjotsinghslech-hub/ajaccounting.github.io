@@ -11,8 +11,8 @@
 body{
 margin:0;
 font-family:'Poppins',Segoe UI,Arial,sans-serif;
-background:#f5f8fc;
-color:#1f2933;
+background:#0b0d12;
+color:#e5e7eb;
 }
 
 /* NAV */
@@ -23,36 +23,39 @@ padding:16px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:white;
-box-shadow:0 10px 25px rgba(0,0,0,0.08);
+background:rgba(11,13,18,0.95);
+backdrop-filter:blur(10px);
+box-shadow:0 10px 30px rgba(0,0,0,0.6);
 z-index:1000;
 }
 
 .logo a{
 font-size:22px;
 font-weight:800;
-color:#c89b2c;
+color:#f5d08c;
 text-decoration:none;
+letter-spacing:0.5px;
 }
 
 nav a{
-color:#1f2933;
+color:#e5e7eb;
 margin-left:22px;
 text-decoration:none;
 font-weight:500;
+opacity:0.85;
 }
 
-nav a:hover{color:#c89b2c}
+nav a:hover{color:#f5d08c}
 
-/* HERO */
+/* HERO SLIDER */
 header{
 position:relative;
-min-height:65vh;
+min-height:70vh;
 display:flex;
 align-items:center;
-padding:140px 8% 90px;
-background:#eef4fb;
+padding:150px 8% 90px;
 overflow:hidden;
+background:#0b0d12;
 }
 
 .slideshow{
@@ -65,18 +68,23 @@ z-index:0;
 position:absolute;
 inset:0;
 opacity:0;
-transition:opacity 1.5s ease-in-out;
+transform:scale(1.1);
+transition:opacity 1.6s ease, transform 6s linear;
 background-size:cover;
 background-position:center;
+filter:brightness(0.4);
 }
 
-.slide.active{opacity:1}
+.slide.active{
+opacity:1;
+transform:scale(1);
+}
 
 header::after{
 content:"";
 position:absolute;
 inset:0;
-background:linear-gradient(to right,rgba(255,255,255,0.92),rgba(255,255,255,0.75),rgba(255,255,255,0.35));
+background:linear-gradient(to right,rgba(11,13,18,0.92),rgba(11,13,18,0.7),rgba(11,13,18,0.4));
 z-index:1;
 }
 
@@ -87,17 +95,17 @@ max-width:900px;
 }
 
 .hero-content h1{
-font-size:48px;
-line-height:1.15;
+font-size:52px;
 margin-bottom:14px;
+line-height:1.15;
 }
 
-.hero-content span{color:#c89b2c}
+.hero-content span{color:#f5d08c}
 
 .hero-content p{
 font-size:20px;
-color:#4b5563;
-max-width:700px;
+color:#cbd5e1;
+max-width:720px;
 }
 
 /* SECTION */
@@ -110,51 +118,56 @@ margin:auto;
 h2{
 font-size:34px;
 margin-bottom:12px;
-color:#1f2933;
+color:#f5d08c;
 }
 
-.sub{color:#6b7280;max-width:720px}
+.sub{color:#9ca3af;max-width:760px}
 
-/* CERTIFICATE LINE */
-.cert-line{
-display:flex;
-gap:28px;
-overflow-x:auto;
-padding:30px 10px 50px;
-margin-top:40px;
-scrollbar-width:thin;
-}
-
-.cert{
-min-width:260px;
-background:white;
-padding:22px;
-border-radius:16px;
-box-shadow:0 18px 40px rgba(0,0,0,0.08);
-border-bottom:5px solid #c89b2c;
-text-align:center;
+/* CERT ROWS */
+.cert-row{
+display:grid;
+grid-template-columns:1fr 2fr;
+gap:30px;
+align-items:center;
+background:linear-gradient(180deg,#121622,#0e111b);
+padding:26px;
+border-radius:22px;
+box-shadow:0 25px 60px rgba(0,0,0,0.7);
+border:1px solid rgba(255,255,255,0.05);
+margin-top:34px;
 transition:0.35s;
 }
 
-.cert:hover{
-transform:translateY(-12px);
-box-shadow:0 30px 70px rgba(0,0,0,0.18);
-border-bottom:5px solid #1f2933;
+.cert-row:hover{
+transform:translateY(-8px);
+border-color:rgba(245,208,140,0.6);
 }
 
-.cert img{
+.cert-row img{
 width:100%;
-max-width:240px;
-border-radius:10px;
-margin-bottom:12px;
+max-width:260px;
+border-radius:14px;
+box-shadow:0 15px 40px rgba(0,0,0,0.6);
+background:white;
+padding:8px;
+}
+
+.cert-row h3{
+color:#f5d08c;
+margin-bottom:6px;
+}
+
+.cert-row p{
+color:#cbd5e1;
+line-height:1.6;
 }
 
 /* CONTACT */
 .contact{
-background:linear-gradient(120deg,#ffffff,#eef4fb);
-border-radius:24px;
+background:linear-gradient(135deg,#5b1a22,#161b34);
+border-radius:30px;
 text-align:center;
-box-shadow:0 25px 60px rgba(0,0,0,0.12);
+box-shadow:0 30px 90px rgba(0,0,0,0.8);
 }
 
 .contact-line{
@@ -165,20 +178,23 @@ gap:22px;
 font-size:17px;
 font-weight:600;
 margin-top:22px;
+color:#e5e7eb;
 }
 
 /* FOOTER */
 footer{
-background:white;
+background:#07080c;
 text-align:center;
 padding:40px;
-color:#6b7280;
+color:#9ca3af;
 margin-top:80px;
-border-top:1px solid #e5e7eb;
+border-top:1px solid rgba(255,255,255,0.06);
 }
 
 @media(max-width:900px){
 .hero-content h1{font-size:40px}
+.cert-row{grid-template-columns:1fr;text-align:center}
+.cert-row img{margin:auto}
 }
 </style>
 </head>
@@ -204,39 +220,52 @@ border-top:1px solid #e5e7eb;
 </div>
 
 <div class="hero-content">
-<h1>Professional <span>Certifications</span></h1>
-<p>Recognized expertise across leading accounting, payroll, and property management platforms.</p>
+<h1>Professional <span>Certifications & Platform Expertise</span></h1>
+<p>
+These certifications represent verified expertise across modern accounting, payroll, and property management systems used by international businesses.
+</p>
 </div>
 
 </header>
 
 <section>
-<h2>Certified Platforms</h2>
-<p class="sub">Demonstrating hands-on capability across industry-standard accounting systems.</p>
+<h2>Certified Systems</h2>
+<p class="sub">
+My work is supported by hands-on certifications in industry-leading platforms, allowing me to deliver accurate implementations, reliable reporting, and system-driven accounting support.
+</p>
 
-<div class="cert-line">
-
-<div class="cert">
-<img src="Quickbooks1.png" alt="QuickBooks Certification">
-<strong>QuickBooks Certified</strong>
+<div class="cert-row">
+<img src="Quickbooks1.png" alt="">
+<div>
+<h3>QuickBooks Certified</h3>
+<p>Specialized in QuickBooks Online environments including system migrations, clean-ups, chart of accounts design, reconciliations, and management-level financial reporting.</p>
+</div>
 </div>
 
-<div class="cert">
-<img src="Gusto.png" alt="Gusto Payroll Certification">
-<strong>Gusto Payroll</strong>
+<div class="cert-row">
+<img src="Gusto.png" alt="">
+<div>
+<h3>Gusto Payroll</h3>
+<p>Experienced in payroll setup, employee management, compliance support, and payroll reporting aligned with structured accounting systems.</p>
+</div>
 </div>
 
-<div class="cert">
-<img src="Buildium.png" alt="Buildium Certification">
-<strong>Buildium Property Accounting</strong>
+<div class="cert-row">
+<img src="Buildium.png" alt="">
+<div>
+<h3>Buildium – Property Accounting</h3>
+<p>Hands-on expertise in property management accounting, trust accounting workflows, owner reporting, and operational financial systems.</p>
+</div>
 </div>
 
-<div class="cert">
-<img src="Xero.png" alt="Xero Certification">
-<strong>Xero Accounting</strong>
+<div class="cert-row">
+<img src="Xero.png" alt="">
+<div>
+<h3>Xero Accounting</h3>
+<p>Cloud-based bookkeeping, reconciliations, financial reporting systems, and multi-platform accounting support.</p>
+</div>
 </div>
 
-</div>
 </section>
 
 <section class="contact" id="contact">
@@ -261,7 +290,7 @@ setInterval(() => {
 slides[i].classList.remove("active");
 i = (i + 1) % slides.length;
 slides[i].classList.add("active");
-}, 4000);
+}, 4500);
 </script>
 
 </body>
