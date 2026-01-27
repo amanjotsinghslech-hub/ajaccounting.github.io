@@ -66,7 +66,7 @@ color:#f5d08c;
 
 .hero p{
 margin-top:24px;
-max-width:720px;
+max-width:760px;
 font-size:22px;
 color:#cbd5e1;
 }
@@ -138,6 +138,78 @@ margin:0;
 .item.active p{
 max-height:200px;
 margin-top:12px;
+}
+
+/* CERTIFICATIONS */
+.cert-home{
+padding:130px 8%;
+text-align:center;
+background:#0b0d12;
+}
+
+.cert-home h2{
+font-size:70px;
+color:#f5d08c;
+margin-bottom:12px;
+}
+
+.cert-home .sub{
+color:#9ca3af;
+max-width:760px;
+margin:0 auto 70px;
+}
+
+.cert-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:40px;
+max-width:1100px;
+margin:auto;
+}
+
+.cert-card{
+background:linear-gradient(180deg,#121622,#0e111b);
+padding:26px;
+border-radius:20px;
+box-shadow:0 22px 55px rgba(0,0,0,0.7);
+transition:0.35s;
+border:1px solid rgba(255,255,255,0.05);
+}
+
+.cert-card:hover{
+transform:translateY(-10px);
+border-color:rgba(245,208,140,0.6);
+}
+
+.cert-card img{
+width:100%;
+max-width:200px;
+margin-bottom:14px;
+background:white;
+padding:10px;
+border-radius:12px;
+}
+
+.cert-card h4{
+color:#f5d08c;
+font-size:18px;
+}
+
+.cert-btn{
+display:inline-block;
+margin-top:60px;
+padding:14px 36px;
+border-radius:40px;
+border:2px solid #f5d08c;
+color:#f5d08c;
+text-decoration:none;
+font-weight:700;
+transition:0.3s;
+}
+
+.cert-btn:hover{
+background:#f5d08c;
+color:#07080c;
 }
 
 /* ABOUT */
@@ -226,7 +298,7 @@ color:#9ca3af;
 .hero h1{font-size:54px}
 .statement,.services,.about{grid-template-columns:1fr}
 .statement h2{font-size:50px}
-.services h2,.about h2{font-size:48px}
+.services h2,.about h2,.cert-home h2{font-size:48px}
 }
 </style>
 </head>
@@ -246,7 +318,7 @@ color:#9ca3af;
 <div class="hero">
 <h1>BEYOND<br>BOOKKEEPING</h1>
 <p>
-Corporate-grade accounting support designed for modern businesses, property managers, and accounting firms worldwide.
+Corporate-grade accounting support for businesses, property managers, and accounting firms that demand clarity, control, and confidence.
 </p>
 </div>
 </header>
@@ -254,8 +326,9 @@ Corporate-grade accounting support designed for modern businesses, property mana
 <section class="statement">
 <h2>WHERE FINANCE<br>MEETS STRUCTURE.</h2>
 <p>
-Our mission is to empower businesses by delivering structured, system-driven accounting solutions that go beyond basic bookkeeping.  
-We help organizations streamline financial operations, improve reporting clarity, and build accounting foundations that support confident decision-making and sustainable growth.
+AJ Accounting Solutions was built to go beyond basic bookkeeping. We help organizations build structured accounting systems, streamline financial operations, and gain clear financial visibility.
+<br><br>
+Our mission is to empower businesses with accurate records, reliable reporting, and scalable accounting foundations that support smarter decisions and sustainable growth.
 </p>
 </section>
 
@@ -263,23 +336,38 @@ We help organizations streamline financial operations, improve reporting clarity
 <h2>OUR SERVICES.</h2>
 
 <div class="accordion">
-<div class="item"><h3>Monthly Bookkeeping <span>+</span></h3><p>Day-to-day accounting, ledger maintenance, expense classification, and structured monthly closing.</p></div>
-<div class="item"><h3>Real Estate Accounting <span>+</span></h3><p>Property accounting systems, trust accounting, owner statements, and portfolio reporting.</p></div>
-<div class="item"><h3>QuickBooks & System Migrations <span>+</span></h3><p>Software transitions, historical data rebuilds, and structured accounting setups.</p></div>
-<div class="item"><h3>Bank & Credit Card Reconciliations <span>+</span></h3><p>Monthly and historical reconciliations ensuring accuracy and audit-ready records.</p></div>
-<div class="item"><h3>Financial Clean-Ups <span>+</span></h3><p>Backlog recovery, balance corrections, and reporting restoration.</p></div>
-<div class="item"><h3>Management Reporting <span>+</span></h3><p>Professional financial statements and performance-driven insights.</p></div>
+<div class="item"><h3>Monthly Bookkeeping <span>+</span></h3><p>Daily transaction management, ledger accuracy, expense classification, and monthly closes.</p></div>
+<div class="item"><h3>Real Estate Accounting <span>+</span></h3><p>Property accounting, trust accounting, owner statements, and portfolio reporting systems.</p></div>
+<div class="item"><h3>QuickBooks & System Migrations <span>+</span></h3><p>Accounting software transitions, historical data rebuilds, and system redesigns.</p></div>
+<div class="item"><h3>Bank & Credit Card Reconciliations <span>+</span></h3><p>Monthly and historical reconciliations ensuring financial accuracy.</p></div>
+<div class="item"><h3>Financial Clean-Ups <span>+</span></h3><p>Backlog recovery, balance corrections, and financial reporting restoration.</p></div>
+<div class="item"><h3>Management Reporting <span>+</span></h3><p>Professional financial statements and performance insights.</p></div>
 </div>
+</section>
+
+<section class="cert-home">
+<h2>CERTIFICATIONS.</h2>
+<p class="sub">
+Certified expertise across modern accounting, payroll, and property management platforms.
+</p>
+
+<div class="cert-grid">
+<div class="cert-card"><img src="Quickbooks1.png"><h4>QuickBooks Certified</h4></div>
+<div class="cert-card"><img src="Gusto.png"><h4>Gusto Payroll</h4></div>
+<div class="cert-card"><img src="Buildium.png"><h4>Buildium Property Accounting</h4></div>
+<div class="cert-card"><img src="Xero.png"><h4>Xero Accounting</h4></div>
+</div>
+
+<a class="cert-btn" href="certifications.html">View All Certifications</a>
 </section>
 
 <section class="about">
 <div>
 <h2>ABOUT US.</h2>
 <p>
-AJ Accounting Solutions delivers professional accounting support to businesses that value structure, accuracy, and long-term financial clarity.  
-With over five years of experience supporting property managers, small businesses, and accounting firms, we specialize in real estate accounting, financial clean-ups, system migrations, and reporting environments.
+AJ Accounting Solutions provides structured accounting support to businesses worldwide. With over five years of professional experience, we specialize in real estate accounting, financial clean-ups, system migrations, and management reporting.
 <br><br>
-Our approach combines operational accounting expertise with modern system implementation — helping businesses transition from reactive bookkeeping to structured financial management.
+Our work focuses on building strong accounting foundations, improving financial accuracy, and transforming financial data into clear business intelligence. We partner with clients who value precision, transparency, and long-term financial stability.
 </p>
 </div>
 </section>
@@ -304,7 +392,7 @@ Our approach combines operational accounting expertise with modern system implem
 
 <div>
 <h4>Let’s Stay Connected</h4>
-<p>Drop your email to receive updates and insights.</p>
+<p>Drop your email to receive accounting insights and updates.</p>
 <input type="email" placeholder="Email address">
 <button>Sign Up</button>
 </div>
