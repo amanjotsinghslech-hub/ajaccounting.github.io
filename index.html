@@ -1,99 +1,182 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>AJ Accounting Solutions | Remote Bookkeeping & Accounting Support</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: Arial, Helvetica, sans-serif;
-      background: #f7f9fc;
-      color: #1f2933;
-      line-height: 1.6;
-    }
-    header {
-      background: #0f172a;
-      color: white;
-      padding: 70px 20px;
-      text-align: center;
-    }
-    header h1 {
-      font-size: 42px;
-      margin-bottom: 10px;
-    }
-    header p {
-      font-size: 20px;
-      color: #cbd5e1;
-    }
-    section {
-      max-width: 1000px;
-      margin: auto;
-      padding: 60px 20px;
-    }
-    h2 {
-      color: #0f172a;
-      margin-bottom: 20px;
-    }
-    .services, .skills {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-      gap: 20px;
-    }
-    .box {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 10px 20px rgba(0,0,0,0.05);
-    }
-    footer {
-      background: #0f172a;
-      color: #cbd5e1;
-      text-align: center;
-      padding: 30px 20px;
-    }
-    .btn {
-      display: inline-block;
-      background: #2563eb;
-      color: white;
-      padding: 12px 24px;
-      border-radius: 6px;
-      text-decoration: none;
-      margin-top: 10px;
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>AJ Accounting Solutions | Remote Accounting & Bookkeeping</title>
+
+<style>
+* { box-sizing: border-box; scroll-behavior: smooth; }
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Arial, sans-serif;
+  background: #f7f7f7;
+  color: #1f2933;
+}
+
+/* NAVBAR */
+nav {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: #4b0f14;
+  padding: 14px 8%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 1000;
+}
+
+nav .logo {
+  color: #fff;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+nav a {
+  color: #f8d7da;
+  margin-left: 22px;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+nav a:hover {
+  color: #ffffff;
+}
+
+/* HERO */
+header {
+  background: linear-gradient(to right, #4b0f14, #7a1f25);
+  color: white;
+  padding: 140px 8% 90px;
+}
+
+header h1 {
+  font-size: 48px;
+  margin-bottom: 12px;
+}
+
+header p {
+  font-size: 20px;
+  max-width: 600px;
+  color: #f3caca;
+}
+
+.btn {
+  display: inline-block;
+  margin-top: 20px;
+  background: #ffffff;
+  color: #7a1f25;
+  padding: 12px 26px;
+  border-radius: 6px;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+/* SECTIONS */
+section {
+  padding: 80px 8%;
+  max-width: 1200px;
+  margin: auto;
+}
+
+h2 {
+  color: #4b0f14;
+  margin-bottom: 14px;
+  font-size: 32px;
+}
+
+p {
+  line-height: 1.7;
+  color: #374151;
+}
+
+/* GRID BOXES */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  gap: 22px;
+  margin-top: 30px;
+}
+
+.box {
+  background: white;
+  padding: 24px;
+  border-radius: 14px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.06);
+  border-top: 4px solid #7a1f25;
+}
+
+/* CTA */
+.cta {
+  background: #7a1f25;
+  color: white;
+  text-align: center;
+  border-radius: 18px;
+}
+
+.cta h2 {
+  color: white;
+}
+
+.cta p {
+  color: #f5d0d0;
+}
+
+/* FOOTER */
+footer {
+  background: #4b0f14;
+  color: #f3caca;
+  text-align: center;
+  padding: 30px 10px;
+  margin-top: 60px;
+}
+
+</style>
 </head>
+
 <body>
 
+<nav>
+  <div class="logo">AJ Accounting Solutions</div>
+  <div>
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#tools">Tools</a>
+    <a href="#contact">Contact</a>
+  </div>
+</nav>
+
 <header>
-  <h1>AJ Accounting Solutions</h1>
-  <p>Remote Bookkeeping & Accounting Support Services</p>
-  <a class="btn" href="#contact">Contact Me</a>
+  <h1>Smart Accounting. Reliable Support. Real Results.</h1>
+  <p>AJ Accounting Solutions provides professional remote bookkeeping and accounting support services to help businesses stay financially organized and compliant.</p>
+  <a class="btn" href="#contact">Request a Consultation</a>
 </header>
 
-<section>
-  <h2>About</h2>
+<section id="about">
+  <h2>About AJ Accounting Solutions</h2>
   <p>
-    AJ Accounting Solutions provides reliable remote bookkeeping and accounting support services to businesses worldwide.
-    I help companies manage their financial operations, streamline processes, and maintain accurate records.
+    AJ Accounting Solutions delivers accurate, efficient, and reliable accounting support services to businesses worldwide.
+    With over 5 years of experience, I help organizations streamline financial operations, maintain clean books, and make confident business decisions.
   </p>
 </section>
 
-<section>
-  <h2>Services</h2>
-  <div class="services">
-    <div class="box">Bookkeeping & Accounting Support</div>
-    <div class="box">Accounts Payable & Receivable</div>
-    <div class="box">Payroll Processing</div>
-    <div class="box">Bank & Credit Card Reconciliation</div>
+<section id="services">
+  <h2>Our Services</h2>
+  <div class="grid">
+    <div class="box">Bookkeeping & Day-to-Day Accounting</div>
+    <div class="box">Accounts Payable & Receivable Management</div>
+    <div class="box">Payroll Processing & Support</div>
+    <div class="box">Bank & Credit Card Reconciliations</div>
     <div class="box">Financial Statements Preparation</div>
     <div class="box">Accounting Software Support</div>
   </div>
 </section>
 
-<section>
-  <h2>Tools & Software</h2>
-  <div class="skills">
+<section id="tools">
+  <h2>Tools & Platforms</h2>
+  <div class="grid">
     <div class="box">QuickBooks</div>
     <div class="box">AppFolio</div>
     <div class="box">Wave Accounting</div>
@@ -103,22 +186,17 @@
   </div>
 </section>
 
-<section>
-  <h2>Why Work With Me</h2>
-  <p>
-    ✔ 5+ years of accounting support experience<br>
-    ✔ Remote work specialist<br>
-    ✔ Detail-oriented and reliable<br>
-    ✔ Experienced with international clients<br>
-    ✔ Focused on accuracy, clarity, and timely delivery
-  </p>
+<section class="cta">
+  <h2>Let’s Build Strong Financial Systems</h2>
+  <p>Looking for a reliable remote accounting partner? Let’s discuss how I can support your business.</p>
+  <a class="btn" href="#contact">Get in Touch</a>
 </section>
 
 <section id="contact">
   <h2>Contact</h2>
-  <p>Email: <strong>yourmail@email.com</strong></p>
-  <p>LinkedIn: <strong>linkedin.com/in/yourprofile</strong></p>
-  <p>Available for remote projects and long-term support.</p>
+  <p><strong>Email:</strong> yourmail@email.com</p>
+  <p><strong>LinkedIn:</strong> linkedin.com/in/yourprofile</p>
+  <p>Available for remote work and long-term collaboration.</p>
 </section>
 
 <footer>
