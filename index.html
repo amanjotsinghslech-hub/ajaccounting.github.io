@@ -43,26 +43,58 @@ font-weight:500;
 
 nav a:hover{color:#c89b2c}
 
-/* HERO */
+/* HERO SLIDER */
 header{
-min-height:95vh;
+position:relative;
+min-height:100vh;
 display:grid;
-grid-template-columns:1.2fr 0.8fr;
+grid-template-columns:1.1fr 0.9fr;
 align-items:center;
 gap:60px;
 padding:130px 8% 90px;
-background:linear-gradient(120deg,#ffffff,#eef4fb);
+background:#eef4fb;
+overflow:hidden;
 }
 
-header h1{
+.slideshow{
+position:absolute;
+inset:0;
+z-index:0;
+}
+
+.slide{
+position:absolute;
+inset:0;
+opacity:0;
+transition:opacity 1.5s ease-in-out;
+background-size:cover;
+background-position:center;
+}
+
+.slide.active{opacity:1}
+
+header::after{
+content:"";
+position:absolute;
+inset:0;
+background:linear-gradient(to right,rgba(255,255,255,0.9),rgba(255,255,255,0.6),rgba(255,255,255,0.2));
+z-index:1;
+}
+
+.hero-content{
+position:relative;
+z-index:2;
+}
+
+.hero-content h1{
 font-size:52px;
 line-height:1.15;
 margin-bottom:14px;
 }
 
-header span{color:#c89b2c}
+.hero-content span{color:#c89b2c}
 
-header p{
+.hero-content p{
 font-size:20px;
 color:#4b5563;
 max-width:640px;
@@ -80,9 +112,15 @@ text-decoration:none;
 box-shadow:0 12px 30px rgba(200,155,44,0.35);
 }
 
+/* PROFILE */
+.hero-img{
+position:relative;
+z-index:2;
+}
+
 .hero-img img{
 width:100%;
-max-width:360px;
+max-width:340px;
 border-radius:18px;
 box-shadow:0 30px 70px rgba(0,0,0,0.18);
 }
@@ -117,20 +155,6 @@ box-shadow:0 18px 40px rgba(0,0,0,0.08);
 border-left:5px solid #c89b2c;
 }
 
-/* IMAGE STRIP */
-.strip{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:24px;
-margin-top:50px;
-}
-
-.strip img{
-width:100%;
-border-radius:16px;
-box-shadow:0 20px 50px rgba(0,0,0,0.15);
-}
-
 /* CONTACT */
 .contact{
 background:linear-gradient(120deg,#ffffff,#eef4fb);
@@ -149,19 +173,6 @@ font-weight:600;
 margin-top:22px;
 }
 
-.contact-line span{
-display:flex;
-align-items:center;
-gap:8px;
-}
-
-.contact-line a{
-text-decoration:none;
-color:#1f2933;
-}
-
-.contact-line a:hover{color:#c89b2c}
-
 /* FOOTER */
 footer{
 background:white;
@@ -175,7 +186,7 @@ border-top:1px solid #e5e7eb;
 @media(max-width:900px){
 header{grid-template-columns:1fr;text-align:center}
 .hero-img{margin:auto}
-header h1{font-size:42px}
+.hero-content h1{font-size:42px}
 }
 </style>
 </head>
@@ -187,16 +198,23 @@ header h1{font-size:42px}
 <div>
 <a href="about.html">About</a>
 <a href="#services">Services</a>
-<a href="#contact">Contact</a>
 <a href="certifications.html">Certifications</a>
+<a href="#contact">Contact</a>
 </div>
 </nav>
 
 <header>
-<div>
-<h1>Corporate-Grade <span>Accounting Support</span><br>for Modern Businesses</h1>
+
+<div class="slideshow">
+<div class="slide active" style="background-image:url('dashboard.jpg')"></div>
+<div class="slide" style="background-image:url('desk.jpg')"></div>
+<div class="slide" style="background-image:url('office%20space.jpg')"></div>
+</div>
+
+<div class="hero-content">
+<h1>Corporate-Grade <span>Accounting Support</span><br>for Growing Businesses</h1>
 <p>
-AJ Accounting Solutions provides structured bookkeeping and accounting support to property managers, small businesses, and accounting firms worldwide.
+Structured bookkeeping, real estate accounting, migrations, and financial reporting for businesses that value accuracy and control.
 </p>
 <a class="btn" href="#contact">Schedule a Discussion</a>
 </div>
@@ -204,35 +222,22 @@ AJ Accounting Solutions provides structured bookkeeping and accounting support t
 <div class="hero-img">
 <img src="12993.jpg" alt="AJ Accounting Solutions">
 </div>
+
 </header>
 
-<section>
+<section id="services">
 <h2>Professional Accounting Services</h2>
-<p class="sub">
-Delivering accuracy-driven accounting support, financial system management, and reporting solutions.
-</p>
+<p class="sub">Delivering accuracy-driven accounting support and financial systems.</p>
 
-<div class="grid" id="services">
-<div class="box"><strong>Bookkeeping & Day-to-Day Accounting</strong><br><br>Structured transaction processing and ledger maintenance.</div>
-<div class="box"><strong>Real Estate Accounting</strong><br><br>Property systems, trust accounting, owner and portfolio reporting.</div>
-<div class="box"><strong>QuickBooks Setup & Migration</strong><br><br>System conversions, rebuilds, and historical data migrations.</div>
-<div class="box"><strong>Bank & Credit Card Reconciliations</strong><br><br>Monthly and historical reconciliations ensuring financial accuracy.</div>
-<div class="box"><strong>Financial Clean-Ups</strong><br><br>Backlog recovery, balance corrections, and structured close processes.</div>
-<div class="box"><strong>Financial Reporting</strong><br><br>Monthly statements and management-ready financial reports.</div>
-<div class="box"><strong>Monthly Close & Compliance Support</strong><br><br>Supporting structured period closes and audit-ready records.</div>
-<div class="box"><strong>Management Reporting & Analysis</strong><br><br>Performance insights, reconciled reports, and decision support.</div>
-<div class="box"><strong>Process Improvement & Controls</strong><br><br>Workflow optimization and internal accounting structure design.</div>
-</div>
-</section>
-
-<section>
-<h2>Corporate Accounting Environment</h2>
-<p class="sub">A professional, system-driven approach to financial operations.</p>
-
-<div class="strip">
-<img src="office.jpg" alt="">
-<img src="accounting.jpg" alt="">
-<img src="teamwork.jpg" alt="">
+<div class="grid">
+<div class="box"><strong>Bookkeeping & Daily Accounting</strong></div>
+<div class="box"><strong>Real Estate Accounting</strong></div>
+<div class="box"><strong>QuickBooks Setup & Migrations</strong></div>
+<div class="box"><strong>Bank & Credit Card Reconciliations</strong></div>
+<div class="box"><strong>Financial Clean-ups</strong></div>
+<div class="box"><strong>Financial Reporting & Monthly Close</strong></div>
+<div class="box"><strong>Management Reporting & Analysis</strong></div>
+<div class="box"><strong>Process Improvement & Controls</strong></div>
 </div>
 </section>
 
@@ -242,7 +247,7 @@ Delivering accuracy-driven accounting support, financial system management, and 
 
 <div class="contact-line">
 <span>📞 +91 991 115 5541</span>
-<span>✉️ <a href="mailto:Slachamanjotsingh@gmail.com">Slachamanjotsingh@gmail.com</a></span>
+<span>✉️ Slachamanjotsingh@gmail.com</span>
 <span>📍 Mohali, Punjab, India</span>
 </div>
 </section>
@@ -250,6 +255,16 @@ Delivering accuracy-driven accounting support, financial system management, and 
 <footer>
 <p>© 2026 AJ Accounting Solutions. All rights reserved.</p>
 </footer>
+
+<script>
+let slides = document.querySelectorAll(".slide");
+let i = 0;
+setInterval(() => {
+slides[i].classList.remove("active");
+i = (i + 1) % slides.length;
+slides[i].classList.add("active");
+}, 4000);
+</script>
 
 </body>
 </html>
