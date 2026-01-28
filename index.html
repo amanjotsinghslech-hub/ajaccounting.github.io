@@ -114,6 +114,34 @@ line-height:1.8;
 color:#cbd5e1;
 }
 
+/* MOVING TEXT */
+.moving-text-section{
+padding:90px 0 30px;
+overflow:hidden;
+background:#0b0d12;
+}
+
+.moving-text-section svg{
+width:100%;
+height:220px;
+}
+
+.moving-text-section text{
+font-size:42px;
+letter-spacing:3px;
+fill:#f5d08c;
+font-weight:700;
+}
+
+@keyframes moveText {
+from { start-offset: 0%; }
+to   { start-offset: 100%; }
+}
+
+#movingText{
+animation: moveText 22s linear infinite;
+}
+
 /* SERVICES */
 .services{
 padding:130px 8%;
@@ -331,8 +359,9 @@ color:#9ca3af;
 <nav>
 <div class="logo"><a href="index.html">AJ Accounting Solutions</a></div>
 <div>
-<a href="services.html">Services</a>
 <a href="about.html">About</a>
+<a href="services.html">Services</a>
+<a href="certifications.html">Certifications</a>
 <a href="#contact">Contact</a>
 </div>
 </nav>
@@ -361,6 +390,18 @@ AJ Accounting Solutions was built to go beyond basic bookkeeping. We help organi
 <br><br>
 Our mission is to empower businesses with accurate records, reliable reporting, and scalable accounting foundations that support smarter decisions and sustainable growth.
 </p>
+</section>
+
+<!-- MOVING BRAND TEXT -->
+<section class="moving-text-section">
+<svg viewBox="0 0 1000 250">
+<path id="curve" d="M 0 180 Q 250 40 500 140 T 1000 160" fill="transparent"/>
+<text>
+<textPath href="#curve" id="movingText">
+ALL ABOUT AJ ACCOUNTING SOLUTIONS • STRUCTURED FINANCIAL MANAGEMENT • REAL ESTATE ACCOUNTING EXPERTISE • FINANCIAL CLARITY FOR GROWTH • SYSTEM-DRIVEN ACCOUNTING • GLOBAL ACCOUNTING SUPPORT •
+</textPath>
+</text>
+</svg>
 </section>
 
 <section class="services">
