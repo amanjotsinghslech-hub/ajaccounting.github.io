@@ -166,34 +166,45 @@ AJ Accounting Solutions delivers system-driven bookkeeping, real estate accounti
 <a href="certifications.html" class="lux-btn">View All Certifications</a>
 </section>
 
-<footer id="contact">
+.lux-footer{
+  background:#f6f6f6;
+  color:#111;
+  padding:4.5rem 12% 2rem;
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+  gap:4rem;
+}
 
-<div>
-<h4>EXPLORE</h4>
-<a href="index.html">Home</a>
-<a href="services.html">Services</a>
-<a href="about.html">About</a>
-<a href="#contact">Contact</a>
-</div>
+.footer-box h4{
+  font-weight:700;
+  letter-spacing:1px;
+  margin-bottom:1.2rem;
+  font-size:1rem;
+}
 
-<div class="footer-social">
-<h4>CONNECT WITH US</h4>
-<a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank">LinkedIn</a>
-<p>✉️ slachamanjotsingh@gmail.com</p>
-<p>📞 +91 991 115 5541</p>
-</div>
+.footer-box a,
+.footer-box p{
+  display:block;
+  margin:0.5rem 0;
+  color:#111;
+  text-decoration:none;
+  font-size:0.95rem;
+}
 
-<div>
-<h4>LOCATION</h4>
-<p>Mohali, Punjab, India</p>
-<p>Global Accounting Support</p>
-</div>
+.footer-box a:hover{
+  text-decoration:underline;
+}
 
-<div class="copyright">
-© 2026 AJ Accounting Solutions. All rights reserved.
-</div>
+.linkedin-link{
+  font-weight:700;
+}
 
-</footer>
-
-</body>
-</html>
+.footer-bottom{
+  grid-column:1/-1;
+  text-align:center;
+  margin-top:3rem;
+  font-size:0.85rem;
+  color:#666;
+  border-top:1px solid #ddd;
+  padding-top:1.5rem;
+}
