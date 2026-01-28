@@ -23,7 +23,7 @@ padding:18px 8%;
 display:flex;
 justify-content:space-between;
 align-items:center;
-background:rgba(11,13,18,0.95);
+background:rgba(11,13,18,0.96);
 backdrop-filter:blur(12px);
 box-shadow:0 10px 30px rgba(0,0,0,0.6);
 z-index:1000;
@@ -116,7 +116,7 @@ color:#cbd5e1;
 
 /* MOVING TEXT */
 .moving-text-section{
-padding:90px 0 30px;
+padding:70px 0 20px;
 overflow:hidden;
 background:#0b0d12;
 }
@@ -131,15 +131,6 @@ font-size:42px;
 letter-spacing:3px;
 fill:#f5d08c;
 font-weight:700;
-}
-
-@keyframes moveText {
-from { start-offset: 0%; }
-to   { start-offset: 100%; }
-}
-
-#movingText{
-animation: moveText 22s linear infinite;
 }
 
 /* SERVICES */
@@ -395,12 +386,17 @@ Our mission is to empower businesses with accurate records, reliable reporting, 
 <!-- MOVING BRAND TEXT -->
 <section class="moving-text-section">
 <svg viewBox="0 0 1000 250">
+
 <path id="curve" d="M 0 180 Q 250 40 500 140 T 1000 160" fill="transparent"/>
+
 <text>
-<textPath href="#curve" id="movingText">
+<textPath href="#curve" startOffset="0%">
 ALL ABOUT AJ ACCOUNTING SOLUTIONS • STRUCTURED FINANCIAL MANAGEMENT • REAL ESTATE ACCOUNTING EXPERTISE • FINANCIAL CLARITY FOR GROWTH • SYSTEM-DRIVEN ACCOUNTING • GLOBAL ACCOUNTING SUPPORT •
+
+<animate attributeName="startOffset" from="0%" to="100%" dur="22s" repeatCount="indefinite" />
 </textPath>
 </text>
+
 </svg>
 </section>
 
