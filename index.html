@@ -114,21 +114,25 @@ line-height:1.8;
 color:#cbd5e1;
 }
 
-/* ORBIT RIBBON */
+/* FLOWING RIBBON */
 .ribbon{
+width:100%;
 overflow:hidden;
-padding:10px 0 0;
+padding:0 0 40px;
+background:#0b0d12;
 }
 
 .ribbon svg{
 width:100%;
-height:260px;
+height:220px;
+display:block;
 }
 
 .ribbon text{
-fill:#f5d08c;
+font-size:34px;
 font-weight:700;
 letter-spacing:2px;
+fill:#f5d08c;
 }
 
 /* SERVICES */
@@ -344,34 +348,26 @@ We build structured accounting systems, streamline financial operations, and del
 </p>
 </section>
 
-<!-- ORBIT FLOW -->
+<!-- FLOWING BRAND RIBBON -->
 <section class="ribbon">
-<svg viewBox="0 0 1000 300">
+<svg viewBox="0 0 1400 260" preserveAspectRatio="none">
 
-<defs>
-<path id="circlePath"
-d="M 500,150
-m -360,0
-a 360,120 0 1,1 720,0
-a 360,120 0 1,1 -720,0"/>
-</defs>
+<path id="wavePath"
+d="M -200 150 
+Q 150 60 500 140 
+T 1100 140 
+T 1700 150"
+fill="transparent"/>
 
-<text font-size="34">
-<textPath href="#circlePath">
+<text>
+<textPath href="#wavePath" startOffset="0%">
 
 ALL ABOUT AJ ACCOUNTING SOLUTIONS • STRUCTURED FINANCIAL MANAGEMENT • REAL ESTATE ACCOUNTING EXPERTISE • FINANCIAL CLARITY FOR GROWTH • SYSTEM-DRIVEN ACCOUNTING • GLOBAL ACCOUNTING SUPPORT • BANK RECONCILIATIONS • CLEANUPS & MIGRATIONS • MANAGEMENT REPORTING •
 
-<animateTransform
-attributeName="transform"
-type="rotate"
-from="0 500 150"
-to="360 500 150"
-dur="22s"
-repeatCount="indefinite"/>
+<animate attributeName="startOffset" from="0%" to="100%" dur="18s" repeatCount="indefinite"/>
 
 </textPath>
 </text>
-
 </svg>
 </section>
 
