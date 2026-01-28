@@ -94,7 +94,7 @@ border:1px solid rgba(255,255,255,0.08);
 
 /* STATEMENT */
 .statement{
-padding:120px 8% 60px;
+padding:110px 8% 30px;
 display:grid;
 grid-template-columns:1.1fr 0.9fr;
 gap:80px;
@@ -114,22 +114,21 @@ line-height:1.8;
 color:#cbd5e1;
 }
 
-/* MOVING RIBBON */
+/* ORBIT RIBBON */
 .ribbon{
 overflow:hidden;
-padding:10px 0 30px;
+padding:10px 0 0;
 }
 
 .ribbon svg{
 width:100%;
-height:240px;
+height:260px;
 }
 
 .ribbon text{
-font-size:38px;
-letter-spacing:2px;
 fill:#f5d08c;
 font-weight:700;
+letter-spacing:2px;
 }
 
 /* SERVICES */
@@ -146,6 +145,7 @@ font-size:70px;
 color:#f5d08c;
 }
 
+/* ACCORDION */
 .accordion{
 border-top:1px solid rgba(255,255,255,0.15);
 }
@@ -344,17 +344,34 @@ We build structured accounting systems, streamline financial operations, and del
 </p>
 </section>
 
-<!-- MOVING BRAND RIBBON -->
+<!-- ORBIT FLOW -->
 <section class="ribbon">
-<svg viewBox="0 0 1200 260">
-<path id="loop" d="M 0 160 Q 300 40 600 140 T 1200 160" fill="transparent"/>
-<text>
-<textPath href="#loop">
-ALL ABOUT AJ ACCOUNTING SOLUTIONS • STRUCTURED FINANCIAL MANAGEMENT • REAL ESTATE ACCOUNTING EXPERTISE • FINANCIAL CLARITY • SYSTEM-DRIVEN ACCOUNTING • GLOBAL ACCOUNTING SUPPORT • BANK RECONCILIATIONS • CLEAN-UP & MIGRATIONS • MANAGEMENT REPORTING •
+<svg viewBox="0 0 1000 300">
 
-<animate attributeName="startOffset" from="0%" to="100%" dur="18s" repeatCount="indefinite"/>
+<defs>
+<path id="circlePath"
+d="M 500,150
+m -360,0
+a 360,120 0 1,1 720,0
+a 360,120 0 1,1 -720,0"/>
+</defs>
+
+<text font-size="34">
+<textPath href="#circlePath">
+
+ALL ABOUT AJ ACCOUNTING SOLUTIONS • STRUCTURED FINANCIAL MANAGEMENT • REAL ESTATE ACCOUNTING EXPERTISE • FINANCIAL CLARITY FOR GROWTH • SYSTEM-DRIVEN ACCOUNTING • GLOBAL ACCOUNTING SUPPORT • BANK RECONCILIATIONS • CLEANUPS & MIGRATIONS • MANAGEMENT REPORTING •
+
+<animateTransform
+attributeName="transform"
+type="rotate"
+from="0 500 150"
+to="360 500 150"
+dur="22s"
+repeatCount="indefinite"/>
+
 </textPath>
 </text>
+
 </svg>
 </section>
 
@@ -409,11 +426,12 @@ With 5+ years of experience, we specialize in migrations, reconciliations, clean
 <h4>Connect</h4>
 <p>📞 +91 991 115 5541</p>
 <p>✉ Slachamanjotsingh@gmail.com</p>
+<p>📍 Mohali, Punjab, India</p>
 </div>
 
 <div>
-<h4>Location</h4>
-<p>Mohali, Punjab, India</p>
+<h4>Brand</h4>
+<p>Structured finance. Scalable growth. Trusted accounting partner.</p>
 </div>
 </div>
 
