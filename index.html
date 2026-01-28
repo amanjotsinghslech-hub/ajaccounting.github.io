@@ -11,102 +11,211 @@
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
 body{background:#0a0a0a;color:#fff;overflow-x:hidden;}
 
-/* NAV */
+/* NAVBAR */
 header{
-position:fixed;top:0;width:100%;
-background:rgba(6,6,6,0.95);
-backdrop-filter:blur(8px);
+position:fixed;
+top:0;
+width:100%;
+background:rgba(5,5,5,0.95);
+backdrop-filter:blur(10px);
 border-bottom:1px solid #222;
-z-index:999;
+z-index:1000;
 }
-.nav-bar{display:flex;justify-content:center;gap:3rem;padding:1.2rem;}
-.nav-bar a{color:white;text-decoration:none;font-weight:700;letter-spacing:1px;}
-.nav-bar a:hover{color:#c5a880;border-bottom:2px solid #c5a880;}
+.nav-bar{
+display:flex;
+justify-content:center;
+gap:3rem;
+padding:1.2rem;
+}
+.nav-bar a{
+color:#fff;
+text-decoration:none;
+font-weight:700;
+letter-spacing:1px;
+}
+.nav-bar a:hover{
+color:#c5a880;
+border-bottom:2px solid #c5a880;
+}
 
 /* HERO */
 .hero{
 min-height:100vh;
-display:flex;flex-direction:column;
-justify-content:center;align-items:center;
-text-align:center;padding-top:6rem;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+text-align:center;
+padding-top:6rem;
 }
 .hero img{
-width:260px;border-radius:50%;
-border:3px solid #c5a880;margin-bottom:2rem;
+width:260px;
+border-radius:50%;
+border:3px solid #c5a880;
+margin-bottom:2rem;
 }
-.hero h1{font-size:4rem;font-weight:900;letter-spacing:4px;}
-.hero p{font-size:1.4rem;margin-top:1rem;opacity:0.85;}
+.hero h1{
+font-size:4rem;
+font-weight:900;
+letter-spacing:4px;
+}
+.hero p{
+font-size:1.4rem;
+margin-top:1rem;
+opacity:0.85;
+}
 
-/* RIBBON */
+/* BRAND RIBBON */
 #brand-ribbon{
-width:100%;overflow:hidden;background:#050505;
-border-top:1px solid #222;border-bottom:1px solid #222;
+width:100%;
+overflow:hidden;
+background:#050505;
+border-top:1px solid #222;
+border-bottom:1px solid #222;
 }
-.ribbon{display:flex;gap:6rem;animation:scroll 35s linear infinite;}
+.ribbon{
+display:flex;
+gap:6rem;
+animation:scroll 35s linear infinite;
+}
 .ribbon span{
-white-space:nowrap;padding:1.1rem 0;
-font-weight:700;letter-spacing:3px;font-size:1.1rem;
+white-space:nowrap;
+padding:1.1rem 0;
+font-weight:700;
+letter-spacing:3px;
+font-size:1.1rem;
 }
-@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-100%);}}
+@keyframes scroll{
+from{transform:translateX(0);}
+to{transform:translateX(-100%);}
+}
 
 /* SECTIONS */
-.section{padding:5rem 10%;text-align:center;}
-.section h2{font-size:2.8rem;letter-spacing:2px;color:#c5a880;}
-.section p{max-width:900px;margin:1.5rem auto;line-height:1.8;opacity:0.85;}
+.section{
+padding:5.5rem 10%;
+text-align:center;
+}
+.section h2{
+font-size:2.8rem;
+letter-spacing:2px;
+color:#c5a880;
+}
+.section p{
+max-width:900px;
+margin:1.5rem auto;
+line-height:1.8;
+opacity:0.85;
+}
 
 /* SERVICES */
 .services-grid{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:2rem;margin-top:3rem;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+gap:2.2rem;
+margin-top:3.5rem;
 }
 .service-card{
-background:#0f0f0f;padding:2rem;border-radius:14px;
-border:1px solid #222;transition:0.35s;
+background:#0f0f0f;
+padding:2.2rem;
+border-radius:16px;
+border:1px solid #222;
+transition:0.4s;
 }
-.service-card:hover{transform:translateY(-8px);border-color:#c5a880;}
-.service-card h3{color:#c5a880;margin-bottom:0.5rem;}
+.service-card:hover{
+transform:translateY(-10px);
+border-color:#c5a880;
+}
+.service-card h3{
+color:#c5a880;
+margin-bottom:0.6rem;
+}
 
 /* CERTIFICATIONS */
-.certifications{background:#050505;}
+.certifications{
+background:#050505;
+}
 .cert-grid{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:3rem;margin-top:4rem;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+gap:3rem;
+margin-top:4rem;
 }
 .cert-card{
-background:linear-gradient(145deg,#0b0b0b,#121212);
-border-radius:18px;padding:2rem;border:1px solid #222;
-box-shadow:0 10px 40px rgba(0,0,0,0.6);
-transition:0.4s;text-align:center;
+background:linear-gradient(145deg,#0b0b0b,#131313);
+border-radius:20px;
+padding:2rem;
+border:1px solid #222;
+box-shadow:0 12px 40px rgba(0,0,0,0.7);
+transition:0.4s;
 }
-.cert-card:hover{transform:translateY(-10px);border-color:#c5a880;}
+.cert-card:hover{
+transform:translateY(-12px);
+border-color:#c5a880;
+}
 .cert-card img{
-width:100%;max-width:230px;border-radius:10px;
-border:1px solid #333;background:#fff;padding:0.4rem;
+width:100%;
+max-width:240px;
+border-radius:10px;
+border:1px solid #333;
+background:#fff;
+padding:0.4rem;
 }
-.cert-card h4{margin-top:1.2rem;color:#c5a880;font-weight:600;}
+.cert-card h4{
+margin-top:1.3rem;
+color:#c5a880;
+font-weight:600;
+}
 
 /* BUTTON */
 .lux-btn{
-display:inline-block;margin-top:3rem;padding:0.9rem 2.5rem;
-border-radius:30px;border:1.5px solid #c5a880;
-color:#c5a880;text-decoration:none;font-weight:700;
-letter-spacing:1px;transition:0.3s;
+display:inline-block;
+margin-top:3.5rem;
+padding:1rem 2.8rem;
+border-radius:30px;
+border:1.5px solid #c5a880;
+color:#c5a880;
+text-decoration:none;
+font-weight:700;
+letter-spacing:1px;
+transition:0.3s;
 }
-.lux-btn:hover{background:#c5a880;color:#000;}
+.lux-btn:hover{
+background:#c5a880;
+color:#000;
+}
 
 /* FOOTER */
-footer{
-background:#f5f5f5;color:#111;padding:4rem 10%;
-display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-gap:3rem;
+.lux-footer{
+background:#f6f6f6;
+color:#111;
+padding:4.5rem 12% 2rem;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:4rem;
 }
-footer h4{margin-bottom:1rem;}
-footer a{color:#111;text-decoration:none;display:block;margin:0.4rem 0;}
-footer a:hover{text-decoration:underline;}
-.footer-social a{font-weight:700;}
-
-.copyright{
-grid-column:1/-1;text-align:center;margin-top:2rem;font-size:0.9rem;color:#555;
+.footer-box h4{
+font-weight:700;
+letter-spacing:1px;
+margin-bottom:1.2rem;
+font-size:1rem;
+}
+.footer-box a,
+.footer-box p{
+display:block;
+margin:0.5rem 0;
+color:#111;
+text-decoration:none;
+font-size:0.95rem;
+}
+.footer-box a:hover{text-decoration:underline;}
+.footer-bottom{
+grid-column:1/-1;
+text-align:center;
+margin-top:3rem;
+font-size:0.85rem;
+color:#666;
+border-top:1px solid #ddd;
+padding-top:1.5rem;
 }
 </style>
 </head>
@@ -123,7 +232,7 @@ grid-column:1/-1;text-align:center;margin-top:2rem;font-size:0.9rem;color:#555;
 </header>
 
 <section class="hero">
-<img src="profile.png">
+<img src="profile.png" alt="AJ Accounting Solutions">
 <h1>BEYOND BOOKKEEPING</h1>
 <p>WHERE FINANCE MEETS STRUCTURE.</p>
 </section>
@@ -166,45 +275,34 @@ AJ Accounting Solutions delivers system-driven bookkeeping, real estate accounti
 <a href="certifications.html" class="lux-btn">View All Certifications</a>
 </section>
 
-.lux-footer{
-  background:#f6f6f6;
-  color:#111;
-  padding:4.5rem 12% 2rem;
-  display:grid;
-  grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-  gap:4rem;
-}
+<footer id="contact" class="lux-footer">
 
-.footer-box h4{
-  font-weight:700;
-  letter-spacing:1px;
-  margin-bottom:1.2rem;
-  font-size:1rem;
-}
+<div class="footer-box">
+<h4>EXPLORE</h4>
+<a href="index.html">Home</a>
+<a href="services.html">Services</a>
+<a href="about.html">About</a>
+<a href="#contact">Contact</a>
+</div>
 
-.footer-box a,
-.footer-box p{
-  display:block;
-  margin:0.5rem 0;
-  color:#111;
-  text-decoration:none;
-  font-size:0.95rem;
-}
+<div class="footer-box">
+<h4>CONNECT WITH US</h4>
+<a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank"><strong>LinkedIn</strong></a>
+<p>✉️ slachamanjotsingh@gmail.com</p>
+<p>📞 +91 991 115 5541</p>
+</div>
 
-.footer-box a:hover{
-  text-decoration:underline;
-}
+<div class="footer-box">
+<h4>LOCATION</h4>
+<p>Mohali, Punjab, India</p>
+<p>Global Accounting Support</p>
+</div>
 
-.linkedin-link{
-  font-weight:700;
-}
+<div class="footer-bottom">
+© 2026 AJ Accounting Solutions. All rights reserved.
+</div>
 
-.footer-bottom{
-  grid-column:1/-1;
-  text-align:center;
-  margin-top:3rem;
-  font-size:0.85rem;
-  color:#666;
-  border-top:1px solid #ddd;
-  padding-top:1.5rem;
-}
+</footer>
+
+</body>
+</html>
