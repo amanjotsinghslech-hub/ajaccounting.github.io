@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Certifications | AJ Accounting Solutions</title>
+<title>Certifications | AmanJot Singh</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
@@ -13,52 +13,37 @@ body{background:#0a0a0a;color:#fff;overflow-x:hidden;}
 
 /* NAVBAR */
 header{
-position:fixed;
-top:0;
-width:100%;
+position:fixed;top:0;width:100%;
 background:rgba(5,5,5,0.95);
 backdrop-filter:blur(10px);
 border-bottom:1px solid #222;
 z-index:1000;
 }
 .nav-bar{
-display:flex;
-justify-content:center;
-gap:3.5rem;
-padding:1.3rem;
+display:flex;justify-content:center;gap:3.5rem;padding:1.3rem;
 }
 .nav-bar a{
-color:#fff;
-text-decoration:none;
-font-weight:700;
-letter-spacing:1px;
+color:#fff;text-decoration:none;font-weight:700;letter-spacing:1px;
 }
 .nav-bar a:hover{
-color:#c5a880;
-border-bottom:2px solid #c5a880;
+color:#c5a880;border-bottom:2px solid #c5a880;
 }
 
 /* HERO */
 .page-hero{
-min-height:55vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding-top:7rem;
+min-height:60vh;
+display:flex;flex-direction:column;
+justify-content:center;align-items:center;
+text-align:center;padding-top:7rem;
 background:radial-gradient(circle at top, #121212, #050505 70%);
 }
 .page-hero h1{
-font-size:3.6rem;
-font-weight:900;
-letter-spacing:4px;
-color:#c5a880;
+font-size:3.6rem;font-weight:900;
+letter-spacing:4px;color:#c5a880;
 }
 .page-hero p{
-margin-top:1.2rem;
-font-size:1.3rem;
-opacity:0.85;
+margin-top:1.2rem;font-size:1.3rem;
+opacity:0.85;max-width:850px;
 }
 
 /* SECTIONS */
@@ -67,35 +52,32 @@ padding:6rem 12%;
 text-align:center;
 }
 .section h2{
-font-size:2.5rem;
-letter-spacing:2px;
+font-size:2.7rem;letter-spacing:2px;
 color:#c5a880;
 }
 .section p{
-max-width:950px;
-margin:1.5rem auto;
-line-height:1.9;
-opacity:0.86;
+max-width:950px;margin:1.6rem auto;
+line-height:1.9;opacity:0.86;
 }
 
 /* CERT GRID */
 .cert-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:3.5rem;
+gap:3.2rem;
 margin-top:4rem;
 }
 .cert-card{
 background:linear-gradient(145deg,#0b0b0b,#141414);
 border-radius:22px;
-padding:2.2rem;
+padding:2.4rem;
 border:1px solid #222;
 box-shadow:0 14px 45px rgba(0,0,0,0.75);
 transition:0.4s;
-text-align:center;
+text-align:left;
 }
 .cert-card:hover{
-transform:translateY(-12px);
+transform:translateY(-10px);
 border-color:#c5a880;
 }
 .cert-card img{
@@ -105,22 +87,25 @@ border-radius:12px;
 border:1px solid #333;
 background:#fff;
 padding:0.5rem;
+display:block;
+margin:auto;
 }
 .cert-card h4{
 margin-top:1.4rem;
 color:#c5a880;
 font-weight:600;
+text-align:center;
 }
 .cert-card p{
 font-size:0.95rem;
-margin-top:0.6rem;
+margin-top:0.8rem;
 opacity:0.8;
+text-align:center;
 }
 
 /* FOOTER */
 .lux-footer{
-background:#f6f6f6;
-color:#111;
+background:#f6f6f6;color:#111;
 padding:6rem 14% 2.8rem;
 }
 .footer-grid{
@@ -129,27 +114,18 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:6rem;
 }
 .footer-box h4{
-font-weight:700;
-letter-spacing:1px;
-margin-bottom:1.4rem;
-font-size:1rem;
+font-weight:700;letter-spacing:1px;
+margin-bottom:1.4rem;font-size:1rem;
 }
-.footer-box a,
-.footer-box p{
-display:block;
-margin:0.7rem 0;
-color:#111;
-text-decoration:none;
-font-size:0.96rem;
+.footer-box a,.footer-box p{
+display:block;margin:0.7rem 0;
+color:#111;text-decoration:none;font-size:0.96rem;
 }
 .footer-box a:hover{text-decoration:underline;}
 .footer-bottom{
-text-align:center;
-margin-top:4rem;
-font-size:0.85rem;
-color:#666;
-border-top:1px solid #ddd;
-padding-top:1.8rem;
+text-align:center;margin-top:4rem;
+font-size:0.85rem;color:#666;
+border-top:1px solid #ddd;padding-top:1.8rem;
 }
 </style>
 </head>
@@ -159,7 +135,7 @@ padding-top:1.8rem;
 <header>
 <nav class="nav-bar">
 <a href="index.html">Home</a>
-<a href="services.html">Services</a>
+<a href="portfolio.html">Portfolio</a>
 <a href="about.html">About</a>
 <a href="#contact">Contact</a>
 </nav>
@@ -168,18 +144,20 @@ padding-top:1.8rem;
 <!-- HERO -->
 <section class="page-hero">
 <h1>CERTIFICATIONS</h1>
-<p>Verified expertise. Trusted financial platforms. Proven professional standards.</p>
+<p>
+Professional credentials that validate my accounting systems expertise and platform-level proficiency.
+</p>
 </section>
 
 <!-- INTRO -->
 <section class="section">
 <h2>Professional Credentials</h2>
 <p>
-At AJ Accounting Solutions, certifications are not just badges — they represent verified expertise, continuous professional development, and platform-level authorization to manage real-world financial systems. Our certifications ensure that every process we build follows industry standards, security protocols, and accounting best practices.
+My certifications represent verified platform knowledge, structured training, and the ability to professionally manage live accounting environments. They support my work in building, optimizing, and maintaining financial systems for businesses across different industries.
 </p>
 </section>
 
-<!-- CERTIFICATIONS -->
+<!-- CERTS -->
 <section class="section">
 
 <div class="cert-grid">
@@ -187,25 +165,33 @@ At AJ Accounting Solutions, certifications are not just badges — they represen
 <div class="cert-card">
 <img src="QuickBooks1.png" alt="QuickBooks Certification">
 <h4>QuickBooks Certified Professional</h4>
-<p>Authorized to set up, manage, migrate, and optimize QuickBooks accounting systems for businesses globally.</p>
+<p>
+Authorized to configure, manage, migrate, and optimize QuickBooks systems including reconciliations, reporting structures, and integrations.
+</p>
 </div>
 
 <div class="cert-card">
 <img src="Gusto.png" alt="Gusto Certification">
 <h4>Gusto Payroll Certified</h4>
-<p>Certified in payroll processing, employee compliance, tax workflows, and payroll system management.</p>
+<p>
+Trained in payroll system setup, compliance workflows, tax processes, employee management, and payroll operations.
+</p>
 </div>
 
 <div class="cert-card">
 <img src="Buildium.png" alt="Buildium Certification">
 <h4>Buildium Certified Specialist</h4>
-<p>Trained in real estate accounting, trust accounting, property reporting, and operational workflows.</p>
+<p>
+Specialized in real estate accounting, trust accounting, property management workflows, and financial reporting systems.
+</p>
 </div>
 
 <div class="cert-card">
 <img src="Xero.png" alt="Xero Certification">
 <h4>Xero Advisor Certified</h4>
-<p>Certified to design, implement, and support cloud-based accounting systems and integrations.</p>
+<p>
+Certified to design, integrate, and support cloud accounting environments and third-party system connections.
+</p>
 </div>
 
 </div>
@@ -220,31 +206,16 @@ At AJ Accounting Solutions, certifications are not just badges — they represen
 <div class="footer-box">
 <h4>EXPLORE</h4>
 <a href="index.html">Home</a>
-<a href="services.html">Services</a>
+<a href="portfolio.html">Portfolio</a>
 <a href="about.html">About</a>
 <a href="#contact">Contact</a>
 </div>
 
 <div class="footer-box">
-<h4>CONNECT WITH US</h4>
+<h4>CONNECT</h4>
 <a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank"><strong>LinkedIn</strong></a>
 <p>✉️ slachamanjotsingh@gmail.com</p>
 <p>📞 +91 991 115 5541</p>
 </div>
 
-<div class="footer-box">
-<h4>LOCATION</h4>
-<p>Mohali, Punjab, India</p>
-<p>Global Accounting Support</p>
-</div>
-
-</div>
-
-<div class="footer-bottom">
-© 2026 AJ Accounting Solutions. All rights reserved.
-</div>
-
-</footer>
-
-</body>
-</html>
+<div class="foot
