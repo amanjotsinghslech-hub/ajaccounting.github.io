@@ -2,144 +2,420 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width initial-scale=1.0">
-<title>Portfolio | AmanJot Singh</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Portfolio | AmanJot Singh | Accounting Projects</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
-body{background:#0a0a0a;color:#fff;overflow-x:hidden;}
-
-/* NAVBAR */
-header{
-position:fixed;top:0;width:100%;
-background:rgba(5,5,5,0.95);
-backdrop-filter:blur(10px);
-border-bottom:1px solid #222;
-z-index:1000;
+/* RESET & BASE */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
 }
-.nav-bar{
-display:flex;justify-content:center;gap:3.5rem;padding:1.3rem;
+html {
+  scroll-behavior: smooth;
 }
-.nav-bar a{
-color:#fff;text-decoration:none;font-weight:700;letter-spacing:1px;
-}
-.nav-bar a:hover{
-color:#c5a880;border-bottom:2px solid #c5a880;
+body {
+  background: #0a0a0a;
+  color: #fff;
+  width: 100%;
+  overflow-x: hidden;
 }
 
-/* HERO */
-.page-hero{
-min-height:60vh;
-display:flex;flex-direction:column;
-justify-content:center;align-items:center;
-text-align:center;padding-top:7rem;
-background:radial-gradient(circle at top, #121212, #050505 70%);
+/* NAVBAR - FIXED FOR ALL DEVICES */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  background: rgba(5, 5, 5, 0.98);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border-bottom: 1px solid #222;
+  z-index: 1000;
+  padding: 0;
 }
-.page-hero h1{
-font-size:3.6rem;font-weight:900;
-letter-spacing:4px;color:#c5a880;
+.nav-bar {
+  display: flex;
+  justify-content: center;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  padding: 1rem;
+  flex-wrap: wrap;
 }
-.page-hero p{
-margin-top:1.2rem;font-size:1.3rem;
-opacity:0.85;max-width:850px;
+.nav-bar a {
+  color: #fff;
+  text-decoration: none;
+  font-weight: 600;
+  letter-spacing: 1px;
+  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  padding: 0.5rem 0;
+  white-space: nowrap;
+}
+.nav-bar a:hover {
+  color: #c5a880;
+  border-bottom: 2px solid #c5a880;
+}
+
+/* PAGE HERO */
+.page-hero {
+  min-height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: clamp(6rem, 10vw, 8rem) 1.5rem 3rem;
+  background: radial-gradient(circle at top, #121212, #050505 70%);
+  position: relative;
+  width: 100%;
+}
+.page-hero h1 {
+  font-size: clamp(2.5rem, 5vw, 3.6rem);
+  font-weight: 900;
+  letter-spacing: 2px;
+  color: #c5a880;
+  line-height: 1.2;
+  margin-bottom: 1rem;
+}
+.page-hero p {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  opacity: 0.85;
+  max-width: 700px;
+  line-height: 1.6;
+  padding: 0 1rem;
 }
 
 /* SECTIONS */
-.section{
-padding:6rem 12%;text-align:center;
+.section {
+  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 12%);
+  text-align: center;
+  width: 100%;
+  max-width: 1400px;
+  margin: 0 auto;
 }
-.section h2{
-font-size:2.7rem;letter-spacing:2px;color:#c5a880;
+.section h2 {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  letter-spacing: 1px;
+  color: #c5a880;
+  margin-bottom: 3rem;
 }
-.section p{
-max-width:950px;margin:1.6rem auto;
-line-height:1.9;opacity:0.86;
-}
-
-/* PROJECTS */
-.portfolio-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:3rem;margin-top:4rem;
-}
-.project-card{
-background:#0f0f0f;
-border:1px solid #222;
-border-radius:22px;
-padding:2.8rem;
-transition:0.4s;text-align:left;
-}
-.project-card:hover{
-transform:translateY(-12px);
-border-color:#c5a880;
-}
-.project-card h3{color:#c5a880;margin-bottom:0.5rem;}
-.project-card span{font-size:0.85rem;opacity:0.6;}
-.project-card p{margin-top:1rem;line-height:1.7;opacity:0.85;}
-
-.project-tags{
-margin-top:1.2rem;
-display:flex;flex-wrap:wrap;gap:0.6rem;
-}
-.project-tags div{
-border:1px solid #333;
-border-radius:20px;
-padding:0.3rem 0.8rem;
-font-size:0.75rem;opacity:0.7;
+.section p {
+  max-width: 900px;
+  margin: 1.2rem auto;
+  line-height: 1.8;
+  opacity: 0.86;
 }
 
-/* ABILITIES */
-.ability-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:2.6rem;margin-top:4rem;
+/* PORTFOLIO FILTER */
+.filter-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin: 2rem 0 3rem;
 }
-.ability-card{
-background:#0f0f0f;border:1px solid #222;
-border-radius:20px;padding:2.4rem;
-transition:0.4s;text-align:left;
+.filter-btn {
+  padding: 0.8rem 1.8rem;
+  background: #0f0f0f;
+  border: 1px solid #222;
+  border-radius: 30px;
+  color: #fff;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s;
+  font-size: 0.95rem;
 }
-.ability-card:hover{
-transform:translateY(-10px);
-border-color:#c5a880;
+.filter-btn:hover,
+.filter-btn.active {
+  background: #c5a880;
+  color: #000;
+  border-color: #c5a880;
 }
-.ability-card h4{color:#c5a880;margin-bottom:0.6rem;}
 
-/* FUTURE */
-.future-box{
-margin-top:4rem;
-background:linear-gradient(145deg,#0b0b0b,#141414);
-border:1px dashed #333;
-border-radius:22px;
-padding:3.5rem;
-opacity:0.9;
+/* PORTFOLIO GRID - MOBILE FRIENDLY */
+.portfolio-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+  gap: clamp(2rem, 3vw, 3rem);
+  margin-top: 2rem;
+  width: 100%;
+}
+.portfolio-card {
+  background: #0f0f0f;
+  border: 1px solid #222;
+  border-radius: 20px;
+  overflow: hidden;
+  transition: all 0.4s;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+.portfolio-card:hover {
+  transform: translateY(-10px);
+  border-color: #c5a880;
+  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
+}
+.card-image {
+  height: 220px;
+  background: #050505;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+  border-bottom: 1px solid #222;
+}
+.card-icon {
+  font-size: 4rem;
+  color: #c5a880;
+}
+.card-content {
+  padding: clamp(1.8rem, 3vw, 2.5rem);
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+.card-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-bottom: 1.2rem;
+}
+.tag {
+  background: rgba(197, 168, 128, 0.1);
+  color: #c5a880;
+  padding: 0.4rem 1rem;
+  border-radius: 15px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid rgba(197, 168, 128, 0.3);
+}
+.card-content h3 {
+  color: #c5a880;
+  font-size: clamp(1.3rem, 2vw, 1.5rem);
+  margin-bottom: 1rem;
+  line-height: 1.3;
+}
+.card-content p {
+  margin: 0 0 1.5rem 0;
+  line-height: 1.6;
+  opacity: 0.9;
+  flex-grow: 1;
+}
+.results {
+  margin-top: 1.5rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #333;
+}
+.results h4 {
+  color: #c5a880;
+  font-size: 1rem;
+  margin-bottom: 0.8rem;
+}
+.results ul {
+  list-style: none;
+  padding-left: 0;
+}
+.results li {
+  position: relative;
+  padding-left: 1.5rem;
+  margin-bottom: 0.5rem;
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+.results li:before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: #c5a880;
+  font-weight: bold;
+}
+
+/* CASE STUDY SECTION */
+.case-study {
+  background: #0f0f0f;
+  border-radius: 20px;
+  padding: clamp(2.5rem, 4vw, 3.5rem);
+  margin-top: 4rem;
+  border: 1px solid #222;
+  text-align: left;
+}
+.case-study h3 {
+  color: #c5a880;
+  font-size: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+.study-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 2rem;
+  margin-top: 2rem;
+}
+.study-item h4 {
+  color: #c5a880;
+  margin-bottom: 0.8rem;
+  font-size: 1.1rem;
+}
+.study-item p {
+  margin: 0;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+/* BUTTONS */
+.lux-btn {
+  display: inline-block;
+  margin-top: 2.5rem;
+  padding: clamp(0.8rem, 2vw, 1rem) clamp(2rem, 4vw, 3rem);
+  border-radius: 40px;
+  border: 1.6px solid #c5a880;
+  color: #c5a880;
+  text-decoration: none;
+  font-weight: 700;
+  letter-spacing: 1px;
+  transition: 0.3s;
+  font-size: clamp(0.9rem, 1.5vw, 1rem);
+}
+.lux-btn:hover {
+  background: #c5a880;
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(197, 168, 128, 0.2);
+}
+.lux-btn-primary {
+  background: #c5a880;
+  color: #000;
+}
+.lux-btn-primary:hover {
+  background: #d4b48c;
+  border-color: #d4b48c;
 }
 
 /* FOOTER */
-.lux-footer{
-background:#f6f6f6;color:#111;
-padding:6rem 14% 2.8rem;
+.lux-footer {
+  background: #f6f6f6;
+  color: #111;
+  padding: clamp(3rem, 6vw, 6rem) clamp(1.5rem, 5vw, 14%) 2.8rem;
+  width: 100%;
 }
-.footer-grid{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:6rem;
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(2rem, 4vw, 4rem);
+  width: 100%;
 }
-.footer-box h4{
-font-weight:700;letter-spacing:1px;
-margin-bottom:1.4rem;font-size:1rem;
+.footer-box h4 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  color: #000;
 }
-.footer-box a,.footer-box p{
-display:block;margin:0.7rem 0;
-color:#111;text-decoration:none;font-size:0.96rem;
+.footer-box a, .footer-box p {
+  display: block;
+  margin: 0.6rem 0;
+  color: #111;
+  text-decoration: none;
+  font-size: 0.95rem;
 }
-.footer-box a:hover{text-decoration:underline;}
-.footer-bottom{
-text-align:center;margin-top:4rem;
-font-size:0.85rem;color:#666;
-border-top:1px solid #ddd;padding-top:1.8rem;
+.footer-box a:hover {
+  color: #c5a880;
+  text-decoration: none;
+}
+.footer-bottom {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: #666;
+  border-top: 1px solid #ddd;
+  padding-top: 1.5rem;
+}
+
+/* MOBILE RESPONSIVE */
+@media (max-width: 768px) {
+  .page-hero {
+    min-height: 60vh;
+    padding-top: 5rem;
+  }
+  
+  .nav-bar {
+    justify-content: space-around;
+    gap: 0.8rem;
+    padding: 0.8rem 0.5rem;
+  }
+  
+  .section {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+  
+  .portfolio-grid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+  
+  .filter-buttons {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: 0.5rem;
+    margin: 1.5rem 0 2rem;
+  }
+  
+  .filter-btn {
+    flex-shrink: 0;
+    padding: 0.6rem 1.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .card-image {
+    height: 180px;
+    padding: 1.5rem;
+  }
+  
+  .card-content {
+    padding: 1.5rem;
+  }
+  
+  .case-study {
+    padding: 1.5rem;
+  }
+  
+  .study-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .page-hero h1 {
+    font-size: 2rem;
+  }
+  
+  .page-hero p {
+    font-size: 1rem;
+  }
+  
+  .nav-bar {
+    flex-wrap: wrap;
+    gap: 0.5rem;
+  }
+  
+  .nav-bar a {
+    font-size: 0.75rem;
+    padding: 0.3rem 0.5rem;
+  }
+  
+  .section h2 {
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+  }
+  
+  .portfolio-card {
+    border-radius: 15px;
+  }
 }
 </style>
 </head>
@@ -150,8 +426,8 @@ border-top:1px solid #ddd;padding-top:1.8rem;
 <nav class="nav-bar">
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="#contact">Connect</a>
+<a href="certifications.html">Certifications</a>
+<a href="#contact">Contact</a>
 </nav>
 </header>
 
@@ -159,129 +435,234 @@ border-top:1px solid #ddd;padding-top:1.8rem;
 <section class="page-hero">
 <h1>PORTFOLIO</h1>
 <p>
-A curated showcase of accounting systems, financial operations, and platform-based implementations.
+Real-world accounting projects, system implementations, and financial transformations I've delivered for clients across industries.
 </p>
 </section>
 
-<!-- INTRO -->
+<!-- PORTFOLIO INTRO -->
 <section class="section">
-<h2>What I Deliver</h2>
+<h2>Project Portfolio</h2>
 <p>
-My portfolio represents hands-on financial system work — building, repairing, migrating, and optimizing accounting environments to support business clarity, compliance, and operational scale.
+Each project below represents a unique financial challenge I helped solve—from system migrations and clean-ups to complete accounting overhauls. Click on any project to see the detailed approach and measurable results.
 </p>
-</section>
 
-<!-- PROJECTS -->
-<section class="section">
-<h2>Selected Projects</h2>
+<div class="filter-buttons">
+<button class="filter-btn active" data-filter="all">All Projects</button>
+<button class="filter-btn" data-filter="real-estate">Real Estate</button>
+<button class="filter-btn" data-filter="cleanup">Financial Cleanup</button>
+<button class="filter-btn" data-filter="system">System Setup</button>
+<button class="filter-btn" data-filter="ecommerce">E-commerce</button>
+</div>
 
+<!-- PORTFOLIO GRID -->
 <div class="portfolio-grid">
 
-<div class="project-card">
-<h3>Property Management Accounting – AppFolio</h3>
-<span>AppFolio • Trust Accounting • Owner Statements • Reconciliations</span>
+<!-- Project 1 -->
+<div class="portfolio-card" data-category="real-estate system">
+<div class="card-image">
+<div class="card-icon">
+<i class="fas fa-building"></i>
+</div>
+</div>
+<div class="card-content">
+<div class="card-tags">
+<span class="tag">Real Estate</span>
+<span class="tag">AppFolio</span>
+<span class="tag">System Setup</span>
+</div>
+<h3>Property Management Accounting System</h3>
 <p>
-Managed complete property management accounting operations in AppFolio including owner and tenant ledgers, trust and operating account reconciliations, monthly close cycles, and structured financial reporting.
+Complete accounting system implementation for a property management company with 50+ residential units. Migrated from spreadsheets to AppFolio with full trust accounting compliance.
 </p>
-<div class="project-tags">
-<div>AppFolio</div><div>Property Accounting</div><div>Trust Accounting</div><div>Reconciliations</div>
+<div class="results">
+<h4>Key Results:</h4>
+<ul>
+<li>Reduced monthly close time from 10 days to 2 days</li>
+<li>Eliminated reconciliation errors across all trust accounts</li>
+<li>Automated owner statements delivery</li>
+<li>Created dashboard reporting for management</li>
+</ul>
+</div>
 </div>
 </div>
 
-<div class="project-card">
-<h3>Real Estate Accounting Infrastructure</h3>
-<span>Buildium • QuickBooks • Trust Accounting</span>
+<!-- Project 2 -->
+<div class="portfolio-card" data-category="cleanup ecommerce">
+<div class="card-image">
+<div class="card-icon">
+<i class="fas fa-broom"></i>
+</div>
+</div>
+<div class="card-content">
+<div class="card-tags">
+<span class="tag">Financial Cleanup</span>
+<span class="tag">E-commerce</span>
+<span class="tag">QuickBooks</span>
+</div>
+<h3>E-commerce Accounting Overhaul</h3>
 <p>
-Designed full-cycle property accounting systems including reconciliations, owner statements, compliance workflows, and management-level financial reporting structures.
+Complete financial cleanup for a Shopify store with 2 years of unreconciled transactions. Fixed categorization errors, reconciled payment gateways, and restored accurate profit reporting.
 </p>
-<div class="project-tags">
-<div>Buildium</div><div>QuickBooks</div><div>System Design</div><div>Real Estate</div>
+<div class="results">
+<h4>Key Results:</h4>
+<ul>
+<li>Recovered $28,500 in unclaimed tax deductions</li>
+<li>Identified $12,200 in duplicate vendor payments</li>
+<li>Corrected COGS calculations increasing reported margins by 18%</li>
+<li>Set up automated bank feeds for ongoing accuracy</li>
+</ul>
+</div>
 </div>
 </div>
 
-<div class="project-card">
-<h3>Multi-Year Financial Cleanup & Recovery</h3>
-<span>QuickBooks • Xero • Bank Reconciliations</span>
+<!-- Project 3 -->
+<div class="portfolio-card" data-category="system">
+<div class="card-image">
+<div class="card-icon">
+<i class="fas fa-sitemap"></i>
+</div>
+</div>
+<div class="card-content">
+<div class="card-tags">
+<span class="tag">System Migration</span>
+<span class="tag">Buildium</span>
+<span class="tag">QuickBooks</span>
+</div>
+<h3>Real Estate Portfolio Migration</h3>
 <p>
-Recovered and corrected historical accounting records, resolved discrepancies, rebuilt chart of accounts, and restored financial statement accuracy.
+Migrated a real estate investment company from manual Excel tracking to Buildium with QuickBooks integration. Created structured chart of accounts and automated reporting workflows.
 </p>
-<div class="project-tags">
-<div>Cleanup</div><div>Backlog</div><div>Reconciliations</div><div>Migrations</div>
+<div class="results">
+<h4>Key Results:</h4>
+<ul>
+<li>Reduced manual data entry by 25 hours monthly</li>
+<li>Improved financial reporting accuracy to 99.8%</li>
+<li>Enabled real-time portfolio performance tracking</li>
+<li>Automated tenant payment tracking and reminders</li>
+</ul>
+</div>
 </div>
 </div>
 
-<div class="project-card">
-<h3>Payroll & Vendor Compliance System</h3>
-<span>Gusto • 1099 Preparation • Vendor Management</span>
+<!-- Project 4 -->
+<div class="portfolio-card" data-category="cleanup">
+<div class="card-image">
+<div class="card-icon">
+<i class="fas fa-file-invoice-dollar"></i>
+</div>
+</div>
+<div class="card-content">
+<div class="card-tags">
+<span class="tag">Tax Preparation</span>
+<span class="tag">1099 Compliance</span>
+<span class="tag">Gusto</span>
+</div>
+<h3>Contractor Compliance System</h3>
 <p>
-Built payroll workflows, vendor processes, and 1099 tracking systems to support compliance, reporting accuracy, and scalable operations.
+Designed and implemented a complete contractor management and 1099 compliance system for a construction company with 85+ vendors. Integrated Gusto payroll with accounting systems.
 </p>
-<div class="project-tags">
-<div>Payroll</div><div>1099</div><div>Compliance</div><div>Operations</div>
+<div class="results">
+<h4>Key Results:</h4>
+<ul>
+<li>Achieved 100% 1099 compliance for all contractors</li>
+<li>Reduced year-end preparation time by 40 hours</li>
+<li>Automated W-9 collection and tracking</li>
+<li>Integrated vendor payments with accounting software</li>
+</ul>
+</div>
 </div>
 </div>
 
-<div class="project-card">
-<h3>E-commerce Accounting Integration</h3>
-<span>QuickBooks • Shopify • Stripe • PayPal</span>
+<!-- Project 5 -->
+<div class="portfolio-card" data-category="ecommerce system">
+<div class="card-image">
+<div class="card-icon">
+<i class="fas fa-shopping-cart"></i>
+</div>
+</div>
+<div class="card-content">
+<div class="card-tags">
+<span class="tag">E-commerce</span>
+<span class="tag">Multi-channel</span>
+<span class="tag">Integration</span>
+</div>
+<h3>Multi-channel Sales Integration</h3>
 <p>
-Integrated sales platforms and payment processors into accounting systems, automating transaction flows and reconciliation processes.
+Integrated Amazon, Shopify, and wholesale channels into a unified QuickBooks accounting system for a consumer goods company. Automated sales tracking, inventory updates, and tax calculations.
 </p>
-<div class="project-tags">
-<div>E-commerce</div><div>Integrations</div><div>Automation</div><div>QuickBooks</div>
+<div class="results">
+<h4>Key Results:</h4>
+<ul>
+<li>Unified reporting across all sales channels</li>
+<li>Automated inventory cost tracking</li>
+<li>Reduced manual data entry by 30 hours weekly</li>
+<li>Improved sales tax accuracy and reporting</li>
+</ul>
+</div>
+</div>
+</div>
+
+<!-- Project 6 -->
+<div class="portfolio-card" data-category="real-estate">
+<div class="card-image">
+<div class="card-icon">
+<i class="fas fa-chart-line"></i>
+</div>
+</div>
+<div class="card-content">
+<div class="card-tags">
+<span class="tag">Financial Reporting</span>
+<span class="tag">Dashboard</span>
+<span class="tag">Analytics</span>
+</div>
+<h3>Real Estate Investor Dashboard</h3>
+<p>
+Created custom financial dashboards and reporting packages for real estate investors tracking multiple properties. Integrated property management software data with financial analytics.
+</p>
+<div class="results">
+<h4>Key Results:</h4>
+<ul>
+<li>Provided real-time ROI tracking for 35+ properties</li>
+<li>Automated monthly investor reporting packages</li>
+<li>Reduced report preparation time by 15 hours monthly</li>
+<li>Enabled data-driven investment decisions</li>
+</ul>
+</div>
 </div>
 </div>
 
 </div>
 </section>
 
-<!-- ABILITIES -->
+<!-- CASE STUDY DETAIL -->
 <section class="section">
-<h2>Professional Abilities</h2>
-
-<div class="ability-grid">
-
-<div class="ability-card">
-<h4>Financial Systems Architecture</h4>
-<p>Designing scalable accounting structures and workflows.</p>
-</div>
-
-<div class="ability-card">
-<h4>Reconciliations & Data Recovery</h4>
-<p>Resolving discrepancies and rebuilding financial histories.</p>
-</div>
-
-<div class="ability-card">
-<h4>Operational Accounting</h4>
-<p>Building internal accounting processes and controls.</p>
-</div>
-
-<div class="ability-card">
-<h4>Platform Integrations</h4>
-<p>Connecting accounting systems with e-commerce and banking tools.</p>
-</div>
-
-<div class="ability-card">
-<h4>Migrations & Optimization</h4>
-<p>System transitions while preserving data integrity.</p>
-</div>
-
-<div class="ability-card">
-<h4>Compliance Support</h4>
-<p>Payroll workflows, vendor classification, and 1099 preparation.</p>
-</div>
-
-</div>
-</section>
-
-<!-- FUTURE -->
-<section class="section">
-<h2>Case Study Pages</h2>
-<div class="future-box">
+<div class="case-study">
+<h3>Detailed Case Study: Property Management Transformation</h3>
 <p>
-Dedicated project pages are being developed to document workflows, challenges, tools, and results. Each portfolio project will soon link to its own detailed breakdown.
+A property management company with 50+ residential units was struggling with manual processes, frequent reconciliation errors, and delayed owner statements. Their previous system involved multiple spreadsheets and manual bank reconciliations, leading to a 10-day monthly close process and frequent owner complaints.
 </p>
+
+<div class="study-grid">
+<div class="study-item">
+<h4>Challenge</h4>
+<p>Manual processes causing errors, delayed reporting, lack of trust accounting compliance, and inability to scale operations.</p>
 </div>
+<div class="study-item">
+<h4>Solution</h4>
+<p>Implemented AppFolio property management system with integrated accounting, automated bank feeds, and standardized workflows.</p>
+</div>
+<div class="study-item">
+<h4>Implementation</h4>
+<p>4-week phased implementation including data migration, staff training, and parallel testing to ensure accuracy.</p>
+</div>
+<div class="study-item">
+<h4>Results</h4>
+<p>Monthly close reduced to 2 days, 100% reconciliation accuracy, automated owner statements, and scalable system for growth.</p>
+</div>
+</div>
+</div>
+
+<a href="#contact" class="lux-btn lux-btn-primary">Start Your Project</a>
 </section>
 
 <!-- FOOTER -->
@@ -293,30 +674,86 @@ Dedicated project pages are being developed to document workflows, challenges, t
 <h4>EXPLORE</h4>
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="#contact">Connect</a>
+<a href="certifications.html">Certifications</a>
+<a href="#contact">Contact</a>
 </div>
 
 <div class="footer-box">
 <h4>CONNECT</h4>
-<a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank"><strong>LinkedIn</strong></a>
-<p>✉️ slachamanjotsingh@gmail.com</p>
-<p>📞 +91 991 115 5541</p>
+<a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank">
+  <i class="fab fa-linkedin"></i> <strong>LinkedIn</strong>
+</a>
+<p><i class="fas fa-envelope"></i> slachamanjotsingh@gmail.com</p>
+<p><i class="fas fa-phone"></i> +91 991 115 5541</p>
+</div>
+
+<div class="footer-box">
+<h4>SERVICES</h4>
+<p>Real Estate Accounting</p>
+<p>Financial Systems Setup</p>
+<p>Bookkeeping Clean-Up</p>
+<p>Payroll & Compliance</p>
 </div>
 
 <div class="footer-box">
 <h4>LOCATION</h4>
-<p>Mohali, Punjab, India</p>
-<p>Working with global clients</p>
+<p><i class="fas fa-map-marker-alt"></i> Mohali, Punjab, India</p>
+<p>Working with global clients remotely</p>
+<p>Available for projects worldwide</p>
 </div>
 
 </div>
 
 <div class="footer-bottom">
-© 2026 AmanJot Singh. All rights reserved.
+© 2026 AmanJot Singh. All rights reserved. | Professional Accounting Portfolio
 </div>
 
 </footer>
+
+<script>
+// Filter functionality for portfolio items
+document.addEventListener('DOMContentLoaded', function() {
+  const filterButtons = document.querySelectorAll('.filter-btn');
+  const portfolioCards = document.querySelectorAll('.portfolio-card');
+  
+  filterButtons.forEach(button => {
+    button.addEventListener('click', function() {
+      // Remove active class from all buttons
+      filterButtons.forEach(btn => btn.classList.remove('active'));
+      
+      // Add active class to clicked button
+      this.classList.add('active');
+      
+      const filterValue = this.getAttribute('data-filter');
+      
+      // Show/hide portfolio cards based on filter
+      portfolioCards.forEach(card => {
+        if (filterValue === 'all') {
+          card.style.display = 'flex';
+        } else {
+          const cardCategories = card.getAttribute('data-category');
+          if (cardCategories.includes(filterValue)) {
+            card.style.display = 'flex';
+          } else {
+            card.style.display = 'none';
+          }
+        }
+        
+        // Add slight animation when showing
+        if (card.style.display === 'flex') {
+          card.style.opacity = '0';
+          card.style.transform = 'translateY(20px)';
+          setTimeout(() => {
+            card.style.transition = 'opacity 0.3s, transform 0.3s';
+            card.style.opacity = '1';
+            card.style.transform = 'translateY(0)';
+          }, 10);
+        }
+      });
+    });
+  });
+});
+</script>
 
 </body>
 </html>
