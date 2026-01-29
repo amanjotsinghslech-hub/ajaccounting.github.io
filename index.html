@@ -129,37 +129,122 @@ header {
   font-weight: 600;
 }
 
-/* BRAND RIBBON */
+/* UPDATED: ENHANCED BRAND RIBBON - MODERN & FOCUSED */
 #brand-ribbon {
   width: 100%;
+  background: linear-gradient(135deg, #050505 0%, #0a0a0a 100%);
+  border-top: 1px solid rgba(34, 34, 34, 0.8);
+  border-bottom: 1px solid rgba(34, 34, 34, 0.8);
+  padding: 1.8rem 0;
+  position: relative;
   overflow: hidden;
-  background: #050505;
-  border-top: 1px solid #222;
-  border-bottom: 1px solid #222;
-  padding: 0.8rem 0;
 }
+
 .ribbon-container {
-  display: flex;
-  width: max-content;
-  min-width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
 }
-.ribbon {
-  display: flex;
-  gap: clamp(3rem, 6vw, 6rem);
-  animation: scroll 40s linear infinite;
-  will-change: transform;
+
+.ribbon-header {
+  text-align: center;
+  margin-bottom: 1.5rem;
 }
-.ribbon span {
-  white-space: nowrap;
-  padding: 0.8rem 0;
+
+.ribbon-header h3 {
+  font-size: clamp(1.1rem, 2vw, 1.3rem);
+  color: #c5a880;
   font-weight: 700;
-  letter-spacing: 2px;
-  font-size: clamp(0.85rem, 1.5vw, 1.05rem);
-  color: #aaa;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.5rem;
 }
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
+
+.ribbon-header p {
+  font-size: 0.9rem;
+  opacity: 0.7;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.5;
+}
+
+.ribbon-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.2rem;
+  justify-content: center;
+}
+
+.ribbon-item {
+  background: rgba(15, 15, 15, 0.7);
+  border: 1px solid rgba(197, 168, 128, 0.15);
+  border-radius: 10px;
+  padding: 1.2rem 1rem;
+  text-align: center;
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 90px;
+}
+
+.ribbon-item:hover {
+  border-color: rgba(197, 168, 128, 0.4);
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.ribbon-icon {
+  font-size: 1.5rem;
+  color: #c5a880;
+  margin-bottom: 0.8rem;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.ribbon-item span {
+  font-weight: 600;
+  font-size: 0.95rem;
+  letter-spacing: 0.5px;
+  color: #eee;
+  line-height: 1.4;
+}
+
+/* Mobile responsiveness for ribbon */
+@media (max-width: 768px) {
+  .ribbon-grid {
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 1rem;
+  }
+  
+  .ribbon-item {
+    padding: 1rem 0.8rem;
+    min-height: 85px;
+  }
+  
+  .ribbon-item span {
+    font-size: 0.9rem;
+  }
+  
+  .ribbon-container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .ribbon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  
+  .ribbon-header h3 {
+    font-size: 1.1rem;
+  }
+  
+  .ribbon-item {
+    padding: 0.9rem 0.6rem;
+  }
 }
 
 /* SECTIONS WITH BETTER SPACING */
@@ -544,12 +629,70 @@ I focus on maintaining clean general ledgers, standardized workflows, and well-d
 </div>
 </section>
 
-<!-- BRAND RIBBON -->
+<!-- UPDATED: ENHANCED BRAND RIBBON -->
 <section id="brand-ribbon">
 <div class="ribbon-container">
-<div class="ribbon">
-<span>ACCOUNTING SYSTEMS • FINANCIAL OPERATIONS • APPFOLIO • REAL ESTATE ACCOUNTING • QUICKBOOKS • XERO • BUILDIUM • GUSTO • RECONCILIATIONS • MIGRATIONS • REPORTING •</span>
-<span>ACCOUNTING SYSTEMS • FINANCIAL OPERATIONS • APPFOLIO • REAL ESTATE ACCOUNTING • QUICKBOOKS • XERO • BUILDIUM • GUSTO • RECONCILIATIONS • MIGRATIONS • REPORTING •</span>
+<div class="ribbon-header">
+<h3>TECHNOLOGY & PLATFORM EXPERTISE</h3>
+<p>Professional certifications and hands-on experience with leading financial platforms</p>
+</div>
+
+<div class="ribbon-grid">
+<div class="ribbon-item">
+<div class="ribbon-icon">
+<i class="fas fa-calculator"></i>
+</div>
+<span>QuickBooks ProAdvisor</span>
+</div>
+
+<div class="ribbon-item">
+<div class="ribbon-icon">
+<i class="fas fa-cloud"></i>
+</div>
+<span>Xero Advisor Certified</span>
+</div>
+
+<div class="ribbon-item">
+<div class="ribbon-icon">
+<i class="fas fa-building"></i>
+</div>
+<span>AppFolio & Buildium</span>
+</div>
+
+<div class="ribbon-item">
+<div class="ribbon-icon">
+<i class="fas fa-money-check-alt"></i>
+</div>
+<span>Payroll (Gusto/ADP)</span>
+</div>
+
+<div class="ribbon-item">
+<div class="ribbon-icon">
+<i class="fas fa-sync-alt"></i>
+</div>
+<span>Reconciliations</span>
+</div>
+
+<div class="ribbon-item">
+<div class="ribbon-icon">
+<i class="fas fa-database"></i>
+</div>
+<span>System Migrations</span>
+</div>
+
+<div class="ribbon-item">
+<div class="ribbon-icon">
+<i class="fas fa-chart-bar"></i>
+</div>
+<span>Financial Reporting</span>
+</div>
+
+<div class="ribbon-item">
+<div class="ribbon-icon">
+<i class="fas fa-home"></i>
+</div>
+<span>Real Estate Accounting</span>
+</div>
 </div>
 </div>
 </section>
