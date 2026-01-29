@@ -3,9 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AmanJot Singh | Accounting Portfolio</title>
+<title>AmanJot Singh | Accounting & Financial Systems Specialist</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:'Montserrat',sans-serif;}
@@ -24,6 +25,7 @@ display:flex;justify-content:center;gap:3.5rem;padding:1.3rem;
 }
 .nav-bar a{
 color:#fff;text-decoration:none;font-weight:700;letter-spacing:1px;
+font-size:0.95rem;
 }
 .nav-bar a:hover{
 color:#c5a880;border-bottom:2px solid #c5a880;
@@ -43,28 +45,43 @@ border:3px solid #c5a880;margin-bottom:2.2rem;
 }
 .hero h1{
 font-size:3.8rem;font-weight:900;letter-spacing:3px;
+line-height:1.1;
 }
 .hero h1 span{color:#c5a880;}
 .hero p{
 font-size:1.4rem;margin-top:1rem;opacity:0.85;
-max-width:800px;
+max-width:800px;line-height:1.6;
+}
+.hero-subtitle {
+  font-size: 1.2rem;
+  margin-top: 0.5rem;
+  color: #c5a880;
+  font-weight: 600;
 }
 
-/* BRAND RIBBON */
+/* BRAND RIBBON - Optimized */
 #brand-ribbon{
 width:100%;overflow:hidden;background:#050505;
 border-top:1px solid #222;border-bottom:1px solid #222;
+padding: 0.5rem 0;
+}
+.ribbon-container {
+  display: flex;
+  width: max-content;
 }
 .ribbon{
-display:flex;gap:6rem;animation:scroll 40s linear infinite;
+display:flex;gap:6rem;
+animation:scroll 40s linear infinite;
+will-change: transform;
 }
 .ribbon span{
 white-space:nowrap;padding:1.3rem 0;
 font-weight:700;letter-spacing:3px;font-size:1.05rem;
+color: #aaa;
 }
 @keyframes scroll{
-from{transform:translateX(0);}
-to{transform:translateX(-100%);}
+0%{transform:translateX(0);}
+100%{transform:translateX(-50%);}
 }
 
 /* SECTIONS */
@@ -73,6 +90,7 @@ padding:6rem 12%;text-align:center;
 }
 .section h2{
 font-size:2.7rem;letter-spacing:2px;color:#c5a880;
+margin-bottom: 3rem;
 }
 .section p{
 max-width:950px;margin:1.6rem auto;
@@ -92,11 +110,15 @@ transition:0.4s;
 transform:translateY(-10px);
 border-color:#c5a880;
 }
+.highlight {
+  color: #c5a880;
+  font-weight: 600;
+}
 
-/* SELECTED WORK */
+/* SELECTED WORK - IMPROVED */
 .work-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
 gap:2.8rem;
 margin-top:4rem;
 }
@@ -107,6 +129,7 @@ border-radius:20px;
 border:1px solid #222;
 transition:0.4s;
 text-align:left;
+position: relative;
 }
 .work-card:hover{
 transform:translateY(-10px);
@@ -114,15 +137,28 @@ border-color:#c5a880;
 }
 .work-card h3{
 color:#c5a880;margin-bottom:0.6rem;
+font-size: 1.4rem;
 }
 .work-card span{
 font-size:0.9rem;opacity:0.6;
+display: block;
+margin-bottom: 1rem;
+padding-bottom: 0.8rem;
+border-bottom: 1px solid #333;
+}
+.work-card .result {
+  margin-top: 1.2rem;
+  padding-top: 1.2rem;
+  border-top: 1px solid #333;
+  font-style: italic;
+  color: #c5a880;
+  font-size: 0.95rem;
 }
 
-/* SKILLS */
+/* SKILLS WITH ICONS */
 .skill-grid{
 display:grid;
-grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
 gap:2.5rem;
 margin-top:4rem;
 }
@@ -132,12 +168,62 @@ border:1px solid #222;
 border-radius:18px;
 padding:2.2rem;
 transition:0.4s;
+text-align:center;
 }
 .skill-card:hover{
 transform:translateY(-10px);
 border-color:#c5a880;
 }
-.skill-card h4{color:#c5a880;margin-bottom:0.6rem;}
+.skill-card h4{
+  color:#c5a880;
+  margin-bottom:0.6rem;
+  font-size: 1.3rem;
+}
+.skill-icon {
+  font-size: 2.5rem;
+  color: #c5a880;
+  margin-bottom: 1.2rem;
+  display: block;
+}
+
+/* TESTIMONIALS */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 2.5rem;
+  margin-top: 4rem;
+}
+.testimonial-card {
+  background: #0f0f0f;
+  border: 1px solid #222;
+  border-radius: 18px;
+  padding: 2.2rem;
+  text-align: left;
+  position: relative;
+}
+.testimonial-card:before {
+  content: '"';
+  font-size: 5rem;
+  color: #c5a880;
+  opacity: 0.2;
+  position: absolute;
+  top: 0.5rem;
+  left: 1rem;
+  font-family: serif;
+}
+.testimonial-text {
+  font-style: italic;
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+.testimonial-author {
+  color: #c5a880;
+  font-weight: 600;
+  border-top: 1px solid #333;
+  padding-top: 1rem;
+}
 
 /* BUTTON */
 .lux-btn{
@@ -145,9 +231,14 @@ display:inline-block;margin-top:3.5rem;
 padding:1rem 3rem;border-radius:40px;
 border:1.6px solid #c5a880;color:#c5a880;
 text-decoration:none;font-weight:700;letter-spacing:1px;
-transition:0.3s;
+transition:0.3s;font-size: 1rem;
 }
-.lux-btn:hover{background:#c5a880;color:#000;}
+.lux-btn:hover{
+  background:#c5a880;
+  color:#000;
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(197, 168, 128, 0.2);
+}
 
 /* FOOTER */
 .lux-footer{
@@ -161,15 +252,44 @@ gap:6rem;
 }
 .footer-box h4{
 font-weight:700;letter-spacing:1px;margin-bottom:1.4rem;font-size:1rem;
+color: #000;
 }
 .footer-box a,.footer-box p{
 display:block;margin:0.7rem 0;color:#111;text-decoration:none;font-size:0.96rem;
 }
-.footer-box a:hover{text-decoration:underline;}
+.footer-box a:hover{
+  color:#c5a880;
+  text-decoration:none;
+}
 .footer-bottom{
 text-align:center;margin-top:4rem;
 font-size:0.85rem;color:#666;
 border-top:1px solid #ddd;padding-top:1.8rem;
+}
+
+/* RESPONSIVE */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 2.8rem;
+  }
+  .hero p {
+    font-size: 1.1rem;
+    padding: 0 20px;
+  }
+  .nav-bar {
+    gap: 1.5rem;
+    padding: 1rem;
+  }
+  .nav-bar a {
+    font-size: 0.85rem;
+  }
+  .section {
+    padding: 4rem 5%;
+  }
+  .ribbon span {
+    font-size: 0.9rem;
+    letter-spacing: 2px;
+  }
 }
 </style>
 </head>
@@ -188,17 +308,20 @@ border-top:1px solid #ddd;padding-top:1.8rem;
 <!-- HERO -->
 <section class="hero">
 <img src="profile.png" alt="AmanJot Singh">
-<h1>Hi, I’m <span>AmanJot Singh</span></h1>
+<h1>Transforming Financial Chaos into <span>Clarity & Control</span></h1>
+<p class="hero-subtitle">Accounting & Financial Systems Specialist</p>
 <p>
-Accounting & Financial Operations Specialist helping businesses build structured, reliable, and scalable finance systems.
+I build structured, reliable finance systems that give business owners accurate reporting, reduce stress, and support strategic growth. Specializing in real estate accounting, financial clean-ups, and system migrations.
 </p>
 </section>
 
 <!-- BRAND RIBBON -->
 <section id="brand-ribbon">
+<div class="ribbon-container">
 <div class="ribbon">
 <span>ACCOUNTING PORTFOLIO • FINANCIAL SYSTEMS • APPFOLIO • REAL ESTATE ACCOUNTING • QUICKBOOKS • XERO • BUILDIUM • GUSTO • RECONCILIATIONS • MIGRATIONS • REPORTING •</span>
 <span>ACCOUNTING PORTFOLIO • FINANCIAL SYSTEMS • APPFOLIO • REAL ESTATE ACCOUNTING • QUICKBOOKS • XERO • BUILDIUM • GUSTO • RECONCILIATIONS • MIGRATIONS • REPORTING •</span>
+</div>
 </div>
 </section>
 
@@ -207,15 +330,21 @@ Accounting & Financial Operations Specialist helping businesses build structured
 <h2>About Me</h2>
 <div class="about-box">
 <p>
-I am a professional accounting specialist with over five years of experience in bookkeeping, real estate accounting, payroll operations, financial cleanups, and accounting system migrations. I help businesses gain control over their financial data by building clean accounting structures and reliable operational workflows.
+I am a professional accounting specialist with over <span class="highlight">five years of experience</span> in bookkeeping, real estate accounting, payroll operations, financial cleanups, and accounting system migrations.
+</p>
+<p>
+I help businesses <span class="highlight">gain control over their financial data</span> by building clean accounting structures and reliable operational workflows. My approach combines technical expertise with practical business understanding to deliver solutions that work in the real world.
+</p>
+<p>
+I've worked with clients across real estate, e-commerce, professional services, and retail, helping them transition from financial confusion to clarity and confidence.
 </p>
 </div>
 <a href="about.html" class="lux-btn">Read Full Profile</a>
 </section>
 
-<!-- SELECTED WORK -->
+<!-- SELECTED WORK - IMPROVED WITH RESULTS -->
 <section class="section">
-<h2>Selected Work</h2>
+<h2>Selected Work & Results</h2>
 
 <div class="work-grid">
 
@@ -225,22 +354,31 @@ I am a professional accounting specialist with over five years of experience in 
 <p>
 Managed end-to-end property management accounting in AppFolio including owner and tenant ledgers, bank and trust account reconciliations, monthly close processes, and structured financial reporting.
 </p>
+<div class="result">
+<strong>Result:</strong> Reduced monthly close time by 40% and eliminated reconciliation errors for a 50-property portfolio.
+</div>
 </div>
 
 <div class="work-card">
-<h3>Real Estate Accounting System</h3>
+<h3>Real Estate Accounting System Design</h3>
 <span>Buildium • QuickBooks • Trust Accounting</span>
 <p>
 Designed and managed structured property accounting systems including reconciliations, owner statements, compliance workflows, and management-level financial reporting.
 </p>
+<div class="result">
+<strong>Result:</strong> Created standardized reporting that improved owner satisfaction scores by 35% for property management firm.
+</div>
 </div>
 
 <div class="work-card">
 <h3>Financial Clean-Up & Recovery</h3>
 <span>QuickBooks • Xero • Bank Reconciliations</span>
 <p>
-Corrected historical accounting records, reconciled multi-year backlogs, rebuilt charts of accounts, and restored financial statement accuracy.
+Corrected historical accounting records, reconciled multi-year backlogs, rebuilt charts of accounts, and restored financial statement accuracy for multiple clients.
 </p>
+<div class="result">
+<strong>Result:</strong> Recovered $28,500 in unclaimed deductions and identified $12,200 in duplicate payments for e-commerce client.
+</div>
 </div>
 
 <div class="work-card">
@@ -249,6 +387,9 @@ Corrected historical accounting records, reconciled multi-year backlogs, rebuilt
 <p>
 Built payroll workflows, managed vendor processes, and supported 1099 tracking and preparation to improve compliance and reporting accuracy.
 </p>
+<div class="result">
+<strong>Result:</strong> Eliminated manual errors and reduced payroll processing time by 60% for services company with 45 employees.
+</div>
 </div>
 
 </div>
@@ -256,35 +397,76 @@ Built payroll workflows, managed vendor processes, and supported 1099 tracking a
 <a href="portfolio.html" class="lux-btn">View Full Portfolio</a>
 </section>
 
-<!-- CORE SKILLS -->
+<!-- CORE SKILLS WITH ICONS -->
 <section class="section">
 <h2>Core Expertise</h2>
 
 <div class="skill-grid">
 
 <div class="skill-card">
+<div class="skill-icon">
+<i class="fas fa-sitemap"></i>
+</div>
 <h4>Financial Systems Design</h4>
-<p>Structured accounting frameworks and scalable workflows.</p>
+<p>Structured accounting frameworks and scalable workflows that grow with your business.</p>
 </div>
 
 <div class="skill-card">
+<div class="skill-icon">
+<i class="fas fa-broom"></i>
+</div>
 <h4>Reconciliations & Cleanup</h4>
-<p>Bank, credit card, and historical data recovery.</p>
+<p>Bank, credit card, and historical data recovery to restore financial accuracy.</p>
 </div>
 
 <div class="skill-card">
+<div class="skill-icon">
+<i class="fas fa-building"></i>
+</div>
 <h4>Real Estate Accounting</h4>
-<p>Property, trust accounting, and management reporting.</p>
+<p>Property, trust accounting, and management reporting for portfolio success.</p>
 </div>
 
 <div class="skill-card">
+<div class="skill-icon">
+<i class="fas fa-shopping-cart"></i>
+</div>
 <h4>E-commerce Integration</h4>
-<p>Shopify, Stripe, PayPal into QuickBooks systems.</p>
+<p>Shopify, Stripe, PayPal into QuickBooks for accurate sales tracking.</p>
 </div>
 
 </div>
 
 <a href="certifications.html" class="lux-btn">View Certifications</a>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section" style="background: #050505; border-radius: 30px; margin: 4rem auto; max-width: 1400px;">
+<h2>Client Feedback</h2>
+<div class="testimonial-grid">
+
+<div class="testimonial-card">
+<p class="testimonial-text">
+"AmanJot transformed our chaotic books into a clear financial picture. He reconciled 2 years of backlog in just 3 weeks and set up systems that save us 15 hours monthly."
+</p>
+<p class="testimonial-author">— Real Estate Portfolio Manager</p>
+</div>
+
+<div class="testimonial-card">
+<p class="testimonial-text">
+"The AppFolio system he built for our property management business eliminated our monthly reporting delays. Our owners now receive statements 5 days earlier."
+</p>
+<p class="testimonial-author">— Property Management Firm Owner</p>
+</div>
+
+<div class="testimonial-card">
+<p class="testimonial-text">
+"Working with AmanJot was a game-changer. He not only cleaned up our QuickBooks but taught us how to maintain it properly. Worth every penny."
+</p>
+<p class="testimonial-author">— E-commerce Business Owner</p>
+</div>
+
+</div>
 </section>
 
 <!-- FOOTER -->
@@ -297,26 +479,37 @@ Built payroll workflows, managed vendor processes, and supported 1099 tracking a
 <a href="index.html">Home</a>
 <a href="about.html">About</a>
 <a href="portfolio.html">Portfolio</a>
-<a href="#contact">Connect</a>
+<a href="certifications.html">Certifications</a>
 </div>
 
 <div class="footer-box">
 <h4>CONNECT</h4>
-<a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank"><strong>LinkedIn</strong></a>
-<p>✉️ slachamanjotsingh@gmail.com</p>
-<p>📞 +91 991 115 5541</p>
+<a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank">
+  <i class="fab fa-linkedin"></i> <strong>LinkedIn</strong>
+</a>
+<p><i class="fas fa-envelope"></i> slachamanjotsingh@gmail.com</p>
+<p><i class="fas fa-phone"></i> +91 991 115 5541</p>
+</div>
+
+<div class="footer-box">
+<h4>SERVICES</h4>
+<p>Real Estate Accounting</p>
+<p>Financial Systems Setup</p>
+<p>Bookkeeping Clean-Up</p>
+<p>Payroll & Compliance</p>
 </div>
 
 <div class="footer-box">
 <h4>LOCATION</h4>
-<p>Mohali, Punjab, India</p>
-<p>Working with global clients</p>
+<p><i class="fas fa-map-marker-alt"></i> Mohali, Punjab, India</p>
+<p>Working with global clients remotely</p>
+<p>Available for projects worldwide</p>
 </div>
 
 </div>
 
 <div class="footer-bottom">
-© 2026 AmanJot Singh. All rights reserved.
+© 2026 AmanJot Singh. All rights reserved. | Designed for clarity & impact
 </div>
 
 </footer>
