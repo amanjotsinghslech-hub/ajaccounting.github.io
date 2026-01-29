@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>AJ Accounting Solutions</title>
+<title>AmanJot Singh | Accounting Portfolio</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
@@ -19,9 +19,15 @@ backdrop-filter:blur(10px);
 border-bottom:1px solid #222;
 z-index:1000;
 }
-.nav-bar{display:flex;justify-content:center;gap:3.5rem;padding:1.3rem;}
-.nav-bar a{color:#fff;text-decoration:none;font-weight:700;letter-spacing:1px;}
-.nav-bar a:hover{color:#c5a880;border-bottom:2px solid #c5a880;}
+.nav-bar{
+display:flex;justify-content:center;gap:3.5rem;padding:1.3rem;
+}
+.nav-bar a{
+color:#fff;text-decoration:none;font-weight:700;letter-spacing:1px;
+}
+.nav-bar a:hover{
+color:#c5a880;border-bottom:2px solid #c5a880;
+}
 
 /* HERO */
 .hero{
@@ -31,64 +37,111 @@ justify-content:center;align-items:center;
 text-align:center;padding-top:7rem;
 }
 .hero img{
-width:260px;border-radius:50%;
+width:240px;border-radius:50%;
 border:3px solid #c5a880;margin-bottom:2.2rem;
 }
-.hero h1{font-size:4.2rem;font-weight:900;letter-spacing:4px;}
-.hero p{font-size:1.45rem;margin-top:1rem;opacity:0.85;}
+.hero h1{
+font-size:3.8rem;font-weight:900;letter-spacing:3px;
+}
+.hero h1 span{color:#c5a880;}
+.hero p{
+font-size:1.4rem;margin-top:1rem;opacity:0.85;
+max-width:800px;
+}
 
 /* BRAND RIBBON */
 #brand-ribbon{
 width:100%;overflow:hidden;background:#050505;
 border-top:1px solid #222;border-bottom:1px solid #222;
 }
-.ribbon{display:flex;gap:6rem;animation:scroll 40s linear infinite;}
+.ribbon{
+display:flex;gap:6rem;animation:scroll 40s linear infinite;
+}
 .ribbon span{
 white-space:nowrap;padding:1.3rem 0;
-font-weight:700;letter-spacing:3px;font-size:1.1rem;
+font-weight:700;letter-spacing:3px;font-size:1.05rem;
 }
-@keyframes scroll{from{transform:translateX(0);}to{transform:translateX(-100%);}}
+@keyframes scroll{
+from{transform:translateX(0);}
+to{transform:translateX(-100%);}
+}
 
 /* SECTIONS */
-.section{padding:6rem 12%;text-align:center;}
-.section h2{font-size:2.9rem;letter-spacing:2px;color:#c5a880;}
-.section p{max-width:900px;margin:1.6rem auto;line-height:1.9;opacity:0.86;}
+.section{
+padding:6rem 12%;text-align:center;
+}
+.section h2{
+font-size:2.7rem;letter-spacing:2px;color:#c5a880;
+}
+.section p{
+max-width:950px;margin:1.6rem auto;
+line-height:1.9;opacity:0.86;
+}
 
-/* SERVICES */
-.services-grid{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(270px,1fr));
-gap:2.5rem;margin-top:4rem;
+/* ABOUT PREVIEW */
+.about-box{
+margin-top:3rem;
+background:#0f0f0f;
+border:1px solid #222;
+border-radius:22px;
+padding:3rem;
+transition:0.4s;
 }
-.service-card{
-background:#0f0f0f;padding:2.4rem;
-border-radius:18px;border:1px solid #222;transition:0.4s;
+.about-box:hover{
+transform:translateY(-10px);
+border-color:#c5a880;
 }
-.service-card:hover{transform:translateY(-10px);border-color:#c5a880;}
-.service-card h3{color:#c5a880;margin-bottom:0.7rem;}
 
-/* CERTIFICATIONS */
-.certifications{background:#050505;}
-.cert-grid{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
-gap:3.5rem;margin-top:4.5rem;
+/* PORTFOLIO GRID */
+.work-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+gap:2.8rem;
+margin-top:4rem;
 }
-.cert-card{
-background:linear-gradient(145deg,#0b0b0b,#141414);
-border-radius:22px;padding:2.2rem;border:1px solid #222;
-box-shadow:0 14px 45px rgba(0,0,0,0.75);
-transition:0.4s;text-align:center;
+.work-card{
+background:#0f0f0f;
+padding:2.6rem;
+border-radius:20px;
+border:1px solid #222;
+transition:0.4s;
+text-align:left;
 }
-.cert-card:hover{transform:translateY(-12px);border-color:#c5a880;}
-.cert-card img{
-width:100%;max-width:240px;border-radius:12px;
-border:1px solid #333;background:#fff;padding:0.5rem;
+.work-card:hover{
+transform:translateY(-10px);
+border-color:#c5a880;
 }
-.cert-card h4{margin-top:1.4rem;color:#c5a880;font-weight:600;}
+.work-card h3{
+color:#c5a880;margin-bottom:0.6rem;
+}
+.work-card span{
+font-size:0.9rem;opacity:0.6;
+}
+
+/* SKILLS */
+.skill-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
+gap:2.5rem;
+margin-top:4rem;
+}
+.skill-card{
+background:#0f0f0f;
+border:1px solid #222;
+border-radius:18px;
+padding:2.2rem;
+transition:0.4s;
+}
+.skill-card:hover{
+transform:translateY(-10px);
+border-color:#c5a880;
+}
+.skill-card h4{color:#c5a880;margin-bottom:0.6rem;}
 
 /* BUTTON */
 .lux-btn{
-display:inline-block;margin-top:4rem;
-padding:1.05rem 3rem;border-radius:40px;
+display:inline-block;margin-top:3.5rem;
+padding:1rem 3rem;border-radius:40px;
 border:1.6px solid #c5a880;color:#c5a880;
 text-decoration:none;font-weight:700;letter-spacing:1px;
 transition:0.3s;
@@ -101,19 +154,22 @@ background:#f6f6f6;color:#111;
 padding:6rem 14% 2.8rem;
 }
 .footer-grid{
-display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:6rem;
 }
-.footer-box h4{font-weight:700;letter-spacing:1px;margin-bottom:1.4rem;font-size:1rem;}
-.footer-box a,.footer-box p{display:block;margin:0.7rem 0;color:#111;text-decoration:none;font-size:0.96rem;}
+.footer-box h4{
+font-weight:700;letter-spacing:1px;margin-bottom:1.4rem;font-size:1rem;
+}
+.footer-box a,.footer-box p{
+display:block;margin:0.7rem 0;color:#111;text-decoration:none;font-size:0.96rem;
+}
 .footer-box a:hover{text-decoration:underline;}
-.footer-bottom{text-align:center;margin-top:4rem;font-size:0.85rem;color:#666;border-top:1px solid #ddd;padding-top:1.8rem;}
-
-/* REVEAL ANIMATIONS */
-.reveal{opacity:0;transform:translateY(40px);transition:all 1.2s ease-out;}
-.reveal.active{opacity:1;transform:translateY(0);}
-.reveal-hero{opacity:0;transform:translateY(25px);animation:heroFade 1.8s ease forwards;}
-@keyframes heroFade{to{opacity:1;transform:translateY(0);}}
+.footer-bottom{
+text-align:center;margin-top:4rem;
+font-size:0.85rem;color:#666;
+border-top:1px solid #ddd;padding-top:1.8rem;
+}
 </style>
 </head>
 
@@ -122,68 +178,117 @@ gap:6rem;
 <header>
 <nav class="nav-bar">
 <a href="about.html">About</a>
-<a href="services.html">Services</a>
+<a href="portfolio.html">Portfolio</a>
 <a href="certifications.html">Certifications</a>
 <a href="#contact">Contact</a>
 </nav>
 </header>
 
+<!-- HERO -->
 <section class="hero">
-<img src="profile.png" class="reveal-hero">
-<h1 class="reveal-hero">BEYOND BOOKKEEPING</h1>
-<p class="reveal-hero">WHERE FINANCE MEETS STRUCTURE.</p>
+<img src="profile.png" alt="AmanJot Singh">
+<h1>Hi, I’m <span>AmanJot Singh</span></h1>
+<p>
+Accounting & Financial Operations Specialist helping businesses build structured, reliable, and scalable finance systems.
+</p>
 </section>
 
+<!-- BRAND RIBBON -->
 <section id="brand-ribbon">
 <div class="ribbon">
-<span>ALL ABOUT AJ ACCOUNTING SOLUTIONS • STRUCTURED FINANCIAL MANAGEMENT • REAL ESTATE ACCOUNTING EXPERTISE • FINANCIAL CLARITY FOR GROWTH • SYSTEM-DRIVEN ACCOUNTING • GLOBAL ACCOUNTING SUPPORT • BANK RECONCILIATIONS • CLEANUPS & MIGRATIONS • MANAGEMENT REPORTING •</span>
-<span>ALL ABOUT AJ ACCOUNTING SOLUTIONS • STRUCTURED FINANCIAL MANAGEMENT • REAL ESTATE ACCOUNTING EXPERTISE • FINANCIAL CLARITY FOR GROWTH • SYSTEM-DRIVEN ACCOUNTING • GLOBAL ACCOUNTING SUPPORT • BANK RECONCILIATIONS • CLEANUPS & MIGRATIONS • MANAGEMENT REPORTING •</span>
+<span>ACCOUNTING PORTFOLIO • FINANCIAL SYSTEMS • REAL ESTATE ACCOUNTING • BOOKKEEPING • PROCESS OPTIMIZATION • QUICKBOOKS • XERO • BUILDIUM • GUSTO • MANAGEMENT REPORTING • GLOBAL CLIENT SUPPORT •</span>
+<span>ACCOUNTING PORTFOLIO • FINANCIAL SYSTEMS • REAL ESTATE ACCOUNTING • BOOKKEEPING • PROCESS OPTIMIZATION • QUICKBOOKS • XERO • BUILDIUM • GUSTO • MANAGEMENT REPORTING • GLOBAL CLIENT SUPPORT •</span>
 </div>
 </section>
 
+<!-- ABOUT PREVIEW -->
 <section class="section">
-<h2 class="reveal">WHERE FINANCE MEETS STRUCTURE</h2>
-<p class="reveal">AJ Accounting Solutions delivers system-driven bookkeeping, real estate accounting, and financial operations support designed for clarity, compliance, and scalable growth.</p>
+<h2>About Me</h2>
+<div class="about-box">
+<p>
+I am a professional accounting specialist with over five years of experience in bookkeeping, financial operations, real estate accounting, payroll systems, and accounting software migrations.  
+<br><br>
+I work with businesses globally to design clean accounting structures, fix broken financial systems, and transform financial data into decision-making tools.
+</p>
+</div>
+<a href="about.html" class="lux-btn">Read Full Profile</a>
 </section>
 
+<!-- PORTFOLIO PREVIEW -->
 <section class="section">
-<h2 class="reveal">Core Services</h2>
-<div class="services-grid">
-<div class="service-card reveal"><h3>Monthly Bookkeeping</h3><p>End-to-end accounting systems.</p></div>
-<div class="service-card reveal"><h3>Real Estate Accounting</h3><p>Property & trust accounting.</p></div>
-<div class="service-card reveal"><h3>System Migrations</h3><p>QuickBooks, Buildium, Xero.</p></div>
-<div class="service-card reveal"><h3>Financial Cleanups</h3><p>Backlogs, corrections, reviews.</p></div>
-</div>
-</section>
+<h2>Selected Work</h2>
 
-<section class="section certifications">
-<h2 class="reveal">CERTIFICATIONS</h2>
-<p class="reveal">Certified across industry-leading accounting platforms.</p>
+<div class="work-grid">
 
-<div class="cert-grid">
-<div class="cert-card reveal"><img src="QuickBooks1.png"><h4>QuickBooks</h4></div>
-<div class="cert-card reveal"><img src="Gusto.png"><h4>Gusto Payroll</h4></div>
-<div class="cert-card reveal"><img src="Buildium.png"><h4>Buildium</h4></div>
-<div class="cert-card reveal"><img src="Xero.png"><h4>Xero</h4></div>
+<div class="work-card">
+<h3>Real Estate Accounting System</h3>
+<span>Buildium • QuickBooks • Trust Accounting</span>
+<p>Designed and managed property accounting systems including reconciliations, owner statements, and financial reporting workflows.</p>
 </div>
 
-<a href="certifications.html" class="lux-btn reveal">View All Certifications</a>
+<div class="work-card">
+<h3>Financial Clean-Up & Recovery</h3>
+<span>QuickBooks • Xero</span>
+<p>Corrected historical accounting records, reconciled multi-year backlogs, and rebuilt chart of accounts for reporting accuracy.</p>
+</div>
+
+<div class="work-card">
+<h3>Payroll & Compliance Operations</h3>
+<span>Gusto • Payroll Systems</span>
+<p>Handled payroll setup, compliance workflows, employee payment structures, and monthly payroll operations.</p>
+</div>
+
+</div>
+
+<a href="portfolio.html" class="lux-btn">View Full Portfolio</a>
 </section>
 
+<!-- SKILLS -->
+<section class="section">
+<h2>Core Expertise</h2>
+
+<div class="skill-grid">
+
+<div class="skill-card">
+<h4>Bookkeeping & Accounting</h4>
+<p>Day-to-day accounting, reconciliations, month-end close, financial reporting.</p>
+</div>
+
+<div class="skill-card">
+<h4>Real Estate Accounting</h4>
+<p>Property accounting, trust accounting, owner statements, compliance reporting.</p>
+</div>
+
+<div class="skill-card">
+<h4>Systems & Migrations</h4>
+<p>QuickBooks, Xero, Buildium migrations, cleanup, and optimization.</p>
+</div>
+
+<div class="skill-card">
+<h4>Financial Operations</h4>
+<p>Process building, documentation, reporting frameworks, operational accounting.</p>
+</div>
+
+</div>
+
+<a href="certifications.html" class="lux-btn">View Certifications</a>
+</section>
+
+<!-- FOOTER -->
 <footer id="contact" class="lux-footer">
 
-<div class="footer-grid reveal">
+<div class="footer-grid">
 
 <div class="footer-box">
 <h4>EXPLORE</h4>
 <a href="index.html">Home</a>
-<a href="services.html">Services</a>
+<a href="portfolio.html">Portfolio</a>
 <a href="about.html">About</a>
 <a href="#contact">Contact</a>
 </div>
 
 <div class="footer-box">
-<h4>CONNECT WITH US</h4>
+<h4>CONNECT</h4>
 <a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank"><strong>LinkedIn</strong></a>
 <p>✉️ slachamanjotsingh@gmail.com</p>
 <p>📞 +91 991 115 5541</p>
@@ -192,32 +297,16 @@ gap:6rem;
 <div class="footer-box">
 <h4>LOCATION</h4>
 <p>Mohali, Punjab, India</p>
-<p>Global Accounting Support</p>
+<p>Working with global clients</p>
 </div>
 
 </div>
 
 <div class="footer-bottom">
-© 2026 AJ Accounting Solutions. All rights reserved.
+© 2026 AmanJot Singh. All rights reserved.
 </div>
 
 </footer>
-
-<script>
-const reveals = document.querySelectorAll(".reveal");
-function revealOnScroll() {
-  reveals.forEach(el => {
-    const windowHeight = window.innerHeight;
-    const elementTop = el.getBoundingClientRect().top;
-    const revealPoint = 120;
-    if (elementTop < windowHeight - revealPoint) {
-      el.classList.add("active");
-    }
-  });
-}
-window.addEventListener("scroll", revealOnScroll);
-revealOnScroll();
-</script>
 
 </body>
 </html>
