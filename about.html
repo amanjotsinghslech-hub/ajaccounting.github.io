@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>About | AJ Accounting Solutions</title>
+<title>About Me | AmanJot Singh</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
 
@@ -13,52 +13,37 @@ body{background:#0a0a0a;color:#fff;overflow-x:hidden;}
 
 /* NAVBAR */
 header{
-position:fixed;
-top:0;
-width:100%;
+position:fixed;top:0;width:100%;
 background:rgba(5,5,5,0.95);
 backdrop-filter:blur(10px);
 border-bottom:1px solid #222;
 z-index:1000;
 }
 .nav-bar{
-display:flex;
-justify-content:center;
-gap:3.5rem;
-padding:1.3rem;
+display:flex;justify-content:center;gap:3.5rem;padding:1.3rem;
 }
 .nav-bar a{
-color:#fff;
-text-decoration:none;
-font-weight:700;
-letter-spacing:1px;
+color:#fff;text-decoration:none;font-weight:700;letter-spacing:1px;
 }
 .nav-bar a:hover{
-color:#c5a880;
-border-bottom:2px solid #c5a880;
+color:#c5a880;border-bottom:2px solid #c5a880;
 }
 
 /* HERO */
 .page-hero{
-min-height:55vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
-align-items:center;
-text-align:center;
-padding-top:7rem;
+min-height:60vh;
+display:flex;flex-direction:column;
+justify-content:center;align-items:center;
+text-align:center;padding-top:7rem;
 background:radial-gradient(circle at top, #121212, #050505 70%);
 }
 .page-hero h1{
-font-size:3.6rem;
-font-weight:900;
-letter-spacing:4px;
-color:#c5a880;
+font-size:3.6rem;font-weight:900;
+letter-spacing:4px;color:#c5a880;
 }
 .page-hero p{
-margin-top:1.2rem;
-font-size:1.3rem;
-opacity:0.85;
+margin-top:1.2rem;font-size:1.3rem;
+opacity:0.85;max-width:850px;
 }
 
 /* SECTIONS */
@@ -67,69 +52,76 @@ padding:6rem 12%;
 text-align:center;
 }
 .section h2{
-font-size:2.7rem;
-letter-spacing:2px;
+font-size:2.7rem;letter-spacing:2px;
 color:#c5a880;
 }
 .section p{
-max-width:950px;
-margin:1.6rem auto;
-line-height:1.9;
-opacity:0.87;
+max-width:950px;margin:1.6rem auto;
+line-height:1.9;opacity:0.86;
 }
 
-/* SPLIT SECTION */
-.split{
-display:grid;
-grid-template-columns:repeat(auto-fit,minmax(300px,1fr));
-gap:4rem;
-align-items:center;
-margin-top:4rem;
-}
-.split-box{
+/* PROFILE BOX */
+.profile-box{
+margin-top:3.5rem;
 background:#0f0f0f;
 border:1px solid #222;
-border-radius:22px;
-padding:3rem;
+border-radius:24px;
+padding:3.2rem;
 transition:0.4s;
 }
-.split-box:hover{
+.profile-box:hover{
 transform:translateY(-10px);
 border-color:#c5a880;
 }
-.split-box h3{
-color:#c5a880;
-margin-bottom:1rem;
-letter-spacing:1px;
-}
 
-/* VALUES */
-.values{
+/* SERVICE GRID */
+.service-grid{
 display:grid;
 grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
-gap:2.5rem;
+gap:2.6rem;
 margin-top:4rem;
 }
-.value-card{
+.service-card{
+background:#0f0f0f;
+border:1px solid #222;
+border-radius:20px;
+padding:2.4rem;
+transition:0.4s;
+text-align:left;
+}
+.service-card:hover{
+transform:translateY(-10px);
+border-color:#c5a880;
+}
+.service-card h4{
+color:#c5a880;margin-bottom:0.6rem;
+}
+
+/* EXPERIENCE STRIP */
+.experience-strip{
+margin-top:4rem;
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(240px,1fr));
+gap:2.5rem;
+}
+.exp-card{
 background:#0f0f0f;
 border:1px solid #222;
 border-radius:18px;
-padding:2.5rem;
+padding:2.2rem;
 transition:0.4s;
 }
-.value-card:hover{
+.exp-card:hover{
 transform:translateY(-10px);
 border-color:#c5a880;
 }
-.value-card h4{
-color:#c5a880;
-margin-bottom:0.8rem;
+.exp-card h3{
+color:#c5a880;font-size:2.4rem;
 }
 
 /* FOOTER */
 .lux-footer{
-background:#f6f6f6;
-color:#111;
+background:#f6f6f6;color:#111;
 padding:6rem 14% 2.8rem;
 }
 .footer-grid{
@@ -138,27 +130,18 @@ grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
 gap:6rem;
 }
 .footer-box h4{
-font-weight:700;
-letter-spacing:1px;
-margin-bottom:1.4rem;
-font-size:1rem;
+font-weight:700;letter-spacing:1px;
+margin-bottom:1.4rem;font-size:1rem;
 }
-.footer-box a,
-.footer-box p{
-display:block;
-margin:0.7rem 0;
-color:#111;
-text-decoration:none;
-font-size:0.96rem;
+.footer-box a,.footer-box p{
+display:block;margin:0.7rem 0;
+color:#111;text-decoration:none;font-size:0.96rem;
 }
 .footer-box a:hover{text-decoration:underline;}
 .footer-bottom{
-text-align:center;
-margin-top:4rem;
-font-size:0.85rem;
-color:#666;
-border-top:1px solid #ddd;
-padding-top:1.8rem;
+text-align:center;margin-top:4rem;
+font-size:0.85rem;color:#666;
+border-top:1px solid #ddd;padding-top:1.8rem;
 }
 </style>
 </head>
@@ -168,7 +151,7 @@ padding-top:1.8rem;
 <header>
 <nav class="nav-bar">
 <a href="index.html">Home</a>
-<a href="services.html">Services</a>
+<a href="portfolio.html">Portfolio</a>
 <a href="certifications.html">Certifications</a>
 <a href="#contact">Contact</a>
 </nav>
@@ -176,63 +159,74 @@ padding-top:1.8rem;
 
 <!-- HERO -->
 <section class="page-hero">
-<h1>ABOUT US</h1>
-<p>Where financial structure meets operational clarity.</p>
-</section>
-
-<!-- ABOUT INTRO -->
-<section class="section">
-<h2>Who We Are</h2>
+<h1>ABOUT ME</h1>
 <p>
-AJ Accounting Solutions is a modern accounting and bookkeeping firm delivering structured, system-driven financial support to businesses worldwide. We specialize in building reliable accounting systems that improve financial visibility, strengthen compliance, and support sustainable growth.
+Accounting & Financial Operations Specialist focused on building structured, reliable, and scalable finance systems.
 </p>
 </section>
 
-<!-- SPLIT -->
+<!-- INTRO -->
 <section class="section">
-<div class="split">
+<h2>Professional Profile</h2>
 
-<div class="split-box">
-<h3>Our Mission</h3>
+<div class="profile-box">
 <p>
-To help businesses move beyond basic bookkeeping and into structured financial management. We focus on accuracy, process optimization, and clarity—so business owners can make confident decisions backed by reliable financial data.
+I’m AmanJot Singh, a professional accounting and financial operations specialist with over five years of hands-on experience supporting businesses across bookkeeping, real estate accounting, payroll operations, and financial systems management.
+<br><br>
+My work is centered around building clean accounting structures, fixing broken financial systems, and helping businesses gain control over their numbers. I specialize in transforming scattered financial data into organized systems that support informed decision-making, compliance, and long-term growth.
+<br><br>
+I work remotely with global clients, delivering accounting solutions that combine technical accuracy with strong operational structure.
 </p>
 </div>
 
-<div class="split-box">
-<h3>Our Expertise</h3>
-<p>
-With over five years of experience across bookkeeping, real estate accounting, payroll systems, reconciliations, and accounting migrations, we deliver professional financial operations support tailored for global clients.
-</p>
-</div>
+</section>
 
+<!-- EXPERIENCE STRIP -->
+<section class="section">
+<h2>Experience Overview</h2>
+
+<div class="experience-strip">
+<div class="exp-card"><h3>5+</h3><p>Years Professional Experience</p></div>
+<div class="exp-card"><h3>Global</h3><p>International Client Support</p></div>
+<div class="exp-card"><h3>Multi-Platform</h3><p>QuickBooks, Xero, Buildium, Gusto</p></div>
+<div class="exp-card"><h3>Operations</h3><p>Accounting Systems & Financial Workflows</p></div>
 </div>
 </section>
 
-<!-- VALUES -->
+<!-- SERVICES -->
 <section class="section">
-<h2>Our Core Principles</h2>
+<h2>What I Specialize In</h2>
 
-<div class="values">
+<div class="service-grid">
 
-<div class="value-card">
-<h4>Structure & Systems</h4>
-<p>We design accounting workflows that are clean, scalable, and audit-ready.</p>
+<div class="service-card">
+<h4>Bookkeeping & Accounting Operations</h4>
+<p>Day-to-day bookkeeping, journal entries, month-end close, and structured financial reporting systems.</p>
 </div>
 
-<div class="value-card">
-<h4>Accuracy & Compliance</h4>
-<p>Every process is built around precision, documentation, and regulatory awareness.</p>
+<div class="service-card">
+<h4>Bank & Credit Card Reconciliations</h4>
+<p>High-volume bank, credit card, and payment processor reconciliations with historical cleanup.</p>
 </div>
 
-<div class="value-card">
-<h4>Clarity & Control</h4>
-<p>We turn financial data into meaningful insight for confident decision-making.</p>
+<div class="service-card">
+<h4>Real Estate Accounting</h4>
+<p>Property accounting, trust accounting, owner statements, compliance workflows, and platform management.</p>
 </div>
 
-<div class="value-card">
-<h4>Long-Term Partnership</h4>
-<p>We work as a financial operations partner, not just a service provider.</p>
+<div class="service-card">
+<h4>E-commerce Integrations</h4>
+<p>Shopify, Amazon, Stripe, PayPal, and payment gateways integrated into QuickBooks accounting systems.</p>
+</div>
+
+<div class="service-card">
+<h4>Accounting Migrations & Cleanups</h4>
+<p>QuickBooks, Xero, and Buildium migrations, chart of accounts redesign, and multi-year data recovery.</p>
+</div>
+
+<div class="service-card">
+<h4>1099 Preparation & Vendor Management</h4>
+<p>Vendor review, 1099 tracking, classification, and year-end preparation support.</p>
 </div>
 
 </div>
@@ -246,13 +240,13 @@ With over five years of experience across bookkeeping, real estate accounting, p
 <div class="footer-box">
 <h4>EXPLORE</h4>
 <a href="index.html">Home</a>
-<a href="services.html">Services</a>
+<a href="portfolio.html">Portfolio</a>
 <a href="about.html">About</a>
 <a href="#contact">Contact</a>
 </div>
 
 <div class="footer-box">
-<h4>CONNECT WITH US</h4>
+<h4>CONNECT</h4>
 <a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank"><strong>LinkedIn</strong></a>
 <p>✉️ slachamanjotsingh@gmail.com</p>
 <p>📞 +91 991 115 5541</p>
@@ -261,13 +255,13 @@ With over five years of experience across bookkeeping, real estate accounting, p
 <div class="footer-box">
 <h4>LOCATION</h4>
 <p>Mohali, Punjab, India</p>
-<p>Global Accounting Support</p>
+<p>Working with global clients</p>
 </div>
 
 </div>
 
 <div class="footer-bottom">
-© 2026 AJ Accounting Solutions. All rights reserved.
+© 2026 AmanJot Singh. All rights reserved.
 </div>
 
 </footer>
