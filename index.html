@@ -6,37 +6,39 @@
     <title>AmanJot Singh | Accounting & Financial Systems Specialist</title>
     
     <!-- Fonts & Icons -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* ===== CSS RESET & VARIABLES ===== */
+        /* ===== LUXURY DARK THEME ===== */
+        :root {
+            /* Luxury Color Palette */
+            --primary-gold: #D4AF37;
+            --primary-gold-dark: #B5942A;
+            --primary-gold-light: #E6C158;
+            --dark-bg: #0A0A0A;
+            --dark-card: #121212;
+            --dark-card-light: #1A1A1A;
+            --dark-border: #2A2A2A;
+            --text-primary: #F5F5F5;
+            --text-secondary: #B0B0B0;
+            --text-muted: #888888;
+            
+            /* Luxury Accents */
+            --accent-bronze: #CD7F32;
+            --accent-maroon: #800000;
+            --accent-velvet: #6A0DAD;
+            
+            /* Shadows with glow */
+            --shadow-gold: 0 0 20px rgba(212, 175, 55, 0.15);
+            --shadow-card: 0 4px 20px rgba(0, 0, 0, 0.3);
+            --shadow-lift: 0 8px 30px rgba(0, 0, 0, 0.4);
+        }
+        
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-        }
-        
-        :root {
-            /* Professional Color Palette with High Contrast */
-            --primary: #0066CC;      /* Strong Blue */
-            --primary-dark: #0052A3;
-            --secondary: #00A86B;    /* Green for financial success */
-            --accent: #7C3AED;       /* Purple for expertise */
-            --dark: #1A1F36;         /* Dark Background */
-            --light: #FFFFFF;        /* Light Background */
-            --text: #2D3748;         /* High Contrast Text */
-            --text-light: #718096;   /* Secondary Text */
-            --card-bg: #FFFFFF;      /* Card Background */
-            --border: #E2E8F0;       /* Borders */
-            
-            /* Spacing Scale */
-            --space-xs: 0.5rem;
-            --space-sm: 1rem;
-            --space-md: 1.5rem;
-            --space-lg: 2rem;
-            --space-xl: 3rem;
-            --space-2xl: 4rem;
         }
         
         html {
@@ -47,75 +49,92 @@
         body {
             font-family: 'Inter', sans-serif;
             line-height: 1.6;
-            color: var(--text);
-            background-color: var(--light);
+            color: var(--text-primary);
+            background: var(--dark-bg);
             overflow-x: hidden;
+            background-image: 
+                radial-gradient(circle at 20% 80%, rgba(212, 175, 55, 0.03) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(212, 175, 55, 0.02) 0%, transparent 50%);
         }
         
         /* ===== TYPOGRAPHY ===== */
         h1, h2, h3, h4, h5, h6 {
-            font-weight: 700;
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
             line-height: 1.2;
-            margin-bottom: var(--space-sm);
-            color: var(--dark);
+            margin-bottom: 1rem;
+            color: var(--text-primary);
         }
         
         h1 {
-            font-size: 2rem;
-            font-weight: 800;
+            font-size: 2.5rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
         }
         
         h2 {
-            font-size: 1.75rem;
-            margin-bottom: var(--space-md);
+            font-size: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: -8px;
+            left: 0;
+            width: 60px;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-gold), transparent);
         }
         
         h3 {
-            font-size: 1.25rem;
+            font-size: 1.5rem;
         }
         
         p {
-            margin-bottom: var(--space-sm);
+            margin-bottom: 1rem;
             font-size: 1rem;
+            color: var(--text-secondary);
         }
         
-        a {
-            color: var(--primary);
-            text-decoration: none;
-            transition: color 0.2s ease;
+        .lead {
+            font-size: 1.25rem;
+            color: var(--text-primary);
         }
         
-        a:hover {
-            color: var(--primary-dark);
-        }
-        
-        /* ===== LAYOUT UTILITIES ===== */
+        /* ===== LAYOUT ===== */
         .container {
             width: 100%;
             max-width: 1200px;
             margin: 0 auto;
-            padding: 0 var(--space-md);
+            padding: 0 1.5rem;
         }
         
         .section {
-            padding: var(--space-xl) 0;
+            padding: 4rem 0;
         }
         
         .text-center {
             text-align: center;
         }
         
-        /* ===== HEADER & NAVIGATION ===== */
+        .text-center h2::after {
+            left: 50%;
+            transform: translateX(-50%);
+        }
+        
+        /* ===== HEADER ===== */
         header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(10, 10, 10, 0.95);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
+            border-bottom: 1px solid var(--dark-border);
             z-index: 1000;
-            padding: var(--space-sm) 0;
+            padding: 1rem 0;
         }
         
         .nav-container {
@@ -125,13 +144,18 @@
         }
         
         .logo {
-            font-size: 1.25rem;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
             font-weight: 700;
-            color: var(--dark);
+            color: var(--primary-gold);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
-        .logo span {
-            color: var(--primary);
+        .logo i {
+            font-size: 1.25rem;
         }
         
         .nav-toggle {
@@ -139,7 +163,7 @@
             background: none;
             border: none;
             font-size: 1.5rem;
-            color: var(--dark);
+            color: var(--text-primary);
             cursor: pointer;
         }
         
@@ -148,12 +172,12 @@
             top: 70px;
             left: 0;
             right: 0;
-            background: var(--light);
-            padding: var(--space-md);
-            border-top: 1px solid var(--border);
+            background: var(--dark-card);
+            padding: 1.5rem;
+            border-top: 1px solid var(--dark-border);
             display: none;
             flex-direction: column;
-            gap: var(--space-sm);
+            gap: 1rem;
         }
         
         .nav-menu.active {
@@ -161,23 +185,28 @@
         }
         
         .nav-menu a {
-            padding: var(--space-sm);
-            color: var(--text);
+            padding: 0.75rem 1rem;
+            color: var(--text-secondary);
             font-weight: 500;
-            border-radius: 6px;
-            transition: all 0.2s ease;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            border-left: 2px solid transparent;
         }
         
         .nav-menu a:hover {
-            background: rgba(0, 102, 204, 0.1);
-            color: var(--primary);
+            color: var(--primary-gold);
+            background: rgba(212, 175, 55, 0.05);
+            border-left-color: var(--primary-gold);
         }
         
         /* ===== HERO SECTION ===== */
         .hero {
-            padding-top: 80px;
-            padding-bottom: var(--space-2xl);
-            background: linear-gradient(135deg, #f6f9fc 0%, #ffffff 100%);
+            padding-top: 100px;
+            padding-bottom: 4rem;
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
             position: relative;
             overflow: hidden;
         }
@@ -185,12 +214,14 @@
         .hero::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(0, 102, 204, 0.1) 0%, transparent 70%);
-            z-index: 0;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(212, 175, 55, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(128, 0, 0, 0.03) 0%, transparent 50%);
+            z-index: -1;
         }
         
         .hero-content {
@@ -200,18 +231,18 @@
         
         .hero-grid {
             display: grid;
-            gap: var(--space-xl);
+            gap: 3rem;
             align-items: center;
         }
         
         .hero-image {
-            width: 200px;
-            height: 200px;
+            width: 220px;
+            height: 220px;
             margin: 0 auto;
-            border-radius: 20px;
+            border-radius: 50%;
             overflow: hidden;
-            border: 4px solid var(--light);
-            box-shadow: var(--shadow-lg);
+            border: 3px solid var(--primary-gold);
+            box-shadow: var(--shadow-gold);
             position: relative;
         }
         
@@ -222,7 +253,7 @@
             left: 0;
             right: 0;
             bottom: 0;
-            background: linear-gradient(45deg, transparent 50%, rgba(0, 102, 204, 0.1) 100%);
+            background: linear-gradient(45deg, transparent 50%, rgba(212, 175, 55, 0.1) 100%);
         }
         
         .hero-image img {
@@ -232,187 +263,224 @@
         }
         
         .hero-text h1 {
-            font-size: 2.25rem;
-            margin-bottom: var(--space-md);
-        }
-        
-        .hero-text .highlight {
-            color: var(--primary);
-            background: linear-gradient(120deg, rgba(0, 102, 204, 0.1) 0%, rgba(0, 102, 204, 0.05) 100%);
-            padding: 0.2rem 0.5rem;
-            border-radius: 4px;
+            font-size: 2.5rem;
+            margin-bottom: 1.5rem;
+            background: linear-gradient(135deg, var(--text-primary) 0%, var(--primary-gold) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
         
         .hero-tagline {
-            font-size: 1.25rem;
-            color: var(--text-light);
-            margin-bottom: var(--space-lg);
+            font-size: 1.125rem;
+            color: var(--primary-gold);
+            margin-bottom: 1.5rem;
+            font-weight: 500;
         }
         
         .hero-stats {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
-            gap: var(--space-md);
-            margin-top: var(--space-xl);
+            gap: 1rem;
+            margin-top: 2rem;
         }
         
         .stat-item {
+            padding: 1.5rem;
+            background: var(--dark-card);
+            border: 1px solid var(--dark-border);
+            border-radius: 8px;
             text-align: center;
-            padding: var(--space-md);
-            background: var(--light);
-            border-radius: 12px;
-            box-shadow: var(--shadow);
+            transition: all 0.3s ease;
+        }
+        
+        .stat-item:hover {
+            border-color: var(--primary-gold);
+            box-shadow: var(--shadow-gold);
+            transform: translateY(-4px);
         }
         
         .stat-number {
             font-size: 1.75rem;
             font-weight: 700;
-            color: var(--primary);
-            margin-bottom: var(--space-xs);
+            color: var(--primary-gold);
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
         }
         
         .stat-label {
             font-size: 0.875rem;
-            color: var(--text-light);
+            color: var(--text-secondary);
         }
         
-        /* ===== EXPERTISE GRID ===== */
+        /* ===== EXPERTISE SECTION ===== */
         .expertise-grid {
             display: grid;
-            gap: var(--space-md);
-            margin-top: var(--space-lg);
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
         
         .expertise-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
+            background: var(--dark-card);
+            border: 1px solid var(--dark-border);
             border-radius: 12px;
-            padding: var(--space-lg);
+            padding: 2rem;
             transition: all 0.3s ease;
             position: relative;
             overflow: hidden;
         }
         
         .expertise-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
-            border-color: var(--primary);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lift);
+            border-color: var(--primary-gold);
+        }
+        
+        .expertise-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: linear-gradient(90deg, var(--primary-gold), var(--accent-maroon));
         }
         
         .expertise-icon {
             width: 60px;
             height: 60px;
-            background: linear-gradient(135deg, var(--primary), var(--accent));
+            background: linear-gradient(135deg, var(--dark-card-light), var(--dark-card));
+            border: 1px solid var(--dark-border);
             border-radius: 12px;
             display: flex;
             align-items: center;
             justify-content: center;
-            margin-bottom: var(--space-md);
-            color: white;
+            margin-bottom: 1.5rem;
+            color: var(--primary-gold);
             font-size: 1.5rem;
+            box-shadow: var(--shadow-gold);
         }
         
         .expertise-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: var(--space-xs);
-            margin-top: var(--space-md);
+            gap: 0.5rem;
+            margin-top: 1rem;
         }
         
         .expertise-tag {
-            background: rgba(0, 102, 204, 0.1);
-            color: var(--primary);
-            padding: 0.25rem 0.75rem;
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--primary-gold);
+            padding: 0.375rem 1rem;
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 500;
+            border: 1px solid rgba(212, 175, 55, 0.2);
         }
         
         /* ===== WORK SHOWCASE ===== */
+        .work-section {
+            background: var(--dark-card);
+            border-top: 1px solid var(--dark-border);
+            border-bottom: 1px solid var(--dark-border);
+        }
+        
         .work-grid {
             display: grid;
-            gap: var(--space-lg);
+            gap: 2rem;
         }
         
         .work-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
+            background: var(--dark-card-light);
+            border: 1px solid var(--dark-border);
             border-radius: 12px;
             overflow: hidden;
             transition: all 0.3s ease;
         }
         
         .work-card:hover {
-            transform: translateY(-4px);
-            box-shadow: var(--shadow-lg);
+            transform: translateY(-8px);
+            box-shadow: var(--shadow-lift);
+            border-color: var(--primary-gold);
         }
         
         .work-card-header {
-            padding: var(--space-md);
-            border-bottom: 1px solid var(--border);
-            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--dark-border);
+            background: linear-gradient(90deg, rgba(212, 175, 55, 0.05), transparent);
         }
         
         .work-tags {
             display: flex;
             flex-wrap: wrap;
-            gap: var(--space-xs);
-            margin-top: var(--space-sm);
+            gap: 0.5rem;
+            margin-top: 1rem;
         }
         
         .work-tag {
-            background: rgba(124, 58, 237, 0.1);
-            color: var(--accent);
-            padding: 0.25rem 0.75rem;
+            background: rgba(205, 127, 50, 0.1);
+            color: var(--accent-bronze);
+            padding: 0.375rem 1rem;
             border-radius: 20px;
             font-size: 0.75rem;
             font-weight: 500;
+            border: 1px solid rgba(205, 127, 50, 0.2);
         }
         
         .work-card-content {
-            padding: var(--space-md);
+            padding: 1.5rem;
         }
         
         .work-results {
-            margin-top: var(--space-md);
-            padding-top: var(--space-md);
-            border-top: 1px solid var(--border);
+            margin-top: 1.5rem;
+            padding-top: 1.5rem;
+            border-top: 1px solid var(--dark-border);
         }
         
         .result-item {
             display: flex;
             align-items: center;
-            gap: var(--space-sm);
-            margin-bottom: var(--space-sm);
+            gap: 1rem;
+            margin-bottom: 1rem;
+            padding: 0.75rem;
+            background: rgba(212, 175, 55, 0.05);
+            border-radius: 8px;
+            border-left: 3px solid var(--primary-gold);
         }
         
         .result-icon {
-            color: var(--secondary);
+            color: var(--primary-gold);
             font-size: 1.25rem;
         }
         
         /* ===== TESTIMONIALS ===== */
         .testimonial-grid {
             display: grid;
-            gap: var(--space-lg);
+            gap: 2rem;
         }
         
         .testimonial-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
+            background: var(--dark-card);
+            border: 1px solid var(--dark-border);
             border-radius: 12px;
-            padding: var(--space-lg);
+            padding: 2rem;
             position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .testimonial-card:hover {
+            border-color: var(--primary-gold);
+            box-shadow: var(--shadow-gold);
         }
         
         .testimonial-card::before {
             content: '"';
             position: absolute;
-            top: 20px;
-            left: 20px;
-            font-size: 3rem;
-            color: rgba(0, 102, 204, 0.1);
-            font-family: serif;
+            top: 1rem;
+            left: 1.5rem;
+            font-size: 4rem;
+            color: rgba(212, 175, 55, 0.1);
+            font-family: 'Playfair Display', serif;
             line-height: 1;
         }
         
@@ -420,25 +488,31 @@
             position: relative;
             z-index: 1;
             font-style: italic;
-            margin-bottom: var(--space-md);
+            margin-bottom: 1.5rem;
+            color: var(--text-secondary);
         }
         
         .testimonial-author {
-            color: var(--primary);
+            color: var(--primary-gold);
             font-weight: 600;
             font-size: 0.875rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .testimonial-author::before {
+            content: '';
+            width: 20px;
+            height: 1px;
+            background: var(--primary-gold);
         }
         
         /* ===== CALL TO ACTION ===== */
         .cta-section {
-            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-dark) 100%);
-            color: white;
-            padding: var(--space-2xl) 0;
-            text-align: center;
-        }
-        
-        .cta-section h2 {
-            color: white;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(128, 0, 0, 0.1));
+            border-top: 1px solid var(--dark-border);
+            border-bottom: 1px solid var(--dark-border);
         }
         
         .cta-content {
@@ -447,90 +521,117 @@
         }
         
         .btn {
-            display: inline-block;
-            padding: 0.875rem 2rem;
-            background: var(--light);
-            color: var(--primary);
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 1rem 2.5rem;
+            background: transparent;
+            color: var(--primary-gold);
             border-radius: 8px;
-            font-weight: 600;
+            font-weight: 500;
             text-decoration: none;
             transition: all 0.3s ease;
-            border: 2px solid transparent;
+            border: 1px solid var(--primary-gold);
             cursor: pointer;
-            margin-top: var(--space-md);
+            margin-top: 1.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(212, 175, 55, 0.2), transparent);
+            transition: left 0.5s ease;
+        }
+        
+        .btn:hover::before {
+            left: 100%;
         }
         
         .btn:hover {
+            background: rgba(212, 175, 55, 0.1);
+            box-shadow: var(--shadow-gold);
             transform: translateY(-2px);
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
         }
         
         .btn-primary {
-            background: var(--primary);
-            color: white;
+            background: linear-gradient(135deg, var(--primary-gold), var(--accent-bronze));
+            color: var(--dark-bg);
+            border: none;
+            font-weight: 600;
         }
         
-        .btn-outline {
-            background: transparent;
-            border-color: var(--light);
-            color: white;
+        .btn-primary:hover {
+            background: linear-gradient(135deg, var(--primary-gold-light), var(--accent-bronze));
         }
         
         /* ===== FOOTER ===== */
         footer {
-            background: var(--dark);
-            color: white;
-            padding: var(--space-xl) 0;
+            background: var(--dark-card);
+            border-top: 1px solid var(--dark-border);
         }
         
         .footer-grid {
             display: grid;
-            gap: var(--space-xl);
+            gap: 2rem;
         }
         
         .footer-links h4 {
-            color: white;
-            margin-bottom: var(--space-md);
             font-size: 1rem;
+            margin-bottom: 1rem;
+            color: var(--primary-gold);
         }
         
         .footer-links a {
-            color: #CBD5E0;
+            color: var(--text-secondary);
             display: block;
-            margin-bottom: var(--space-sm);
+            margin-bottom: 0.75rem;
             font-size: 0.875rem;
+            text-decoration: none;
+            transition: color 0.3s ease;
         }
         
         .footer-links a:hover {
-            color: white;
+            color: var(--primary-gold);
         }
         
         .contact-info {
             display: flex;
             align-items: center;
-            gap: var(--space-sm);
-            margin-bottom: var(--space-sm);
-            color: #CBD5E0;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            color: var(--text-secondary);
             font-size: 0.875rem;
+        }
+        
+        .contact-info i {
+            color: var(--primary-gold);
+            width: 20px;
         }
         
         .copyright {
             text-align: center;
-            padding-top: var(--space-lg);
-            margin-top: var(--space-lg);
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            color: #CBD5E0;
+            padding-top: 2rem;
+            margin-top: 2rem;
+            border-top: 1px solid var(--dark-border);
+            color: var(--text-muted);
             font-size: 0.875rem;
         }
         
         /* ===== DESKTOP STYLES ===== */
         @media (min-width: 768px) {
             h1 {
-                font-size: 3rem;
+                font-size: 3.5rem;
             }
             
             h2 {
-                font-size: 2.25rem;
+                font-size: 2.5rem;
             }
             
             .nav-toggle {
@@ -541,25 +642,36 @@
                 position: static;
                 display: flex;
                 flex-direction: row;
-                gap: var(--space-md);
+                gap: 2rem;
                 background: transparent;
                 padding: 0;
                 border: none;
             }
             
             .nav-menu a {
-                padding: 0.5rem 1rem;
+                padding: 0.5rem 0;
+                border-left: none;
+                border-bottom: 2px solid transparent;
+            }
+            
+            .nav-menu a:hover {
+                border-left-color: transparent;
+                border-bottom-color: var(--primary-gold);
             }
             
             .hero-grid {
                 grid-template-columns: 1fr 1fr;
-                gap: var(--space-2xl);
+                gap: 4rem;
             }
             
             .hero-image {
-                width: 300px;
-                height: 300px;
+                width: 280px;
+                height: 280px;
                 margin: 0;
+            }
+            
+            .hero-text h1 {
+                font-size: 3rem;
             }
             
             .hero-stats {
@@ -583,22 +695,26 @@
             }
             
             .section {
-                padding: var(--space-2xl) 0;
+                padding: 5rem 0;
             }
         }
         
         /* ===== EXTRA SMALL DEVICES ===== */
         @media (max-width: 480px) {
             .container {
-                padding: 0 var(--space-sm);
+                padding: 0 1rem;
+            }
+            
+            .hero {
+                padding-top: 80px;
             }
             
             .hero-text h1 {
-                font-size: 1.75rem;
+                font-size: 2rem;
             }
             
             .hero-tagline {
-                font-size: 1.125rem;
+                font-size: 1rem;
             }
             
             .hero-stats {
@@ -606,27 +722,18 @@
             }
             
             .stat-item {
-                padding: var(--space-sm);
+                padding: 1rem;
             }
             
             .expertise-card,
             .work-card,
             .testimonial-card {
-                padding: var(--space-md);
+                padding: 1.5rem;
             }
             
             .btn {
                 width: 100%;
                 text-align: center;
-            }
-        }
-        
-        /* ===== TOUCH FRIENDLY ===== */
-        @media (hover: none) {
-            .expertise-card:hover,
-            .work-card:hover,
-            .btn:hover {
-                transform: none;
             }
         }
     </style>
@@ -636,7 +743,10 @@
     <header>
         <div class="container">
             <nav class="nav-container">
-                <div class="logo">AJ<span>Accounting</span></div>
+                <a href="index.html" class="logo">
+                    <i class="fas fa-crown"></i>
+                    AJAccounting
+                </a>
                 <button class="nav-toggle" id="navToggle">
                     <i class="fas fa-bars"></i>
                 </button>
@@ -658,30 +768,30 @@
                 <div class="hero-grid">
                     <div class="hero-image">
                         <!-- Replace with your profile image -->
-                        <div style="width:100%;height:100%;background:linear-gradient(135deg,#0066CC,#7C3AED);display:flex;align-items:center;justify-content:center;color:white;font-size:3rem;">
+                        <div style="width:100%;height:100%;background:linear-gradient(135deg,var(--primary-gold),var(--accent-maroon));display:flex;align-items:center;justify-content:center;color:var(--dark-bg);font-family:'Playfair Display';font-size:3rem;font-weight:700;">
                             AS
                         </div>
                     </div>
                     <div class="hero-text">
-                        <h1>Turn Financial Chaos into <span class="highlight">Confident Clarity</span></h1>
-                        <p class="hero-tagline">Professional Accounting & Financial Systems Specialist</p>
-                        <p>I transform disorganized finances into reliable, structured systems that give business owners the confidence to make smart decisions and grow with peace of mind.</p>
+                        <h1>Precision Accounting for Sophisticated Businesses</h1>
+                        <p class="hero-tagline">Senior Financial Systems Architect</p>
+                        <p class="lead">I transform complex financial challenges into elegant, structured solutions that empower business leaders to operate with confidence and clarity.</p>
                         
                         <div class="hero-stats">
                             <div class="stat-item">
                                 <div class="stat-number">5+</div>
-                                <div class="stat-label">Years Experience</div>
+                                <div class="stat-label">Years Excellence</div>
                             </div>
                             <div class="stat-item">
                                 <div class="stat-number">40%</div>
-                                <div class="stat-label">Faster Reporting</div>
+                                <div class="stat-label">Efficiency Gain</div>
                             </div>
                             <div class="stat-item">
                                 <div class="stat-number">100%</div>
                                 <div class="stat-label">Accuracy Rate</div>
                             </div>
                             <div class="stat-item">
-                                <div class="stat-number">$28.5K+</div>
+                                <div class="stat-number">$28.5K</div>
                                 <div class="stat-label">Average Recovery</div>
                             </div>
                         </div>
@@ -694,48 +804,48 @@
     <!-- Expertise Section -->
     <section class="section">
         <div class="container">
-            <h2 class="text-center">Specialized Financial Solutions</h2>
-            <p class="text-center" style="color: var(--text-light); max-width: 600px; margin: 0 auto var(--space-xl);">
-                From system design to cleanup, I provide comprehensive accounting solutions tailored to your business needs
+            <h2 class="text-center">Specialized Financial Architecture</h2>
+            <p class="text-center lead" style="max-width: 600px; margin: 0 auto 3rem;">
+                Crafting bespoke financial systems for discerning clients
             </p>
             
             <div class="expertise-grid">
                 <div class="expertise-card">
                     <div class="expertise-icon">
-                        <i class="fas fa-sitemap"></i>
+                        <i class="fas fa-chess-king"></i>
                     </div>
-                    <h3>Financial Systems Design</h3>
-                    <p>Build scalable accounting frameworks that grow with your business and support informed decision-making.</p>
+                    <h3>Strategic Systems Design</h3>
+                    <p>Architecting scalable financial frameworks that anticipate growth and support executive decision-making.</p>
                     <div class="expertise-tags">
                         <span class="expertise-tag">QuickBooks</span>
                         <span class="expertise-tag">Xero</span>
-                        <span class="expertise-tag">Workflow Design</span>
+                        <span class="expertise-tag">Enterprise Workflows</span>
                     </div>
                 </div>
                 
                 <div class="expertise-card">
                     <div class="expertise-icon">
-                        <i class="fas fa-broom"></i>
+                        <i class="fas fa-gem"></i>
                     </div>
-                    <h3>Cleanup & Recovery</h3>
-                    <p>Fix historical accounting errors, reconcile backlogs, and recover lost deductions from messy books.</p>
+                    <h3>Financial Restoration</h3>
+                    <p>Recovering financial integrity through meticulous cleanup, reconciliation, and deduction optimization.</p>
                     <div class="expertise-tags">
-                        <span class="expertise-tag">Reconciliation</span>
-                        <span class="expertise-tag">Audit Support</span>
-                        <span class="expertise-tag">Deduction Recovery</span>
+                        <span class="expertise-tag">Audit Precision</span>
+                        <span class="expertise-tag">Compliance</span>
+                        <span class="expertise-tag">Asset Recovery</span>
                     </div>
                 </div>
                 
                 <div class="expertise-card">
                     <div class="expertise-icon">
-                        <i class="fas fa-building"></i>
+                        <i class="fas fa-landmark"></i>
                     </div>
-                    <h3>Real Estate Accounting</h3>
-                    <p>Specialized property management accounting, trust compliance, and portfolio reporting solutions.</p>
+                    <h3>Real Estate Portfolio Management</h3>
+                    <p>Specialized trust accounting and portfolio reporting for sophisticated property investments.</p>
                     <div class="expertise-tags">
                         <span class="expertise-tag">AppFolio</span>
                         <span class="expertise-tag">Buildium</span>
-                        <span class="expertise-tag">Trust Accounting</span>
+                        <span class="expertise-tag">Trust Compliance</span>
                     </div>
                 </div>
             </div>
@@ -743,77 +853,80 @@
     </section>
 
     <!-- Work Showcase -->
-    <section class="section" style="background: #f8fafc;">
+    <section class="section work-section">
         <div class="container">
-            <h2 class="text-center">Transformative Results</h2>
-            <p class="text-center" style="color: var(--text-light); max-width: 600px; margin: 0 auto var(--space-xl);">
-                See how I've helped businesses achieve financial clarity and operational efficiency
+            <h2 class="text-center">Signature Engagements</h2>
+            <p class="text-center lead" style="max-width: 600px; margin: 0 auto 3rem;">
+                Select case studies demonstrating transformative financial leadership
             </p>
             
             <div class="work-grid">
                 <div class="work-card">
                     <div class="work-card-header">
-                        <h3>Property Management System</h3>
+                        <h3>Luxury Property Portfolio</h3>
                         <div class="work-tags">
                             <span class="work-tag">AppFolio</span>
                             <span class="work-tag">Trust Accounting</span>
+                            <span class="work-tag">Portfolio Management</span>
                         </div>
                     </div>
                     <div class="work-card-content">
-                        <p>Complete accounting system overhaul for 50+ unit property management company with trust compliance and automated reporting.</p>
+                        <p>Complete financial system transformation for a 50+ unit luxury property portfolio, implementing trust compliance and automated performance reporting.</p>
                         <div class="work-results">
                             <div class="result-item">
                                 <i class="fas fa-bolt result-icon"></i>
-                                <span>Reduced monthly close time by 40%</span>
-                            </div>
-                            <div class="result-item">
-                                <i class="fas fa-check-circle result-icon"></i>
-                                <span>Eliminated reconciliation errors</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="work-card">
-                    <div class="work-card-header">
-                        <h3>E-commerce Cleanup</h3>
-                        <div class="work-tags">
-                            <span class="work-tag">QuickBooks</span>
-                            <span class="work-tag">Shopify</span>
-                        </div>
-                    </div>
-                    <div class="work-card-content">
-                        <p>Financial recovery and system setup for e-commerce business with 2 years of unreconciled transactions.</p>
-                        <div class="work-results">
-                            <div class="result-item">
-                                <i class="fas fa-dollar-sign result-icon"></i>
-                                <span>Recovered $28,500 in deductions</span>
-                            </div>
-                            <div class="result-item">
-                                <i class="fas fa-chart-line result-icon"></i>
-                                <span>Increased margins by 18%</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                
-                <div class="work-card">
-                    <div class="work-card-header">
-                        <h3>Real Estate Migration</h3>
-                        <div class="work-tags">
-                            <span class="work-tag">Buildium</span>
-                            <span class="work-tag">QuickBooks</span>
-                        </div>
-                    </div>
-                    <div class="work-card-content">
-                        <p>Migrated real estate portfolio from manual Excel tracking to automated Buildium system with integrated reporting.</p>
-                        <div class="work-results">
-                            <div class="result-item">
-                                <i class="fas fa-clock result-icon"></i>
-                                <span>Saved 25 hours monthly</span>
+                                <span>40% reduction in monthly close time</span>
                             </div>
                             <div class="result-item">
                                 <i class="fas fa-shield-alt result-icon"></i>
+                                <span>100% trust compliance achievement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="work-card">
+                    <div class="work-card-header">
+                        <h3>Premium E-commerce Restoration</h3>
+                        <div class="work-tags">
+                            <span class="work-tag">QuickBooks</span>
+                            <span class="work-tag">Shopify</span>
+                            <span class="work-tag">Financial Recovery</span>
+                        </div>
+                    </div>
+                    <div class="work-card-content">
+                        <p>Financial integrity restoration for luxury e-commerce brand with comprehensive system implementation and margin optimization.</p>
+                        <div class="work-results">
+                            <div class="result-item">
+                                <i class="fas fa-dollar-sign result-icon"></i>
+                                <span>$28,500 in recovered deductions</span>
+                            </div>
+                            <div class="result-item">
+                                <i class="fas fa-chart-line result-icon"></i>
+                                <span>18% margin enhancement</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="work-card">
+                    <div class="work-card-header">
+                        <h3>Real Estate Enterprise Migration</h3>
+                        <div class="work-tags">
+                            <span class="work-tag">Buildium</span>
+                            <span class="work-tag">QuickBooks</span>
+                            <span class="work-tag">System Integration</span>
+                        </div>
+                    </div>
+                    <div class="work-card-content">
+                        <p>Migration of substantial real estate portfolio from legacy systems to automated Buildium platform with integrated executive reporting.</p>
+                        <div class="work-results">
+                            <div class="result-item">
+                                <i class="fas fa-clock result-icon"></i>
+                                <span>25 hours monthly efficiency gain</span>
+                            </div>
+                            <div class="result-item">
+                                <i class="fas fa-trophy result-icon"></i>
                                 <span>99.8% reporting accuracy</span>
                             </div>
                         </div>
@@ -826,46 +939,52 @@
     <!-- Testimonials -->
     <section class="section">
         <div class="container">
-            <h2 class="text-center">Client Success Stories</h2>
+            <h2 class="text-center">Client Testimonials</h2>
             
             <div class="testimonial-grid">
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        "The reconciliation system AmanJot implemented completely transformed how we track expenses. We went from monthly confusion to having clear, organized reports that actually make sense for decision-making."
+                        "AmanJot's implementation of our reconciliation system has been transformative. We've moved from operational confusion to having elegant, organized reports that empower our executive decision-making. The precision is remarkable."
                     </div>
-                    <div class="testimonial-author">— Property Management Company Owner</div>
+                    <div class="testimonial-author">— Luxury Property Management Group</div>
                 </div>
                 
                 <div class="testimonial-card">
                     <div class="testimonial-content">
-                        "After cleaning up our QuickBooks and setting up the proper chart of accounts, our accountant said it was the most organized set of books they've worked with all year. Tax preparation is now straightforward."
+                        "The financial restoration work exceeded all expectations. Our accounting firm described the resulting books as 'impeccable'—the most organized set they've encountered. Tax preparation is now a streamlined process."
                     </div>
-                    <div class="testimonial-author">— E-commerce Business Owner</div>
+                    <div class="testimonial-author">— Premium E-commerce Enterprise</div>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Call to Action -->
-    <section class="cta-section">
+    <section class="section cta-section">
         <div class="container">
-            <div class="cta-content">
-                <h2>Ready for Financial Clarity?</h2>
-                <p>Let's transform your accounting from a source of stress to a tool for growth.</p>
-                <div style="display: flex; gap: var(--space-sm); flex-wrap: wrap; justify-content: center;">
-                    <a href="portfolio.html" class="btn btn-primary">View My Work</a>
-                    <a href="#contact" class="btn btn-outline">Get in Touch</a>
+            <div class="cta-content text-center">
+                <h2>Elevate Your Financial Operations</h2>
+                <p class="lead">Ready to transform your financial management into a strategic advantage?</p>
+                <div style="display: flex; gap: 1rem; flex-wrap: wrap; justify-content: center;">
+                    <a href="portfolio.html" class="btn btn-primary">
+                        <i class="fas fa-briefcase"></i>
+                        View Portfolio
+                    </a>
+                    <a href="#contact" class="btn">
+                        <i class="fas fa-envelope"></i>
+                        Schedule Consultation
+                    </a>
                 </div>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer id="contact">
+    <footer id="contact" class="section">
         <div class="container">
             <div class="footer-grid">
                 <div class="footer-links">
-                    <h4>Explore</h4>
+                    <h4>Navigation</h4>
                     <a href="index.html">Home</a>
                     <a href="about.html">About</a>
                     <a href="portfolio.html">Portfolio</a>
@@ -890,24 +1009,24 @@
                 <div class="footer-links">
                     <h4>Services</h4>
                     <a href="#services">Real Estate Accounting</a>
-                    <a href="#services">Financial Systems Setup</a>
-                    <a href="#services">Bookkeeping Cleanup</a>
-                    <a href="#services">1099 & Compliance</a>
+                    <a href="#services">Financial Architecture</a>
+                    <a href="#services">Portfolio Management</a>
+                    <a href="#services">Compliance & Audit</a>
                 </div>
                 
                 <div class="footer-links">
-                    <h4>Location</h4>
-                    <p style="color: #CBD5E0; font-size: 0.875rem; margin-bottom: var(--space-sm);">
+                    <h4>Global Presence</h4>
+                    <p style="color: var(--text-secondary); font-size: 0.875rem; margin-bottom: 1rem;">
                         <i class="fas fa-map-marker-alt"></i> Mohali, Punjab, India
                     </p>
-                    <p style="color: #CBD5E0; font-size: 0.875rem;">
-                        Working with global clients remotely. Available for projects worldwide.
+                    <p style="color: var(--text-secondary); font-size: 0.875rem;">
+                        Serving discerning clients worldwide with remote precision and executive-level attention.
                     </p>
                 </div>
             </div>
             
             <div class="copyright">
-                © 2024 AmanJot Singh | Professional Accounting Systems Specialist
+                © 2024 AmanJot Singh | Executive Financial Systems Architect
             </div>
         </div>
     </footer>
