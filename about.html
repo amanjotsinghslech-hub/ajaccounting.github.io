@@ -152,7 +152,7 @@ header {
   font-weight: 600;
 }
 
-/* EXPERIENCE STRIP */
+/* ENHANCED EXPERIENCE STRIP WITH ICONS */
 .experience-strip {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -166,10 +166,23 @@ header {
   padding: clamp(1.8rem, 3vw, 2.2rem);
   transition: 0.4s;
   text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .exp-card:hover {
   transform: translateY(-8px);
   border-color: #c5a880;
+}
+.exp-icon {
+  font-size: 2.5rem;
+  color: #c5a880;
+  margin-bottom: 1rem;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .exp-card h3 {
   color: #c5a880;
@@ -182,7 +195,7 @@ header {
   margin: 0;
 }
 
-/* SERVICES GRID */
+/* ENHANCED SERVICES GRID WITH SKILL TAGS */
 .service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
@@ -217,11 +230,30 @@ header {
 .service-card p {
   font-size: 0.95rem;
   line-height: 1.6;
-  margin: 0;
+  margin: 0 0 1.5rem 0;
   flex-grow: 1;
 }
+/* NEW: Service Skill Tags */
+.service-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: auto;
+  padding-top: 1.2rem;
+  border-top: 1px solid #333;
+}
+.service-tag {
+  background: rgba(197, 168, 128, 0.1);
+  color: #c5a880;
+  padding: 0.3rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid rgba(197, 168, 128, 0.3);
+  white-space: nowrap;
+}
 
-/* WORK PROCESS */
+/* ENHANCED WORK PROCESS WITH ICONS */
 .process-section {
   background: #0f0f0f;
   border-radius: 20px;
@@ -249,7 +281,17 @@ header {
   justify-content: center;
   font-weight: 900;
   font-size: 1.3rem;
-  margin: 0 auto 1.5rem;
+  margin: 0 auto 1.2rem;
+  position: relative;
+}
+.step-icon {
+  font-size: 1.5rem;
+  color: #c5a880;
+  margin-bottom: 1rem;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .process-step h4 {
   color: #c5a880;
@@ -325,6 +367,49 @@ header {
   padding-top: 1.5rem;
 }
 
+/* NEW: VISUAL RESULTS DASHBOARD */
+.results-dashboard {
+  background: linear-gradient(135deg, #0a0a0a 0%, #050505 100%);
+  border-radius: 20px;
+  padding: clamp(2.5rem, 4vw, 3.5rem);
+  margin: 4rem auto;
+  border: 1px solid #222;
+  max-width: 1000px;
+}
+.dashboard-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+.dashboard-header h3 {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  color: #c5a880;
+  margin-bottom: 0.8rem;
+}
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.8rem;
+}
+.dashboard-item {
+  text-align: center;
+  padding: 1.5rem;
+}
+.dashboard-icon {
+  font-size: 2.2rem;
+  color: #c5a880;
+  margin-bottom: 1rem;
+}
+.dashboard-value {
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #c5a880;
+  margin-bottom: 0.5rem;
+}
+.dashboard-label {
+  font-size: 0.95rem;
+  opacity: 0.9;
+}
+
 /* MOBILE RESPONSIVE */
 @media (max-width: 768px) {
   .page-hero {
@@ -348,13 +433,16 @@ header {
   }
   
   .experience-strip,
-  .service-grid {
+  .service-grid,
+  .process-steps,
+  .dashboard-grid {
     grid-template-columns: 1fr;
   }
   
   .profile-box,
   .service-card,
-  .exp-card {
+  .exp-card,
+  .dashboard-item {
     padding: 1.5rem;
   }
   
@@ -362,6 +450,10 @@ header {
     margin: 2rem auto 0 auto;
     padding: 0.9rem 2rem;
     font-size: 1rem;
+  }
+  
+  .service-tags {
+    justify-content: center;
   }
 }
 
@@ -392,6 +484,17 @@ header {
     padding: 0.8rem 1.8rem;
     font-size: 0.95rem;
     max-width: 280px;
+  }
+  
+  .exp-icon,
+  .service-icon,
+  .dashboard-icon {
+    font-size: 2rem;
+  }
+  
+  .service-tag {
+    font-size: 0.75rem;
+    padding: 0.25rem 0.6rem;
   }
 }
 </style>
@@ -442,31 +545,90 @@ I work remotely with global clients, delivering accounting solutions that combin
 </div>
 </section>
 
-<!-- EXPERIENCE -->
+<!-- NEW: VISUAL RESULTS DASHBOARD -->
+<section class="section">
+<div class="results-dashboard">
+<div class="dashboard-header">
+<h3>Proven Impact & Results</h3>
+<p>Quantifiable improvements delivered for clients across industries</p>
+</div>
+
+<div class="dashboard-grid">
+<div class="dashboard-item">
+<div class="dashboard-icon">
+<i class="fas fa-chart-line"></i>
+</div>
+<div class="dashboard-value">40%</div>
+<div class="dashboard-label">Average Monthly Close Time Reduction</div>
+</div>
+
+<div class="dashboard-item">
+<div class="dashboard-icon">
+<i class="fas fa-money-bill-wave"></i>
+</div>
+<div class="dashboard-value">$28.5K</div>
+<div class="dashboard-label">Average Recovery Per Client</div>
+</div>
+
+<div class="dashboard-item">
+<div class="dashboard-icon">
+<i class="fas fa-tachometer-alt"></i>
+</div>
+<div class="dashboard-value">90%</div>
+<div class="dashboard-label">System Error Reduction</div>
+</div>
+
+<div class="dashboard-item">
+<div class="dashboard-icon">
+<i class="fas fa-history"></i>
+</div>
+<div class="dashboard-value">18+</div>
+<div class="dashboard-label">Months Backlog Cleared</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- ENHANCED EXPERIENCE SECTION WITH ICONS -->
 <section class="section">
 <h2>Experience & Expertise</h2>
 
 <div class="experience-strip">
 <div class="exp-card">
+<div class="exp-icon">
+<i class="fas fa-calendar-alt"></i>
+</div>
 <h3>5+ Years</h3>
 <p>Professional Accounting Experience</p>
 </div>
+
 <div class="exp-card">
+<div class="exp-icon">
+<i class="fas fa-globe-americas"></i>
+</div>
 <h3>Global</h3>
 <p>International Client Support</p>
 </div>
+
 <div class="exp-card">
+<div class="exp-icon">
+<i class="fas fa-laptop-code"></i>
+</div>
 <h3>Multi-Platform</h3>
 <p>AppFolio, QuickBooks, Xero, Buildium</p>
 </div>
+
 <div class="exp-card">
+<div class="exp-icon">
+<i class="fas fa-file-invoice-dollar"></i>
+</div>
 <h3>Payroll Processing</h3>
 <p>Gusto, ADP, Payroll Compliance</p>
 </div>
 </div>
 </section>
 
-<!-- SERVICES -->
+<!-- ENHANCED SERVICES SECTION WITH SKILL TAGS -->
 <section class="section">
 <h2>What I Specialize In</h2>
 
@@ -477,7 +639,12 @@ I work remotely with global clients, delivering accounting solutions that combin
 <i class="fas fa-book"></i>
 </div>
 <h4>Bookkeeping & Accounting Operations</h4>
-<p>Day-to-day bookkeeping, journal entries, month-end close, and structured financial reporting systems that provide clear insights into business performance.</p>
+<p>Day-to-day bookkeeping, journal entries, month-end close, and structured financial reporting systems.</p>
+<div class="service-tags">
+<span class="service-tag">Month-End Close</span>
+<span class="service-tag">Financial Reporting</span>
+<span class="service-tag">GAAP Compliance</span>
+</div>
 </div>
 
 <div class="service-card">
@@ -485,7 +652,12 @@ I work remotely with global clients, delivering accounting solutions that combin
 <i class="fas fa-exchange-alt"></i>
 </div>
 <h4>Bank & Credit Card Reconciliations</h4>
-<p>High-volume bank, credit card, and payment processor reconciliations with historical cleanup to ensure 100% accuracy in financial records.</p>
+<p>High-volume reconciliations with historical cleanup to ensure 100% accuracy in financial records.</p>
+<div class="service-tags">
+<span class="service-tag">Bank Reconciliation</span>
+<span class="service-tag">Payment Processors</span>
+<span class="service-tag">Accuracy Guarantee</span>
+</div>
 </div>
 
 <div class="service-card">
@@ -493,7 +665,12 @@ I work remotely with global clients, delivering accounting solutions that combin
 <i class="fas fa-building"></i>
 </div>
 <h4>Real Estate Accounting</h4>
-<p>Property accounting, trust accounting compliance, owner statements, tenant ledgers, and comprehensive property management reporting.</p>
+<p>Property accounting, trust accounting compliance, owner statements, and property management reporting.</p>
+<div class="service-tags">
+<span class="service-tag">Trust Accounting</span>
+<span class="service-tag">Owner Statements</span>
+<span class="service-tag">Portfolio Reporting</span>
+</div>
 </div>
 
 <div class="service-card">
@@ -501,7 +678,12 @@ I work remotely with global clients, delivering accounting solutions that combin
 <i class="fas fa-shopping-cart"></i>
 </div>
 <h4>E-commerce & Platform Integrations</h4>
-<p>Shopify, Home Depot, Amazon, Stripe, PayPal, Bill.com, Monday.com integrations seamlessly connected to QuickBooks for accurate sales tracking and reporting.</p>
+<p>Shopify, Amazon, Stripe, PayPal integrations connected to QuickBooks for accurate sales tracking.</p>
+<div class="service-tags">
+<span class="service-tag">Shopify</span>
+<span class="service-tag">Amazon</span>
+<span class="service-tag">Stripe/PayPal</span>
+</div>
 </div>
 
 <div class="service-card">
@@ -509,7 +691,12 @@ I work remotely with global clients, delivering accounting solutions that combin
 <i class="fas fa-database"></i>
 </div>
 <h4>Accounting System Migrations</h4>
-<p>QuickBooks, Xero, and Buildium migrations, chart of accounts redesign, and multi-year data recovery to fix broken accounting systems.</p>
+<p>QuickBooks, Xero, Buildium migrations, chart of accounts redesign, and multi-year data recovery.</p>
+<div class="service-tags">
+<span class="service-tag">System Migration</span>
+<span class="service-tag">Data Recovery</span>
+<span class="service-tag">QuickBooks/Xero</span>
+</div>
 </div>
 
 <div class="service-card">
@@ -517,13 +704,18 @@ I work remotely with global clients, delivering accounting solutions that combin
 <i class="fas fa-file-invoice-dollar"></i>
 </div>
 <h4>1099 Preparation & Vendor Management</h4>
-<p>Complete vendor review, 1099 tracking, proper classification, and year-end preparation to ensure full IRS compliance.</p>
+<p>Complete vendor review, 1099 tracking, proper classification, and year-end IRS compliance.</p>
+<div class="service-tags">
+<span class="service-tag">1099 Filing</span>
+<span class="service-tag">Vendor Management</span>
+<span class="service-tag">IRS Compliance</span>
+</div>
 </div>
 
 </div>
 </section>
 
-<!-- WORK PROCESS -->
+<!-- ENHANCED WORK PROCESS WITH ICONS -->
 <section class="section">
 <div class="process-section">
 <h2>My Work Process</h2>
@@ -532,24 +724,36 @@ I work remotely with global clients, delivering accounting solutions that combin
 <div class="process-steps">
 <div class="process-step">
 <div class="step-number">1</div>
+<div class="step-icon">
+<i class="fas fa-search"></i>
+</div>
 <h4>Discovery & Assessment</h4>
 <p>Complete review of your current systems, pain points, and financial goals to understand exactly what you need.</p>
 </div>
 
 <div class="process-step">
 <div class="step-number">2</div>
+<div class="step-icon">
+<i class="fas fa-map"></i>
+</div>
 <h4>Planning & Strategy</h4>
 <p>Detailed project plan with clear scope, timeline, and deliverables. No surprises, just clarity from day one.</p>
 </div>
 
 <div class="process-step">
 <div class="step-number">3</div>
+<div class="step-icon">
+<i class="fas fa-cogs"></i>
+</div>
 <h4>Execution & Implementation</h4>
 <p>Clean, organized execution with regular updates. I handle the technical work while keeping you informed.</p>
 </div>
 
 <div class="process-step">
 <div class="step-number">4</div>
+<div class="step-icon">
+<i class="fas fa-handshake"></i>
+</div>
 <h4>Delivery & Support</h4>
 <p>Clear handover with documentation and training. Ongoing support options available for continued success.</p>
 </div>
