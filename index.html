@@ -106,20 +106,18 @@ header {
   font-weight: 600;
 }
 .hero p {
-  font-size: clamp(1rem, 2vw, 1.2rem);
+  font-size: clamp(1rem, 2vw, 1.1rem);
   opacity: 0.85;
   line-height: 1.6;
-  max-width: 700px;
+  max-width: 800px;
   width: 100%;
   padding: 0 1rem;
-  margin: 0 auto;
+  margin: 0.5rem auto;
+  text-align: left;
 }
-.cta-buttons {
-  display: flex;
-  gap: 1.5rem;
-  margin-top: 2.5rem;
-  flex-wrap: wrap;
-  justify-content: center;
+.hero .intro-highlight {
+  color: #c5a880;
+  font-weight: 600;
 }
 
 /* BRAND RIBBON - FIXED OVERFLOW */
@@ -168,35 +166,6 @@ header {
   letter-spacing: 1px;
   color: #c5a880;
   margin-bottom: 3rem;
-}
-
-/* ABOUT BOX */
-.about-box {
-  margin-top: 2rem;
-  background: #0f0f0f;
-  border: 1px solid #222;
-  border-radius: 20px;
-  padding: clamp(2rem, 4vw, 3rem);
-  transition: 0.4s;
-  width: 100%;
-  max-width: 900px;
-  margin-left: auto;
-  margin-right: auto;
-}
-.about-box:hover {
-  transform: translateY(-8px);
-  border-color: #c5a880;
-}
-.about-box p {
-  max-width: 100%;
-  margin: 1.2rem 0;
-  line-height: 1.8;
-  opacity: 0.86;
-  text-align: left;
-}
-.highlight {
-  color: #c5a880;
-  font-weight: 600;
 }
 
 /* SELECTED WORK - RESPONSIVE GRID */
@@ -280,7 +249,7 @@ header {
 /* TESTIMONIALS */
 .testimonial-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
   gap: clamp(1.5rem, 3vw, 2.5rem);
   margin-top: 3rem;
   width: 100%;
@@ -320,6 +289,7 @@ header {
 /* BUTTONS */
 .lux-btn {
   display: inline-block;
+  margin-top: 2.5rem;
   padding: clamp(0.8rem, 2vw, 1rem) clamp(2rem, 4vw, 3rem);
   border-radius: 40px;
   border: 1.6px solid #c5a880;
@@ -335,14 +305,6 @@ header {
   color: #000;
   transform: translateY(-3px);
   box-shadow: 0 5px 15px rgba(197, 168, 128, 0.2);
-}
-.lux-btn-primary {
-  background: #c5a880;
-  color: #000;
-}
-.lux-btn-primary:hover {
-  background: #d4b48c;
-  border-color: #d4b48c;
 }
 
 /* FOOTER */
@@ -409,23 +371,10 @@ header {
     grid-template-columns: 1fr;
   }
   
-  .about-box,
   .work-card,
   .skill-card,
   .testimonial-card {
     padding: 1.5rem;
-  }
-  
-  .cta-buttons {
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
-  }
-  
-  .cta-buttons .lux-btn {
-    width: 100%;
-    max-width: 300px;
-    text-align: center;
   }
 }
 
@@ -473,15 +422,14 @@ header {
 <section class="hero">
 <div class="hero-content">
 <img src="profile.png" alt="AmanJot Singh">
-<h1>Transforming Financial Chaos into <span>Clarity & Control</span></h1>
-<p class="hero-subtitle">Accounting & Financial Systems Specialist</p>
-<p>
-I build structured, reliable finance systems that give business owners accurate reporting, reduce stress, and support strategic growth. Specializing in real estate accounting, financial clean-ups, and system migrations.
-</p>
-<div class="cta-buttons">
-<a href="portfolio.html" class="lux-btn lux-btn-primary">View My Work</a>
-<a href="#contact" class="lux-btn">Get In Touch</a>
-</div>
+<h1>Structured Financial Systems for <span>Confident Business Decisions</span></h1>
+<p class="hero-subtitle">Professional Accounting & Financial Systems Specialist</p>
+
+<p>I'm a <span class="intro-highlight">Professional Accounting & Financial Systems Specialist</span> with over 5+ years of experience supporting businesses through structured, GAAP-aligned accounting operations. My background covers full-cycle accounting, payroll administration, financial statement reconstruction, 1099 preparation and accounting system implementation across real estate, e-commerce, professional services, and retail environments.</p>
+
+<p>I specialize in building organized, reliable financial systems that improve accuracy, consistency, and compliance. My work includes real estate trust accounting, multi-entity accounting structures, SaaS and service-based revenue tracking, inventory costing support, and compliance-driven reporting. I focus on maintaining clean general ledgers, standardized workflows, and well-documented financial records that support confident business operations.</p>
+
+<p>Whether working with growing businesses or property portfolios, my goal is to bring clarity, structure, and control to financial processes—ensuring records are accurate, systems are scalable, and reporting is dependable.</p>
 </div>
 </section>
 
@@ -495,24 +443,7 @@ I build structured, reliable finance systems that give business owners accurate 
 </div>
 </section>
 
-<!-- ABOUT PREVIEW -->
-<section class="section">
-<h2>About Me</h2>
-<div class="about-box">
-<p>
-I am a professional accounting specialist with over <span class="highlight">five years of experience</span> in bookkeeping, real estate accounting, payroll operations, financial cleanups, and accounting system migrations.
-</p>
-<p>
-I help businesses <span class="highlight">gain control over their financial data</span> by building clean accounting structures and reliable operational workflows. My approach combines technical expertise with practical business understanding to deliver solutions that work in the real world.
-</p>
-<p>
-I've worked with clients across real estate, e-commerce, professional services, and retail, helping them transition from financial confusion to clarity and confidence.
-</p>
-</div>
-<a href="about.html" class="lux-btn">Read Full Profile</a>
-</section>
-
-<!-- SELECTED WORK PREVIEW -->
+<!-- SELECTED WORK -->
 <section class="section">
 <h2>Selected Work & Results</h2>
 
@@ -520,34 +451,34 @@ I've worked with clients across real estate, e-commerce, professional services, 
 
 <div class="work-card">
 <h3>Property Management Accounting – AppFolio</h3>
-<span>AppFolio • Trust Accounting • Owner Statements • Reconciliations</span>
+<span>AppFolio • Trust Accounting • Owner Statements • Utility Payments • Reconciliations</span>
 <p>
-Managed end-to-end property management accounting in AppFolio including owner and tenant ledgers, bank and trust account reconciliations, monthly close processes, and structured financial reporting.
+Managed end-to-end property management accounting in AppFolio including owner and tenant ledgers, bank and trust account reconciliations, monthly close processes, structured financial reporting, and utility invoice payment processing.
 </p>
 <div class="result">
-<strong>Result:</strong> Reduced monthly close time by 40% and eliminated reconciliation errors for a 50-property portfolio.
+<strong>Result:</strong> Reduced monthly close time by 40% and eliminated reconciliation errors across 67 property units. Utility payment tracking reduced tenant disputes by 60%.
 </div>
 </div>
 
 <div class="work-card">
 <h3>Real Estate Accounting System Design</h3>
-<span>Buildium • QuickBooks • Trust Accounting</span>
+<span>Buildium • QuickBooks • Trust Accounting • Process Documentation</span>
 <p>
-Designed and managed structured property accounting systems including reconciliations, owner statements, compliance workflows, and management-level financial reporting.
+Designed and managed structured property accounting systems including reconciliations, owner statements, compliance workflows, and management-level financial reporting. Created comprehensive SOPs for every accounting process.
 </p>
 <div class="result">
-<strong>Result:</strong> Created standardized reporting that improved owner satisfaction scores by 35% for property management firm.
+<strong>Result:</strong> Standardized SOPs reduced overlapping work by 35% and improved training efficiency for property management firm. System errors decreased by 90%.
 </div>
 </div>
 
 <div class="work-card">
 <h3>Financial Clean-Up & Recovery</h3>
-<span>QuickBooks • Xero • Bank Reconciliations</span>
+<span>QuickBooks • Xero • Bank & Credit Card Reconciliations • Transaction Analysis</span>
 <p>
-Corrected historical accounting records, reconciled multi-year backlogs, rebuilt charts of accounts, and restored financial statement accuracy for multiple clients.
+Corrected historical accounting records, reconciled multi-year backlogs across diverse business models (retail, e-commerce, professional services), rebuilt charts of accounts, and restored financial statement accuracy. Specialized in high-volume transaction environments with complex bank and credit card activity.
 </p>
 <div class="result">
-<strong>Result:</strong> Recovered $28,500 in unclaimed deductions and identified $12,200 in duplicate payments for e-commerce client.
+<strong>Result:</strong> Recovered $28,500 in unclaimed deductions and identified $12,200 in duplicate payments for e-commerce client. Cleared 18-month reconciliation backlog for professional service firm.
 </div>
 </div>
 
@@ -556,7 +487,7 @@ Corrected historical accounting records, reconciled multi-year backlogs, rebuilt
 <a href="portfolio.html" class="lux-btn">View Full Portfolio</a>
 </section>
 
-<!-- CORE SKILLS PREVIEW -->
+<!-- CORE SKILLS -->
 <section class="section">
 <h2>Core Expertise</h2>
 
@@ -594,6 +525,14 @@ Corrected historical accounting records, reconciled multi-year backlogs, rebuilt
 <p>Shopify, Stripe, PayPal into QuickBooks for accurate sales tracking.</p>
 </div>
 
+<div class="skill-card">
+<div class="skill-icon">
+<i class="fas fa-file-invoice-dollar"></i>
+</div>
+<h4>1099 Preparation & Compliance</h4>
+<p>Vendor management, W-9 tracking, classification, and year-end 1099 filing support.</p>
+</div>
+
 </div>
 
 <a href="certifications.html" class="lux-btn">View Certifications</a>
@@ -601,26 +540,19 @@ Corrected historical accounting records, reconciled multi-year backlogs, rebuilt
 
 <!-- TESTIMONIALS -->
 <section class="section" style="background: #050505; border-radius: 20px; margin: 4rem auto; max-width: 1400px;">
-<h2>Client Feedback</h2>
+<h2>Work Feedback</h2>
 <div class="testimonial-grid">
 
 <div class="testimonial-card">
 <p class="testimonial-text">
-"AmanJot transformed our chaotic books into a clear financial picture. He reconciled 2 years of backlog in just 3 weeks and set up systems that save us 15 hours monthly."
+"The reconciliation system you implemented completely transformed how we track expenses. We went from monthly confusion to having clear, organized reports that actually make sense for decision-making. The standardized procedures you documented have made training new staff so much easier."
 </p>
-<p class="testimonial-author">— Real Estate Portfolio Manager</p>
+<p class="testimonial-author">— Property Management Company Owner</p>
 </div>
 
 <div class="testimonial-card">
 <p class="testimonial-text">
-"The AppFolio system he built for our property management business eliminated our monthly reporting delays. Our owners now receive statements 5 days earlier."
-</p>
-<p class="testimonial-author">— Property Management Firm Owner</p>
-</div>
-
-<div class="testimonial-card">
-<p class="testimonial-text">
-"Working with AmanJot was a game-changer. He not only cleaned up our QuickBooks but taught us how to maintain it properly. Worth every penny."
+"After you cleaned up our QuickBooks and set up the proper chart of accounts, our accountant said it was the most organized set of books they've worked with all year. The categorization system you created makes tax preparation straightforward and eliminates the back-and-forth questions we used to get."
 </p>
 <p class="testimonial-author">— E-commerce Business Owner</p>
 </div>
@@ -655,7 +587,7 @@ Corrected historical accounting records, reconciled multi-year backlogs, rebuilt
 <p>Real Estate Accounting</p>
 <p>Financial Systems Setup</p>
 <p>Bookkeeping Clean-Up</p>
-<p>Payroll & Compliance</p>
+<p>1099 & Compliance</p>
 </div>
 
 <div class="footer-box">
@@ -668,7 +600,7 @@ Corrected historical accounting records, reconciled multi-year backlogs, rebuilt
 </div>
 
 <div class="footer-bottom">
-© 2026 AmanJot Singh. All rights reserved. | Designed for clarity & impact
+© 2026 AmanJot Singh. All rights reserved. | Professional Accounting Systems Specialist
 </div>
 
 </footer>
