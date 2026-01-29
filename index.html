@@ -352,11 +352,11 @@ header {
   font-size: 1rem;
 }
 
-/* BUTTONS */
+/* BUTTONS - UPDATED */
 .lux-btn {
-  display: inline-block;
-  margin-top: 3rem;
-  padding: clamp(0.9rem, 2vw, 1.1rem) clamp(2.2rem, 4vw, 3.2rem);
+  display: block;
+  margin: 3rem auto 0 auto;
+  padding: clamp(1.1rem, 2.5vw, 1.3rem) clamp(2.5rem, 5vw, 3.5rem);
   border-radius: 40px;
   border: 2px solid #c5a880;
   color: #c5a880;
@@ -364,7 +364,10 @@ header {
   font-weight: 700;
   letter-spacing: 1px;
   transition: all 0.3s ease;
-  font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  font-size: clamp(1.1rem, 2vw, 1.2rem);
+  text-align: center;
+  max-width: 350px;
+  width: 100%;
 }
 .lux-btn:hover {
   background: #c5a880;
@@ -451,6 +454,12 @@ header {
   .footer-grid {
     gap: 2.5rem;
   }
+  
+  .lux-btn {
+    margin: 2.5rem auto 0 auto;
+    padding: 1rem 2.2rem;
+    font-size: 1.05rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -489,6 +498,12 @@ header {
   .work-tag {
     font-size: 0.8rem;
     padding: 0.3rem 1rem;
+  }
+  
+  .lux-btn {
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+    max-width: 300px;
   }
 }
 </style>
