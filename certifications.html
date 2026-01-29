@@ -225,25 +225,28 @@ header {
   opacity: 0.8;
 }
 
-/* BUTTONS */
+/* BUTTONS - UPDATED */
 .lux-btn {
-  display: inline-block;
-  margin-top: 2.5rem;
-  padding: clamp(0.8rem, 2vw, 1rem) clamp(2rem, 4vw, 3rem);
+  display: block;
+  margin: 2.5rem auto 0 auto;
+  padding: clamp(1rem, 2.5vw, 1.2rem) clamp(2.2rem, 5vw, 3.2rem);
   border-radius: 40px;
-  border: 1.6px solid #c5a880;
+  border: 2px solid #c5a880;
   color: #c5a880;
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 1px;
   transition: 0.3s;
-  font-size: clamp(0.9rem, 1.5vw, 1rem);
+  font-size: clamp(1rem, 2vw, 1.1rem);
+  text-align: center;
+  max-width: 350px;
+  width: 100%;
 }
 .lux-btn:hover {
   background: #c5a880;
   color: #000;
   transform: translateY(-3px);
-  box-shadow: 0 5px 15px rgba(197, 168, 128, 0.2);
+  box-shadow: 0 8px 20px rgba(197, 168, 128, 0.25);
 }
 
 /* FOOTER */
@@ -315,6 +318,12 @@ header {
   .cert-image-container {
     height: 150px;
   }
+  
+  .lux-btn {
+    margin: 2rem auto 0 auto;
+    padding: 0.9rem 2rem;
+    font-size: 1rem;
+  }
 }
 
 @media (max-width: 480px) {
@@ -338,6 +347,12 @@ header {
   
   .section h2 {
     font-size: 1.6rem;
+  }
+  
+  .lux-btn {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.95rem;
+    max-width: 280px;
   }
 }
 </style>
@@ -445,23 +460,6 @@ Certified advisor for Xero cloud accounting platform with expertise in setup, mi
 
 <div class="cert-card">
 <div class="cert-image-container">
-<img src="AppFolio.png" alt="AppFolio Certification" class="cert-image" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\"fas fa-home cert-icon\"></i>';">
-</div>
-<h4>AppFolio Property Management Certified</h4>
-<div class="cert-level">Property Management Systems</div>
-<p class="cert-description">
-Certified in AppFolio property management platform with focus on accounting workflows, rent collection automation, vendor payment systems, and comprehensive financial reporting for property portfolios.
-</p>
-<div class="cert-details">
-<p><i class="fas fa-check-circle"></i> Rent collection automation</p>
-<p><i class="fas fa-check-circle"></i> Vendor & contractor payments</p>
-<p><i class="fas fa-check-circle"></i> Portfolio performance reporting</p>
-<p><i class="fas fa-calendar-alt"></i> Valid through: 2026</p>
-</div>
-</div>
-
-<div class="cert-card">
-<div class="cert-image-container">
 <img src="Excel.png" alt="Excel Certification" class="cert-image" onerror="this.onerror=null; this.parentElement.innerHTML='<i class=\"fas fa-table cert-icon\"></i>';">
 </div>
 <h4>Microsoft Excel Advanced Certification</h4>
@@ -489,18 +487,18 @@ Advanced Excel certification covering complex formulas, pivot tables, data analy
 
 <div class="progress-grid">
 <div class="progress-item">
-<h4>CPA Preparation</h4>
-<p>Currently completing requirements for CPA certification with focus on auditing and business concepts.</p>
+<h4>CA Preparation</h4>
+<p>Currently completing requirements for Chartered Accountancy certification with focus on auditing standards and financial reporting compliance.</p>
 </div>
 
 <div class="progress-item">
 <h4>Advanced Tax Planning</h4>
-<p>Advanced coursework in tax strategy for small businesses and real estate investments.</p>
+<p>Advanced coursework in tax strategy for small businesses and real estate investments including GST compliance and international taxation.</p>
 </div>
 
 <div class="progress-item">
-<h4>Data Analytics for Accounting</h4>
-<p>Learning advanced data analytics tools to provide deeper financial insights to clients.</p>
+<h4>AI & Data Analytics for Accounting</h4>
+<p>Learning advanced data analytics tools and GPT/AI integration to streamline accounting processes, automate repetitive tasks, and reduce manual labor in financial reporting.</p>
 </div>
 </div>
 </div>
