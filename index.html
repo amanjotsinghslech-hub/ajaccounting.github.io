@@ -39,6 +39,7 @@
             background: var(--dark);
             color: var(--text);
             line-height: 1.6;
+            padding-top: 70px;
         }
         
         /* ===== UTILITY CLASSES ===== */
@@ -60,7 +61,7 @@
             text-align: center;
         }
         
-        /* ===== HEADER ===== */
+        /* ===== HEADER WITH HAMBURGER MENU ===== */
         header {
             position: fixed;
             top: 0;
@@ -70,10 +71,16 @@
             backdrop-filter: blur(10px);
             border-bottom: 1px solid var(--border);
             z-index: 1000;
-            padding: 1rem 0;
+            height: 70px;
+            display: flex;
+            align-items: center;
         }
         
         .header-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 1.5rem;
             display: flex;
             justify-content: space-between;
             align-items: center;
@@ -90,19 +97,62 @@
             color: var(--primary);
         }
         
-        .nav-minimal {
+        /* Desktop Navigation */
+        .nav-desktop {
             display: flex;
             gap: 2rem;
         }
         
-        .nav-minimal a {
+        .nav-desktop a {
             color: var(--text-light);
             text-decoration: none;
             font-weight: 500;
+            font-size: 0.9rem;
             transition: color 0.3s ease;
         }
         
-        .nav-minimal a:hover {
+        .nav-desktop a:hover {
+            color: var(--primary);
+        }
+        
+        /* Mobile Navigation */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.4rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .nav-mobile {
+            display: none;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem;
+            flex-direction: column;
+            gap: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-mobile.active {
+            display: flex;
+        }
+        
+        .nav-mobile a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .nav-mobile a:hover {
             color: var(--primary);
         }
         
@@ -136,7 +186,7 @@
         
         /* ===== HERO SECTION ===== */
         .hero-minimal {
-            padding-top: 100px;
+            padding-top: 30px;
             padding-bottom: 3rem;
             background: linear-gradient(135deg, #0A0A0A 0%, #050505 100%);
         }
@@ -161,8 +211,8 @@
         }
         
         .profile-img {
-            width: 220px; /* Increased from 180px */
-            height: 220px; /* Increased from 180px */
+            width: 220px;
+            height: 220px;
             border-radius: 50%;
             border: 3px solid var(--primary);
             object-fit: cover;
@@ -172,7 +222,7 @@
         .hero-text h1 {
             font-size: 2.2rem;
             font-weight: 700;
-            margin-bottom: 1rem;
+            margin-bottom: 0.5rem;
             line-height: 1.2;
         }
         
@@ -180,9 +230,11 @@
             color: var(--primary);
         }
         
-        .hero-text h1 .certified-title {
+        .hero-text h2 {
+            font-size: 1.5rem;
             color: var(--primary);
             font-weight: 600;
+            margin-bottom: 1rem;
         }
         
         .tagline {
@@ -205,9 +257,21 @@
         
         .achievements-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            grid-template-columns: repeat(3, 1fr);
             gap: 1.5rem;
             margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .achievements-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
         }
         
         .achievement-card {
@@ -298,7 +362,7 @@
             font-weight: 600;
         }
         
-        /* ===== PORTFOLIO CONNECTIONS ===== */
+        /* ===== PORTFOLIO SECTION ===== */
         .portfolio-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -492,12 +556,36 @@
         
         /* ===== MOBILE RESPONSIVE ===== */
         @media (max-width: 768px) {
-            .nav-minimal {
+            body {
+                padding-top: 60px;
+            }
+            
+            header {
+                height: 60px;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-desktop {
                 display: none;
+            }
+            
+            .nav-mobile {
+                top: 60px;
+            }
+            
+            .hero-minimal {
+                padding-top: 20px;
             }
             
             .hero-text h1 {
                 font-size: 1.8rem;
+            }
+            
+            .hero-text h2 {
+                font-size: 1.3rem;
             }
             
             .section {
@@ -530,8 +618,8 @@
             }
             
             .profile-img {
-                width: 180px; /* Adjusted for mobile */
-                height: 180px; /* Adjusted for mobile */
+                width: 180px;
+                height: 180px;
             }
             
             .certification-badges {
@@ -555,30 +643,49 @@
                 gap: 2rem;
             }
             
-            .achievements-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 1rem;
-            }
-            
             .portfolio-grid {
                 gap: 1rem;
+            }
+        }
+        
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-padding-top: 70px;
+        }
+        
+        @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 60px;
             }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
+    <!-- Header with Mobile Hamburger Menu -->
     <header>
-        <div class="container">
-            <div class="header-content">
-                <a href="index.html" class="logo">AmanJot Singh <span>Slach</span></a>
-                <nav class="nav-minimal">
-                    <a href="index.html">Home</a>
-                    <a href="portfolio.html">Portfolio</a>
-                    <a href="certifications.html">Certifications</a>
-                    <a href="#consultation">Consultation</a>
-                </nav>
-            </div>
+        <div class="header-content">
+            <a href="index.html" class="logo">AmanJot Singh <span>Slach</span></a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="certifications.html">Certifications</a>
+                <a href="#consultation">Consultation</a>
+            </nav>
+            
+            <!-- Mobile Hamburger Menu -->
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <!-- Mobile Navigation Menu -->
+            <nav class="nav-mobile" id="mobileNav">
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="certifications.html">Certifications</a>
+                <a href="#consultation">Consultation</a>
+            </nav>
         </div>
     </header>
 
@@ -591,19 +698,19 @@
                 </div>
                 <div class="hero-text">
                     <h1>AmanJot Singh <span>Slach</span></h1>
-                    <h2 class="certified-title">Certified Property Accounting Specialist</h2>
+                    <h2>Certified Property Accounting Specialist</h2>
                     
                     <div class="certification-badges">
                         <span class="certification-badge gold-badge">
-                            <i class="fas fa-award"></i> AppFolio Software Specialist
+                            <i class="fas fa-award"></i> AppFolio Property Manager Specialist
                         </span>
                         <span class="certification-badge">
-                            <i class="fas fa-award"></i> Buildium Certified
+                            <i class="fas fa-award"></i> Buildium Property Management Certificate
                         </span>
                     </div>
                     
                     <p class="hero-description">
-                        As a certified property accounting specialist with expertise in AppFolio and Buildium, 
+                        As a certified property accounting specialist with expertise in AppFolio and Quickbooks, 
                         I provide expert financial management solutions for real estate portfolios. With over 5 years 
                         of specialized experience, I optimize accounting systems to ensure accuracy, compliance, and 
                         operational efficiency for property management firms.
@@ -617,7 +724,7 @@
                             <i class="fas fa-certificate"></i> Gusto Payroll Specialist
                         </span>
                         <span class="certification-badge">
-                            <i class="fas fa-certificate"></i> Xero Certified Advisor
+                            <i class="fas fa-certificate"></i> Migration Specialist
                         </span>
                     </div>
                 </div>
@@ -634,7 +741,7 @@
             <div class="achievements-grid">
                 <div class="achievement-card">
                     <div class="achievement-value">AppFolio & Buildium</div>
-                    <p>Software Certification</p>
+                    <p>Dual Platform Certification</p>
                 </div>
                 <div class="achievement-card">
                     <div class="achievement-value">5+</div>
@@ -643,10 +750,6 @@
                 <div class="achievement-card">
                     <div class="achievement-value">40%</div>
                     <p>Process Efficiency Improvement</p>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-value">100%</div>
-                    <p>Financial Accuracy Rate</p>
                 </div>
             </div>
         </div>
@@ -667,11 +770,11 @@
                         <h3>Certified Platforms</h3>
                     </div>
                     <ul class="skills-list">
-                        <li>AppFolio Software Specialist <span class="skill-level">Expert</span></li>
-                        <li>Buildium Certified Specialist <span class="skill-level">Expert</span></li>
+                        <li>AppFolio Property Manager Specialist <span class="skill-level">Expert</span></li>
+                        <li>Buildium Property Management Certificate <span class="skill-level">Expert</span></li>
                         <li>QuickBooks ProAdvisor <span class="skill-level">Expert</span></li>
                         <li>Gusto Payroll Specialist <span class="skill-level">Advanced</span></li>
-                        <li>Xero Certified Advisor <span class="skill-level">Advanced</span></li>
+                        <li>Migration Specialist <span class="skill-level">Expert</span></li>
                     </ul>
                 </div>
                 
@@ -694,10 +797,10 @@
         </div>
     </section>
 
-    <!-- Portfolio Connections -->
+    <!-- Portfolio Section -->
     <section class="section" style="background: var(--card-bg);">
         <div class="container">
-            <h2 class="text-center">Certification Applications</h2>
+            <h2 class="text-center">Portfolio</h2>
             <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">How professional certifications deliver client value</p>
             
             <div class="portfolio-grid">
@@ -717,8 +820,8 @@
                 </div>
                 
                 <div class="portfolio-card">
-                    <h3>Software Integration</h3>
-                    <p>Integration of AppFolio and Buildium systems for large-scale property management operations.</p>
+                    <h3>Migration Specialist</h3>
+                    <p>Expert migration services between property management software platforms ensuring seamless data transfer.</p>
                 </div>
             </div>
             
@@ -727,7 +830,7 @@
                     <i class="fas fa-certificate"></i> View All Certifications
                 </a>
                 <a href="portfolio.html" class="btn btn-primary">
-                    <i class="fas fa-folder-open"></i> See Portfolio
+                    <i class="fas fa-folder-open"></i> See Full Portfolio
                 </a>
             </div>
         </div>
@@ -805,9 +908,9 @@
                 <div class="footer-section">
                     <h4>Certifications & Specializations</h4>
                     <ul class="footer-links">
-                        <li><strong>AppFolio Software Specialist</strong></li>
-                        <li><strong>Buildium Certified Specialist</strong></li>
-                        <li>Real Estate Trust Accounting</li>
+                        <li><strong>AppFolio Property Manager Specialist</strong></li>
+                        <li><strong>Buildium Property Management Certificate</strong></li>
+                        <li>Migration Specialist</li>
                         <li>Property Financial Systems</li>
                         <li>Financial Reporting & Analysis</li>
                     </ul>
@@ -815,12 +918,39 @@
             </div>
             
             <div class="copyright">
-                © 2024 AmanJot Singh Slach | Certified Property Accounting Specialist
+                © 2026 AmanJot Singh Slach | Certified Property Accounting Specialist
             </div>
         </div>
     </footer>
 
     <script>
+        // Mobile Navigation Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+            menuToggle.innerHTML = mobileNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!menuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
+                mobileNav.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
         // Form submission handler
         document.getElementById('consultationForm').addEventListener('submit', function(e) {
             e.preventDefault();
