@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AmanJot Singh | Accounting & Financial Systems Specialist</title>
+    <title>AmanJot Singh | Property Accounting Specialist</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -47,7 +47,11 @@
         }
         
         .section {
-            padding: 4rem 0;
+            padding: 3rem 0;
+        }
+        
+        .section-sm {
+            padding: 2rem 0;
         }
         
         .text-center {
@@ -103,14 +107,14 @@
         /* ===== HERO - CONCISE ===== */
         .hero-minimal {
             padding-top: 100px;
-            padding-bottom: 4rem;
+            padding-bottom: 3rem;
             background: linear-gradient(135deg, #0A0A0A 0%, #050505 100%);
         }
         
         .hero-content {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 3rem;
+            gap: 2.5rem;
             align-items: center;
         }
         
@@ -125,8 +129,8 @@
         }
         
         .profile-img {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 50%;
             border: 3px solid var(--primary);
             object-fit: cover;
@@ -135,7 +139,7 @@
         }
         
         .hero-text h1 {
-            font-size: 2.5rem;
+            font-size: 2.2rem;
             font-weight: 700;
             margin-bottom: 1rem;
             line-height: 1.2;
@@ -149,47 +153,93 @@
             font-size: 1.1rem;
             color: var(--accent);
             font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .specialization-tag {
+            display: inline-block;
+            background: rgba(0, 102, 204, 0.2);
+            color: var(--primary);
+            padding: 0.4rem 1rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
             margin-bottom: 1.5rem;
+            border: 1px solid var(--primary);
         }
         
         .hero-highlights {
-            margin-top: 2rem;
+            margin-top: 1.5rem;
         }
         
         .highlight-item {
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
         
         .highlight-icon {
             color: var(--accent);
-            font-size: 1.2rem;
+            font-size: 1.1rem;
         }
         
-        /* ===== SKILLS SHOWCASE ===== */
-        .skills-showcase {
+        /* ===== BY THE NUMBERS ===== */
+        .achievements-section {
             background: var(--card-bg);
         }
         
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        .achievement-card {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-3px);
+            border: 1px solid var(--primary);
+        }
+        
+        .achievement-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* ===== SKILLS SHOWCASE ===== */
         .skills-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
         }
         
         .skill-category {
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 2rem;
+            border-radius: 8px;
+            padding: 1.5rem;
             transition: transform 0.3s ease;
         }
         
         .skill-category:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             border-color: var(--primary);
         }
         
@@ -197,19 +247,19 @@
             display: flex;
             align-items: center;
             gap: 1rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 1.2rem;
         }
         
         .category-icon {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background: var(--primary);
-            border-radius: 10px;
+            border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             color: white;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
         }
         
         .skills-list {
@@ -217,112 +267,113 @@
         }
         
         .skills-list li {
-            padding: 0.5rem 0;
+            padding: 0.6rem 0;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
         
+        .skills-list li:last-child {
+            border-bottom: none;
+        }
+        
         .skill-level {
             color: var(--accent);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             font-weight: 600;
         }
         
-        /* ===== PORTFOLIO HIGHLIGHTS ===== */
-        .portfolio-highlights {
+        /* ===== PORTFOLIO CONNECTIONS ===== */
+        .portfolio-grid {
             display: grid;
             grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-top: 3rem;
+            gap: 1.5rem;
+            margin-top: 2rem;
         }
         
         @media (min-width: 768px) {
-            .portfolio-highlights {
-                grid-template-columns: repeat(3, 1fr);
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
             }
         }
         
         .portfolio-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 2rem;
+            border-radius: 8px;
+            padding: 1.5rem;
             transition: transform 0.3s ease;
         }
         
         .portfolio-card:hover {
-            transform: translateY(-5px);
+            transform: translateY(-3px);
             border-color: var(--primary);
         }
         
         .portfolio-card h3 {
             color: var(--primary);
-            margin-bottom: 1rem;
-            font-size: 1.2rem;
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
         }
         
-        .portfolio-metrics {
-            display: flex;
-            flex-direction: column;
-            gap: 0.5rem;
-            margin-top: 1.5rem;
+        .portfolio-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
         }
         
-        .metric {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .metric-value {
-            font-weight: 700;
-            color: var(--accent);
-        }
-        
-        /* ===== ACHIEVEMENTS ===== */
-        .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-            margin-top: 3rem;
-        }
-        
-        .achievement-card {
-            text-align: center;
-            padding: 2rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 10px;
-        }
-        
-        .achievement-value {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        /* ===== CALL TO ACTION ===== */
-        .cta-minimal {
+        /* ===== CONSULTATION FORM ===== */
+        .consultation-section {
             background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(0, 168, 107, 0.1));
-            border-top: 1px solid var(--border);
         }
         
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 2rem;
-            flex-wrap: wrap;
+        .form-container {
+            max-width: 500px;
+            margin: 2rem auto 0;
         }
         
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        /* ===== BUTTONS ===== */
         .btn {
-            padding: 1rem 2rem;
+            padding: 0.9rem 1.8rem;
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
             transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
         }
         
         .btn-primary {
@@ -336,23 +387,35 @@
             color: var(--primary);
         }
         
+        .btn-block {
+            width: 100%;
+        }
+        
         .btn:hover {
             transform: translateY(-2px);
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
         }
         
         /* ===== FOOTER ===== */
         .footer-minimal {
             background: var(--card-bg);
             border-top: 1px solid var(--border);
-            padding: 3rem 0 2rem;
+            padding: 2.5rem 0 1.5rem;
         }
         
         .footer-content {
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
-            margin-bottom: 2rem;
+            margin-bottom: 1.5rem;
         }
         
         @media (min-width: 768px) {
@@ -373,12 +436,16 @@
         
         .footer-links li {
             margin-bottom: 0.5rem;
+            font-size: 0.9rem;
         }
         
         .footer-links a {
             color: var(--text-light);
             text-decoration: none;
             transition: color 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
         }
         
         .footer-links a:hover {
@@ -387,10 +454,10 @@
         
         .copyright {
             text-align: center;
-            padding-top: 2rem;
+            padding-top: 1.5rem;
             border-top: 1px solid var(--border);
             color: var(--text-light);
-            font-size: 0.9rem;
+            font-size: 0.85rem;
         }
         
         /* ===== MOBILE RESPONSIVE ===== */
@@ -400,11 +467,11 @@
             }
             
             .hero-text h1 {
-                font-size: 2rem;
+                font-size: 1.8rem;
             }
             
             .section {
-                padding: 3rem 0;
+                padding: 2rem 0;
             }
             
             .cta-buttons {
@@ -415,6 +482,42 @@
                 width: 100%;
                 text-align: center;
             }
+            
+            .achievement-card {
+                padding: 1.2rem 0.8rem;
+            }
+            
+            .achievement-value {
+                font-size: 1.6rem;
+            }
+            
+            .skill-category {
+                padding: 1.2rem;
+            }
+            
+            .portfolio-card {
+                padding: 1.2rem;
+            }
+            
+            .profile-img {
+                width: 150px;
+                height: 150px;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content {
+                gap: 2rem;
+            }
+            
+            .achievements-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 1rem;
+            }
+            
+            .portfolio-grid {
+                gap: 1rem;
+            }
         }
     </style>
 </head>
@@ -423,11 +526,11 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="index.html" class="logo">AJ<span>Accounting</span></a>
+                <a href="index.html" class="logo">AJ<span>PropertyAccounting</span></a>
                 <nav class="nav-minimal">
                     <a href="portfolio.html">Portfolio</a>
                     <a href="certifications.html">Certifications</a>
-                    <a href="#contact">Connect</a>
+                    <a href="#consultation">Consultation</a>
                 </nav>
             </div>
         </div>
@@ -441,14 +544,15 @@
                     <img src="profile.png" alt="AmanJot Singh" class="profile-img">
                 </div>
                 <div class="hero-text">
-                    <h1>Financial Systems <span>Architect</span></h1>
-                    <p class="tagline">Transforming complex finances into streamlined operations</p>
-                    <p>Specializing in real estate accounting, financial system design, and complex cleanup for growing businesses. Over 5 years delivering measurable efficiency gains and financial recovery.</p>
+                    <h1>Property Accounting <span>Specialist</span></h1>
+                    <p class="tagline">Transforming property finances into streamlined systems</p>
+                    <span class="specialization-tag">Specialized in Real Estate & Property Accounting</span>
+                    <p>With over 5 years of expertise in property management accounting, I specialize in optimizing financial systems for real estate portfolios, ensuring compliance, accuracy, and efficiency.</p>
                     
                     <div class="hero-highlights">
                         <div class="highlight-item">
                             <i class="fas fa-check-circle highlight-icon"></i>
-                            <span>Expert in AppFolio, Buildium, QuickBooks, Xero</span>
+                            <span>AppFolio & Buildium Property Accounting Expert</span>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-chart-line highlight-icon"></i>
@@ -464,26 +568,53 @@
         </div>
     </section>
 
-    <!-- Skills Showcase -->
+    <!-- By The Numbers -->
+    <section class="achievements-section section-sm">
+        <div class="container">
+            <h2 class="text-center">By The Numbers</h2>
+            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">Property accounting results that speak for themselves</p>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-value">5+</div>
+                    <p>Years Property Accounting</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-value">200+</div>
+                    <p>Properties Managed</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-value">40%</div>
+                    <p>Average Efficiency Gain</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-value">100%</div>
+                    <p>Compliance Accuracy</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Technical Expertise -->
     <section class="section">
         <div class="container">
             <h2 class="text-center">Technical Expertise</h2>
-            <p class="text-center" style="color: var(--text-light); margin-top: 1rem;">Platform mastery and specialized skills</p>
+            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">Property accounting platform mastery</p>
             
             <div class="skills-grid">
                 <div class="skill-category">
                     <div class="category-header">
                         <div class="category-icon">
-                            <i class="fas fa-calculator"></i>
+                            <i class="fas fa-building"></i>
                         </div>
-                        <h3>Accounting Platforms</h3>
+                        <h3>Property Accounting Platforms</h3>
                     </div>
                     <ul class="skills-list">
-                        <li>QuickBooks ProAdvisor <span class="skill-level">Expert</span></li>
-                        <li>Xero Certified Advisor <span class="skill-level">Expert</span></li>
-                        <li>AppFolio Property Accounting <span class="skill-level">Advanced</span></li>
-                        <li>Buildium Certified <span class="skill-level">Advanced</span></li>
-                        <li>Gusto Payroll Specialist <span class="skill-level">Advanced</span></li>
+                        <li>AppFolio Property Accounting <span class="skill-level">Expert</span></li>
+                        <li>Buildium Certified <span class="skill-level">Expert</span></li>
+                        <li>QuickBooks for Real Estate <span class="skill-level">Expert</span></li>
+                        <li>Yardi Voyager <span class="skill-level">Advanced</span></li>
+                        <li>MRI Software <span class="skill-level">Advanced</span></li>
                     </ul>
                 </div>
                 
@@ -495,105 +626,44 @@
                         <h3>Core Competencies</h3>
                     </div>
                     <ul class="skills-list">
-                        <li>Financial System Design <span class="skill-level">Expert</span></li>
                         <li>Real Estate Trust Accounting <span class="skill-level">Expert</span></li>
-                        <li>High-Volume Reconciliation <span class="skill-level">Expert</span></li>
-                        <li>E-commerce Integration <span class="skill-level">Advanced</span></li>
-                        <li>1099 Compliance <span class="skill-level">Expert</span></li>
+                        <li>CAM Reconciliation <span class="skill-level">Expert</span></li>
+                        <li>Property Financial Reporting <span class="skill-level">Expert</span></li>
+                        <li>1099 Compliance for Properties <span class="skill-level">Expert</span></li>
+                        <li>Budgeting & Forecasting <span class="skill-level">Advanced</span></li>
                     </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Portfolio Highlights -->
+    <!-- Portfolio Connections -->
     <section class="section" style="background: var(--card-bg);">
         <div class="container">
-            <h2 class="text-center">Key Achievements</h2>
-            <p class="text-center" style="color: var(--text-light); margin-top: 1rem;">Selected transformative projects</p>
+            <h2 class="text-center">Portfolio Connections</h2>
+            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">Featured property accounting engagements</p>
             
-            <div class="portfolio-highlights">
+            <div class="portfolio-grid">
                 <div class="portfolio-card">
-                    <h3>Real Estate System Overhaul</h3>
-                    <p>Migrated 50+ property portfolio from manual tracking to automated AppFolio system with integrated trust accounting.</p>
-                    <div class="portfolio-metrics">
-                        <div class="metric">
-                            <i class="fas fa-bolt" style="color: var(--accent);"></i>
-                            <span><strong class="metric-value">40%</strong> faster monthly close</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-check-circle" style="color: var(--accent);"></i>
-                            <span><strong class="metric-value">100%</strong> reconciliation accuracy</span>
-                        </div>
-                    </div>
+                    <h3>Multi-Property Portfolio Management</h3>
+                    <p>Managed financials for 50+ residential and commercial properties using AppFolio, achieving 100% on-time reporting.</p>
                 </div>
                 
                 <div class="portfolio-card">
-                    <h3>E-commerce Financial Recovery</h3>
-                    <p>Cleaned up 2 years of unreconciled transactions for Shopify business, implementing automated systems.</p>
-                    <div class="portfolio-metrics">
-                        <div class="metric">
-                            <i class="fas fa-dollar-sign" style="color: var(--accent);"></i>
-                            <span><strong class="metric-value">$28.5K</strong> recovered deductions</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-chart-line" style="color: var(--accent);"></i>
-                            <span><strong class="metric-value">18%</strong> margin increase</span>
-                        </div>
-                    </div>
+                    <h3>Trust Accounting Compliance</h3>
+                    <p>Implemented compliant trust accounting systems for property management firms, ensuring zero audit findings.</p>
                 </div>
                 
                 <div class="portfolio-card">
-                    <h3>Process Optimization</h3>
-                    <p>Designed Standard Operating Procedures that reduced overlapping work and eliminated system errors.</p>
-                    <div class="portfolio-metrics">
-                        <div class="metric">
-                            <i class="fas fa-clock" style="color: var(--accent);"></i>
-                            <span><strong class="metric-value">35%</strong> less overlapping work</span>
-                        </div>
-                        <div class="metric">
-                            <i class="fas fa-shield-alt" style="color: var(--accent);"></i>
-                            <span><strong class="metric-value">90%</strong> error reduction</span>
-                        </div>
-                    </div>
+                    <h3>Property Financial System Design</h3>
+                    <p>Designed automated financial systems for real estate investors, reducing manual work by 60%.</p>
+                </div>
+                
+                <div class="portfolio-card">
+                    <h3>CAM Reconciliation Projects</h3>
+                    <p>Successfully reconciled CAM charges for commercial properties, recovering over $15K in misallocated funds.</p>
                 </div>
             </div>
-        </div>
-    </section>
-
-    <!-- Achievements -->
-    <section class="section">
-        <div class="container">
-            <h2 class="text-center">By The Numbers</h2>
-            
-            <div class="achievements-grid">
-                <div class="achievement-card">
-                    <div class="achievement-value">5+</div>
-                    <p>Years Professional Experience</p>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-value">$28.5K+</div>
-                    <p>Average Client Recovery</p>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-value">40%</div>
-                    <p>Average Efficiency Gain</p>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-value">100%</div>
-                    <p>Project Success Rate</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Call to Action -->
-    <section class="cta-minimal section">
-        <div class="container">
-            <h2 class="text-center">Ready to Streamline Your Finances?</h2>
-            <p class="text-center" style="color: var(--text-light); margin-top: 1rem;">
-                Let's discuss how I can optimize your financial operations
-            </p>
             
             <div class="cta-buttons">
                 <a href="portfolio.html" class="btn btn-primary">
@@ -606,8 +676,51 @@
         </div>
     </section>
 
+    <!-- Consultation Form -->
+    <section id="consultation" class="consultation-section section">
+        <div class="container">
+            <h2 class="text-center">Request a Consultation</h2>
+            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">
+                Let's discuss your property accounting needs
+            </p>
+            
+            <div class="form-container">
+                <form id="consultationForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="propertyCount">Number of Properties</label>
+                        <input type="text" id="propertyCount" class="form-control" placeholder="e.g., 10-20 properties">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="currentSoftware">Current Accounting Software</label>
+                        <input type="text" id="currentSoftware" class="form-control" placeholder="e.g., QuickBooks, AppFolio, etc.">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">What challenges are you facing?</label>
+                        <textarea id="message" class="form-control" rows="3" placeholder="Briefly describe your property accounting needs..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-paper-plane"></i> Send Enquiry
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
-    <footer id="contact" class="footer-minimal">
+    <footer class="footer-minimal">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
@@ -616,6 +729,7 @@
                         <li><a href="index.html">Home</a></li>
                         <li><a href="portfolio.html">Portfolio</a></li>
                         <li><a href="certifications.html">Certifications</a></li>
+                        <li><a href="#consultation">Consultation</a></li>
                     </ul>
                 </div>
                 
@@ -627,26 +741,45 @@
                                 <i class="fab fa-linkedin"></i> LinkedIn
                             </a>
                         </li>
-                        <li><i class="fas fa-envelope"></i> contact@ajaccounting.com</li>
+                        <li><a href="mailto:contact@ajaccounting.com"><i class="fas fa-envelope"></i> contact@ajaccounting.com</a></li>
                         <li><i class="fas fa-phone"></i> +91 991 115 5541</li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Specializations</h4>
+                    <h4>Property Accounting Specializations</h4>
                     <ul class="footer-links">
-                        <li>Real Estate Accounting</li>
-                        <li>Financial Systems Design</li>
-                        <li>Process Optimization</li>
-                        <li>Compliance & Reconciliation</li>
+                        <li>AppFolio & Buildium Systems</li>
+                        <li>Real Estate Trust Accounting</li>
+                        <li>CAM Reconciliations</li>
+                        <li>Property Financial Reporting</li>
+                        <li>Compliance & Audit Preparation</li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                © 2024 AmanJot Singh | Financial Systems Specialist
+                © 2024 AmanJot Singh | Property Accounting Specialist
             </div>
         </div>
     </footer>
+
+    <script>
+        // Form submission handler
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            // In a real application, you would send this data to a server
+            // For now, we'll just show an alert
+            alert(`Thank you ${name}! Your consultation request has been received. I'll contact you at ${email} within 24 hours.`);
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
 </body>
 </html>
