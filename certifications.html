@@ -1,225 +1,580 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Certifications | AJ Soul Advisory</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-:root{
-    --primary:#2F81F7;
-    --dark:#0d1117;
-    --card:#161b22;
-    --border:#30363d;
-    --text:#e6edf3;
-    --text-light:#9da7b3;
-}
-
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-    font-family:'Inter',sans-serif;
-    background:var(--dark);
-    color:var(--text);
-}
-
-/* ===== HEADER ===== */
-header{
-    position:fixed;
-    top:0;left:0;right:0;
-    background:#0d1117ee;
-    backdrop-filter:blur(10px);
-    border-bottom:1px solid var(--border);
-    z-index:1000;
-}
-.header{
-    max-width:1200px;
-    margin:auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:1rem;
-}
-.logo{
-    font-weight:700;
-    font-size:1.1rem;
-}
-.logo span{color:var(--primary)}
-
-nav{
-    display:flex;
-    gap:2rem;
-}
-nav a{
-    color:var(--text-light);
-    text-decoration:none;
-    font-weight:500;
-}
-nav a:hover{color:var(--primary)}
-
-.menu-toggle{
-    display:none;
-    font-size:1.4rem;
-    cursor:pointer;
-}
-
-/* ===== HERO ===== */
-.hero{
-    padding-top:110px;
-    text-align:center;
-    padding-bottom:2rem;
-}
-.hero h1{
-    font-size:2rem;
-}
-.hero span{color:var(--primary)}
-.hero p{
-    color:var(--text-light);
-    margin-top:.5rem;
-}
-
-/* ===== GRID ===== */
-.container{
-    max-width:1200px;
-    margin:auto;
-    padding:1rem;
-}
-.grid{
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
-    gap:2rem;
-    margin-top:2rem;
-}
-
-.card{
-    background:var(--card);
-    border:1px solid var(--border);
-    border-radius:10px;
-    padding:1.5rem;
-    text-align:center;
-    transition:.3s ease;
-}
-.card:hover{
-    transform:translateY(-8px);
-    border-color:var(--primary);
-    box-shadow:0 10px 30px rgba(47,129,247,.2);
-}
-.card img{
-    max-width:250px;
-    border-radius:8px;
-    margin-bottom:1rem;
-    border:2px solid var(--primary);
-}
-.card h3{margin-bottom:.3rem}
-.level{
-    color:var(--primary);
-    font-weight:600;
-    margin-bottom:.5rem;
-}
-.desc{
-    color:var(--text-light);
-    font-size:.9rem;
-}
-
-/* ===== FOOTER ===== */
-footer{
-    margin-top:3rem;
-    border-top:1px solid var(--border);
-    padding:2rem 1rem;
-    text-align:center;
-    color:var(--text-light);
-}
-
-/* ===== MOBILE NAV ===== */
-@media(max-width:768px){
-    .menu-toggle{display:block}
-    nav{
-        position:absolute;
-        right:0;
-        top:65px;
-        background:#111;
-        flex-direction:column;
-        width:200px;
-        padding:1rem;
-        display:none;
-        border-left:1px solid var(--border);
-    }
-    nav.active{display:flex}
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Certifications | AJ Soul Advisory | Property Accounting Specialist</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #D4AF37; /* Luxury Gold */
+            --primary-dark: #B8941F;
+            --accent: #2F81F7;
+            --dark: #0A0A0A;
+            --darker: #050505;
+            --light: #FFFFFF;
+            --card-bg: #1A1A1A;
+            --text: #F0F0F0;
+            --text-light: #AAAAAA;
+            --border: #333333;
+            --footer-bg: #FFFFFF;
+            --footer-text: #333333;
+            --footer-light: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.5;
+        }
+        
+        /* ===== HEADER & NAVIGATION ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            padding: 0.8rem 0;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        /* Desktop Navigation */
+        .nav-desktop {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-desktop a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-desktop a:hover {
+            color: var(--primary);
+        }
+        
+        /* Mobile Navigation */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.4rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .nav-mobile {
+            display: none;
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem;
+            flex-direction: column;
+            gap: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-mobile.active {
+            display: flex;
+        }
+        
+        .nav-mobile a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .nav-mobile a:hover {
+            color: var(--primary);
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero-section {
+            padding-top: 100px;
+            padding-bottom: 2rem;
+            text-align: center;
+            background: linear-gradient(135deg, var(--darker) 0%, var(--dark) 100%);
+        }
+        
+        .hero-section h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .hero-section h1 span {
+            color: var(--primary);
+        }
+        
+        .hero-subtitle {
+            font-size: 1rem;
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        
+        /* ===== CERTIFICATIONS GRID ===== */
+        .section {
+            padding: 2rem 0;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+        
+        .certifications-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .certifications-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        @media (min-width: 1024px) {
+            .certifications-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        .certification-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.5rem;
+            text-align: center;
+            transition: all 0.3s ease;
+        }
+        
+        .certification-card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
+        }
+        
+        .certificate-image {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 1.2rem;
+            border: 2px solid var(--primary);
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .certification-card h3 {
+            color: var(--text);
+            font-size: 1.1rem;
+            margin-bottom: 0.4rem;
+        }
+        
+        .certification-level {
+            display: block;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 0.8rem;
+            font-size: 0.9rem;
+        }
+        
+        .certification-description {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            line-height: 1.4;
+            margin: 0 auto;
+            max-width: 280px;
+        }
+        
+        /* ===== BUTTONS ===== */
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 0.8rem 1.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            font-size: 0.9rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: var(--dark);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* ===== FOOTER (WHITE BACKGROUND) ===== */
+        .footer-minimal {
+            background: var(--footer-bg);
+            border-top: 1px solid #E5E7EB;
+            padding: 2.5rem 0 2rem;
+            margin-top: 3rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        .footer-section h4 {
+            color: var(--footer-text);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.6rem;
+        }
+        
+        .footer-links a {
+            color: var(--footer-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-links li:not(a) {
+            color: var(--footer-light);
+            font-size: 0.9rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #E5E7EB;
+            color: var(--footer-light);
+            font-size: 0.85rem;
+        }
+        
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-desktop {
+                display: none;
+            }
+            
+            .hero-section {
+                padding-top: 90px;
+            }
+            
+            .hero-section h1 {
+                font-size: 1.8rem;
+            }
+            
+            .certifications-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            
+            .certificate-image {
+                max-width: 250px;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-section h1 {
+                font-size: 1.5rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 0.9rem;
+            }
+            
+            .certification-card {
+                padding: 1.2rem;
+            }
+            
+            .certificate-image {
+                max-width: 220px;
+            }
+        }
+    </style>
 </head>
-
 <body>
-
-<header>
-    <div class="header">
-        <div class="logo">AJ <span>Soul Advisory</span></div>
-        <div class="menu-toggle" id="toggle"><i class="fas fa-bars"></i></div>
-        <nav id="nav">
-            <a href="index.html">Home</a>
-            <a href="portfolio.html">Portfolio</a>
-            <a href="certifications.html" style="color:var(--primary)">Certifications</a>
-        </nav>
-    </div>
-</header>
-
-<section class="hero">
-    <h1>Professional <span>Certifications</span></h1>
-    <p>Verified expertise in property accounting platforms</p>
-</section>
-
-<div class="container">
-    <div class="grid">
-
-        <div class="card">
-            <img src="Buildium.png" alt="">
-            <h3>Buildium Certified</h3>
-            <div class="level">Property Management Systems</div>
-            <div class="desc">Specialized certification for property management accounting and operations.</div>
+    <!-- Header with Mobile Navigation -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">AJ <span>Soul Advisory</span></a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="certifications.html" style="color: var(--primary);">Certifications</a>
+            </nav>
+            
+            <!-- Mobile Hamburger Menu -->
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <!-- Mobile Navigation Menu -->
+            <nav class="nav-mobile" id="mobileNav">
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="certifications.html" style="color: var(--primary);">Certifications</a>
+            </nav>
         </div>
+    </header>
 
-        <div class="card">
-            <img src="Quickbooks1.png" alt="">
-            <h3>QuickBooks ProAdvisor</h3>
-            <div class="level">Advanced Accounting Systems</div>
-            <div class="desc">Expert in property accounting setups and financial system optimization.</div>
+    <!-- Hero Section -->
+    <section class="hero-section section">
+        <div class="container">
+            <h1>Professional <span>Certifications</span></h1>
+            <p class="hero-subtitle">
+                Verified expertise in property accounting platforms and systems
+            </p>
         </div>
+    </section>
 
-        <div class="card">
-            <img src="Gusto.png" alt="">
-            <h3>Gusto Payroll Specialist</h3>
-            <div class="level">Payroll & Compliance Systems</div>
-            <div class="desc">Certified for property management payroll and tax compliance systems.</div>
+    <!-- Certifications Grid -->
+    <section class="section">
+        <div class="container">
+            <div class="certifications-grid">
+                <!-- Buildium Certification -->
+                <div class="certification-card">
+                    <img src="Buildium.png" alt="Buildium Certification" class="certificate-image">
+                    <h3>Buildium Certified</h3>
+                    <div class="certification-level">Property Management Systems</div>
+                    <p class="certification-description">
+                        Specialized certification for property management accounting and operations.
+                    </p>
+                </div>
+                
+                <!-- QuickBooks Certification -->
+                <div class="certification-card">
+                    <img src="Quickbooks1.png" alt="QuickBooks Certification" class="certificate-image">
+                    <h3>QuickBooks ProAdvisor</h3>
+                    <div class="certification-level">Advanced Accounting Systems</div>
+                    <p class="certification-description">
+                        Expert in property accounting setups and financial system optimization.
+                    </p>
+                </div>
+                
+                <!-- Gusto Certification -->
+                <div class="certification-card">
+                    <img src="Gusto.png" alt="Gusto Certification" class="certificate-image">
+                    <h3>Gusto Payroll Specialist</h3>
+                    <div class="certification-level">Payroll & Compliance Systems</div>
+                    <p class="certification-description">
+                        Certified for property management payroll and tax compliance systems.
+                    </p>
+                </div>
+                
+                <!-- Xero Certification -->
+                <div class="certification-card">
+                    <img src="Xero.png" alt="Xero Certification" class="certificate-image">
+                    <h3>Xero Certified Advisor</h3>
+                    <div class="certification-level">Cloud Accounting Systems</div>
+                    <p class="certification-description">
+                        Expert in cloud-based property accounting and integration systems.
+                    </p>
+                </div>
+                
+                <!-- Hubdoc Certification -->
+                <div class="certification-card">
+                    <img src="Hubdoc.png" alt="Hubdoc Certification" class="certificate-image">
+                    <h3>Hubdoc Certified</h3>
+                    <div class="certification-level">Document Automation Systems</div>
+                    <p class="certification-description">
+                        Automated document processing for property expense management.
+                    </p>
+                </div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="index.html" class="btn btn-primary">
+                    <i class="fas fa-home"></i> Back to Home
+                </a>
+                <a href="index.html#consultation" class="btn btn-outline">
+                    <i class="fas fa-calendar-check"></i> Book Consultation
+                </a>
+            </div>
         </div>
+    </section>
 
-        <div class="card">
-            <img src="Xero.png" alt="">
-            <h3>Xero Certified Advisor</h3>
-            <div class="level">Cloud Accounting Systems</div>
-            <div class="desc">Expert in cloud-based property accounting and integration systems.</div>
+    <!-- Footer with White Background -->
+    <footer class="footer-minimal">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="portfolio.html"><i class="fas fa-folder"></i> Portfolio</a></li>
+                        <li><a href="certifications.html"><i class="fas fa-certificate"></i> Certifications</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect With Me</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </li>
+                        <li><a href="mailto:contact@ajsouladvisory.com"><i class="fas fa-envelope"></i> contact@ajsouladvisory.com</a></li>
+                        <li><i class="fas fa-phone"></i> +91 991 115 5541</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Specializations</h4>
+                    <ul class="footer-links">
+                        <li>Property Accounting Systems</li>
+                        <li>Real Estate Trust Accounting</li>
+                        <li>Financial Reporting & Compliance</li>
+                        <li>Process Optimization</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © 2024 AJ Soul Advisory | Property Accounting Specialist
+            </div>
         </div>
+    </footer>
 
-        <div class="card">
-            <img src="Hubdoc.png" alt="">
-            <h3>Hubdoc Certified</h3>
-            <div class="level">Document Automation Systems</div>
-            <div class="desc">Automated document processing for property expense management.</div>
-        </div>
-
-    </div>
-</div>
-
-<footer>
-    © 2024 AJ Soul Advisory | Property Accounting Specialist
-</footer>
-
-<script>
-const toggle=document.getElementById('toggle');
-const nav=document.getElementById('nav');
-toggle.onclick=()=>nav.classList.toggle('active');
-</script>
-
+    <script>
+        // Mobile Navigation Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+            menuToggle.innerHTML = mobileNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!menuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
+                mobileNav.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+    </script>
 </body>
 </html>
