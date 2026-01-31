@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AmanJot Singh | Property Accounting Specialist</title>
+    <title>AmanJot Singh | Certified Property Accounting Specialist</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
@@ -14,6 +14,7 @@
             --primary: #0066CC;
             --primary-dark: #0052A3;
             --accent: #00A86B;
+            --gold: #FFD700;
             --dark: #0A0A0A;
             --light: #FFFFFF;
             --card-bg: #1A1A1A;
@@ -56,6 +57,32 @@
         
         .text-center {
             text-align: center;
+        }
+        
+        /* ===== CERTIFICATION BADGE ===== */
+        .certification-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05));
+            color: var(--gold);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+            border: 1px solid var(--gold);
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4); }
+            70% { box-shadow: 0 0 0 6px rgba(255, 215, 0, 0); }
+            100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
+        }
+        
+        .certification-badge i {
+            font-size: 1.1rem;
         }
         
         /* ===== MINIMAL HEADER ===== */
@@ -147,6 +174,11 @@
         
         .hero-text h1 span {
             color: var(--primary);
+        }
+        
+        .certified-title {
+            color: var(--gold);
+            font-weight: 600;
         }
         
         .tagline {
@@ -284,6 +316,31 @@
             font-weight: 600;
         }
         
+        /* ===== CERTIFICATION HIGHLIGHT ===== */
+        .certification-highlight {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            padding: 1rem;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 8px;
+            margin-top: 1.5rem;
+        }
+        
+        .certification-icon {
+            color: var(--gold);
+            font-size: 1.5rem;
+        }
+        
+        .certification-text {
+            flex: 1;
+        }
+        
+        .certification-text strong {
+            color: var(--gold);
+        }
+        
         /* ===== PORTFOLIO CONNECTIONS ===== */
         .portfolio-grid {
             display: grid;
@@ -387,6 +444,12 @@
             color: var(--primary);
         }
         
+        .btn-gold {
+            background: linear-gradient(135deg, #FFD700, #FFAA00);
+            color: #000;
+            border: none;
+        }
+        
         .btn-block {
             width: 100%;
         }
@@ -452,6 +515,22 @@
             color: var(--primary);
         }
         
+        .certification-footer {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 1.5rem;
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
+            border: 1px solid rgba(255, 215, 0, 0.3);
+            border-radius: 8px;
+            margin-top: 1rem;
+        }
+        
+        .certification-footer h4 {
+            color: var(--gold);
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+        
         .copyright {
             text-align: center;
             padding-top: 1.5rem;
@@ -503,6 +582,12 @@
                 width: 150px;
                 height: 150px;
             }
+            
+            .certification-highlight {
+                flex-direction: column;
+                text-align: center;
+                gap: 0.5rem;
+            }
         }
         
         @media (max-width: 480px) {
@@ -544,15 +629,29 @@
                     <img src="profile.png" alt="AmanJot Singh" class="profile-img">
                 </div>
                 <div class="hero-text">
-                    <h1>Property Accounting <span>Specialist</span></h1>
+                    <div class="certification-badge">
+                        <i class="fas fa-award"></i>
+                        Certified Property Accounting Specialist
+                    </div>
+                    
+                    <h1><span class="certified-title">Certified</span> Property Accounting <span>Specialist</span></h1>
                     <p class="tagline">Transforming property finances into streamlined systems</p>
-                    <span class="specialization-tag">Specialized in Real Estate & Property Accounting</span>
-                    <p>With over 5 years of expertise in property management accounting, I specialize in optimizing financial systems for real estate portfolios, ensuring compliance, accuracy, and efficiency.</p>
+                    <span class="specialization-tag">Buildium Certified • Real Estate Accounting Expert</span>
+                    <p>With over 5 years of expertise in property management accounting and official Buildium certification, I specialize in optimizing financial systems for real estate portfolios, ensuring compliance, accuracy, and efficiency.</p>
+                    
+                    <div class="certification-highlight">
+                        <div class="certification-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <div class="certification-text">
+                            <strong>Officially Certified:</strong> Buildium Property Management Accounting Specialist with demonstrated expertise in trust accounting, CAM reconciliations, and financial reporting for real estate portfolios.
+                        </div>
+                    </div>
                     
                     <div class="hero-highlights">
                         <div class="highlight-item">
                             <i class="fas fa-check-circle highlight-icon"></i>
-                            <span>AppFolio & Buildium Property Accounting Expert</span>
+                            <span>Buildium Certified Property Accounting Expert</span>
                         </div>
                         <div class="highlight-item">
                             <i class="fas fa-chart-line highlight-icon"></i>
@@ -588,8 +687,8 @@
                     <p>Average Efficiency Gain</p>
                 </div>
                 <div class="achievement-card">
-                    <div class="achievement-value">100%</div>
-                    <p>Compliance Accuracy</p>
+                    <div class="achievement-value">Certified</div>
+                    <p>Buildium Accounting Expert</p>
                 </div>
             </div>
         </div>
@@ -604,14 +703,14 @@
             <div class="skills-grid">
                 <div class="skill-category">
                     <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-building"></i>
+                        <div class="category-icon" style="background: var(--gold);">
+                            <i class="fas fa-award"></i>
                         </div>
-                        <h3>Property Accounting Platforms</h3>
+                        <h3>Certified Platform Expertise</h3>
                     </div>
                     <ul class="skills-list">
+                        <li>Buildium Certified Specialist <span class="skill-level">Certified</span></li>
                         <li>AppFolio Property Accounting <span class="skill-level">Expert</span></li>
-                        <li>Buildium Certified <span class="skill-level">Expert</span></li>
                         <li>QuickBooks for Real Estate <span class="skill-level">Expert</span></li>
                         <li>Yardi Voyager <span class="skill-level">Advanced</span></li>
                         <li>MRI Software <span class="skill-level">Advanced</span></li>
@@ -627,7 +726,7 @@
                     </div>
                     <ul class="skills-list">
                         <li>Real Estate Trust Accounting <span class="skill-level">Expert</span></li>
-                        <li>CAM Reconciliation <span class="skill-level">Expert</span></li>
+                        <li>CAM Reconciliation <span class="skill-level">Certified</span></li>
                         <li>Property Financial Reporting <span class="skill-level">Expert</span></li>
                         <li>1099 Compliance for Properties <span class="skill-level">Expert</span></li>
                         <li>Budgeting & Forecasting <span class="skill-level">Advanced</span></li>
@@ -655,8 +754,8 @@
                 </div>
                 
                 <div class="portfolio-card">
-                    <h3>Property Financial System Design</h3>
-                    <p>Designed automated financial systems for real estate investors, reducing manual work by 60%.</p>
+                    <h3>Buildium System Implementation</h3>
+                    <p>Certified Buildium implementation for property management companies, streamlining accounting processes.</p>
                 </div>
                 
                 <div class="portfolio-card">
@@ -669,8 +768,8 @@
                 <a href="portfolio.html" class="btn btn-primary">
                     <i class="fas fa-folder-open"></i> View Full Portfolio
                 </a>
-                <a href="certifications.html" class="btn btn-outline">
-                    <i class="fas fa-certificate"></i> See Certifications
+                <a href="certifications.html" class="btn btn-gold">
+                    <i class="fas fa-certificate"></i> See Certification
                 </a>
             </div>
         </div>
@@ -703,7 +802,7 @@
                     
                     <div class="form-group">
                         <label for="currentSoftware">Current Accounting Software</label>
-                        <input type="text" id="currentSoftware" class="form-control" placeholder="e.g., QuickBooks, AppFolio, etc.">
+                        <input type="text" id="currentSoftware" class="form-control" placeholder="e.g., QuickBooks, AppFolio, Buildium, etc.">
                     </div>
                     
                     <div class="form-group">
@@ -749,7 +848,7 @@
                 <div class="footer-section">
                     <h4>Property Accounting Specializations</h4>
                     <ul class="footer-links">
-                        <li>AppFolio & Buildium Systems</li>
+                        <li><strong>Buildium Certified Specialist</strong></li>
                         <li>Real Estate Trust Accounting</li>
                         <li>CAM Reconciliations</li>
                         <li>Property Financial Reporting</li>
@@ -758,8 +857,13 @@
                 </div>
             </div>
             
+            <div class="certification-footer">
+                <h4><i class="fas fa-award"></i> Official Certification</h4>
+                <p>Certified Property Accounting Specialist with demonstrated expertise in Buildium, AppFolio, and real estate financial management systems.</p>
+            </div>
+            
             <div class="copyright">
-                © 2024 AmanJot Singh | Property Accounting Specialist
+                © 2024 AmanJot Singh | Certified Property Accounting Specialist
             </div>
         </div>
     </footer>
