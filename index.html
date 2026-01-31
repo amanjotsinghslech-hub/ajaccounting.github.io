@@ -1,740 +1,971 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-<title>AmanJot Singh | Accounting & Financial Systems Specialist</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-/* RESET & BASE */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
-}
-html {
-  scroll-behavior: smooth;
-}
-body {
-  background: #0a0a0a;
-  color: #fff;
-  width: 100%;
-  overflow-x: hidden;
-  line-height: 1.6;
-}
-
-/* NAVBAR - FIXED FOR ALL DEVICES */
-header {
-  position: fixed;
-  top: 0;
-  width: 100%;
-  background: rgba(5, 5, 5, 0.98);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid #222;
-  z-index: 1000;
-  padding: 0;
-}
-.nav-bar {
-  display: flex;
-  justify-content: center;
-  gap: clamp(1.5rem, 4vw, 3.5rem);
-  padding: 1rem;
-  flex-wrap: wrap;
-}
-.nav-bar a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 1px;
-  font-size: clamp(0.8rem, 2vw, 0.95rem);
-  padding: 0.5rem 0;
-  white-space: nowrap;
-}
-.nav-bar a:hover {
-  color: #c5a880;
-  border-bottom: 2px solid #c5a880;
-}
-
-/* HERO SECTION - IMPROVED SPACING */
-.hero {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: clamp(6rem, 10vw, 8rem) clamp(1.5rem, 5vw, 8%) 3rem;
-  position: relative;
-  width: 100%;
-}
-.hero-content {
-  max-width: 1200px;
-  width: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.hero img {
-  width: clamp(160px, 25vw, 240px);
-  height: clamp(160px, 25vw, 240px);
-  border-radius: 50%;
-  border: 3px solid #c5a880;
-  margin-bottom: 2.5rem;
-  object-fit: cover;
-}
-.hero h1 {
-  font-size: clamp(2.2rem, 5vw, 3.2rem);
-  font-weight: 900;
-  letter-spacing: 1px;
-  line-height: 1.2;
-  margin-bottom: 1rem;
-  padding: 0 clamp(1rem, 3vw, 4rem);
-}
-.hero h1 span {
-  color: #c5a880;
-  display: inline-block;
-}
-.hero-subtitle {
-  font-size: clamp(1.1rem, 2.5vw, 1.3rem);
-  margin-bottom: 2rem;
-  color: #c5a880;
-  font-weight: 600;
-}
-
-/* IMPROVED PARAGRAPH SPACING */
-.intro-container {
-  max-width: 1000px;
-  width: 100%;
-  margin: 0 auto;
-  padding: 0 1rem;
-}
-.intro-paragraph {
-  font-size: clamp(1rem, 1.8vw, 1.1rem);
-  opacity: 0.9;
-  line-height: 1.7;
-  margin-bottom: 1.8rem;
-  text-align: left;
-  padding: 0 0.5rem;
-}
-.intro-paragraph:last-child {
-  margin-bottom: 0;
-}
-.intro-highlight {
-  color: #c5a880;
-  font-weight: 600;
-}
-
-/* BRAND RIBBON - UPDATED */
-#brand-ribbon {
-  width: 100%;
-  overflow: hidden;
-  background: #050505;
-  border-top: 1px solid #222;
-  border-bottom: 1px solid #222;
-  padding: 0.8rem 0;
-}
-.ribbon-container {
-  display: flex;
-  width: max-content;
-  min-width: 100%;
-}
-.ribbon {
-  display: flex;
-  gap: clamp(3rem, 6vw, 6rem);
-  animation: scroll 40s linear infinite;
-  will-change: transform;
-}
-.ribbon span {
-  white-space: nowrap;
-  padding: 0.8rem 0;
-  font-weight: 700;
-  letter-spacing: 2px;
-  font-size: clamp(0.85rem, 1.5vw, 1.05rem);
-  color: #aaa;
-}
-@keyframes scroll {
-  0% { transform: translateX(0); }
-  100% { transform: translateX(-50%); }
-}
-
-/* SECTIONS WITH BETTER SPACING */
-.section {
-  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 8%);
-  width: 100%;
-  max-width: 1400px;
-  margin: 0 auto;
-}
-.section-header {
-  text-align: center;
-  margin-bottom: clamp(3rem, 5vw, 4.5rem);
-}
-.section h2 {
-  font-size: clamp(1.9rem, 4vw, 2.8rem);
-  letter-spacing: 1px;
-  color: #c5a880;
-  margin-bottom: 1rem;
-  line-height: 1.2;
-}
-.section-subtitle {
-  font-size: clamp(1rem, 1.8vw, 1.2rem);
-  opacity: 0.8;
-  max-width: 800px;
-  margin: 0 auto;
-  line-height: 1.6;
-}
-
-/* IMPROVED WORK GRID */
-.work-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
-  gap: clamp(2rem, 3vw, 3rem);
-  width: 100%;
-}
-.work-card {
-  background: #0f0f0f;
-  padding: clamp(2rem, 3vw, 2.8rem);
-  border-radius: 18px;
-  border: 1px solid #222;
-  transition: all 0.4s ease;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
-}
-.work-card:hover {
-  transform: translateY(-10px);
-  border-color: #c5a880;
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.3);
-}
-.work-card h3 {
-  color: #c5a880;
-  margin-bottom: 1rem;
-  font-size: clamp(1.3rem, 2vw, 1.5rem);
-  line-height: 1.3;
-}
-.work-tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.7rem;
-  margin-bottom: 1.5rem;
-}
-.work-tag {
-  background: rgba(197, 168, 128, 0.1);
-  color: #c5a880;
-  padding: 0.4rem 1.2rem;
-  border-radius: 20px;
-  font-size: 0.85rem;
-  font-weight: 600;
-  border: 1px solid rgba(197, 168, 128, 0.3);
-}
-.work-card p {
-  font-size: 1rem;
-  line-height: 1.7;
-  opacity: 0.9;
-  margin-bottom: 1.5rem;
-  flex-grow: 1;
-}
-.work-result {
-  margin-top: 1.5rem;
-  padding-top: 1.5rem;
-  border-top: 1px solid #333;
-}
-.work-result strong {
-  color: #c5a880;
-  display: block;
-  margin-bottom: 0.5rem;
-  font-size: 1rem;
-}
-.work-result-content {
-  font-style: italic;
-  font-size: 0.95rem;
-  line-height: 1.6;
-  opacity: 0.9;
-}
-
-/* STRUCTURED CORE EXPERTISE */
-.expertise-container {
-  max-width: 1200px;
-  margin: 0 auto;
-}
-.expertise-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: clamp(2rem, 3vw, 2.5rem);
-  margin-top: 3rem;
-}
-.expertise-card {
-  background: #0f0f0f;
-  border: 1px solid #222;
-  border-radius: 18px;
-  padding: clamp(2rem, 3vw, 2.5rem);
-  transition: all 0.4s ease;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  height: 100%;
-}
-.expertise-card:hover {
-  transform: translateY(-8px);
-  border-color: #c5a880;
-}
-.expertise-icon {
-  font-size: clamp(2.5rem, 4vw, 3rem);
-  color: #c5a880;
-  margin-bottom: 1.5rem;
-  height: 70px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-.expertise-card h4 {
-  color: #c5a880;
-  font-size: clamp(1.2rem, 2vw, 1.4rem);
-  margin-bottom: 1rem;
-  line-height: 1.3;
-  min-height: 3.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  width: 100%;
-}
-.expertise-card p {
-  font-size: 1rem;
-  line-height: 1.6;
-  opacity: 0.9;
-  margin: 0;
-}
-
-/* TESTIMONIALS WITH BETTER LAYOUT */
-.testimonial-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: clamp(2rem, 3vw, 2.5rem);
-  width: 100%;
-}
-.testimonial-card {
-  background: #0f0f0f;
-  border: 1px solid #222;
-  border-radius: 18px;
-  padding: clamp(2rem, 3vw, 2.5rem);
-  position: relative;
-}
-.testimonial-card:before {
-  content: '"';
-  font-size: 5rem;
-  color: #c5a880;
-  opacity: 0.15;
-  position: absolute;
-  top: 0.5rem;
-  left: 1.5rem;
-  font-family: serif;
-  line-height: 1;
-}
-.testimonial-text {
-  font-style: italic;
-  line-height: 1.7;
-  margin-bottom: 1.5rem;
-  position: relative;
-  z-index: 1;
-  font-size: 1.05rem;
-  opacity: 0.9;
-}
-.testimonial-author {
-  color: #c5a880;
-  font-weight: 600;
-  border-top: 1px solid #333;
-  padding-top: 1.2rem;
-  font-size: 1rem;
-}
-
-/* BUTTONS - UPDATED */
-.lux-btn {
-  display: block;
-  margin: 3rem auto 0 auto;
-  padding: clamp(1.1rem, 2.5vw, 1.3rem) clamp(2.5rem, 5vw, 3.5rem);
-  border-radius: 40px;
-  border: 2px solid #c5a880;
-  color: #c5a880;
-  text-decoration: none;
-  font-weight: 700;
-  letter-spacing: 1px;
-  transition: all 0.3s ease;
-  font-size: clamp(1.1rem, 2vw, 1.2rem);
-  text-align: center;
-  max-width: 350px;
-  width: 100%;
-}
-.lux-btn:hover {
-  background: #c5a880;
-  color: #000;
-  transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(197, 168, 128, 0.25);
-}
-
-/* FOOTER */
-.lux-footer {
-  background: #f6f6f6;
-  color: #111;
-  padding: clamp(3.5rem, 7vw, 6.5rem) clamp(1.5rem, 5vw, 8%) 3rem;
-  width: 100%;
-}
-.footer-grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-  gap: clamp(2.5rem, 4vw, 4rem);
-  width: 100%;
-}
-.footer-box h4 {
-  font-weight: 700;
-  letter-spacing: 1px;
-  margin-bottom: 1.5rem;
-  font-size: 1.1rem;
-  color: #000;
-}
-.footer-box a, .footer-box p {
-  display: block;
-  margin: 0.7rem 0;
-  color: #111;
-  text-decoration: none;
-  font-size: 0.98rem;
-  line-height: 1.5;
-}
-.footer-box a:hover {
-  color: #c5a880;
-  text-decoration: none;
-}
-.footer-bottom {
-  text-align: center;
-  margin-top: 4rem;
-  font-size: 0.9rem;
-  color: #666;
-  border-top: 1px solid #ddd;
-  padding-top: 2rem;
-}
-
-/* MOBILE RESPONSIVENESS */
-@media (max-width: 768px) {
-  .hero {
-    padding-top: 6rem;
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-  
-  .nav-bar {
-    gap: 1rem;
-    padding: 0.8rem;
-  }
-  
-  .section {
-    padding-left: 1.5rem;
-    padding-right: 1.5rem;
-  }
-  
-  .work-grid,
-  .expertise-grid,
-  .testimonial-grid {
-    grid-template-columns: 1fr;
-  }
-  
-  .intro-paragraph {
-    padding: 0;
-  }
-  
-  .work-card,
-  .expertise-card,
-  .testimonial-card {
-    padding: 2rem;
-  }
-  
-  .footer-grid {
-    gap: 2.5rem;
-  }
-  
-  .lux-btn {
-    margin: 2.5rem auto 0 auto;
-    padding: 1rem 2.2rem;
-    font-size: 1.05rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero h1 {
-    font-size: 1.9rem;
-    padding: 0 1rem;
-  }
-  
-  .hero-subtitle {
-    font-size: 1.1rem;
-  }
-  
-  .intro-paragraph {
-    font-size: 1rem;
-  }
-  
-  .nav-bar {
-    gap: 0.7rem;
-    padding: 0.7rem 0.5rem;
-  }
-  
-  .nav-bar a {
-    font-size: 0.82rem;
-  }
-  
-  .section h2 {
-    font-size: 1.8rem;
-  }
-  
-  .work-card,
-  .expertise-card,
-  .testimonial-card {
-    padding: 1.8rem;
-  }
-  
-  .work-tag {
-    font-size: 0.8rem;
-    padding: 0.3rem 1rem;
-  }
-  
-  .lux-btn {
-    padding: 0.9rem 2rem;
-    font-size: 1rem;
-    max-width: 300px;
-  }
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AmanJot Singh Slach | Certified Property Accounting Specialist</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #D4AF37; /* Luxury Gold - Matching certificates page */
+            --primary-dark: #B8941F;
+            --accent: #2F81F7;
+            --dark: #0A0A0A;
+            --light: #FFFFFF;
+            --card-bg: #1A1A1A;
+            --text: #F0F0F0;
+            --text-light: #AAAAAA;
+            --border: #333333;
+            --footer-bg: #FFFFFF;
+            --footer-text: #333333;
+            --footer-light: #666666;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--dark);
+            color: var(--text);
+            line-height: 1.6;
+            padding-top: 70px;
+        }
+        
+        /* ===== UTILITY CLASSES ===== */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        .section {
+            padding: 3rem 0;
+        }
+        
+        .section-sm {
+            padding: 2rem 0;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* ===== HEADER WITH HAMBURGER MENU ===== */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            background: rgba(10, 10, 10, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border);
+            z-index: 1000;
+            height: 70px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .header-content {
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: var(--text);
+            text-decoration: none;
+        }
+        
+        .logo span {
+            color: var(--primary);
+        }
+        
+        /* Desktop Navigation */
+        .nav-desktop {
+            display: flex;
+            gap: 2rem;
+        }
+        
+        .nav-desktop a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.9rem;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-desktop a:hover {
+            color: var(--primary);
+        }
+        
+        /* Mobile Navigation */
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text);
+            font-size: 1.4rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .nav-mobile {
+            display: none;
+            position: absolute;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: var(--card-bg);
+            border-bottom: 1px solid var(--border);
+            padding: 1rem;
+            flex-direction: column;
+            gap: 1rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .nav-mobile.active {
+            display: flex;
+        }
+        
+        .nav-mobile a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 0;
+            border-bottom: 1px solid var(--border);
+        }
+        
+        .nav-mobile a:hover {
+            color: var(--primary);
+        }
+        
+        /* ===== CERTIFICATION BADGES ===== */
+        .certification-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+            justify-content: center;
+        }
+        
+        .certification-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+            color: var(--primary);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--primary);
+        }
+        
+        .gold-badge {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+            color: var(--primary);
+            border: 1px solid var(--primary);
+        }
+        
+        /* ===== HERO SECTION ===== */
+        .hero-minimal {
+            padding-top: 30px;
+            padding-bottom: 3rem;
+            background: linear-gradient(135deg, #0A0A0A 0%, #050505 100%);
+        }
+        
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        @media (min-width: 768px) {
+            .hero-content {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .profile-container {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+        
+        .profile-img {
+            width: 220px;
+            height: 220px;
+            border-radius: 50%;
+            border: 3px solid var(--primary);
+            object-fit: cover;
+            display: block;
+        }
+        
+        .hero-text h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            line-height: 1.2;
+        }
+        
+        .hero-text h1 span {
+            color: var(--primary);
+        }
+        
+        .hero-text h2 {
+            font-size: 1.5rem;
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .tagline {
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 600;
+            margin-bottom: 1rem;
+        }
+        
+        .hero-description {
+            color: var(--text-light);
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        /* ===== ACHIEVEMENTS SECTION ===== */
+        .achievements-section {
+            background: var(--card-bg);
+        }
+        
+        .achievements-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        @media (max-width: 768px) {
+            .achievements-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .achievements-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        .achievement-card {
+            text-align: center;
+            padding: 1.5rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+        
+        .achievement-card:hover {
+            transform: translateY(-3px);
+            border: 1px solid var(--primary);
+        }
+        
+        .achievement-value {
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        /* ===== TECHNICAL EXPERTISE ===== */
+        .skills-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .skills-grid {
+                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            }
+        }
+        
+        .skill-category {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .skill-category:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+        
+        .category-header {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1.2rem;
+        }
+        
+        .category-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--primary);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.3rem;
+        }
+        
+        .skills-list {
+            list-style: none;
+        }
+        
+        .skills-list li {
+            padding: 0.6rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .skills-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .skill-level {
+            color: var(--accent);
+            font-size: 0.85rem;
+            font-weight: 600;
+        }
+        
+        /* ===== PORTFOLIO SECTION ===== */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+        
+        .portfolio-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1.5rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .portfolio-card:hover {
+            transform: translateY(-3px);
+            border-color: var(--primary);
+        }
+        
+        .portfolio-card h3 {
+            color: var(--primary);
+            margin-bottom: 0.8rem;
+            font-size: 1.1rem;
+        }
+        
+        .portfolio-card p {
+            font-size: 0.95rem;
+            color: var(--text-light);
+        }
+        
+        /* ===== CONSULTATION FORM ===== */
+        .consultation-section {
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(47, 129, 247, 0.1));
+        }
+        
+        .form-container {
+            max-width: 500px;
+            margin: 2rem auto 0;
+        }
+        
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+        
+        .form-control {
+            width: 100%;
+            padding: 0.8rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid var(--border);
+            border-radius: 5px;
+            color: var(--text);
+            font-family: 'Inter', sans-serif;
+            font-size: 1rem;
+            transition: border-color 0.3s ease;
+        }
+        
+        .form-control:focus {
+            outline: none;
+            border-color: var(--primary);
+        }
+        
+        /* ===== BUTTONS ===== */
+        .btn {
+            padding: 0.9rem 1.8rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            border: none;
+            cursor: pointer;
+            font-size: 0.95rem;
+        }
+        
+        .btn-primary {
+            background: var(--primary);
+            color: var(--dark);
+        }
+        
+        .btn-outline {
+            background: transparent;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+        }
+        
+        .btn-gold {
+            background: linear-gradient(135deg, var(--primary), #FFAA00);
+            color: var(--dark);
+            border: none;
+        }
+        
+        .btn-block {
+            width: 100%;
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+            margin-top: 2rem;
+            flex-wrap: wrap;
+        }
+        
+        /* ===== FOOTER (WHITE BACKGROUND) ===== */
+        .footer-minimal {
+            background: var(--footer-bg);
+            border-top: 1px solid #E5E7EB;
+            padding: 3rem 0 2rem;
+        }
+        
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-content {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
+            }
+        }
+        
+        .footer-section h4 {
+            color: var(--footer-text);
+            margin-bottom: 1rem;
+            font-size: 1rem;
+            font-weight: 600;
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.6rem;
+        }
+        
+        .footer-links a {
+            color: var(--footer-light);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            font-size: 0.9rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+        
+        .footer-links li:not(a) {
+            color: var(--footer-light);
+            font-size: 0.9rem;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 1.5rem;
+            border-top: 1px solid #E5E7EB;
+            color: var(--footer-light);
+            font-size: 0.85rem;
+        }
+        
+        /* ===== MOBILE RESPONSIVE ===== */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 60px;
+            }
+            
+            header {
+                height: 60px;
+            }
+            
+            .menu-toggle {
+                display: block;
+            }
+            
+            .nav-desktop {
+                display: none;
+            }
+            
+            .nav-mobile {
+                top: 60px;
+            }
+            
+            .hero-minimal {
+                padding-top: 20px;
+            }
+            
+            .hero-text h1 {
+                font-size: 1.8rem;
+            }
+            
+            .hero-text h2 {
+                font-size: 1.3rem;
+            }
+            
+            .section {
+                padding: 2rem 0;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+            }
+            
+            .btn {
+                width: 100%;
+                text-align: center;
+            }
+            
+            .achievement-card {
+                padding: 1.2rem 0.8rem;
+            }
+            
+            .achievement-value {
+                font-size: 1.6rem;
+            }
+            
+            .skill-category {
+                padding: 1.2rem;
+            }
+            
+            .portfolio-card {
+                padding: 1.2rem;
+            }
+            
+            .profile-img {
+                width: 180px;
+                height: 180px;
+            }
+            
+            .certification-badges {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .certification-badge {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .hero-content {
+                gap: 2rem;
+            }
+            
+            .portfolio-grid {
+                gap: 1rem;
+            }
+        }
+        
+        /* Smooth scrolling for anchor links */
+        html {
+            scroll-padding-top: 70px;
+        }
+        
+        @media (max-width: 768px) {
+            html {
+                scroll-padding-top: 60px;
+            }
+        }
+    </style>
 </head>
-
 <body>
+    <!-- Header with Mobile Hamburger Menu -->
+    <header>
+        <div class="header-content">
+            <a href="index.html" class="logo">AmanJot Singh <span>Slach</span></a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="nav-desktop">
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="certifications.html">Certifications</a>
+                <a href="#consultation">Consultation</a>
+            </nav>
+            
+            <!-- Mobile Hamburger Menu -->
+            <button class="menu-toggle" id="menuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <!-- Mobile Navigation Menu -->
+            <nav class="nav-mobile" id="mobileNav">
+                <a href="index.html">Home</a>
+                <a href="portfolio.html">Portfolio</a>
+                <a href="certifications.html">Certifications</a>
+                <a href="#consultation">Consultation</a>
+            </nav>
+        </div>
+    </header>
 
-<header>
-<nav class="nav-bar">
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="certifications.html">Certifications</a>
-<a href="#contact">Connect</a>
-</nav>
-</header>
+    <!-- Hero Section -->
+    <section class="hero-minimal section">
+        <div class="container">
+            <div class="hero-content">
+                <div class="profile-container">
+                    <img src="profile.png" alt="AmanJot Singh Slach" class="profile-img">
+                </div>
+                <div class="hero-text">
+                    <h1>AmanJot Singh <span>Slach</span></h1>
+                    <h2>Certified Property Accounting Specialist</h2>
+                    
+                    <div class="certification-badges">
+                        <span class="certification-badge gold-badge">
+                            <i class="fas fa-award"></i> AppFolio Property Manager Specialist
+                        </span>
+                        <span class="certification-badge">
+                            <i class="fas fa-award"></i> Buildium Property Management Certificate
+                        </span>
+                    </div>
+                    
+                    <p class="hero-description">
+                        As a certified property accounting specialist with expertise in AppFolio and Quickbooks, 
+                        I provide expert financial management solutions for real estate portfolios. With over 5 years 
+                        of specialized experience, I optimize accounting systems to ensure accuracy, compliance, and 
+                        operational efficiency for property management firms.
+                    </p>
+                    
+                    <div class="certification-badges">
+                        <span class="certification-badge">
+                            <i class="fas fa-certificate"></i> QuickBooks ProAdvisor
+                        </span>
+                        <span class="certification-badge">
+                            <i class="fas fa-certificate"></i> Gusto Payroll Specialist
+                        </span>
+                        <span class="certification-badge">
+                            <i class="fas fa-certificate"></i> Migration Specialist
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<!-- HERO -->
-<section class="hero">
-<div class="hero-content">
-<img src="profile.png" alt="AmanJot Singh">
-<h1>Structured Financial Systems for <span>Confident Business Decisions</span></h1>
-<p class="hero-subtitle">Professional Accounting & Financial Systems Specialist</p>
+    <!-- By The Numbers -->
+    <section class="achievements-section section-sm">
+        <div class="container">
+            <h2 class="text-center">Certified Results</h2>
+            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">Professional certifications translate to measurable performance</p>
+            
+            <div class="achievements-grid">
+                <div class="achievement-card">
+                    <div class="achievement-value">AppFolio & Buildium</div>
+                    <p>Dual Platform Certification</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-value">5+</div>
+                    <p>Years Specialized Experience</p>
+                </div>
+                <div class="achievement-card">
+                    <div class="achievement-value">40%</div>
+                    <p>Process Efficiency Improvement</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<div class="intro-container">
-<p class="intro-paragraph">
-I'm a <span class="intro-highlight">Professional Accounting & Financial Systems Specialist</span> with over 5+ years of experience supporting businesses through structured, GAAP-aligned accounting operations. My background covers full-cycle accounting, payroll administration, financial statement reconstruction, 1099 preparation and accounting system implementation across real estate, e-commerce, professional services, and retail environments.
-</p>
+    <!-- Technical Expertise -->
+    <section class="section">
+        <div class="container">
+            <h2 class="text-center">Certified Technical Expertise</h2>
+            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">Dual-certified platform mastery with comprehensive skills</p>
+            
+            <div class="skills-grid">
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-certificate"></i>
+                        </div>
+                        <h3>Certified Platforms</h3>
+                    </div>
+                    <ul class="skills-list">
+                        <li>AppFolio Property Manager Specialist <span class="skill-level">Expert</span></li>
+                        <li>Buildium Property Management Certificate <span class="skill-level">Expert</span></li>
+                        <li>QuickBooks ProAdvisor <span class="skill-level">Expert</span></li>
+                        <li>Gusto Payroll Specialist <span class="skill-level">Advanced</span></li>
+                        <li>Migration Specialist <span class="skill-level">Expert</span></li>
+                    </ul>
+                </div>
+                
+                <div class="skill-category">
+                    <div class="category-header">
+                        <div class="category-icon">
+                            <i class="fas fa-sitemap"></i>
+                        </div>
+                        <h3>Core Competencies</h3>
+                    </div>
+                    <ul class="skills-list">
+                        <li>Property Trust Accounting <span class="skill-level">Expert</span></li>
+                        <li>CAM Reconciliation Systems <span class="skill-level">Expert</span></li>
+                        <li>Financial Reporting Automation <span class="skill-level">Expert</span></li>
+                        <li>1099 & Tax Compliance <span class="skill-level">Expert</span></li>
+                        <li>Budget Forecasting & Analysis <span class="skill-level">Advanced</span></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
 
-<p class="intro-paragraph">
-I specialize in building organized, reliable financial systems that improve accuracy, consistency, and compliance. My work includes real estate trust accounting, multi-entity accounting structures, SaaS and service-based revenue tracking, inventory costing support, and compliance-driven reporting.
-</p>
+    <!-- Portfolio Section -->
+    <section class="section" style="background: var(--card-bg);">
+        <div class="container">
+            <h2 class="text-center">Portfolio</h2>
+            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">How professional certifications deliver client value</p>
+            
+            <div class="portfolio-grid">
+                <div class="portfolio-card">
+                    <h3>AppFolio Financial Management</h3>
+                    <p>Specialized AppFolio configuration for multi-property portfolios with automated reporting and compliance.</p>
+                </div>
+                
+                <div class="portfolio-card">
+                    <h3>Buildium System Implementation</h3>
+                    <p>Certified Buildium setup and optimization for property management companies, streamlining all accounting processes.</p>
+                </div>
+                
+                <div class="portfolio-card">
+                    <h3>Trust Accounting Systems</h3>
+                    <p>Certified implementation of compliant trust accounting systems across all client portfolios.</p>
+                </div>
+                
+                <div class="portfolio-card">
+                    <h3>Migration Specialist</h3>
+                    <p>Expert migration services between property management software platforms ensuring seamless data transfer.</p>
+                </div>
+            </div>
+            
+            <div class="cta-buttons">
+                <a href="certifications.html" class="btn btn-gold">
+                    <i class="fas fa-certificate"></i> View All Certifications
+                </a>
+                <a href="portfolio.html" class="btn btn-primary">
+                    <i class="fas fa-folder-open"></i> See Full Portfolio
+                </a>
+            </div>
+        </div>
+    </section>
 
-<p class="intro-paragraph">
-I focus on maintaining clean general ledgers, standardized workflows, and well-documented financial records that support confident business operations. Whether working with growing businesses or property portfolios, my goal is to bring clarity, structure, and control to financial processes—ensuring records are accurate, systems are scalable, and reporting is dependable.
-</p>
-</div>
-</div>
-</section>
+    <!-- Consultation Form -->
+    <section id="consultation" class="consultation-section section">
+        <div class="container">
+            <h2 class="text-center">Certified Consultation</h2>
+            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">
+                Schedule a consultation with a certified property accounting specialist
+            </p>
+            
+            <div class="form-container">
+                <form id="consultationForm">
+                    <div class="form-group">
+                        <label for="name">Full Name</label>
+                        <input type="text" id="name" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email">Email Address</label>
+                        <input type="email" id="email" class="form-control" required>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="propertyCount">Number of Properties</label>
+                        <input type="text" id="propertyCount" class="form-control" placeholder="e.g., 10-20 properties">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="currentSoftware">Current Accounting Software</label>
+                        <input type="text" id="currentSoftware" class="form-control" placeholder="e.g., QuickBooks, AppFolio, Buildium, etc.">
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="message">What challenges are you facing?</label>
+                        <textarea id="message" class="form-control" rows="3" placeholder="Briefly describe your property accounting needs..."></textarea>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-paper-plane"></i> Request Certified Consultation
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
 
-<!-- BRAND RIBBON - UPDATED WITH NEW WORDS -->
-<section id="brand-ribbon">
-<div class="ribbon-container">
-<div class="ribbon">
-<span>PROPERTY MANAGEMENT SOFTWARE SPECIALIST • FINANCIAL OPERATIONS • APPFOLIO & BUILDIUM PROPERTY MANAGEMENT • MIGRATION • REAL ESTATE ACCOUNTING • QUICKBOOKS PRO ADVISOR • XERO • PAYROLL SOFTWARE • RECONCILIATIONS •</span>
-<span>PROPERTY MANAGEMENT SOFTWARE SPECIALIST • FINANCIAL OPERATIONS • APPFOLIO & BUILDIUM PROPERTY MANAGEMENT • MIGRATION • REAL ESTATE ACCOUNTING • QUICKBOOKS PRO ADVISOR • XERO • PAYROLL SOFTWARE • RECONCILIATIONS •</span>
-</div>
-</div>
-</section>
+    <!-- Footer (White Background) -->
+    <footer class="footer-minimal">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Quick Links</h4>
+                    <ul class="footer-links">
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="portfolio.html"><i class="fas fa-folder"></i> Portfolio</a></li>
+                        <li><a href="certifications.html"><i class="fas fa-certificate"></i> Certifications</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Connect With Me</h4>
+                    <ul class="footer-links">
+                        <li>
+                            <a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank">
+                                <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                        </li>
+                        <li><a href="mailto:Slachamanjotsingh@gmail.com"><i class="fas fa-envelope"></i> Slachamanjotsingh@gmail.com</a></li>
+                        <li><i class="fas fa-phone"></i> +91 991 115 5541</li>
+                    </ul>
+                </div>
+                
+                <div class="footer-section">
+                    <h4>Certifications & Specializations</h4>
+                    <ul class="footer-links">
+                        <li><strong>AppFolio Property Manager Specialist</strong></li>
+                        <li><strong>Buildium Property Management Certificate</strong></li>
+                        <li>Migration Specialist</li>
+                        <li>Property Financial Systems</li>
+                        <li>Financial Reporting & Analysis</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                © 2026 AmanJot Singh Slach | Certified Property Accounting Specialist
+            </div>
+        </div>
+    </footer>
 
-<!-- SELECTED WORK -->
-<section class="section">
-<div class="section-header">
-<h2>Selected Work & Results</h2>
-<p class="section-subtitle">Delivering measurable improvements in financial operations and system efficiency</p>
-</div>
-
-<div class="work-grid">
-<div class="work-card">
-<h3>Property Management Accounting – AppFolio</h3>
-<div class="work-tags">
-<span class="work-tag">AppFolio</span>
-<span class="work-tag">Trust Accounting</span>
-<span class="work-tag">Utility Payments</span>
-<span class="work-tag">Reconciliations</span>
-</div>
-<p>
-Managed comprehensive property management accounting including owner/tenant ledgers, bank reconciliations, monthly close processes, structured financial reporting, and utility invoice payment systems.
-</p>
-<div class="work-result">
-<strong>Key Results:</strong>
-<div class="work-result-content">Reduced monthly close time by 40%, eliminated reconciliation errors across 67 property units, and reduced tenant disputes by 60% through systematic utility payment tracking.</div>
-</div>
-</div>
-
-<div class="work-card">
-<h3>Real Estate Accounting System Design</h3>
-<div class="work-tags">
-<span class="work-tag">Buildium</span>
-<span class="work-tag">QuickBooks</span>
-<span class="work-tag">Process Documentation</span>
-<span class="work-tag">SOP Creation</span>
-</div>
-<p>
-Designed structured property accounting systems with comprehensive reconciliations, compliance workflows, management reporting, and detailed Standard Operating Procedures for every accounting process.
-</p>
-<div class="work-result">
-<strong>Key Results:</strong>
-<div class="work-result-content">Standardized SOPs reduced overlapping work by 35%, improved training efficiency, and decreased system errors by 90% through documented procedures.</div>
-</div>
-</div>
-
-<div class="work-card">
-<h3>Financial Clean-Up & Recovery</h3>
-<div class="work-tags">
-<span class="work-tag">QuickBooks</span>
-<span class="work-tag">Xero</span>
-<span class="work-tag">Transaction Analysis</span>
-<span class="work-tag">High-Volume Reconciliation</span>
-</div>
-<p>
-Corrected historical accounting records and reconciled multi-year backlogs across diverse business models including retail, e-commerce, and professional services with complex bank/credit card transaction environments.
-</p>
-<div class="work-result">
-<strong>Key Results:</strong>
-<div class="work-result-content">Recovered $28,500 in unclaimed deductions, identified $12,200 in duplicate payments, and cleared 18-month reconciliation backlog for professional service firm.</div>
-</div>
-</div>
-</div>
-
-<a href="portfolio.html" class="lux-btn">View Full Portfolio</a>
-</section>
-
-<!-- CORE EXPERTISE -->
-<section class="section">
-<div class="section-header">
-<h2>Core Expertise</h2>
-<p class="section-subtitle">Specialized skills for comprehensive financial system management</p>
-</div>
-
-<div class="expertise-container">
-<div class="expertise-grid">
-<div class="expertise-card">
-<div class="expertise-icon">
-<i class="fas fa-sitemap"></i>
-</div>
-<h4>Financial Systems Design</h4>
-<p>Structured accounting frameworks and scalable workflows that grow with your business.</p>
-</div>
-
-<div class="expertise-card">
-<div class="expertise-icon">
-<i class="fas fa-broom"></i>
-</div>
-<h4>Reconciliations & Cleanup</h4>
-<p>Bank, credit card, and historical data recovery to restore financial accuracy.</p>
-</div>
-
-<div class="expertise-card">
-<div class="expertise-icon">
-<i class="fas fa-building"></i>
-</div>
-<h4>Real Estate Accounting</h4>
-<p>Property, trust accounting, and management reporting for portfolio success.</p>
-</div>
-
-<div class="expertise-card">
-<div class="expertise-icon">
-<i class="fas fa-shopping-cart"></i>
-</div>
-<h4>E-commerce Integration</h4>
-<p>Shopify, Stripe, PayPal into QuickBooks for accurate sales tracking.</p>
-</div>
-
-<div class="expertise-card">
-<div class="expertise-icon">
-<i class="fas fa-file-invoice-dollar"></i>
-</div>
-<h4>1099 Preparation & Compliance</h4>
-<p>Vendor management, W-9 tracking, classification, and year-end 1099 filing support.</p>
-</div>
-</div>
-</div>
-
-<a href="certifications.html" class="lux-btn">View Professional Certifications</a>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section" style="background: #050505; border-radius: 20px; margin: 5rem auto; max-width: 1400px;">
-<div class="section-header">
-<h2>Work Feedback</h2>
-<p class="section-subtitle">Client experiences with implemented financial systems</p>
-</div>
-
-<div class="testimonial-grid">
-<div class="testimonial-card">
-<p class="testimonial-text">
-"The reconciliation system you implemented completely transformed how we track expenses. We went from monthly confusion to having clear, organized reports that actually make sense for decision-making. The standardized procedures you documented have made training new staff so much easier."
-</p>
-<p class="testimonial-author">— Property Management Company Owner</p>
-</div>
-
-<div class="testimonial-card">
-<p class="testimonial-text">
-"After you cleaned up our QuickBooks and set up the proper chart of accounts, our accountant said it was the most organized set of books they've worked with all year. The categorization system you created makes tax preparation straightforward and eliminates the back-and-forth questions we used to get."
-</p>
-<p class="testimonial-author">— E-commerce Business Owner</p>
-</div>
-</div>
-</section>
-
-<!-- FOOTER -->
-<footer id="contact" class="lux-footer">
-<div class="footer-grid">
-<div class="footer-box">
-<h4>EXPLORE</h4>
-<a href="index.html">Home</a>
-<a href="about.html">About</a>
-<a href="portfolio.html">Portfolio</a>
-<a href="certifications.html">Certifications</a>
-</div>
-
-<div class="footer-box">
-<h4>CONNECT</h4>
-<a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank">
-<i class="fab fa-linkedin"></i> <strong>LinkedIn Profile</strong>
-</a>
-<p><i class="fas fa-envelope"></i> slachamanjotsingh@gmail.com</p>
-<p><i class="fas fa-phone"></i> +91 991 115 5541</p>
-</div>
-
-<div class="footer-box">
-<h4>SERVICES</h4>
-<p>Real Estate Accounting</p>
-<p>Financial Systems Setup</p>
-<p>Bookkeeping Clean-Up</p>
-<p>1099 & Compliance</p>
-</div>
-
-<div class="footer-box">
-<h4>LOCATION & AVAILABILITY</h4>
-<p><i class="fas fa-map-marker-alt"></i> Mohali, Punjab, India</p>
-<p>Working with global clients remotely</p>
-<p>Available for projects worldwide</p>
-</div>
-</div>
-
-<div class="footer-bottom">
-© 2026 AmanJot Singh. All rights reserved. | Professional Accounting Systems Specialist
-</div>
-</footer>
-
+    <script>
+        // Mobile Navigation Toggle
+        const menuToggle = document.getElementById('menuToggle');
+        const mobileNav = document.getElementById('mobileNav');
+        
+        menuToggle.addEventListener('click', () => {
+            mobileNav.classList.toggle('active');
+            menuToggle.innerHTML = mobileNav.classList.contains('active') 
+                ? '<i class="fas fa-times"></i>' 
+                : '<i class="fas fa-bars"></i>';
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (event) => {
+            if (!menuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
+                mobileNav.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            }
+        });
+        
+        // Close mobile menu when clicking a link
+        mobileNav.querySelectorAll('a').forEach(link => {
+            link.addEventListener('click', () => {
+                mobileNav.classList.remove('active');
+                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+            });
+        });
+        
+        // Form submission handler
+        document.getElementById('consultationForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Get form data
+            const name = document.getElementById('name').value;
+            const email = document.getElementById('email').value;
+            
+            // In a real application, you would send this data to a server
+            // For now, we'll just show an alert
+            alert(`Thank you ${name}! Your consultation request has been received by a certified specialist. I'll contact you at ${email} within 24 hours.`);
+            
+            // Reset form
+            this.reset();
+        });
+    </script>
 </body>
 </html>
