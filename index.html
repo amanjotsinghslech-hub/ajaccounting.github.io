@@ -9,7 +9,6 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
-        /* ===== RESET & VARIABLES ===== */
         :root {
             --primary: #0066CC;
             --primary-dark: #0052A3;
@@ -21,6 +20,9 @@
             --text: #F0F0F0;
             --text-light: #AAAAAA;
             --border: #333333;
+            --footer-bg: #FFFFFF;
+            --footer-text: #333333;
+            --footer-light: #666666;
         }
         
         * {
@@ -59,33 +61,7 @@
             text-align: center;
         }
         
-        /* ===== CERTIFICATION BADGE ===== */
-        .certification-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05));
-            color: var(--gold);
-            padding: 0.5rem 1.2rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            margin-bottom: 1.5rem;
-            border: 1px solid var(--gold);
-            animation: pulse 2s infinite;
-        }
-        
-        @keyframes pulse {
-            0% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0.4); }
-            70% { box-shadow: 0 0 0 6px rgba(255, 215, 0, 0); }
-            100% { box-shadow: 0 0 0 0 rgba(255, 215, 0, 0); }
-        }
-        
-        .certification-badge i {
-            font-size: 1.1rem;
-        }
-        
-        /* ===== MINIMAL HEADER ===== */
+        /* ===== HEADER ===== */
         header {
             position: fixed;
             top: 0;
@@ -131,7 +107,34 @@
             color: var(--primary);
         }
         
-        /* ===== HERO - CONCISE ===== */
+        /* ===== CERTIFICATION BADGES ===== */
+        .certification-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .certification-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: linear-gradient(135deg, rgba(0, 102, 204, 0.15), rgba(0, 102, 204, 0.05));
+            color: var(--primary);
+            padding: 0.5rem 1.2rem;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            border: 1px solid var(--primary);
+        }
+        
+        .gold-badge {
+            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05));
+            color: var(--gold);
+            border: 1px solid var(--gold);
+        }
+        
+        /* ===== HERO SECTION ===== */
         .hero-minimal {
             padding-top: 100px;
             padding-bottom: 3rem;
@@ -176,7 +179,7 @@
             color: var(--primary);
         }
         
-        .certified-title {
+        .hero-text h1 .certified-title {
             color: var(--gold);
             font-weight: 600;
         }
@@ -188,35 +191,13 @@
             margin-bottom: 1rem;
         }
         
-        .specialization-tag {
-            display: inline-block;
-            background: rgba(0, 102, 204, 0.2);
-            color: var(--primary);
-            padding: 0.4rem 1rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
+        .hero-description {
+            color: var(--text-light);
             margin-bottom: 1.5rem;
-            border: 1px solid var(--primary);
+            line-height: 1.6;
         }
         
-        .hero-highlights {
-            margin-top: 1.5rem;
-        }
-        
-        .highlight-item {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 0.8rem;
-        }
-        
-        .highlight-icon {
-            color: var(--accent);
-            font-size: 1.1rem;
-        }
-        
-        /* ===== BY THE NUMBERS ===== */
+        /* ===== ACHIEVEMENTS SECTION ===== */
         .achievements-section {
             background: var(--card-bg);
         }
@@ -248,7 +229,7 @@
             margin-bottom: 0.5rem;
         }
         
-        /* ===== SKILLS SHOWCASE ===== */
+        /* ===== TECHNICAL EXPERTISE ===== */
         .skills-grid {
             display: grid;
             grid-template-columns: 1fr;
@@ -314,31 +295,6 @@
             color: var(--accent);
             font-size: 0.85rem;
             font-weight: 600;
-        }
-        
-        /* ===== CERTIFICATION HIGHLIGHT ===== */
-        .certification-highlight {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            padding: 1rem;
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 8px;
-            margin-top: 1.5rem;
-        }
-        
-        .certification-icon {
-            color: var(--gold);
-            font-size: 1.5rem;
-        }
-        
-        .certification-text {
-            flex: 1;
-        }
-        
-        .certification-text strong {
-            color: var(--gold);
         }
         
         /* ===== PORTFOLIO CONNECTIONS ===== */
@@ -467,30 +423,35 @@
             flex-wrap: wrap;
         }
         
-        /* ===== FOOTER ===== */
+        /* ===== FOOTER (WHITE BACKGROUND) ===== */
         .footer-minimal {
-            background: var(--card-bg);
-            border-top: 1px solid var(--border);
-            padding: 2.5rem 0 1.5rem;
+            background: var(--footer-bg);
+            border-top: 1px solid #E5E7EB;
+            padding: 3rem 0 2rem;
         }
         
         .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
-            margin-bottom: 1.5rem;
+            margin-bottom: 2rem;
         }
         
         @media (min-width: 768px) {
             .footer-content {
                 grid-template-columns: repeat(3, 1fr);
+                gap: 2rem;
             }
         }
         
         .footer-section h4 {
-            color: var(--primary);
+            color: var(--footer-text);
             margin-bottom: 1rem;
             font-size: 1rem;
+            font-weight: 600;
         }
         
         .footer-links {
@@ -498,14 +459,14 @@
         }
         
         .footer-links li {
-            margin-bottom: 0.5rem;
-            font-size: 0.9rem;
+            margin-bottom: 0.6rem;
         }
         
         .footer-links a {
-            color: var(--text-light);
+            color: var(--footer-light);
             text-decoration: none;
             transition: color 0.3s ease;
+            font-size: 0.9rem;
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -515,27 +476,16 @@
             color: var(--primary);
         }
         
-        .certification-footer {
-            grid-column: 1 / -1;
-            text-align: center;
-            padding: 1.5rem;
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.1), rgba(255, 215, 0, 0.05));
-            border: 1px solid rgba(255, 215, 0, 0.3);
-            border-radius: 8px;
-            margin-top: 1rem;
-        }
-        
-        .certification-footer h4 {
-            color: var(--gold);
-            font-size: 1.1rem;
-            margin-bottom: 0.5rem;
+        .footer-links li:not(a) {
+            color: var(--footer-light);
+            font-size: 0.9rem;
         }
         
         .copyright {
             text-align: center;
             padding-top: 1.5rem;
-            border-top: 1px solid var(--border);
-            color: var(--text-light);
+            border-top: 1px solid #E5E7EB;
+            color: var(--footer-light);
             font-size: 0.85rem;
         }
         
@@ -583,10 +533,19 @@
                 height: 150px;
             }
             
-            .certification-highlight {
+            .certification-badges {
                 flex-direction: column;
-                text-align: center;
-                gap: 0.5rem;
+                align-items: flex-start;
+            }
+            
+            .certification-badge {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .footer-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
             }
         }
         
@@ -607,12 +566,13 @@
     </style>
 </head>
 <body>
-    <!-- Minimal Header -->
+    <!-- Header -->
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="index.html" class="logo">AJ<span>Soul Advisory</span></a>
+                <a href="index.html" class="logo">AmanJot Singh <span>| Property Accounting</span></a>
                 <nav class="nav-minimal">
+                    <a href="index.html">Home</a>
                     <a href="portfolio.html">Portfolio</a>
                     <a href="certifications.html">Certifications</a>
                     <a href="#consultation">Consultation</a>
@@ -629,38 +589,34 @@
                     <img src="profile.png" alt="AmanJot Singh" class="profile-img">
                 </div>
                 <div class="hero-text">
-                    <div class="certification-badge">
-                        <i class="fas fa-award"></i>
-                        Certified Property Accounting Specialist
-                    </div>
-                    
                     <h1><span class="certified-title">Certified</span> Property Accounting <span>Specialist</span></h1>
-                    <p class="tagline">Transforming property finances into streamlined systems</p>
-                    <span class="specialization-tag">Buildium Certified • Real Estate Accounting Expert</span>
-                    <p>With over 5 years of expertise in property management accounting and official Buildium certification, I specialize in optimizing financial systems for real estate portfolios, ensuring compliance, accuracy, and efficiency.</p>
                     
-                    <div class="certification-highlight">
-                        <div class="certification-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <div class="certification-text">
-                            <strong>Officially Certified:</strong> Buildium Property Management Accounting Specialist with demonstrated expertise in trust accounting, CAM reconciliations, and financial reporting for real estate portfolios.
-                        </div>
+                    <div class="certification-badges">
+                        <span class="certification-badge gold-badge">
+                            <i class="fas fa-award"></i> Buildium Certified
+                        </span>
+                        <span class="certification-badge">
+                            <i class="fas fa-award"></i> AppFolio Property Management Specialist
+                        </span>
                     </div>
                     
-                    <div class="hero-highlights">
-                        <div class="highlight-item">
-                            <i class="fas fa-check-circle highlight-icon"></i>
-                            <span>Buildium Certified Property Accounting Expert</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-chart-line highlight-icon"></i>
-                            <span>40% average reduction in monthly close time</span>
-                        </div>
-                        <div class="highlight-item">
-                            <i class="fas fa-dollar-sign highlight-icon"></i>
-                            <span>$28,500+ average client recovery</span>
-                        </div>
+                    <p class="hero-description">
+                        As a certified property accounting specialist with dual certification in Buildium and AppFolio, 
+                        I provide expert financial management solutions for real estate portfolios. With over 5 years 
+                        of specialized experience, I optimize accounting systems to ensure accuracy, compliance, and 
+                        operational efficiency for property management firms.
+                    </p>
+                    
+                    <div class="certification-badges">
+                        <span class="certification-badge">
+                            <i class="fas fa-certificate"></i> QuickBooks ProAdvisor
+                        </span>
+                        <span class="certification-badge">
+                            <i class="fas fa-certificate"></i> Gusto Payroll Specialist
+                        </span>
+                        <span class="certification-badge">
+                            <i class="fas fa-certificate"></i> Xero Certified Advisor
+                        </span>
                     </div>
                 </div>
             </div>
@@ -670,25 +626,25 @@
     <!-- By The Numbers -->
     <section class="achievements-section section-sm">
         <div class="container">
-            <h2 class="text-center">By The Numbers</h2>
-            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">Property accounting results that speak for themselves</p>
+            <h2 class="text-center">Certified Results</h2>
+            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">Professional certifications translate to measurable performance</p>
             
             <div class="achievements-grid">
                 <div class="achievement-card">
-                    <div class="achievement-value">5+</div>
-                    <p>Years Property Accounting</p>
+                    <div class="achievement-value">Dual</div>
+                    <p>Platform Certification (Buildium & AppFolio)</p>
                 </div>
                 <div class="achievement-card">
-                    <div class="achievement-value">200+</div>
-                    <p>Properties Managed</p>
+                    <div class="achievement-value">5+</div>
+                    <p>Years Specialized Experience</p>
                 </div>
                 <div class="achievement-card">
                     <div class="achievement-value">40%</div>
-                    <p>Average Efficiency Gain</p>
+                    <p>Process Efficiency Improvement</p>
                 </div>
                 <div class="achievement-card">
-                    <div class="achievement-value">Certified</div>
-                    <p>Buildium Accounting Expert</p>
+                    <div class="achievement-value">100%</div>
+                    <p>Compliance & Audit Success</p>
                 </div>
             </div>
         </div>
@@ -697,23 +653,23 @@
     <!-- Technical Expertise -->
     <section class="section">
         <div class="container">
-            <h2 class="text-center">Technical Expertise</h2>
-            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">Property accounting platform mastery</p>
+            <h2 class="text-center">Certified Technical Expertise</h2>
+            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">Dual-certified platform mastery with comprehensive skills</p>
             
             <div class="skills-grid">
                 <div class="skill-category">
                     <div class="category-header">
-                        <div class="category-icon" style="background: var(--gold);">
-                            <i class="fas fa-award"></i>
+                        <div class="category-icon">
+                            <i class="fas fa-certificate"></i>
                         </div>
-                        <h3>Certified Platform Expertise</h3>
+                        <h3>Certified Platforms</h3>
                     </div>
                     <ul class="skills-list">
-                        <li>Buildium Certified Specialist <span class="skill-level">Certified</span></li>
-                        <li>AppFolio Property Accounting <span class="skill-level">Expert</span></li>
-                        <li>QuickBooks for Real Estate <span class="skill-level">Expert</span></li>
-                        <li>Yardi Voyager <span class="skill-level">Advanced</span></li>
-                        <li>MRI Software <span class="skill-level">Advanced</span></li>
+                        <li>Buildium Certified Specialist <span class="skill-level">Expert</span></li>
+                        <li>AppFolio Property Management Specialist <span class="skill-level">Expert</span></li>
+                        <li>QuickBooks ProAdvisor <span class="skill-level">Expert</span></li>
+                        <li>Gusto Payroll Specialist <span class="skill-level">Advanced</span></li>
+                        <li>Xero Certified Advisor <span class="skill-level">Advanced</span></li>
                     </ul>
                 </div>
                 
@@ -725,11 +681,11 @@
                         <h3>Core Competencies</h3>
                     </div>
                     <ul class="skills-list">
-                        <li>Real Estate Trust Accounting <span class="skill-level">Expert</span></li>
-                        <li>CAM Reconciliation <span class="skill-level">Certified</span></li>
-                        <li>Property Financial Reporting <span class="skill-level">Expert</span></li>
-                        <li>1099 Compliance for Properties <span class="skill-level">Expert</span></li>
-                        <li>Budgeting & Forecasting <span class="skill-level">Advanced</span></li>
+                        <li>Property Trust Accounting <span class="skill-level">Expert</span></li>
+                        <li>CAM Reconciliation Systems <span class="skill-level">Expert</span></li>
+                        <li>Financial Reporting Automation <span class="skill-level">Expert</span></li>
+                        <li>1099 & Tax Compliance <span class="skill-level">Expert</span></li>
+                        <li>Budget Forecasting & Analysis <span class="skill-level">Advanced</span></li>
                     </ul>
                 </div>
             </div>
@@ -739,37 +695,37 @@
     <!-- Portfolio Connections -->
     <section class="section" style="background: var(--card-bg);">
         <div class="container">
-            <h2 class="text-center">Portfolio Connections</h2>
-            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">Featured property accounting engagements</p>
+            <h2 class="text-center">Certification Applications</h2>
+            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">How professional certifications deliver client value</p>
             
             <div class="portfolio-grid">
                 <div class="portfolio-card">
-                    <h3>Multi-Property Portfolio Management</h3>
-                    <p>Managed financials for 50+ residential and commercial properties using AppFolio, achieving 100% on-time reporting.</p>
-                </div>
-                
-                <div class="portfolio-card">
-                    <h3>Trust Accounting Compliance</h3>
-                    <p>Implemented compliant trust accounting systems for property management firms, ensuring zero audit findings.</p>
-                </div>
-                
-                <div class="portfolio-card">
                     <h3>Buildium System Implementation</h3>
-                    <p>Certified Buildium implementation for property management companies, streamlining accounting processes.</p>
+                    <p>Certified Buildium setup and optimization for property management companies, streamlining all accounting processes.</p>
                 </div>
                 
                 <div class="portfolio-card">
-                    <h3>CAM Reconciliation Projects</h3>
-                    <p>Successfully reconciled CAM charges for commercial properties, recovering over $15K in misallocated funds.</p>
+                    <h3>AppFolio Financial Management</h3>
+                    <p>Specialized AppFolio configuration for multi-property portfolios with automated reporting and compliance.</p>
+                </div>
+                
+                <div class="portfolio-card">
+                    <h3>Trust Accounting Systems</h3>
+                    <p>Certified implementation of compliant trust accounting with zero audit findings across all client portfolios.</p>
+                </div>
+                
+                <div class="portfolio-card">
+                    <h3>Dual-Platform Integration</h3>
+                    <p>Integration of Buildium and AppFolio systems for large-scale property management operations.</p>
                 </div>
             </div>
             
             <div class="cta-buttons">
-                <a href="portfolio.html" class="btn btn-primary">
-                    <i class="fas fa-folder-open"></i> View Full Portfolio
-                </a>
                 <a href="certifications.html" class="btn btn-gold">
-                    <i class="fas fa-certificate"></i> See Certification
+                    <i class="fas fa-certificate"></i> View All Certifications
+                </a>
+                <a href="portfolio.html" class="btn btn-primary">
+                    <i class="fas fa-folder-open"></i> See Portfolio
                 </a>
             </div>
         </div>
@@ -778,9 +734,9 @@
     <!-- Consultation Form -->
     <section id="consultation" class="consultation-section section">
         <div class="container">
-            <h2 class="text-center">Request a Consultation</h2>
+            <h2 class="text-center">Certified Consultation</h2>
             <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">
-                Let's discuss your property accounting needs
+                Schedule a consultation with a certified property accounting specialist
             </p>
             
             <div class="form-container">
@@ -811,55 +767,49 @@
                     </div>
                     
                     <button type="submit" class="btn btn-primary btn-block">
-                        <i class="fas fa-paper-plane"></i> Send Enquiry
+                        <i class="fas fa-paper-plane"></i> Request Certified Consultation
                     </button>
                 </form>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
+    <!-- Footer (White Background) -->
     <footer class="footer-minimal">
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
                     <h4>Quick Links</h4>
                     <ul class="footer-links">
-                        <li><a href="index.html">Home</a></li>
-                        <li><a href="portfolio.html">Portfolio</a></li>
-                        <li><a href="certifications.html">Certifications</a></li>
-                        <li><a href="#consultation">Consultation</a></li>
+                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                        <li><a href="portfolio.html"><i class="fas fa-folder"></i> Portfolio</a></li>
+                        <li><a href="certifications.html"><i class="fas fa-certificate"></i> Certifications</a></li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Connect</h4>
+                    <h4>Connect With Me</h4>
                     <ul class="footer-links">
                         <li>
                             <a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank">
                                 <i class="fab fa-linkedin"></i> LinkedIn
                             </a>
                         </li>
-                        <li><a href="mailto:contact@ajaccounting.com"><i class="fas fa-envelope"></i> contact@ajaccounting.com</a></li>
+                        <li><a href="mailto:Slachamanjotsingh@gmail.com"><i class="fas fa-envelope"></i> Slachamanjotsingh@gmail.com</a></li>
                         <li><i class="fas fa-phone"></i> +91 991 115 5541</li>
                     </ul>
                 </div>
                 
                 <div class="footer-section">
-                    <h4>Property Accounting Specializations</h4>
+                    <h4>Certifications & Specializations</h4>
                     <ul class="footer-links">
                         <li><strong>Buildium Certified Specialist</strong></li>
+                        <li><strong>AppFolio Property Management Specialist</strong></li>
                         <li>Real Estate Trust Accounting</li>
-                        <li>CAM Reconciliations</li>
-                        <li>Property Financial Reporting</li>
+                        <li>Property Financial Systems</li>
                         <li>Compliance & Audit Preparation</li>
                     </ul>
                 </div>
-            </div>
-            
-            <div class="certification-footer">
-                <h4><i class="fas fa-award"></i> Official Certification</h4>
-                <p>Certified Property Accounting Specialist with demonstrated expertise in Buildium, AppFolio, and real estate financial management systems.</p>
             </div>
             
             <div class="copyright">
@@ -879,7 +829,7 @@
             
             // In a real application, you would send this data to a server
             // For now, we'll just show an alert
-            alert(`Thank you ${name}! Your consultation request has been received. I'll contact you at ${email} within 24 hours.`);
+            alert(`Thank you ${name}! Your consultation request has been received by a certified specialist. I'll contact you at ${email} within 24 hours.`);
             
             // Reset form
             this.reset();
