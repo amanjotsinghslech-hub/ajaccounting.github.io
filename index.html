@@ -156,6 +156,43 @@
             color: var(--primary);
         }
         
+        /* ===== BRAND RIBBON ===== */
+        #brand-ribbon {
+            width: 100%;
+            overflow: hidden;
+            background: #050505;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+            padding: 0.8rem 0;
+        }
+        
+        .ribbon-container {
+            display: flex;
+            width: max-content;
+            min-width: 100%;
+        }
+        
+        .ribbon {
+            display: flex;
+            gap: clamp(3rem, 6vw, 6rem);
+            animation: scroll 40s linear infinite;
+            will-change: transform;
+        }
+        
+        .ribbon span {
+            white-space: nowrap;
+            padding: 0.8rem 0;
+            font-weight: 700;
+            letter-spacing: 2px;
+            font-size: clamp(0.85rem, 1.5vw, 1.05rem);
+            color: #aaa;
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+        
         /* ===== CERTIFICATION BADGES ===== */
         .certification-badges {
             display: flex;
@@ -728,6 +765,16 @@
                         </span>
                     </div>
                 </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Brand Ribbon -->
+    <section id="brand-ribbon">
+        <div class="ribbon-container">
+            <div class="ribbon">
+                <span>PROPERTY MANAGEMENT SOFTWARE SPECIALIST • FINANCIAL OPERATIONS • APPFOLIO & BUILDIUM PROPERTY MANAGEMENT • MIGRATION • REAL ESTATE ACCOUNTING • QUICKBOOKS PRO ADVISOR • XERO • PAYROLL SOFTWARE • RECONCILIATIONS •</span>
+                <span>PROPERTY MANAGEMENT SOFTWARE SPECIALIST • FINANCIAL OPERATIONS • APPFOLIO & BUILDIUM PROPERTY MANAGEMENT • MIGRATION • REAL ESTATE ACCOUNTING • QUICKBOOKS PRO ADVISOR • XERO • PAYROLL SOFTWARE • RECONCILIATIONS •</span>
             </div>
         </div>
     </section>
