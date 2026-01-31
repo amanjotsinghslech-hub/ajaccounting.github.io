@@ -3,17 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AmanJot Singh | Certified Property Accounting Specialist</title>
+    <title>AmanJot Singh Slach | Certified Property Accounting Specialist</title>
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     
     <style>
         :root {
-            --primary: #0066CC;
-            --primary-dark: #0052A3;
-            --accent: #00A86B;
-            --gold: #FFD700;
+            --primary: #D4AF37; /* Luxury Gold - Matching certificates page */
+            --primary-dark: #B8941F;
+            --accent: #2F81F7;
             --dark: #0A0A0A;
             --light: #FFFFFF;
             --card-bg: #1A1A1A;
@@ -113,13 +112,14 @@
             flex-wrap: wrap;
             gap: 0.5rem;
             margin-bottom: 1.5rem;
+            justify-content: center;
         }
         
         .certification-badge {
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
-            background: linear-gradient(135deg, rgba(0, 102, 204, 0.15), rgba(0, 102, 204, 0.05));
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
             color: var(--primary);
             padding: 0.5rem 1.2rem;
             border-radius: 20px;
@@ -129,9 +129,9 @@
         }
         
         .gold-badge {
-            background: linear-gradient(135deg, rgba(255, 215, 0, 0.15), rgba(255, 215, 0, 0.05));
-            color: var(--gold);
-            border: 1px solid var(--gold);
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
+            color: var(--primary);
+            border: 1px solid var(--primary);
         }
         
         /* ===== HERO SECTION ===== */
@@ -156,15 +156,16 @@
         
         .profile-container {
             position: relative;
+            display: flex;
+            justify-content: center;
         }
         
         .profile-img {
-            width: 180px;
-            height: 180px;
+            width: 220px; /* Increased from 180px */
+            height: 220px; /* Increased from 180px */
             border-radius: 50%;
             border: 3px solid var(--primary);
             object-fit: cover;
-            margin: 0 auto;
             display: block;
         }
         
@@ -180,7 +181,7 @@
         }
         
         .hero-text h1 .certified-title {
-            color: var(--gold);
+            color: var(--primary);
             font-weight: 600;
         }
         
@@ -337,7 +338,7 @@
         
         /* ===== CONSULTATION FORM ===== */
         .consultation-section {
-            background: linear-gradient(135deg, rgba(0, 102, 204, 0.1), rgba(0, 168, 107, 0.1));
+            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(47, 129, 247, 0.1));
         }
         
         .form-container {
@@ -391,7 +392,7 @@
         
         .btn-primary {
             background: var(--primary);
-            color: white;
+            color: var(--dark);
         }
         
         .btn-outline {
@@ -401,8 +402,8 @@
         }
         
         .btn-gold {
-            background: linear-gradient(135deg, #FFD700, #FFAA00);
-            color: #000;
+            background: linear-gradient(135deg, var(--primary), #FFAA00);
+            color: var(--dark);
             border: none;
         }
         
@@ -529,8 +530,8 @@
             }
             
             .profile-img {
-                width: 150px;
-                height: 150px;
+                width: 180px; /* Adjusted for mobile */
+                height: 180px; /* Adjusted for mobile */
             }
             
             .certification-badges {
@@ -570,7 +571,7 @@
     <header>
         <div class="container">
             <div class="header-content">
-                <a href="index.html" class="logo">AmanJot Singh <span>| Property Accounting</span></a>
+                <a href="index.html" class="logo">AmanJot Singh <span>Slach</span></a>
                 <nav class="nav-minimal">
                     <a href="index.html">Home</a>
                     <a href="portfolio.html">Portfolio</a>
@@ -586,22 +587,23 @@
         <div class="container">
             <div class="hero-content">
                 <div class="profile-container">
-                    <img src="profile.png" alt="AmanJot Singh" class="profile-img">
+                    <img src="profile.png" alt="AmanJot Singh Slach" class="profile-img">
                 </div>
                 <div class="hero-text">
-                    <h1><span class="certified-title">Certified</span> Property Accounting <span>Specialist</span></h1>
+                    <h1>AmanJot Singh <span>Slach</span></h1>
+                    <h2 class="certified-title">Certified Property Accounting Specialist</h2>
                     
                     <div class="certification-badges">
                         <span class="certification-badge gold-badge">
-                            <i class="fas fa-award"></i> Buildium Certified
+                            <i class="fas fa-award"></i> AppFolio Software Specialist
                         </span>
                         <span class="certification-badge">
-                            <i class="fas fa-award"></i> AppFolio Property Management Specialist
+                            <i class="fas fa-award"></i> Buildium Certified
                         </span>
                     </div>
                     
                     <p class="hero-description">
-                        As a certified property accounting specialist with dual certification in Buildium and AppFolio, 
+                        As a certified property accounting specialist with expertise in AppFolio and Buildium, 
                         I provide expert financial management solutions for real estate portfolios. With over 5 years 
                         of specialized experience, I optimize accounting systems to ensure accuracy, compliance, and 
                         operational efficiency for property management firms.
@@ -631,8 +633,8 @@
             
             <div class="achievements-grid">
                 <div class="achievement-card">
-                    <div class="achievement-value">Dual</div>
-                    <p>Platform Certification (Buildium & AppFolio)</p>
+                    <div class="achievement-value">AppFolio & Buildium</div>
+                    <p>Software Certification</p>
                 </div>
                 <div class="achievement-card">
                     <div class="achievement-value">5+</div>
@@ -644,7 +646,7 @@
                 </div>
                 <div class="achievement-card">
                     <div class="achievement-value">100%</div>
-                    <p>Compliance & Audit Success</p>
+                    <p>Financial Accuracy Rate</p>
                 </div>
             </div>
         </div>
@@ -665,8 +667,8 @@
                         <h3>Certified Platforms</h3>
                     </div>
                     <ul class="skills-list">
+                        <li>AppFolio Software Specialist <span class="skill-level">Expert</span></li>
                         <li>Buildium Certified Specialist <span class="skill-level">Expert</span></li>
-                        <li>AppFolio Property Management Specialist <span class="skill-level">Expert</span></li>
                         <li>QuickBooks ProAdvisor <span class="skill-level">Expert</span></li>
                         <li>Gusto Payroll Specialist <span class="skill-level">Advanced</span></li>
                         <li>Xero Certified Advisor <span class="skill-level">Advanced</span></li>
@@ -700,23 +702,23 @@
             
             <div class="portfolio-grid">
                 <div class="portfolio-card">
-                    <h3>Buildium System Implementation</h3>
-                    <p>Certified Buildium setup and optimization for property management companies, streamlining all accounting processes.</p>
-                </div>
-                
-                <div class="portfolio-card">
                     <h3>AppFolio Financial Management</h3>
                     <p>Specialized AppFolio configuration for multi-property portfolios with automated reporting and compliance.</p>
                 </div>
                 
                 <div class="portfolio-card">
-                    <h3>Trust Accounting Systems</h3>
-                    <p>Certified implementation of compliant trust accounting with zero audit findings across all client portfolios.</p>
+                    <h3>Buildium System Implementation</h3>
+                    <p>Certified Buildium setup and optimization for property management companies, streamlining all accounting processes.</p>
                 </div>
                 
                 <div class="portfolio-card">
-                    <h3>Dual-Platform Integration</h3>
-                    <p>Integration of Buildium and AppFolio systems for large-scale property management operations.</p>
+                    <h3>Trust Accounting Systems</h3>
+                    <p>Certified implementation of compliant trust accounting systems across all client portfolios.</p>
+                </div>
+                
+                <div class="portfolio-card">
+                    <h3>Software Integration</h3>
+                    <p>Integration of AppFolio and Buildium systems for large-scale property management operations.</p>
                 </div>
             </div>
             
@@ -803,17 +805,17 @@
                 <div class="footer-section">
                     <h4>Certifications & Specializations</h4>
                     <ul class="footer-links">
+                        <li><strong>AppFolio Software Specialist</strong></li>
                         <li><strong>Buildium Certified Specialist</strong></li>
-                        <li><strong>AppFolio Property Management Specialist</strong></li>
                         <li>Real Estate Trust Accounting</li>
                         <li>Property Financial Systems</li>
-                        <li>Compliance & Audit Preparation</li>
+                        <li>Financial Reporting & Analysis</li>
                     </ul>
                 </div>
             </div>
             
             <div class="copyright">
-                © 2024 AmanJot Singh | Certified Property Accounting Specialist
+                © 2024 AmanJot Singh Slach | Certified Property Accounting Specialist
             </div>
         </div>
     </footer>
