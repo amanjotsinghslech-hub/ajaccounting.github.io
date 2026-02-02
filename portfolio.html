@@ -224,7 +224,6 @@
             height: 200px;
             overflow: hidden;
             border-bottom: 1px solid var(--border);
-            cursor: pointer;
         }
         
         .portfolio-image {
@@ -232,10 +231,6 @@
             height: 100%;
             object-fit: cover;
             transition: transform 0.5s ease;
-        }
-        
-        .image-container:hover .portfolio-image {
-            transform: scale(1.05);
         }
         
         /* Image Overlay for Zoom */
@@ -251,19 +246,6 @@
             justify-content: center;
             opacity: 0;
             transition: opacity 0.3s ease;
-        }
-        
-        .image-container:hover .image-overlay {
-            opacity: 1;
-        }
-        
-        .zoom-icon {
-            color: var(--primary);
-            font-size: 2rem;
-            background: rgba(212, 175, 55, 0.2);
-            padding: 0.5rem;
-            border-radius: 50%;
-            border: 2px solid var(--primary);
         }
         
         /* Modal for Full-size Images */
@@ -341,6 +323,39 @@
             font-size: 0.8rem;
             font-weight: 500;
             border: 1px solid rgba(212, 175, 55, 0.3);
+        }
+        
+        /* ===== DESKTOP-ONLY MODAL FEATURES ===== */
+        @media (max-width: 768px) {
+            .image-container {
+                cursor: default !important;
+            }
+            
+            .image-container:hover .portfolio-image {
+                transform: none;
+            }
+            
+            .image-container:hover .image-overlay {
+                opacity: 0;
+            }
+            
+            .image-overlay {
+                display: none;
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .image-container {
+                cursor: pointer;
+            }
+            
+            .image-container:hover .portfolio-image {
+                transform: scale(1.05);
+            }
+            
+            .image-container:hover .image-overlay {
+                opacity: 1;
+            }
         }
         
         /* ===== RESULTS SUMMARY ===== */
@@ -628,7 +643,7 @@
             <div class="portfolio-grid">
                 <!-- 1099 Reporting System -->
                 <div class="portfolio-card">
-                    <div class="image-container" onclick="openModal('modal1099')">
+                    <div class="image-container" onclick="openModalIfDesktop('modal1099')">
                         <img src="1099 1.png" alt="1099 Reporting System" class="portfolio-image">
                         <div class="image-overlay">
                             <i class="fas fa-search-plus zoom-icon"></i>
@@ -648,7 +663,7 @@
                 
                 <!-- Property Management in QuickBooks -->
                 <div class="portfolio-card">
-                    <div class="image-container" onclick="openModal('modalQuickBooks')">
+                    <div class="image-container" onclick="openModalIfDesktop('modalQuickBooks')">
                         <img src="ACM Bank Accounts.png" alt="Property Management in QuickBooks" class="portfolio-image">
                         <div class="image-overlay">
                             <i class="fas fa-search-plus zoom-icon"></i>
@@ -668,7 +683,7 @@
                 
                 <!-- Migration Project -->
                 <div class="portfolio-card">
-                    <div class="image-container" onclick="openModal('modalMigration')">
+                    <div class="image-container" onclick="openModalIfDesktop('modalMigration')">
                         <img src="1099 2.png" alt="Software Migration Project" class="portfolio-image">
                         <div class="image-overlay">
                             <i class="fas fa-search-plus zoom-icon"></i>
@@ -688,7 +703,7 @@
                 
                 <!-- Bank & Credit Card Reconciliation -->
                 <div class="portfolio-card">
-                    <div class="image-container" onclick="openModal('modalReconciliation')">
+                    <div class="image-container" onclick="openModalIfDesktop('modalReconciliation')">
                         <img src="1099 1.png" alt="Bank & Credit Card Reconciliation" class="portfolio-image">
                         <div class="image-overlay">
                             <i class="fas fa-search-plus zoom-icon"></i>
@@ -708,7 +723,7 @@
                 
                 <!-- Notice & Compliance Tracker -->
                 <div class="portfolio-card">
-                    <div class="image-container" onclick="openModal('modalCompliance')">
+                    <div class="image-container" onclick="openModalIfDesktop('modalCompliance')">
                         <img src="1099 2.png" alt="Notice & Compliance Tracker" class="portfolio-image">
                         <div class="image-overlay">
                             <i class="fas fa-search-plus zoom-icon"></i>
@@ -728,7 +743,7 @@
                 
                 <!-- Virtual Assistant Services -->
                 <div class="portfolio-card">
-                    <div class="image-container" onclick="openModal('modalVA')">
+                    <div class="image-container" onclick="openModalIfDesktop('modalVA')">
                         <img src="ACM Bank Accounts.png" alt="Virtual Assistant Services" class="portfolio-image">
                         <div class="image-overlay">
                             <i class="fas fa-search-plus zoom-icon"></i>
@@ -748,7 +763,7 @@
                 
                 <!-- Sales & Purchase Records -->
                 <div class="portfolio-card">
-                    <div class="image-container" onclick="openModal('modalSales')">
+                    <div class="image-container" onclick="openModalIfDesktop('modalSales')">
                         <img src="1099 1.png" alt="Sales & Purchase Records" class="portfolio-image">
                         <div class="image-overlay">
                             <i class="fas fa-search-plus zoom-icon"></i>
@@ -768,7 +783,7 @@
                 
                 <!-- Reconciliation Specialist -->
                 <div class="portfolio-card">
-                    <div class="image-container" onclick="openModal('modalReconSpecialist')">
+                    <div class="image-container" onclick="openModalIfDesktop('modalReconSpecialist')">
                         <img src="1099 2.png" alt="Reconciliation Specialist" class="portfolio-image">
                         <div class="image-overlay">
                             <i class="fas fa-search-plus zoom-icon"></i>
@@ -788,7 +803,7 @@
                 
                 <!-- Financial Reporting -->
                 <div class="portfolio-card">
-                    <div class="image-container" onclick="openModal('modalReporting')">
+                    <div class="image-container" onclick="openModalIfDesktop('modalReporting')">
                         <img src="ACM Bank Accounts.png" alt="Financial Reporting" class="portfolio-image">
                         <div class="image-overlay">
                             <i class="fas fa-search-plus zoom-icon"></i>
@@ -966,10 +981,18 @@
             });
         });
         
-        // Image Modal Functions
+        // Image Modal Functions for Desktop Only
+        function openModalIfDesktop(modalId) {
+            // Only open modal on screens wider than 768px (desktop)
+            if (window.innerWidth > 768) {
+                document.getElementById(modalId).classList.add('active');
+                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            }
+        }
+        
         function openModal(modalId) {
             document.getElementById(modalId).classList.add('active');
-            document.body.style.overflow = 'hidden'; // Prevent scrolling
+            document.body.style.overflow = 'hidden';
         }
         
         function closeModal(modalId) {
