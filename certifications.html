@@ -220,6 +220,19 @@
             margin-bottom: 1.5rem;
             border: 2px solid var(--primary);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        
+        /* Desktop-only click effect */
+        @media (min-width: 769px) {
+            .certificate-image {
+                cursor: zoom-in;
+            }
+            
+            .certificate-image:hover {
+                transform: scale(1.02);
+            }
         }
         
         .certification-card h3 {
@@ -241,6 +254,69 @@
             font-size: 0.95rem;
             line-height: 1.5;
             max-width: 300px;
+        }
+        
+        /* ===== IMAGE MODAL (Desktop Only) ===== */
+        .image-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .image-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .modal-content {
+            max-width: 90%;
+            max-height: 90%;
+            position: relative;
+        }
+        
+        .modal-image {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            border: 3px solid var(--primary);
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.5);
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: -40px;
+            right: -10px;
+            background: none;
+            border: none;
+            color: white;
+            font-size: 2.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            transition: color 0.3s ease;
+        }
+        
+        .modal-close:hover {
+            color: var(--primary);
+        }
+        
+        /* Hide modal on mobile */
+        @media (max-width: 768px) {
+            .image-modal {
+                display: none !important;
+            }
+            
+            .certificate-image {
+                cursor: default;
+            }
         }
         
         /* ===== BUTTONS ===== */
@@ -490,7 +566,7 @@
             <div class="certifications-grid">
                 <!-- Buildium Certification -->
                 <div class="certification-card">
-                    <img src="Buildium.png" alt="Buildium Certification" class="certificate-image">
+                    <img src="Buildium.png" alt="Buildium Certification" class="certificate-image" data-src="Buildium.png">
                     <h3>Buildium Certified</h3>
                     <div class="certification-level">Property Management Systems</div>
                     <p class="certification-description">
@@ -500,7 +576,7 @@
                 
                 <!-- QuickBooks Certification -->
                 <div class="certification-card">
-                    <img src="Quickbooks1.png" alt="QuickBooks Certification" class="certificate-image">
+                    <img src="Quickbooks1.png" alt="QuickBooks Certification" class="certificate-image" data-src="Quickbooks1.png">
                     <h3>QuickBooks ProAdvisor</h3>
                     <div class="certification-level">Advanced Accounting Systems</div>
                     <p class="certification-description">
@@ -510,7 +586,7 @@
                 
                 <!-- Gusto Certification -->
                 <div class="certification-card">
-                    <img src="Gusto.png" alt="Gusto Certification" class="certificate-image">
+                    <img src="Gusto.png" alt="Gusto Certification" class="certificate-image" data-src="Gusto.png">
                     <h3>Gusto Payroll Specialist</h3>
                     <div class="certification-level">Payroll & Compliance Systems</div>
                     <p class="certification-description">
@@ -520,7 +596,7 @@
                 
                 <!-- Xero Certification -->
                 <div class="certification-card">
-                    <img src="Xero.png" alt="Xero Certification" class="certificate-image">
+                    <img src="Xero.png" alt="Xero Certification" class="certificate-image" data-src="Xero.png">
                     <h3>Xero Certified Advisor</h3>
                     <div class="certification-level">Cloud Accounting Systems</div>
                     <p class="certification-description">
@@ -530,7 +606,7 @@
                 
                 <!-- Hubdoc Certification -->
                 <div class="certification-card">
-                    <img src="Hubdoc.png" alt="Hubdoc Certification" class="certificate-image">
+                    <img src="Hubdoc.png" alt="Hubdoc Certification" class="certificate-image" data-src="Hubdoc.png">
                     <h3>Hubdoc Certified</h3>
                     <div class="certification-level">Document Automation Systems</div>
                     <p class="certification-description">
@@ -549,6 +625,14 @@
             </div>
         </div>
     </section>
+
+    <!-- Image Modal for Desktop -->
+    <div class="image-modal" id="imageModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">&times;</button>
+            <img src="" alt="Enlarged Certification" class="modal-image" id="modalImage">
+        </div>
+    </div>
 
     <!-- Footer with White Background -->
     <footer class="footer-minimal">
@@ -620,6 +704,46 @@
                 menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
+        
+        // Image Modal Functionality (Desktop Only)
+        const imageModal = document.getElementById('imageModal');
+        const modalImage = document.getElementById('modalImage');
+        const modalClose = document.getElementById('modalClose');
+        
+        // Only add click events for desktop
+        if (window.innerWidth > 768) {
+            document.querySelectorAll('.certificate-image').forEach(image => {
+                image.addEventListener('click', (e) => {
+                    const imgSrc = e.target.getAttribute('data-src');
+                    modalImage.src = imgSrc;
+                    modalImage.alt = e.target.alt;
+                    imageModal.classList.add('active');
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                });
+            });
+            
+            // Close modal when clicking X
+            modalClose.addEventListener('click', () => {
+                imageModal.classList.remove('active');
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close modal when clicking outside the image
+            imageModal.addEventListener('click', (e) => {
+                if (e.target === imageModal) {
+                    imageModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && imageModal.classList.contains('active')) {
+                    imageModal.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                }
+            });
+        }
     </script>
 </body>
 </html>
