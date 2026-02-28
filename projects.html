@@ -167,6 +167,47 @@
             margin-top: 1.5rem;
         }
 
+        .category-section {
+            margin-bottom: 2.5rem;
+        }
+
+        .category-heading {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--primary);
+        }
+
+        .category-intro {
+            color: var(--text-light);
+            margin-bottom: 1.2rem;
+        }
+
+        .project-entry {
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-left: 4px solid var(--primary);
+            border-radius: 10px;
+            padding: 1rem 1.2rem;
+            margin-bottom: 0.9rem;
+        }
+
+        .project-entry h3 {
+            font-size: 1.05rem;
+            margin-bottom: 0.4rem;
+        }
+
+        .project-entry p {
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
+        .proof-note {
+            font-size: 0.85rem;
+            color: var(--primary);
+            margin-top: 0.5rem;
+            display: inline-block;
+        }
+
         @media (min-width: 768px) {
             .portfolio-grid {
                 grid-template-columns: repeat(2, 1fr);
@@ -295,11 +336,111 @@
 </section>
 
 <section class="section">
-    <div class="container text-center">
-        <h2>Featured Projects</h2>
-        <p style="color: var(--text-light); margin-top: 0.5rem;">
-            Property accounting systems implemented and optimized
-        </p>
+    <div class="container">
+        <div class="text-center" style="margin-bottom: 2rem;">
+            <h2>Client-Focused Project Categories</h2>
+            <p style="color: var(--text-light); margin-top: 0.5rem;">
+                Organized to help clients quickly find experience relevant to their accounting setup
+            </p>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-heading">Chart of Accounts (COA)</h2>
+            <p class="category-intro">Configured different COA structures based on software and reporting needs for property-focused clients.</p>
+
+            <div class="project-entry">
+                <h3>AppFolio</h3>
+                <p>Built property-level account maps in AppFolio so owners and managers could track each property cleanly without mixing balances across portfolios.</p>
+                <span class="proof-note">Example screenshots can be added here later.</span>
+            </div>
+
+            <div class="project-entry">
+                <h3>QuickBooks (3 Clients - Construction-Focused)</h3>
+                <p>Created multiple COA layouts in QuickBooks for construction and real-estate operations, including alternate methods for project/property segmentation.</p>
+                <span class="proof-note">Example screenshots can be added here later.</span>
+            </div>
+
+            <div class="project-entry">
+                <h3>Xero</h3>
+                <p>Designed a simplified but scalable COA in Xero to keep reporting clear while supporting multiple project/property activity types.</p>
+                <span class="proof-note">Example screenshots can be added here later.</span>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-heading">Balance Sheet Structuring</h2>
+            <p class="category-intro">Handled different methods of recording properties and project values across platforms, based on client requirements.</p>
+
+            <div class="project-entry">
+                <h3>AppFolio</h3>
+                <p>Structured balance sheet accounts for property portfolios to keep asset, liability, and equity presentation aligned with management reporting.</p>
+                <span class="proof-note">Example screenshots can be added here later.</span>
+            </div>
+
+            <div class="project-entry">
+                <h3>QuickBooks</h3>
+                <p>Set up balance sheet treatment through GL and class/category mapping so property-level data remained clear and audit-friendly.</p>
+                <span class="proof-note">Example screenshots can be added here later.</span>
+            </div>
+
+            <div class="project-entry">
+                <h3>Xero</h3>
+                <p>Implemented balance sheet logic using inventory and account group strategies where needed, based on how each client tracked properties.</p>
+                <span class="proof-note">Example screenshots can be added here later.</span>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-heading">Bank Accounts, Feeds & Reconciliations</h2>
+
+            <div class="project-entry">
+                <h3>High-Volume Reconciliation Project (4 Clients)</h3>
+                <p>Managed projects with 40+ bank and credit accounts in one engagement, organizing feed rules and reconciliation workflows for accuracy and speed.</p>
+                <span class="proof-note">Example screenshots can be added here later.</span>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-heading">Bills & Payables Workflows</h2>
+
+            <div class="project-entry">
+                <h3>AppFolio</h3>
+                <p>Built repeatable bill-entry and approval routines to ensure expenses were posted to the correct property and account every month.</p>
+                <span class="proof-note">Example screenshots can be added here later.</span>
+            </div>
+
+            <div class="project-entry">
+                <h3>QuickBooks</h3>
+                <p>Standardized bill recording for vendor accuracy, cleaner aging reports, and stronger cost tracking by class/location.</p>
+                <span class="proof-note">Example screenshots can be added here later.</span>
+            </div>
+
+            <div class="project-entry">
+                <h3>Xero</h3>
+                <p>Organized AP workflows for smoother coding, better expense consistency, and easier month-end review.</p>
+                <span class="proof-note">Example screenshots can be added here later.</span>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-heading">P&L Classification & Expense Analysis</h2>
+
+            <div class="project-entry">
+                <h3>Cross-Platform Expense Structuring</h3>
+                <p>Created clear expense classes/types across clients so management could compare profitability by property, service line, or job type.</p>
+                <span class="proof-note">Example screenshots can be added here later.</span>
+            </div>
+        </div>
+
+        <div class="category-section">
+            <h2 class="category-heading">Backlog Cleanup & Recovery</h2>
+
+            <div class="project-entry">
+                <h3>3-Year Backlog & Unreconciled Bank Balances</h3>
+                <p>Resolved a multi-year accounting backlog, including unreconciled feed differences up to seven figures, by categorizing and classifying historical transactions before final close.</p>
+                <span class="proof-note">Add before/after screenshots here to show cleanup impact.</span>
+            </div>
+        </div>
     </div>
 </section>
 
