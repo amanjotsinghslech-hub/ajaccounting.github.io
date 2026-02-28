@@ -437,6 +437,52 @@
             color: var(--text-light);
         }
         
+
+        /* ===== WHY CLIENTS CHOOSE ME ===== */
+        .positioning-section {
+            background: #111111;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .positioning-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .positioning-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .positioning-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.2rem;
+        }
+
+        .positioning-card h3 {
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .positioning-card p {
+            color: var(--text-light);
+            font-size: 0.92rem;
+        }
+
+        .start-note {
+            margin-top: 1.2rem;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
         /* ===== CONSULTATION FORM ===== */
         .consultation-section {
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(47, 129, 247, 0.1));
@@ -706,6 +752,7 @@
             <!-- Desktop Navigation -->
             <nav class="nav-desktop">
                 <a href="index.html">Home</a>
+                <a href="about.html">About</a>
                 <a href="portfolio.html">Portfolio</a>
                 <a href="certifications.html">Certifications</a>
                 <a href="#consultation">Consultation</a>
@@ -719,6 +766,7 @@
             <!-- Mobile Navigation Menu -->
             <nav class="nav-mobile" id="mobileNav">
                 <a href="index.html">Home</a>
+                <a href="about.html">About</a>
                 <a href="portfolio.html">Portfolio</a>
                 <a href="certifications.html">Certifications</a>
                 <a href="#consultation">Consultation</a>
@@ -747,7 +795,7 @@
                     </div>
                     
                     <p class="hero-description">
-                        As a certified property accounting specialist with expertise in AppFolio and Quickbooks, 
+                        As a certified property accounting specialist with expertise in AppFolio and QuickBooks, 
                         I provide expert financial management solutions for real estate portfolios. With over 5 years 
                         of specialized experience, I optimize accounting systems to ensure accuracy, compliance, and 
                         operational efficiency for property management firms.
@@ -880,6 +928,32 @@
                     <i class="fas fa-folder-open"></i> See Full Portfolio
                 </a>
             </div>
+        </div>
+    </section>
+
+
+    <!-- Positioning Section -->
+    <section class="positioning-section section">
+        <div class="container">
+            <h2 class="text-center">Why New Clients Feel Safe Working With Me</h2>
+            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">I built this profile to start freelancing with transparency: clear communication, structured workflows, and measurable accounting outcomes.</p>
+
+            <div class="positioning-grid">
+                <article class="positioning-card">
+                    <h3>Clear Scope Before We Start</h3>
+                    <p>I define deliverables, timeline, and priorities before beginning, so you know exactly what is being done and when.</p>
+                </article>
+                <article class="positioning-card">
+                    <h3>Weekly Progress Visibility</h3>
+                    <p>You receive concise updates on completed reconciliations, issues found, and next steps to avoid surprises.</p>
+                </article>
+                <article class="positioning-card">
+                    <h3>System-First Thinking</h3>
+                    <p>My focus is not only cleanup; I build repeatable accounting systems that reduce errors in future months.</p>
+                </article>
+            </div>
+
+            <p class="start-note">Starting freelance, delivering professional standards.</p>
         </div>
     </section>
 
