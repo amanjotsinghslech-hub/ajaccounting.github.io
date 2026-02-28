@@ -192,6 +192,10 @@
             .certifications-grid {
                 grid-template-columns: repeat(3, 1fr);
             }
+
+            .trust-strip {
+                grid-template-columns: repeat(3, 1fr);
+            }
         }
         
         .certification-card {
@@ -256,6 +260,27 @@
             max-width: 300px;
         }
         
+
+        .trust-strip {
+            margin-top: 1.5rem;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+
+        .trust-item {
+            background: rgba(212, 175, 55, 0.08);
+            border: 1px solid rgba(212, 175, 55, 0.25);
+            border-radius: 8px;
+            padding: 1rem;
+            color: var(--text-light);
+            font-size: 0.92rem;
+        }
+
+        .trust-item strong {
+            color: var(--primary);
+        }
+
         /* ===== IMAGE MODAL (Desktop Only) ===== */
         .image-modal {
             display: none;
@@ -472,6 +497,10 @@
             .certification-card {
                 padding: 1.5rem;
             }
+
+            .trust-strip {
+                grid-template-columns: 1fr;
+            }
             
             .footer-content {
                 grid-template-columns: 1fr;
@@ -535,6 +564,7 @@
                 <a href="about.html">About</a>
                 <a href="projects.html">Projects</a>
                 <a href="certifications.html" style="color: var(--primary);">Certifications</a>
+                <a href="index.html#consultation">Connect</a>
             </nav>
             
             <!-- Mobile Hamburger Menu -->
@@ -548,6 +578,7 @@
                 <a href="about.html">About</a>
                 <a href="projects.html">Projects</a>
                 <a href="certifications.html" style="color: var(--primary);">Certifications</a>
+                <a href="index.html#consultation">Connect</a>
             </nav>
         </div>
     </header>
@@ -558,6 +589,9 @@
             <h1>Professional <span>Certifications</span></h1>
             <p class="hero-subtitle">
                 Verified expertise in property accounting platforms and systems
+            </p>
+            <p class="hero-subtitle" style="margin-top: 0.6rem; font-size: 0.95rem;">
+                Each certification supports practical client outcomes: cleaner books, better controls, and faster monthly closes.
             </p>
         </div>
     </section>
@@ -615,6 +649,12 @@
                         Automated document processing for property expense management.
                     </p>
                 </div>
+            </div>
+
+            <div class="trust-strip">
+                <div class="trust-item"><strong>Implementation Confidence:</strong> Certifications confirm platform-level proficiency before setup or migration starts.</div>
+                <div class="trust-item"><strong>Compliance Readiness:</strong> Workflows are aligned with documentation and reporting standards used by finance teams.</div>
+                <div class="trust-item"><strong>Faster Delivery:</strong> Proven tools and structured processes reduce trial-and-error during onboarding and cleanup.</div>
             </div>
             
             <div class="cta-buttons">
