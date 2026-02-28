@@ -9,6 +9,17 @@
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
+:root {
+  --primary: #E3BF4D;
+  --primary-dark: #C49A26;
+  --accent: #63B3ED;
+  --dark: #0A0A0A;
+  --card-bg: #14181D;
+  --border: #2A313A;
+  --text: #F0F0F0;
+  --text-light: #C2CAD5;
+}
+
 /* RESET & BASE */
 * {
   margin: 0;
@@ -20,8 +31,8 @@ html {
   scroll-behavior: smooth;
 }
 body {
-  background: #0a0a0a;
-  color: #fff;
+  background: var(--dark);
+  color: var(--text);
   width: 100%;
   overflow-x: hidden;
 }
@@ -34,7 +45,7 @@ header {
   background: rgba(5, 5, 5, 0.98);
   backdrop-filter: blur(10px);
   -webkit-backdrop-filter: blur(10px);
-  border-bottom: 1px solid #222;
+  border-bottom: 1px solid var(--border);
   z-index: 1000;
   padding: 0;
 }
@@ -46,7 +57,7 @@ header {
   flex-wrap: wrap;
 }
 .nav-bar a {
-  color: #fff;
+  color: var(--text);
   text-decoration: none;
   font-weight: 600;
   letter-spacing: 1px;
@@ -55,8 +66,12 @@ header {
   white-space: nowrap;
 }
 .nav-bar a:hover {
-  color: #c5a880;
-  border-bottom: 2px solid #c5a880;
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
+}
+.nav-bar a.active {
+  color: var(--primary);
+  border-bottom: 2px solid var(--primary);
 }
 
 /* PAGE HERO */
@@ -76,7 +91,7 @@ header {
   font-size: clamp(2.5rem, 5vw, 3.6rem);
   font-weight: 900;
   letter-spacing: 2px;
-  color: #c5a880;
+  color: var(--primary);
   line-height: 1.2;
   margin-bottom: 1rem;
 }
@@ -99,7 +114,7 @@ header {
 .section h2 {
   font-size: clamp(1.8rem, 4vw, 2.5rem);
   letter-spacing: 1px;
-  color: #c5a880;
+  color: var(--primary);
   margin-bottom: 1.5rem;
 }
 .section p {
@@ -131,8 +146,8 @@ header {
   display: block;
 }
 .profile-box {
-  background: #0f0f0f;
-  border: 1px solid #222;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
   border-radius: 20px;
   padding: clamp(2rem, 3vw, 3.2rem);
   transition: 0.4s;
@@ -140,7 +155,7 @@ header {
 }
 .profile-box:hover {
   transform: translateY(-10px);
-  border-color: #c5a880;
+  border-color: var(--primary);
 }
 .profile-box p {
   max-width: 100%;
@@ -148,7 +163,7 @@ header {
   line-height: 1.8;
 }
 .highlight {
-  color: #c5a880;
+  color: var(--primary);
   font-weight: 600;
 }
 
@@ -160,8 +175,8 @@ header {
   margin-top: 3rem;
 }
 .exp-card {
-  background: #0f0f0f;
-  border: 1px solid #222;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
   border-radius: 16px;
   padding: clamp(1.8rem, 3vw, 2.2rem);
   transition: 0.4s;
@@ -169,10 +184,10 @@ header {
 }
 .exp-card:hover {
   transform: translateY(-8px);
-  border-color: #c5a880;
+  border-color: var(--primary);
 }
 .exp-card h3 {
-  color: #c5a880;
+  color: var(--primary);
   font-size: clamp(2rem, 3vw, 2.4rem);
   margin-bottom: 0.5rem;
 }
@@ -190,8 +205,8 @@ header {
   margin-top: 3rem;
 }
 .service-card {
-  background: #0f0f0f;
-  border: 1px solid #222;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
   border-radius: 18px;
   padding: clamp(2rem, 3vw, 2.4rem);
   transition: 0.4s;
@@ -201,15 +216,15 @@ header {
 }
 .service-card:hover {
   transform: translateY(-8px);
-  border-color: #c5a880;
+  border-color: var(--primary);
 }
 .service-icon {
   font-size: 2.2rem;
-  color: #c5a880;
+  color: var(--primary);
   margin-bottom: 1.2rem;
 }
 .service-card h4 {
-  color: #c5a880;
+  color: var(--primary);
   margin-bottom: 1rem;
   font-size: 1.3rem;
   font-weight: 700;
@@ -223,11 +238,11 @@ header {
 
 /* WORK PROCESS */
 .process-section {
-  background: #0f0f0f;
+  background: var(--card-bg);
   border-radius: 20px;
   padding: clamp(2.5rem, 4vw, 3.5rem);
   margin-top: 4rem;
-  border: 1px solid #222;
+  border: 1px solid var(--border);
 }
 .process-steps {
   display: grid;
@@ -241,7 +256,7 @@ header {
 .step-number {
   width: 50px;
   height: 50px;
-  background: #c5a880;
+  background: var(--primary);
   color: #000;
   border-radius: 50%;
   display: flex;
@@ -252,7 +267,7 @@ header {
   margin: 0 auto 1.5rem;
 }
 .process-step h4 {
-  color: #c5a880;
+  color: var(--primary);
   margin-bottom: 0.8rem;
   font-size: 1.2rem;
 }
@@ -267,8 +282,8 @@ header {
   margin: 2.5rem auto 0 auto;
   padding: clamp(1rem, 2.5vw, 1.2rem) clamp(2.2rem, 5vw, 3.2rem);
   border-radius: 40px;
-  border: 2px solid #c5a880;
-  color: #c5a880;
+  border: 2px solid var(--primary);
+  color: var(--primary);
   text-decoration: none;
   font-weight: 700;
   letter-spacing: 1px;
@@ -279,10 +294,39 @@ header {
   width: 100%;
 }
 .lux-btn:hover {
-  background: #c5a880;
+  background: var(--primary);
   color: #000;
   transform: translateY(-3px);
-  box-shadow: 0 8px 20px rgba(197, 168, 128, 0.25);
+  box-shadow: 0 8px 20px rgba(227, 191, 77, 0.25);
+}
+
+.quick-summary {
+  max-width: 1100px;
+  margin: -1.5rem auto 0;
+  padding: 0 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(210px, 1fr));
+  gap: 1rem;
+}
+
+.summary-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem;
+  text-align: left;
+}
+
+.summary-card h3 {
+  color: var(--primary);
+  font-size: 1rem;
+  margin-bottom: 0.35rem;
+}
+
+.summary-card p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: var(--text-light);
 }
 
 /* FOOTER */
@@ -402,6 +446,7 @@ header {
 <header>
 <nav class="nav-bar">
 <a href="index.html">Home</a>
+<a href="about.html" class="active">About</a>
 <a href="portfolio.html">Portfolio</a>
 <a href="certifications.html">Certifications</a>
 <a href="#contact">Connect</a>
@@ -412,8 +457,27 @@ header {
 <section class="page-hero">
 <h1>ABOUT ME</h1>
 <p>
-Accounting & Financial Operations Specialist focused on building structured, reliable, and scalable finance systems for growing businesses.
+I help businesses keep accounting simple, accurate, and reliable.
 </p>
+</section>
+
+<section class="quick-summary">
+  <article class="summary-card">
+    <h3>Bookkeeping</h3>
+    <p>Month-end close, reconciliations, and clean ledgers.</p>
+  </article>
+  <article class="summary-card">
+    <h3>Real Estate Accounting</h3>
+    <p>AppFolio and Buildium workflows with trust accounting support.</p>
+  </article>
+  <article class="summary-card">
+    <h3>Payroll & Compliance</h3>
+    <p>Accurate processing and organized records for reporting.</p>
+  </article>
+  <article class="summary-card">
+    <h3>Client Communication</h3>
+    <p>Clear scope, regular updates, and practical next steps.</p>
+  </article>
 </section>
 
 <!-- PROFILE SECTION -->
@@ -427,16 +491,16 @@ Accounting & Financial Operations Specialist focused on building structured, rel
 
 <div class="profile-box">
 <p>
-I'm <span class="highlight">AmanJot Singh</span>, a professional accounting and financial operations specialist with over <span class="highlight">five years of hands-on experience</span> supporting businesses across bookkeeping, real estate accounting, payroll operations, and financial systems management.
+I'm <span class="highlight">AmanJot Singh</span>, an accounting and financial operations specialist with over <span class="highlight">five years of hands-on experience</span>.
 </p>
 <p>
-My work is centered around <span class="highlight">building clean accounting structures, fixing broken financial systems, and helping businesses gain control over their numbers</span>. I specialize in transforming scattered financial data into organized systems that support informed decision-making, compliance, and long-term growth.
+My work focuses on <span class="highlight">clean books, better reporting, and reliable accounting systems</span> so business owners can make decisions with confidence.
 </p>
 <p>
-I believe that good accounting isn't just about recording transactions—it's about creating systems that give business owners <span class="highlight">clarity, confidence, and control</span> over their financial future.
+I believe accounting should remove stress, not add it. My goal is to give clients <span class="highlight">clarity, confidence, and control</span> over their numbers.
 </p>
 <p>
-I work remotely with global clients, delivering accounting solutions that combine technical accuracy with strong operational structure.
+I work remotely with global clients and deliver practical solutions with clear communication at every step.
 </p>
 </div>
 </div>
