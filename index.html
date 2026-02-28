@@ -10,15 +10,15 @@
     
     <style>
         :root {
-            --primary: #D4AF37; /* Luxury Gold - Matching certificates page */
-            --primary-dark: #B8941F;
-            --accent: #2F81F7;
+            --primary: #E3BF4D; /* Warm gold for clearer contrast */
+            --primary-dark: #C49A26;
+            --accent: #63B3ED;
             --dark: #0A0A0A;
             --light: #FFFFFF;
-            --card-bg: #1A1A1A;
+            --card-bg: #14181D;
             --text: #F0F0F0;
-            --text-light: #AAAAAA;
-            --border: #333333;
+            --text-light: #C2CAD5;
+            --border: #2A313A;
             --footer-bg: #FFFFFF;
             --footer-text: #333333;
             --footer-light: #666666;
@@ -437,6 +437,52 @@
             color: var(--text-light);
         }
         
+
+        /* ===== WHY CLIENTS CHOOSE ME ===== */
+        .positioning-section {
+            background: #0F141A;
+            border-top: 1px solid var(--border);
+            border-bottom: 1px solid var(--border);
+        }
+
+        .positioning-grid {
+            display: grid;
+            gap: 1rem;
+            margin-top: 2rem;
+            grid-template-columns: 1fr;
+        }
+
+        @media (min-width: 768px) {
+            .positioning-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .positioning-card {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1.2rem;
+        }
+
+        .positioning-card h3 {
+            color: var(--primary);
+            font-size: 1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .positioning-card p {
+            color: var(--text-light);
+            font-size: 0.92rem;
+        }
+
+        .start-note {
+            margin-top: 1.2rem;
+            text-align: center;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
+
         /* ===== CONSULTATION FORM ===== */
         .consultation-section {
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(47, 129, 247, 0.1));
@@ -706,6 +752,7 @@
             <!-- Desktop Navigation -->
             <nav class="nav-desktop">
                 <a href="index.html">Home</a>
+                <a href="about.html">About</a>
                 <a href="portfolio.html">Portfolio</a>
                 <a href="certifications.html">Certifications</a>
                 <a href="#consultation">Consultation</a>
@@ -719,6 +766,7 @@
             <!-- Mobile Navigation Menu -->
             <nav class="nav-mobile" id="mobileNav">
                 <a href="index.html">Home</a>
+                <a href="about.html">About</a>
                 <a href="portfolio.html">Portfolio</a>
                 <a href="certifications.html">Certifications</a>
                 <a href="#consultation">Consultation</a>
@@ -747,10 +795,8 @@
                     </div>
                     
                     <p class="hero-description">
-                        As a certified property accounting specialist with expertise in AppFolio and Quickbooks, 
-                        I provide expert financial management solutions for real estate portfolios. With over 5 years 
-                        of specialized experience, I optimize accounting systems to ensure accuracy, compliance, and 
-                        operational efficiency for property management firms.
+                        I help property managers and business owners keep their books clean, accurate, and easy to understand.
+                        My focus is simple: reliable reports, stress-free reconciliations, and accounting systems you can trust.
                     </p>
                     
                     <div class="certification-badges">
@@ -763,6 +809,11 @@
                         <span class="certification-badge">
                             <i class="fas fa-certificate"></i> Data Migration Specialist
                         </span>
+                    </div>
+
+                    <div class="cta-buttons" style="justify-content: flex-start; margin-top: 1.2rem;">
+                        <a href="about.html" class="btn btn-primary"><i class="fas fa-user"></i> About Me</a>
+                        <a href="#consultation" class="btn btn-outline"><i class="fas fa-comments"></i> Let’s Talk</a>
                     </div>
                 </div>
             </div>
@@ -782,21 +833,21 @@
     <!-- By The Numbers -->
     <section class="achievements-section section-sm">
         <div class="container">
-            <h2 class="text-center">Certified Results</h2>
-            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">Professional certifications translate to measurable performance</p>
+            <h2 class="text-center">Quick Snapshot</h2>
+            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">A clear view of what I do and how I support clients</p>
             
             <div class="achievements-grid">
                 <div class="achievement-card">
-                    <div class="achievement-value">QuickBooks & Buildium</div>
-                    <p>Dual Platform Certification</p>
+                    <div class="achievement-value">Bookkeeping</div>
+                    <p>Monthly close, reconciliations, and clean ledgers</p>
                 </div>
                 <div class="achievement-card">
-                    <div class="achievement-value">5+</div>
-                    <p>Years Specialized Experience</p>
+                    <div class="achievement-value">Real Estate</div>
+                    <p>AppFolio and Buildium property accounting support</p>
                 </div>
                 <div class="achievement-card">
-                    <div class="achievement-value">40%</div>
-                    <p>Process Efficiency Improvement</p>
+                    <div class="achievement-value">Payroll</div>
+                    <p>Accurate payroll workflows and compliance-ready records</p>
                 </div>
             </div>
         </div>
@@ -805,8 +856,8 @@
     <!-- Technical Expertise -->
     <section class="section">
         <div class="container">
-            <h2 class="text-center">Certified Technical Expertise</h2>
-            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">Dual-certified platform mastery with comprehensive skills</p>
+            <h2 class="text-center">What I Can Help You With</h2>
+            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">Straightforward services for business owners who need dependable accounting support</p>
             
             <div class="skills-grid">
                 <div class="skill-category">
@@ -848,7 +899,7 @@
     <section class="section" style="background: var(--card-bg);">
         <div class="container">
             <h2 class="text-center">Portfolio</h2>
-            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">How professional certifications deliver client value</p>
+            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">Real examples of the systems and accounting workflows I handle</p>
             
             <div class="portfolio-grid">
                 <div class="portfolio-card">
@@ -883,12 +934,38 @@
         </div>
     </section>
 
+
+    <!-- Positioning Section -->
+    <section class="positioning-section section">
+        <div class="container">
+            <h2 class="text-center">About Me — How I Work With Clients</h2>
+            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">I am building my freelance career with one clear promise: honest communication, organized work, and dependable results.</p>
+
+            <div class="positioning-grid">
+                <article class="positioning-card">
+                    <h3>Clear Scope Before We Start</h3>
+                    <p>I define deliverables, timeline, and priorities before beginning, so you know exactly what is being done and when.</p>
+                </article>
+                <article class="positioning-card">
+                    <h3>Weekly Progress Visibility</h3>
+                    <p>You receive concise updates on completed reconciliations, issues found, and next steps to avoid surprises.</p>
+                </article>
+                <article class="positioning-card">
+                    <h3>System-First Thinking</h3>
+                    <p>My focus is not only cleanup; I build repeatable accounting systems that reduce errors in future months.</p>
+                </article>
+            </div>
+
+            <p class="start-note">New to freelancing, not new to accounting discipline.</p>
+        </div>
+    </section>
+
     <!-- Consultation Form -->
     <section id="consultation" class="consultation-section section">
         <div class="container">
-            <h2 class="text-center">Certified Consultation</h2>
+            <h2 class="text-center">Free Discovery Call</h2>
             <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">
-                Schedule a consultation with a certified property accounting specialist
+                Tell me your current bookkeeping challenge and I will suggest a practical plan.
             </p>
             
             <div class="form-container">
@@ -919,7 +996,7 @@
                     </div>
                     
                     <button type="submit" class="btn btn-primary btn-block">
-                        <i class="fas fa-paper-plane"></i> Request Certified Consultation
+                        <i class="fas fa-paper-plane"></i> Request Free Discovery Call
                     </button>
                 </form>
             </div>
