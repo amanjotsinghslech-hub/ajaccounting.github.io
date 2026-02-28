@@ -1,452 +1,280 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Portfolio | AmanJot Singh Slach | Property Accounting Specialist</title>
+<section class="section">
+    <div class="container">
+        <h2 class="text-center">Platform-Based Accounting Experience</h2>
+        <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem;">
+            Real client projects across AppFolio, QuickBooks, and Xero. 
+            Screenshots are masked for confidentiality.
+        </p>
 
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+        <!-- ======================= -->
+        <!-- 1️⃣ CHART OF ACCOUNTS -->
+        <!-- ======================= -->
 
-    <style>
-        :root {
-            --primary: #D4AF37;
-            --dark: #0A0A0A;
-            --card-bg: #1A1A1A;
-            --text: #F0F0F0;
-            --text-light: #AAAAAA;
-            --border: #333333;
-            --footer-bg: #FFFFFF;
-            --footer-text: #333333;
-            --footer-light: #666666;
-        }
+        <h2 style="margin-top:3rem;">1️⃣ Chart of Accounts (COA)</h2>
 
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        html { scroll-behavior: smooth; scroll-padding-top: 70px; }
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--dark);
-            color: var(--text);
-            line-height: 1.5;
-            padding-top: 70px;
-        }
+        <div class="portfolio-grid">
 
-        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
-        .section { padding: 3rem 0; }
-        .section-sm { padding: 2rem 0; }
-        .text-center { text-align: center; }
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>AppFolio – Property-Level COA</h3>
+                    <p>
+                        Designed property-based income & expense structure aligned with trust accounting 
+                        and owner reporting requirements.
+                    </p>
+                    <div class="proof-placeholder">
+                        Add screenshots: COA layout + trust vs operating accounts.
+                    </div>
+                </div>
+            </div>
 
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
-            height: 70px;
-            display: flex;
-            align-items: center;
-        }
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>QuickBooks – Construction & Multi-Property COA</h3>
+                    <p>
+                        Built customized COA using sub-accounts and class tracking 
+                        for construction and multi-property reporting.
+                    </p>
+                    <div class="proof-placeholder">
+                        Add screenshots: Sub-accounts + class-enabled COA.
+                    </div>
+                </div>
+            </div>
 
-        .header-content {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>Xero – Tracking Category Structure</h3>
+                    <p>
+                        Structured general ledger using tracking categories 
+                        for property-level profitability and clean grouping.
+                    </p>
+                    <div class="proof-placeholder">
+                        Add screenshots: COA view + tracking categories.
+                    </div>
+                </div>
+            </div>
 
-        .logo { font-weight: 700; font-size: 1.2rem; color: var(--text); text-decoration: none; }
-        .logo span { color: var(--primary); }
-
-        .nav-desktop { display: flex; gap: 2rem; }
-        .nav-desktop a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-        .nav-desktop a:hover { color: var(--primary); }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text);
-            font-size: 1.4rem;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .nav-mobile {
-            display: none;
-            position: absolute;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background: var(--card-bg);
-            border-bottom: 1px solid var(--border);
-            padding: 1rem;
-            flex-direction: column;
-            gap: 1rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        .nav-mobile.active { display: flex; }
-        .nav-mobile a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .portfolio-hero {
-            padding-top: 30px;
-            padding-bottom: 1.5rem;
-            background: linear-gradient(135deg, #0A0A0A 0%, #050505 100%);
-            text-align: center;
-        }
-        .portfolio-hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
-        .portfolio-hero h1 span { color: var(--primary); }
-        .hero-subtitle {
-            font-size: 1rem;
-            color: var(--text-light);
-            max-width: 840px;
-            margin: 0 auto;
-        }
-
-        .classification-section {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        .classification-section h3 {
-            font-size: 1.3rem;
-            margin-bottom: 0.5rem;
-            color: var(--primary);
-        }
-
-        .classification-intro {
-            color: var(--text-light);
-            font-size: 0.95rem;
-            margin-bottom: 1rem;
-        }
-
-        .platform-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1rem;
-        }
-
-        @media (min-width: 992px) {
-            .platform-grid { grid-template-columns: repeat(3, 1fr); }
-        }
-
-        .platform-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            overflow: hidden;
-        }
-
-        .platform-image-wrap {
-            height: 170px;
-            border-bottom: 1px solid var(--border);
-            overflow: hidden;
-        }
-
-        .platform-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .platform-content { padding: 1rem; }
-        .platform-content h4 { font-size: 1rem; margin-bottom: 0.5rem; }
-        .platform-content p { color: var(--text-light); font-size: 0.9rem; }
-
-        .screenshot-note {
-            margin-top: 0.8rem;
-            font-size: 0.82rem;
-            color: #f7e6a9;
-            border-left: 3px solid var(--primary);
-            background: rgba(212, 175, 55, 0.09);
-            padding: 0.5rem 0.6rem;
-            border-radius: 4px;
-        }
-
-        .results-section { background: #121212; }
-        .results-grid {
-            display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 1rem;
-            margin-top: 1.5rem;
-        }
-        @media (min-width: 768px) { .results-grid { grid-template-columns: repeat(4, 1fr); } }
-
-        .result-item {
-            text-align: center;
-            padding: 1.2rem 0.8rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            border: 1px solid var(--border);
-        }
-        .result-value { font-size: 1.1rem; font-weight: 700; color: var(--primary); margin-bottom: 0.3rem; }
-        .result-label { font-size: 0.85rem; color: var(--text-light); }
-
-        .cta-buttons { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap; }
-        .btn {
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            font-size: 1rem;
-        }
-        .btn-primary { background: var(--primary); color: var(--dark); }
-        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
-
-        .footer-minimal {
-            background: var(--footer-bg);
-            border-top: 1px solid #E5E7EB;
-            padding: 3rem 0 2rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            .footer-content { grid-template-columns: repeat(3, 1fr); }
-        }
-
-        .footer-section h4 { color: var(--footer-text); margin-bottom: 1rem; font-size: 1rem; font-weight: 600; }
-        .footer-links { list-style: none; }
-        .footer-links li { margin-bottom: 0.6rem; color: var(--footer-light); font-size: 0.9rem; }
-        .footer-links a {
-            color: var(--footer-light);
-            text-decoration: none;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid #E5E7EB;
-            color: var(--footer-light);
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 768px) {
-            body { padding-top: 60px; }
-            header { height: 60px; }
-            html { scroll-padding-top: 60px; }
-            .menu-toggle { display: block; }
-            .nav-desktop { display: none; }
-            .nav-mobile { top: 60px; }
-            .portfolio-hero h1 { font-size: 1.8rem; }
-            .section { padding: 2rem 0; }
-            .cta-buttons { flex-direction: column; }
-            .btn { width: 100%; justify-content: center; }
-        }
-    </style>
-</head>
-<body>
-    <header>
-        <div class="header-content">
-            <a href="index.html" class="logo">AmanJot Singh <span>Slach</span></a>
-            <nav class="nav-desktop">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="portfolio.html" style="color: var(--primary);">Portfolio</a>
-                <a href="certifications.html">Certifications</a>
-                <a href="#contact">Connect</a>
-            </nav>
-            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
-            <nav class="nav-mobile" id="mobileNav">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="portfolio.html" style="color: var(--primary);">Portfolio</a>
-                <a href="certifications.html">Certifications</a>
-                <a href="#contact">Connect</a>
-            </nav>
         </div>
-    </header>
 
-    <section class="portfolio-hero section">
-        <div class="container">
-            <h1>Property Accounting <span>Portfolio</span></h1>
-            <p class="hero-subtitle">Portfolio is now organized exactly by work classification. Under each heading, recruiters can directly see AppFolio, QuickBooks, and Xero experience with short explanations and screenshot placeholders.</p>
+
+        <!-- ======================= -->
+        <!-- 2️⃣ BALANCE SHEET -->
+        <!-- ======================= -->
+
+        <h2 style="margin-top:3rem;">2️⃣ Balance Sheet (BS)</h2>
+
+        <div class="portfolio-grid">
+
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>AppFolio – Property Asset Structure</h3>
+                    <p>
+                        Managed trust liabilities, security deposits, and 
+                        owner payables with clean property segregation.
+                    </p>
+                    <div class="proof-placeholder">
+                        Add screenshots: Balance sheet + trust separation.
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>QuickBooks – Inventory vs Class Method</h3>
+                    <p>
+                        Implemented two property treatment methods:
+                        inventory-based tracking and class-based segmentation.
+                    </p>
+                    <div class="proof-placeholder">
+                        Add screenshots: Both reporting approaches.
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>Xero – Fixed Asset & Tracking Approach</h3>
+                    <p>
+                        Structured properties under fixed assets with 
+                        tracking categories for operational clarity.
+                    </p>
+                    <div class="proof-placeholder">
+                        Add screenshots: BS + tracking-based report.
+                    </div>
+                </div>
+            </div>
+
         </div>
-    </section>
 
-    <section class="section">
-        <div class="container">
-            <h2 class="text-center">Classification-Wise Experience</h2>
-            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem;">Structured format: Head → AppFolio SS explain → QB SS explain → Xero SS explain.</p>
 
-            <div class="classification-section">
-                <h3>Head: Chart of Accounts</h3>
-                <p class="classification-intro">Show how you structure accounts for property and construction reporting in each system.</p>
-                <div class="platform-grid">
-                    <article class="platform-card"><div class="platform-content"><h4>AppFolio (SS + Explain)</h4><p>Add AppFolio Chart of Accounts screenshot and explain in 1–2 lines how property accounts are grouped for reporting.</p><div class="screenshot-note">Add SS: AppFolio COA.</div></div></article>
-                    <article class="platform-card"><div class="platform-content"><h4>QuickBooks (SS + Explain)</h4><p>Add QuickBooks screenshot and explain class/location setup used for client-specific COA structure.</p><div class="screenshot-note">Add SS: QuickBooks COA.</div></div></article>
-                    <article class="platform-card"><div class="platform-content"><h4>Xero (SS + Explain)</h4><p>Add Xero screenshot and explain how account codes are aligned for clean property-wise tracking.</p><div class="screenshot-note">Add SS: Xero COA.</div></div></article>
+        <!-- ======================= -->
+        <!-- 3️⃣ BANK RECONCILIATION -->
+        <!-- ======================= -->
+
+        <h2 style="margin-top:3rem;">3️⃣ Bank Accounts & Reconciliation</h2>
+
+        <div class="portfolio-grid">
+
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>AppFolio – Multi-Account Reconciliation</h3>
+                    <p>
+                        Reconciled trust, operating, and owner accounts 
+                        ensuring clean monthly closures.
+                    </p>
+                    <div class="proof-placeholder">
+                        Add screenshots: Reconciliation summary.
+                    </div>
                 </div>
             </div>
 
-            <div class="classification-section">
-                <h3>Head: Balance Sheet (BS)</h3>
-                <p class="classification-intro">Show how properties are recorded in BS through inventory or GL/class categorization.</p>
-                <div class="platform-grid">
-                    <article class="platform-card"><div class="platform-content"><h4>AppFolio (SS + Explain)</h4><p>Add AppFolio BS screenshot and explain how asset/liability balances are arranged by property.</p><div class="screenshot-note">Add SS: AppFolio BS.</div></div></article>
-                    <article class="platform-card"><div class="platform-content"><h4>QuickBooks (SS + Explain)</h4><p>Add QuickBooks BS screenshot and explain GL/class method used for construction/property clients.</p><div class="screenshot-note">Add SS: QuickBooks BS.</div></div></article>
-                    <article class="platform-card"><div class="platform-content"><h4>Xero (SS + Explain)</h4><p>Add Xero BS screenshot and explain inventory/categorization logic used for property presentation.</p><div class="screenshot-note">Add SS: Xero BS.</div></div></article>
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>QuickBooks – 40+ Accounts Managed</h3>
+                    <p>
+                        Reconciled over 40 bank and credit accounts 
+                        within a single engagement.
+                    </p>
+                    <div class="proof-placeholder">
+                        Add screenshots: Account list + reconciliation status.
+                    </div>
                 </div>
             </div>
 
-            <div class="classification-section">
-                <h3>Head: Bank Accounts & Feed Reconciliation</h3>
-                <p class="classification-intro">Show multi-account reconciliation experience and feed control discipline.</p>
-                <div class="platform-grid">
-                    <article class="platform-card"><div class="platform-content"><h4>AppFolio (SS + Explain)</h4><p>Add AppFolio reconciliation screenshot and explain month-end matching/check process.</p><div class="screenshot-note">Add SS: AppFolio bank feed + reconcile.</div></div></article>
-                    <article class="platform-card"><div class="platform-content"><h4>QuickBooks (SS + Explain)</h4><p>Add QB screenshot proving 40+ accounts reconciled and explain your control/review workflow.</p><div class="screenshot-note">Add SS: QuickBooks 40+ account reconciliation.</div></div></article>
-                    <article class="platform-card"><div class="platform-content"><h4>Xero (SS + Explain)</h4><p>Add Xero feed screenshot and explain how unmatched items were resolved for clean closing.</p><div class="screenshot-note">Add SS: Xero bank feed and reconciliation.</div></div></article>
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>Xero – Feed Cleanup & Rule Optimization</h3>
+                    <p>
+                        Cleaned high-volume bank feeds using rule automation 
+                        and duplicate detection control.
+                    </p>
+                    <div class="proof-placeholder">
+                        Add screenshots: Feed screen + rule setup.
+                    </div>
                 </div>
             </div>
 
-            <div class="classification-section">
-                <h3>Head: Bills Recording (AP)</h3>
-                <p class="classification-intro">Show how vendor bills are entered, coded and posted in each platform.</p>
-                <div class="platform-grid">
-                    <article class="platform-card"><div class="platform-content"><h4>AppFolio (SS + Explain)</h4><p>Add AppFolio bill entry screenshot and explain property-level coding and posting flow.</p><div class="screenshot-note">Add SS: AppFolio bills workflow.</div></div></article>
-                    <article class="platform-card"><div class="platform-content"><h4>QuickBooks (SS + Explain)</h4><p>Add QuickBooks AP screenshot and explain bill coding for construction/property vendors.</p><div class="screenshot-note">Add SS: QuickBooks bills coding.</div></div></article>
-                    <article class="platform-card"><div class="platform-content"><h4>Xero (SS + Explain)</h4><p>Add Xero bills screenshot and explain how categories are controlled for correct reporting.</p><div class="screenshot-note">Add SS: Xero bills process.</div></div></article>
+        </div>
+
+
+        <!-- ======================= -->
+        <!-- 4️⃣ BILLS / AP -->
+        <!-- ======================= -->
+
+        <h2 style="margin-top:3rem;">4️⃣ Bills & Accounts Payable</h2>
+
+        <div class="portfolio-grid">
+
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>AppFolio – Property-Mapped Bills</h3>
+                    <p>
+                        Posted vendor bills directly linked to properties 
+                        with structured expense categorization.
+                    </p>
+                    <div class="proof-placeholder">
+                        Add screenshots: Bill entry + vendor ledger.
+                    </div>
                 </div>
             </div>
 
-            <div class="classification-section">
-                <h3>Head: Profit &amp; Loss (P&amp;L)</h3>
-                <p class="classification-intro">Show expense classification styles across client types.</p>
-                <div class="platform-grid">
-                    <article class="platform-card"><div class="platform-content"><h4>AppFolio (SS + Explain)</h4><p>Add AppFolio P&amp;L screenshot and explain expense classes used for owner-level reporting.</p><div class="screenshot-note">Add SS: AppFolio P&amp;L.</div></div></article>
-                    <article class="platform-card"><div class="platform-content"><h4>QuickBooks (SS + Explain)</h4><p>Add QuickBooks class-wise P&amp;L screenshot and explain how it supports client decisions.</p><div class="screenshot-note">Add SS: QuickBooks P&amp;L by class.</div></div></article>
-                    <article class="platform-card"><div class="platform-content"><h4>Xero (SS + Explain)</h4><p>Add Xero P&amp;L screenshot and explain expense group mapping for trend analysis.</p><div class="screenshot-note">Add SS: Xero P&amp;L.</div></div></article>
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>QuickBooks – Job & Class Coding</h3>
+                    <p>
+                        Applied class tracking and job costing 
+                        to ensure proper COGS vs expense separation.
+                    </p>
+                    <div class="proof-placeholder">
+                        Add screenshots: Class-coded bill + AP aging.
+                    </div>
                 </div>
             </div>
 
-            <div class="classification-section">
-                <h3>Head: Historical Cleanup (3-Year Backlog)</h3>
-                <p class="classification-intro">Show before/after cleanup proof of unreconciled balances and backlog closure.</p>
-                <div class="platform-grid">
-                    <article class="platform-card"><div class="platform-content"><h4>AppFolio (SS + Explain)</h4><p>Add AppFolio before/after screenshot and explain how historical periods were corrected.</p><div class="screenshot-note">Add SS: AppFolio cleanup evidence.</div></div></article>
-                    <article class="platform-card"><div class="platform-content"><h4>QuickBooks (SS + Explain)</h4><p>Add QB screenshot with unreconciled gap (up to high variance) and explain cleanup result.</p><div class="screenshot-note">Add SS: QuickBooks backlog + unreconciled before/after.</div></div></article>
-                    <article class="platform-card"><div class="platform-content"><h4>Xero (SS + Explain)</h4><p>Add Xero cleanup screenshot and explain balancing checks completed before finalization.</p><div class="screenshot-note">Add SS: Xero historical cleanup.</div></div></article>
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>Xero – Structured Vendor Workflow</h3>
+                    <p>
+                        Managed draft-to-payment workflow with 
+                        due-date control and vendor reconciliation.
+                    </p>
+                    <div class="proof-placeholder">
+                        Add screenshots: Bill workflow view.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- ======================= -->
+        <!-- 5️⃣ PROFIT & LOSS -->
+        <!-- ======================= -->
+
+        <h2 style="margin-top:3rem;">5️⃣ Profit & Loss (P&L)</h2>
+
+        <div class="portfolio-grid">
+
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>AppFolio – Property-Level Reporting</h3>
+                    <p>
+                        Generated property-specific P&L aligned 
+                        with owner statements and management decisions.
+                    </p>
+                    <div class="proof-placeholder">
+                        Add screenshots: Property P&L.
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>QuickBooks – Class-Based Profitability</h3>
+                    <p>
+                        Used class tracking for construction job profitability 
+                        and multi-location expense comparison.
+                    </p>
+                    <div class="proof-placeholder">
+                        Add screenshots: P&L by class.
+                    </div>
+                </div>
+            </div>
+
+            <div class="portfolio-card">
+                <div class="card-content">
+                    <h3>Xero – Tracking Category Profitability</h3>
+                    <p>
+                        Built filtered P&L reports showing property-wise 
+                        income and expense breakdown.
+                    </p>
+                    <div class="proof-placeholder">
+                        Add screenshots: Tracking filtered P&L.
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+
+        <!-- ======================= -->
+        <!-- 6️⃣ BACKLOG CLEANUP -->
+        <!-- ======================= -->
+
+        <h2 style="margin-top:3rem;">6️⃣ 3-Year Backlog & $1M Cleanup Case</h2>
+
+        <div class="portfolio-card" style="margin-top:1.5rem;">
+            <div class="card-content">
+                <h3>Historical Cleanup & Reconciliation Recovery</h3>
+                <p>
+                    Resolved 3 years of backlog including unreconciled balances 
+                    approaching $1M. Rebuilt reconciliations, corrected opening balances, 
+                    and delivered clean financial statements.
+                </p>
+                <div class="proof-placeholder">
+                    Add BEFORE & AFTER screenshots: unreconciled feed vs final reconciliation.
                 </div>
             </div>
         </div>
-    </section>
 
-    <section class="results-section section-sm">
-        <div class="container">
-            <h3 class="text-center">Why Recruiters Can Trust This Portfolio</h3>
-            <div class="results-grid">
-                <div class="result-item"><div class="result-value">Classification Based</div><div class="result-label">COA, BS, Bank, Bills, P&amp;L, Cleanup</div></div>
-                <div class="result-item"><div class="result-value">Platform Coverage</div><div class="result-label">AppFolio + QuickBooks + Xero</div></div>
-                <div class="result-item"><div class="result-value">Scale Experience</div><div class="result-label">40+ bank accounts reconciled</div></div>
-                <div class="result-item"><div class="result-value">Recovery Capability</div><div class="result-label">3-year backlog and unreconciled cleanup</div></div>
-            </div>
-        </div>
-    </section>
-
-    <section class="section">
-        <div class="container">
-            <div class="cta-buttons">
-                <a href="index.html#consultation" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Consultation</a>
-                <a href="certifications.html" class="btn btn-outline"><i class="fas fa-certificate"></i> View Certifications</a>
-            </div>
-        </div>
-    </section>
-
-    <footer id="contact" class="footer-minimal">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                        <li><a href="portfolio.html"><i class="fas fa-folder"></i> Portfolio</a></li>
-                        <li><a href="certifications.html"><i class="fas fa-certificate"></i> Certifications</a></li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Connect With Me</h4>
-                    <ul class="footer-links">
-                        <li><a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-                        <li><a href="mailto:Slachamanjotsingh@gmail.com"><i class="fas fa-envelope"></i> Slachamanjotsingh@gmail.com</a></li>
-                        <li><i class="fas fa-phone"></i> +91 991 115 5541</li>
-                    </ul>
-                </div>
-
-                <div class="footer-section">
-                    <h4>Specializations</h4>
-                    <ul class="footer-links">
-                        <li><strong>AppFolio Property Management</strong></li>
-                        <li><strong>Buildium Property Accounting</strong></li>
-                        <li>Migration Services</li>
-                        <li>Reconciliation Specialist</li>
-                        <li>Financial Reporting</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="copyright">© 2026 AmanJot Singh Slach | Certified Property Accounting Specialist</div>
-        </div>
-    </footer>
-
-    <script>
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileNav = document.getElementById('mobileNav');
-
-        menuToggle.addEventListener('click', () => {
-            mobileNav.classList.toggle('active');
-            menuToggle.innerHTML = mobileNav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-        });
-
-        document.addEventListener('click', (event) => {
-            if (!menuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
-                mobileNav.classList.remove('active');
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
-
-        mobileNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNav.classList.remove('active');
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            });
-        });
-    </script>
-</body>
-</html>
+    </div>
+</section>
