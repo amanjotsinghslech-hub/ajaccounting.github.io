@@ -4,16 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfolio | AmanJot Singh Slach | Property Accounting Specialist</title>
-    
+
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
+
     <style>
-        /* ===== RESET & VARIABLES ===== */
         :root {
-            --primary: #D4AF37; /* Luxury Gold - Matching home page */
+            --primary: #D4AF37;
             --primary-dark: #B8941F;
-            --accent: #2F81F7;
             --dark: #0A0A0A;
             --light: #FFFFFF;
             --card-bg: #1A1A1A;
@@ -24,17 +22,10 @@
             --footer-text: #333333;
             --footer-light: #666666;
         }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        html { scroll-behavior: smooth; scroll-padding-top: 70px; }
+
         body {
             font-family: 'Inter', sans-serif;
             background: var(--dark);
@@ -42,27 +33,12 @@
             line-height: 1.5;
             padding-top: 70px;
         }
-        
-        /* ===== UTILITY CLASSES ===== */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        
-        .section {
-            padding: 3rem 0;
-        }
-        
-        .section-sm {
-            padding: 2rem 0;
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        /* ===== HEADER WITH HAMBURGER MENU ===== */
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 1.5rem; }
+        .section { padding: 3rem 0; }
+        .section-sm { padding: 2rem 0; }
+        .text-center { text-align: center; }
+
         header {
             position: fixed;
             top: 0;
@@ -76,7 +52,7 @@
             display: flex;
             align-items: center;
         }
-        
+
         .header-content {
             max-width: 1200px;
             width: 100%;
@@ -86,24 +62,11 @@
             justify-content: space-between;
             align-items: center;
         }
-        
-        .logo {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--text);
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--primary);
-        }
-        
-        /* Desktop Navigation */
-        .nav-desktop {
-            display: flex;
-            gap: 2rem;
-        }
-        
+
+        .logo { font-weight: 700; font-size: 1.2rem; color: var(--text); text-decoration: none; }
+        .logo span { color: var(--primary); }
+
+        .nav-desktop { display: flex; gap: 2rem; }
         .nav-desktop a {
             color: var(--text-light);
             text-decoration: none;
@@ -111,12 +74,8 @@
             font-size: 0.9rem;
             transition: color 0.3s ease;
         }
-        
-        .nav-desktop a:hover {
-            color: var(--primary);
-        }
-        
-        /* Mobile Navigation */
+        .nav-desktop a:hover { color: var(--primary); }
+
         .menu-toggle {
             display: none;
             background: none;
@@ -126,7 +85,7 @@
             cursor: pointer;
             padding: 0.5rem;
         }
-        
+
         .nav-mobile {
             display: none;
             position: absolute;
@@ -140,11 +99,7 @@
             gap: 1rem;
             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
-        
-        .nav-mobile.active {
-            display: flex;
-        }
-        
+        .nav-mobile.active { display: flex; }
         .nav-mobile a {
             color: var(--text-light);
             text-decoration: none;
@@ -152,57 +107,44 @@
             padding: 0.5rem 0;
             border-bottom: 1px solid var(--border);
         }
-        
-        .nav-mobile a:hover {
-            color: var(--primary);
-        }
-        
-        /* ===== PORTFOLIO HERO ===== */
+
         .portfolio-hero {
             padding-top: 30px;
             padding-bottom: 1.5rem;
             background: linear-gradient(135deg, #0A0A0A 0%, #050505 100%);
             text-align: center;
         }
-        
-        .portfolio-hero h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
+
+        .portfolio-hero h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 0.5rem; }
+        .portfolio-hero h1 span { color: var(--primary); }
+        .hero-subtitle { font-size: 1rem; color: var(--text-light); max-width: 740px; margin: 0.3rem auto 0; }
+
+        .framework-grid {
+            margin-top: 1.5rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1rem;
         }
-        
-        .portfolio-hero h1 span {
-            color: var(--primary);
-        }
-        
-        .hero-subtitle {
-            font-size: 1rem;
+
+        .framework-item {
+            background: rgba(255, 255, 255, 0.04);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
             color: var(--text-light);
-            max-width: 500px;
-            margin: 0 auto;
+            font-size: 0.9rem;
         }
-        
-        /* ===== PORTFOLIO GRID - With Larger Images ===== */
+
         .portfolio-grid {
             display: grid;
             grid-template-columns: 1fr;
             gap: 1.5rem;
             margin-top: 1.5rem;
         }
-        
-        @media (min-width: 768px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
-        }
-        
-        @media (min-width: 1024px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-        
+
+        @media (min-width: 768px) { .portfolio-grid { grid-template-columns: repeat(2, 1fr); gap: 2rem; } }
+        @media (min-width: 1024px) { .portfolio-grid { grid-template-columns: repeat(3, 1fr); } }
+
         .portfolio-card {
             background: var(--card-bg);
             border: 1px solid var(--border);
@@ -210,14 +152,12 @@
             overflow: hidden;
             transition: all 0.3s ease;
         }
-        
         .portfolio-card:hover {
             border-color: var(--primary);
             transform: translateY(-5px);
             box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
         }
-        
-        /* Enhanced Image Container */
+
         .image-container {
             position: relative;
             width: 100%;
@@ -225,15 +165,8 @@
             overflow: hidden;
             border-bottom: 1px solid var(--border);
         }
-        
-        .portfolio-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s ease;
-        }
-        
-        /* Image Overlay for Zoom */
+
+        .portfolio-image { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; }
         .image-overlay {
             position: absolute;
             top: 0;
@@ -247,8 +180,7 @@
             opacity: 0;
             transition: opacity 0.3s ease;
         }
-        
-        /* Modal for Full-size Images */
+
         .image-modal {
             display: none;
             position: fixed;
@@ -262,59 +194,26 @@
             align-items: center;
             padding: 2rem;
         }
-        
-        .image-modal.active {
-            display: flex;
+
+        .image-modal.active { display: flex; }
+        .modal-image { max-width: 90%; max-height: 90%; object-fit: contain; border: 2px solid var(--primary); border-radius: 8px; }
+        .close-modal { position: absolute; top: 20px; right: 30px; color: white; font-size: 2rem; cursor: pointer; }
+
+        .card-content { padding: 1.5rem; }
+        .card-content h3 { color: var(--text); font-size: 1.1rem; margin-bottom: 0.8rem; line-height: 1.3; }
+        .card-content p { color: var(--text-light); font-size: 0.9rem; margin-bottom: 0.8rem; }
+
+        .proof-placeholder {
+            border-left: 3px solid var(--primary);
+            background: rgba(212, 175, 55, 0.08);
+            color: #f7e6a9;
+            font-size: 0.85rem;
+            padding: 0.6rem 0.7rem;
+            border-radius: 4px;
+            margin: 0.9rem 0;
         }
-        
-        .modal-image {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-            border: 2px solid var(--primary);
-            border-radius: 8px;
-        }
-        
-        .close-modal {
-            position: absolute;
-            top: 20px;
-            right: 30px;
-            color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            transition: color 0.3s ease;
-        }
-        
-        .close-modal:hover {
-            color: var(--primary);
-        }
-        
-        .card-content {
-            padding: 1.5rem;
-        }
-        
-        .card-content h3 {
-            color: var(--text);
-            font-size: 1.1rem;
-            margin-bottom: 0.8rem;
-            line-height: 1.3;
-        }
-        
-        .card-content p {
-            color: var(--text-light);
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 1rem;
-            min-height: 80px;
-        }
-        
-        .card-tags {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-top: 1rem;
-        }
-        
+
+        .card-tags { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-top: 1rem; }
         .tag {
             background: rgba(212, 175, 55, 0.1);
             color: var(--primary);
@@ -324,59 +223,17 @@
             font-weight: 500;
             border: 1px solid rgba(212, 175, 55, 0.3);
         }
-        
-        /* ===== DESKTOP-ONLY MODAL FEATURES ===== */
-        @media (max-width: 768px) {
-            .image-container {
-                cursor: default !important;
-            }
-            
-            .image-container:hover .portfolio-image {
-                transform: none;
-            }
-            
-            .image-container:hover .image-overlay {
-                opacity: 0;
-            }
-            
-            .image-overlay {
-                display: none;
-            }
-        }
-        
-        @media (min-width: 769px) {
-            .image-container {
-                cursor: pointer;
-            }
-            
-            .image-container:hover .portfolio-image {
-                transform: scale(1.05);
-            }
-            
-            .image-container:hover .image-overlay {
-                opacity: 1;
-            }
-        }
-        
-        /* ===== RESULTS SUMMARY ===== */
-        .results-section {
-            background: var(--card-bg);
-        }
-        
+
+        .results-section { background: var(--card-bg); }
         .results-grid {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 1rem;
             margin-top: 1.5rem;
         }
-        
-        @media (min-width: 768px) {
-            .results-grid {
-                grid-template-columns: repeat(4, 1fr);
-                gap: 1.5rem;
-            }
-        }
-        
+
+        @media (min-width: 768px) { .results-grid { grid-template-columns: repeat(4, 1fr); gap: 1.5rem; } }
+
         .result-item {
             text-align: center;
             padding: 1.5rem 1rem;
@@ -384,28 +241,10 @@
             border-radius: 8px;
             border: 1px solid var(--border);
         }
-        
-        .result-value {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        .result-label {
-            font-size: 0.9rem;
-            color: var(--text-light);
-        }
-        
-        /* ===== BUTTONS ===== */
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-        
+        .result-value { font-size: 1.8rem; font-weight: 700; color: var(--primary); margin-bottom: 0.5rem; }
+        .result-label { font-size: 0.9rem; color: var(--text-light); }
+
+        .cta-buttons { display: flex; gap: 1rem; justify-content: center; margin-top: 2rem; flex-wrap: wrap; }
         .btn {
             padding: 1rem 2rem;
             border-radius: 5px;
@@ -417,189 +256,65 @@
             gap: 0.5rem;
             font-size: 1rem;
         }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: var(--dark);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        /* ===== FOOTER (White Background - Matching Home Page) ===== */
-        .footer-minimal {
-            background: var(--footer-bg);
-            border-top: 1px solid #E5E7EB;
-            padding: 3rem 0 2rem;
-        }
-        
+        .btn-primary { background: var(--primary); color: var(--dark); }
+        .btn-outline { background: transparent; border: 2px solid var(--primary); color: var(--primary); }
+
+        .footer-minimal { background: var(--footer-bg); border-top: 1px solid #E5E7EB; padding: 3rem 0 2rem; }
         .footer-content {
             max-width: 1200px;
-            margin: 0 auto;
+            margin: 0 auto 2rem;
             padding: 0 1rem;
             display: grid;
             grid-template-columns: 1fr;
             gap: 2rem;
-            margin-bottom: 2rem;
         }
-        
-        @media (min-width: 768px) {
-            .footer-content {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
-            }
-        }
-        
-        .footer-section h4 {
-            color: var(--footer-text);
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.6rem;
-        }
-        
-        .footer-links a {
-            color: var(--footer-light);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-        
-        .footer-links li:not(a) {
-            color: var(--footer-light);
-            font-size: 0.9rem;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid #E5E7EB;
-            color: var(--footer-light);
-            font-size: 0.85rem;
-        }
-        
-        /* ===== MOBILE RESPONSIVE ===== */
+        @media (min-width: 768px) { .footer-content { grid-template-columns: repeat(3, 1fr); } }
+
+        .footer-section h4 { color: var(--footer-text); margin-bottom: 1rem; font-size: 1rem; font-weight: 600; }
+        .footer-links { list-style: none; }
+        .footer-links li { margin-bottom: 0.6rem; }
+        .footer-links a { color: var(--footer-light); text-decoration: none; font-size: 0.9rem; display: flex; align-items: center; gap: 0.5rem; }
+        .footer-links li:not(a) { color: var(--footer-light); font-size: 0.9rem; }
+        .copyright { text-align: center; padding-top: 1.5rem; border-top: 1px solid #E5E7EB; color: var(--footer-light); font-size: 0.85rem; }
+
         @media (max-width: 768px) {
-            body {
-                padding-top: 60px;
-            }
-            
-            header {
-                height: 60px;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-            
-            .nav-desktop {
-                display: none;
-            }
-            
-            .nav-mobile {
-                top: 60px;
-            }
-            
-            .portfolio-hero {
-                padding-top: 20px;
-            }
-            
-            .portfolio-hero h1 {
-                font-size: 1.8rem;
-            }
-            
-            .section {
-                padding: 2rem 0;
-            }
-            
-            .image-container {
-                height: 180px;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
+            body { padding-top: 60px; }
+            header { height: 60px; }
+            html { scroll-padding-top: 60px; }
+            .menu-toggle { display: block; }
+            .nav-desktop { display: none; }
+            .nav-mobile { top: 60px; }
+            .portfolio-hero h1 { font-size: 1.8rem; }
+            .section { padding: 2rem 0; }
+            .image-container { height: 180px; }
+            .cta-buttons { flex-direction: column; }
+            .btn { width: 100%; justify-content: center; }
         }
-        
+
         @media (max-width: 480px) {
-            .portfolio-hero h1 {
-                font-size: 1.6rem;
-            }
-            
-            .hero-subtitle {
-                font-size: 0.9rem;
-            }
-            
-            .results-grid {
-                grid-template-columns: 1fr;
-                gap: 0.8rem;
-            }
-            
-            .image-container {
-                height: 160px;
-            }
-            
-            .card-content {
-                padding: 1.2rem;
-            }
-            
-            .card-content p {
-                min-height: 70px;
-                font-size: 0.85rem;
-            }
+            .portfolio-hero h1 { font-size: 1.6rem; }
+            .hero-subtitle { font-size: 0.9rem; }
+            .results-grid { grid-template-columns: 1fr; }
+            .image-container { height: 160px; }
+            .card-content { padding: 1.2rem; }
         }
-        
-        /* Smooth scrolling for anchor links */
-        html {
-            scroll-padding-top: 70px;
-        }
-        
+
         @media (max-width: 768px) {
-            html {
-                scroll-padding-top: 60px;
-            }
+            .image-container { cursor: default !important; }
+            .image-overlay { display: none; }
+        }
+
+        @media (min-width: 769px) {
+            .image-container { cursor: pointer; }
+            .image-container:hover .portfolio-image { transform: scale(1.05); }
+            .image-container:hover .image-overlay { opacity: 1; }
         }
     </style>
 </head>
 <body>
-    <!-- Header with Mobile Hamburger Menu -->
     <header>
         <div class="header-content">
             <a href="index.html" class="logo">AmanJot Singh <span>Slach</span></a>
-            
-            <!-- Desktop Navigation -->
             <nav class="nav-desktop">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
@@ -607,13 +322,7 @@
                 <a href="certifications.html">Certifications</a>
                 <a href="#contact">Connect</a>
             </nav>
-            
-            <!-- Mobile Hamburger Menu -->
-            <button class="menu-toggle" id="menuToggle">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <!-- Mobile Navigation Menu -->
+            <button class="menu-toggle" id="menuToggle"><i class="fas fa-bars"></i></button>
             <nav class="nav-mobile" id="mobileNav">
                 <a href="index.html">Home</a>
                 <a href="about.html">About</a>
@@ -624,294 +333,134 @@
         </div>
     </header>
 
-    <!-- Portfolio Hero -->
     <section class="portfolio-hero section">
         <div class="container">
-            <h1>Property Accounting <span>Portfolio</span></h1>
-            <p class="hero-subtitle">
-                Real-world property accounting projects with measurable results
-            </p>
+            <h1>Client-Ready Accounting <span>Proof Portfolio</span></h1>
+            <p class="hero-subtitle">A structured portfolio focused on what property owners and construction-focused clients care about most: clean books, clear reporting, and reliable controls.</p>
+
+            <div class="framework-grid">
+                <div class="framework-item"><strong>How to present:</strong> Share the client pain point first, then your screenshot evidence, then the business impact.</div>
+                <div class="framework-item"><strong>Tools shown:</strong> AppFolio, QuickBooks, and Xero projects with cross-platform comparisons.</div>
+                <div class="framework-item"><strong>Screenshot plan:</strong> Each section below includes an “Add screenshot” placeholder for your 4 client examples.</div>
+            </div>
         </div>
     </section>
 
-    <!-- Portfolio Grid -->
     <section class="section">
         <div class="container">
-            <h2 class="text-center">Featured Projects</h2>
-            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">
-                Property accounting systems implemented and optimized
-            </p>
-            
+            <h2 class="text-center">Portfolio Categories Clients Relate To</h2>
+            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">Use these categories in proposals, interviews, and discovery calls to show practical, job-winning outcomes.</p>
+
             <div class="portfolio-grid">
-                <!-- 1099 Reporting System -->
-                <div class="portfolio-card">
-                    <div class="image-container" onclick="openModalIfDesktop('modal1099')">
-                        <img src="1099 1.png" alt="1099 Reporting System" class="portfolio-image">
-                        <div class="image-overlay">
-                            <i class="fas fa-search-plus zoom-icon"></i>
-                        </div>
+                <article class="portfolio-card">
+                    <div class="image-container" onclick="openModalIfDesktop('modalCOA')">
+                        <img src="accounting.jpg" alt="Chart of accounts structure" class="portfolio-image">
+                        <div class="image-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="card-content">
-                        <h3>1099 Reporting System</h3>
-                        <p>Complete 1099 vendor compliance system for property management firm with 150+ vendors across multiple states, ensuring IRS compliance.</p>
-                        <div class="card-tags">
-                            <span class="tag">1099</span>
-                            <span class="tag">Compliance</span>
-                            <span class="tag">Tax Reporting</span>
-                            <span class="tag">QuickBooks</span>
-                        </div>
+                        <h3>1) Chart of Accounts Setup by Property Type</h3>
+                        <p>Examples from AppFolio and QuickBooks showing different account structures for construction and property-management clients. Highlights how property-level tracking is built correctly from day one.</p>
+                        <div class="proof-placeholder">Add screenshots: COA layouts from 4 clients (AppFolio + 3 QuickBooks clients).</div>
+                        <div class="card-tags"><span class="tag">COA Design</span><span class="tag">Construction</span><span class="tag">Property Setup</span></div>
                     </div>
-                </div>
-                
-                <!-- Property Management in QuickBooks -->
-                <div class="portfolio-card">
-                    <div class="image-container" onclick="openModalIfDesktop('modalQuickBooks')">
-                        <img src="ACM Bank Accounts.png" alt="Property Management in QuickBooks" class="portfolio-image">
-                        <div class="image-overlay">
-                            <i class="fas fa-search-plus zoom-icon"></i>
-                        </div>
+                </article>
+
+                <article class="portfolio-card">
+                    <div class="image-container" onclick="openModalIfDesktop('modalBS')">
+                        <img src="Buildium.png" alt="Balance sheet comparison" class="portfolio-image">
+                        <div class="image-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="card-content">
-                        <h3>Property Management in QuickBooks</h3>
-                        <p>Complete banking integration for property investors with automated feeds, reconciliation workflows, and multi-bank account management.</p>
-                        <div class="card-tags">
-                            <span class="tag">QuickBooks</span>
-                            <span class="tag">Banking</span>
-                            <span class="tag">Integration</span>
-                            <span class="tag">Property Accounting</span>
-                        </div>
+                        <h3>2) Balance Sheet Mapping Across Systems</h3>
+                        <p>Balance Sheet presentation in Xero, QuickBooks, and AppFolio, including different methods like inventory-based treatment and GL/class categorization for properties.</p>
+                        <div class="proof-placeholder">Add screenshots: BS examples from each platform + short note: “why this method was chosen for that client.”</div>
+                        <div class="card-tags"><span class="tag">Balance Sheet</span><span class="tag">GL Classes</span><span class="tag">Xero/QB/AppFolio</span></div>
                     </div>
-                </div>
-                
-                <!-- Migration Project -->
-                <div class="portfolio-card">
-                    <div class="image-container" onclick="openModalIfDesktop('modalMigration')">
-                        <img src="1099 2.png" alt="Software Migration Project" class="portfolio-image">
-                        <div class="image-overlay">
-                            <i class="fas fa-search-plus zoom-icon"></i>
-                        </div>
+                </article>
+
+                <article class="portfolio-card">
+                    <div class="image-container" onclick="openModalIfDesktop('modalBank')">
+                        <img src="ACM Bank Accounts.png" alt="Bank account reconciliation" class="portfolio-image">
+                        <div class="image-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="card-content">
-                        <h3>Software Migration</h3>
-                        <p>Complete migration of 75+ property portfolio from spreadsheets to Buildium with automated reporting and compliance workflows.</p>
-                        <div class="card-tags">
-                            <span class="tag">Buildium</span>
-                            <span class="tag">Migration</span>
-                            <span class="tag">Automation</span>
-                            <span class="tag">Data Transfer</span>
-                        </div>
+                        <h3>3) Bank Accounts & Feed Reconciliation at Scale</h3>
+                        <p>Demonstrates handling high-volume banking environments with 40+ accounts reconciled in a single project, including feed cleanup and control checks across multiple clients.</p>
+                        <div class="proof-placeholder">Add screenshots: 4 clients with account count, feed status, and reconciled period completion.</div>
+                        <div class="card-tags"><span class="tag">Bank Feeds</span><span class="tag">Reconciliation</span><span class="tag">40+ Accounts</span></div>
                     </div>
-                </div>
-                
-                <!-- Bank & Credit Card Reconciliation -->
-                <div class="portfolio-card">
-                    <div class="image-container" onclick="openModalIfDesktop('modalReconciliation')">
-                        <img src="1099 1.png" alt="Bank & Credit Card Reconciliation" class="portfolio-image">
-                        <div class="image-overlay">
-                            <i class="fas fa-search-plus zoom-icon"></i>
-                        </div>
+                </article>
+
+                <article class="portfolio-card">
+                    <div class="image-container" onclick="openModalIfDesktop('modalBills')">
+                        <img src="Xero.png" alt="Bills and AP workflow" class="portfolio-image">
+                        <div class="image-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="card-content">
-                        <h3>Bank & Credit Card Reconciliation</h3>
-                        <p>High-volume bank and credit card reconciliations for property management companies ensuring 100% accuracy and audit readiness.</p>
-                        <div class="card-tags">
-                            <span class="tag">Reconciliation</span>
-                            <span class="tag">Banking</span>
-                            <span class="tag">Accuracy</span>
-                            <span class="tag">Compliance</span>
-                        </div>
+                        <h3>4) Bills & Accounts Payable Workflow</h3>
+                        <p>How bills are recorded and controlled in Xero, QuickBooks, and AppFolio—including coding discipline, approval sequence, and clean posting to job/property ledgers.</p>
+                        <div class="proof-placeholder">Add screenshots: one bill flow per platform from draft to posting.</div>
+                        <div class="card-tags"><span class="tag">Accounts Payable</span><span class="tag">Bill Coding</span><span class="tag">Process Control</span></div>
                     </div>
-                </div>
-                
-                <!-- Notice & Compliance Tracker -->
-                <div class="portfolio-card">
-                    <div class="image-container" onclick="openModalIfDesktop('modalCompliance')">
-                        <img src="1099 2.png" alt="Notice & Compliance Tracker" class="portfolio-image">
-                        <div class="image-overlay">
-                            <i class="fas fa-search-plus zoom-icon"></i>
-                        </div>
+                </article>
+
+                <article class="portfolio-card">
+                    <div class="image-container" onclick="openModalIfDesktop('modalPL')">
+                        <img src="profile.png" alt="P and L classification" class="portfolio-image">
+                        <div class="image-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="card-content">
-                        <h3>Notice & Compliance Tracker</h3>
-                        <p>Automated compliance tracking system for property management with deadline alerts, documentation management, and regulatory updates.</p>
-                        <div class="card-tags">
-                            <span class="tag">Compliance</span>
-                            <span class="tag">Tracking</span>
-                            <span class="tag">Automation</span>
-                            <span class="tag">Deadlines</span>
-                        </div>
+                        <h3>5) P&L Structure by Expense Class</h3>
+                        <p>P&L examples showing how expenses are classified differently per client needs (property class, job class, or business unit), making reports decision-ready for owners.</p>
+                        <div class="proof-placeholder">Add screenshots: class-wise P&L versions from multiple client types.</div>
+                        <div class="card-tags"><span class="tag">P&L Reporting</span><span class="tag">Expense Classes</span><span class="tag">Owner Reporting</span></div>
                     </div>
-                </div>
-                
-                <!-- Virtual Assistant Services -->
-                <div class="portfolio-card">
-                    <div class="image-container" onclick="openModalIfDesktop('modalVA')">
-                        <img src="ACM Bank Accounts.png" alt="Virtual Assistant Services" class="portfolio-image">
-                        <div class="image-overlay">
-                            <i class="fas fa-search-plus zoom-icon"></i>
-                        </div>
+                </article>
+
+                <article class="portfolio-card">
+                    <div class="image-container" onclick="openModalIfDesktop('modalCleanup')">
+                        <img src="1099 2.png" alt="Backlog cleanup case" class="portfolio-image">
+                        <div class="image-overlay"><i class="fas fa-search-plus"></i></div>
                     </div>
                     <div class="card-content">
-                        <h3>Virtual Assistant Services</h3>
-                        <p>Dedicated virtual assistant services for property accounting tasks including data entry, invoice processing, reporting, and client communication.</p>
-                        <div class="card-tags">
-                            <span class="tag">Virtual Assistant</span>
-                            <span class="tag">Support</span>
-                            <span class="tag">Efficiency</span>
-                            <span class="tag">Administration</span>
-                        </div>
+                        <h3>6) 3-Year Backlog & Unreconciled Balance Cleanup</h3>
+                        <p>Turnaround case: client with three years of backlog and major unreconciled balances (including feed differences approaching $1M). Use before/after evidence to prove cleanup capability.</p>
+                        <div class="proof-placeholder">Add screenshots: before-finalization feed mismatches, unreconciled balances, and post-cleanup summary.</div>
+                        <div class="card-tags"><span class="tag">Historical Cleanup</span><span class="tag">Backlog Recovery</span><span class="tag">High-Value Reconciliation</span></div>
                     </div>
-                </div>
-                
-                <!-- Sales & Purchase Records -->
-                <div class="portfolio-card">
-                    <div class="image-container" onclick="openModalIfDesktop('modalSales')">
-                        <img src="1099 1.png" alt="Sales & Purchase Records" class="portfolio-image">
-                        <div class="image-overlay">
-                            <i class="fas fa-search-plus zoom-icon"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3>Sales & Purchase Records</h3>
-                        <p>Complete sales and purchase record system for property investment portfolios with transaction tracking, reporting, and tax documentation.</p>
-                        <div class="card-tags">
-                            <span class="tag">Transactions</span>
-                            <span class="tag">Reporting</span>
-                            <span class="tag">Tracking</span>
-                            <span class="tag">Documentation</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Reconciliation Specialist -->
-                <div class="portfolio-card">
-                    <div class="image-container" onclick="openModalIfDesktop('modalReconSpecialist')">
-                        <img src="1099 2.png" alt="Reconciliation Specialist" class="portfolio-image">
-                        <div class="image-overlay">
-                            <i class="fas fa-search-plus zoom-icon"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3>Reconciliation Specialist</h3>
-                        <p>Expert reconciliation services for property trust accounts, bank statements, and financial records ensuring 100% compliance and audit readiness.</p>
-                        <div class="card-tags">
-                            <span class="tag">Trust Accounting</span>
-                            <span class="tag">Reconciliation</span>
-                            <span class="tag">Compliance</span>
-                            <span class="tag">Audit</span>
-                        </div>
-                    </div>
-                </div>
-                
-                <!-- Financial Reporting -->
-                <div class="portfolio-card">
-                    <div class="image-container" onclick="openModalIfDesktop('modalReporting')">
-                        <img src="ACM Bank Accounts.png" alt="Financial Reporting" class="portfolio-image">
-                        <div class="image-overlay">
-                            <i class="fas fa-search-plus zoom-icon"></i>
-                        </div>
-                    </div>
-                    <div class="card-content">
-                        <h3>Financial Reporting</h3>
-                        <p>Customized financial reporting systems for property portfolios with automated dashboards, performance metrics, and KPI tracking.</p>
-                        <div class="card-tags">
-                            <span class="tag">Reporting</span>
-                            <span class="tag">Dashboard</span>
-                            <span class="tag">Analytics</span>
-                            <span class="tag">KPIs</span>
-                        </div>
-                    </div>
-                </div>
+                </article>
             </div>
         </div>
     </section>
 
-    <!-- Image Modals -->
-    <div id="modal1099" class="image-modal">
-        <span class="close-modal" onclick="closeModal('modal1099')">&times;</span>
-        <img src="1099 1.png" alt="1099 Reporting System Full Size" class="modal-image">
-    </div>
-    
-    <div id="modalQuickBooks" class="image-modal">
-        <span class="close-modal" onclick="closeModal('modalQuickBooks')">&times;</span>
-        <img src="ACM Bank Accounts.png" alt="Property Management in QuickBooks Full Size" class="modal-image">
-    </div>
-    
-    <div id="modalMigration" class="image-modal">
-        <span class="close-modal" onclick="closeModal('modalMigration')">&times;</span>
-        <img src="1099 2.png" alt="Software Migration Project Full Size" class="modal-image">
-    </div>
-    
-    <div id="modalReconciliation" class="image-modal">
-        <span class="close-modal" onclick="closeModal('modalReconciliation')">&times;</span>
-        <img src="1099 1.png" alt="Bank & Credit Card Reconciliation Full Size" class="modal-image">
-    </div>
-    
-    <div id="modalCompliance" class="image-modal">
-        <span class="close-modal" onclick="closeModal('modalCompliance')">&times;</span>
-        <img src="1099 2.png" alt="Notice & Compliance Tracker Full Size" class="modal-image">
-    </div>
-    
-    <div id="modalVA" class="image-modal">
-        <span class="close-modal" onclick="closeModal('modalVA')">&times;</span>
-        <img src="ACM Bank Accounts.png" alt="Virtual Assistant Services Full Size" class="modal-image">
-    </div>
-    
-    <div id="modalSales" class="image-modal">
-        <span class="close-modal" onclick="closeModal('modalSales')">&times;</span>
-        <img src="1099 1.png" alt="Sales & Purchase Records Full Size" class="modal-image">
-    </div>
-    
-    <div id="modalReconSpecialist" class="image-modal">
-        <span class="close-modal" onclick="closeModal('modalReconSpecialist')">&times;</span>
-        <img src="1099 2.png" alt="Reconciliation Specialist Full Size" class="modal-image">
-    </div>
-    
-    <div id="modalReporting" class="image-modal">
-        <span class="close-modal" onclick="closeModal('modalReporting')">&times;</span>
-        <img src="ACM Bank Accounts.png" alt="Financial Reporting Full Size" class="modal-image">
-    </div>
+    <div id="modalCOA" class="image-modal"><span class="close-modal" onclick="closeModal('modalCOA')">&times;</span><img src="accounting.jpg" alt="COA full size" class="modal-image"></div>
+    <div id="modalBS" class="image-modal"><span class="close-modal" onclick="closeModal('modalBS')">&times;</span><img src="Buildium.png" alt="BS full size" class="modal-image"></div>
+    <div id="modalBank" class="image-modal"><span class="close-modal" onclick="closeModal('modalBank')">&times;</span><img src="ACM Bank Accounts.png" alt="Bank full size" class="modal-image"></div>
+    <div id="modalBills" class="image-modal"><span class="close-modal" onclick="closeModal('modalBills')">&times;</span><img src="Xero.png" alt="Bills full size" class="modal-image"></div>
+    <div id="modalPL" class="image-modal"><span class="close-modal" onclick="closeModal('modalPL')">&times;</span><img src="profile.png" alt="P&L full size" class="modal-image"></div>
+    <div id="modalCleanup" class="image-modal"><span class="close-modal" onclick="closeModal('modalCleanup')">&times;</span><img src="1099 2.png" alt="Cleanup full size" class="modal-image"></div>
 
-    <!-- Results Summary -->
     <section class="results-section section-sm">
         <div class="container">
-            <h3 class="text-center">Project Results Summary</h3>
+            <h3 class="text-center">Business Value You Can State to Prospects</h3>
             <div class="results-grid">
-                <div class="result-item">
-                    <div class="result-value">40%</div>
-                    <div class="result-label">Faster Monthly Close</div>
-                </div>
-                <div class="result-item">
-                    <div class="result-value">100%</div>
-                    <div class="result-label">Compliance Accuracy</div>
-                </div>
-                <div class="result-item">
-                    <div class="result-value">25+</div>
-                    <div class="result-label">Hours Saved Monthly</div>
-                </div>
-                <div class="result-item">
-                    <div class="result-value">100%</div>
-                    <div class="result-label">Client Satisfaction</div>
-                </div>
+                <div class="result-item"><div class="result-value">Platform-Flexible</div><div class="result-label">AppFolio, QuickBooks, Xero</div></div>
+                <div class="result-item"><div class="result-value">Control-Driven</div><div class="result-label">Clean COA, BS, P&L and AP logic</div></div>
+                <div class="result-item"><div class="result-value">Scale-Ready</div><div class="result-label">40+ bank accounts managed</div></div>
+                <div class="result-item"><div class="result-value">Recovery-Focused</div><div class="result-label">Backlog and unreconciled cleanup</div></div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
     <section class="section">
         <div class="container">
             <div class="cta-buttons">
-                <a href="index.html#consultation" class="btn btn-primary">
-                    <i class="fas fa-calendar-check"></i> Book Consultation
-                </a>
-                <a href="certifications.html" class="btn btn-outline">
-                    <i class="fas fa-certificate"></i> View Certifications
-                </a>
+                <a href="index.html#consultation" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book Consultation</a>
+                <a href="certifications.html" class="btn btn-outline"><i class="fas fa-certificate"></i> View Certifications</a>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
     <footer id="contact" class="footer-minimal">
         <div class="container">
             <div class="footer-content">
@@ -923,20 +472,16 @@
                         <li><a href="certifications.html"><i class="fas fa-certificate"></i> Certifications</a></li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4>Connect With Me</h4>
                     <ul class="footer-links">
-                        <li>
-                            <a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank">
-                                <i class="fab fa-linkedin"></i> LinkedIn
-                            </a>
-                        </li>
+                        <li><a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
                         <li><a href="mailto:Slachamanjotsingh@gmail.com"><i class="fas fa-envelope"></i> Slachamanjotsingh@gmail.com</a></li>
                         <li><i class="fas fa-phone"></i> +91 991 115 5541</li>
                     </ul>
                 </div>
-                
+
                 <div class="footer-section">
                     <h4>Specializations</h4>
                     <ul class="footer-links">
@@ -948,61 +493,46 @@
                     </ul>
                 </div>
             </div>
-            
-            <div class="copyright">
-                © 2026 AmanJot Singh Slach | Certified Property Accounting Specialist
-            </div>
+
+            <div class="copyright">© 2026 AmanJot Singh Slach | Certified Property Accounting Specialist</div>
         </div>
     </footer>
 
     <script>
-        // Mobile Navigation Toggle
         const menuToggle = document.getElementById('menuToggle');
         const mobileNav = document.getElementById('mobileNav');
-        
+
         menuToggle.addEventListener('click', () => {
             mobileNav.classList.toggle('active');
-            menuToggle.innerHTML = mobileNav.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
+            menuToggle.innerHTML = mobileNav.classList.contains('active') ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
         });
-        
-        // Close mobile menu when clicking outside
+
         document.addEventListener('click', (event) => {
             if (!menuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
                 mobileNav.classList.remove('active');
                 menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
             }
         });
-        
-        // Close mobile menu when clicking a link
+
         mobileNav.querySelectorAll('a').forEach(link => {
             link.addEventListener('click', () => {
                 mobileNav.classList.remove('active');
                 menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
-        
-        // Image Modal Functions for Desktop Only
+
         function openModalIfDesktop(modalId) {
-            // Only open modal on screens wider than 768px (desktop)
             if (window.innerWidth > 768) {
                 document.getElementById(modalId).classList.add('active');
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
+                document.body.style.overflow = 'hidden';
             }
         }
-        
-        function openModal(modalId) {
-            document.getElementById(modalId).classList.add('active');
-            document.body.style.overflow = 'hidden';
-        }
-        
+
         function closeModal(modalId) {
             document.getElementById(modalId).classList.remove('active');
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            document.body.style.overflow = 'auto';
         }
-        
-        // Close modal when clicking outside the image
+
         document.querySelectorAll('.image-modal').forEach(modal => {
             modal.addEventListener('click', function(e) {
                 if (e.target === this) {
@@ -1011,8 +541,7 @@
                 }
             });
         });
-        
-        // Close modal with Escape key
+
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
                 document.querySelectorAll('.image-modal.active').forEach(modal => {
