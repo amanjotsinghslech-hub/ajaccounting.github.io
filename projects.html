@@ -7,7 +7,6 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
     <style>
         :root {
@@ -183,6 +182,58 @@
             margin-bottom: 1.2rem;
         }
 
+        .project-search-box {
+            max-width: 680px;
+            margin: 0 auto 1.6rem;
+            background: var(--card-bg);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 1rem;
+        }
+
+        .project-search-box h3 {
+            margin-bottom: 0.6rem;
+            color: var(--primary);
+            font-size: 1.2rem;
+        }
+
+        .project-search-input {
+            width: 100%;
+            padding: 0.7rem 0.8rem;
+            border-radius: 8px;
+            border: 1px solid var(--border);
+            background: #111;
+            color: var(--text);
+            font-size: 0.95rem;
+        }
+
+        .project-search-input:focus {
+            outline: 1px solid var(--primary);
+            border-color: var(--primary);
+        }
+
+        .search-note {
+            margin-top: 0.5rem;
+            color: var(--text-light);
+            font-size: 0.9rem;
+        }
+
+        .search-results-note {
+            color: var(--text-light);
+            margin-bottom: 1.4rem;
+            font-size: 0.92rem;
+        }
+
+        .search-empty {
+            display: none;
+            margin-top: 1rem;
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 0.8rem;
+            color: var(--text-light);
+            background: #111;
+        }
+
         .project-entry {
             background: var(--card-bg);
             border: 1px solid var(--border);
@@ -226,12 +277,10 @@
             border: 1px solid var(--border);
             border-radius: 10px;
             overflow: hidden;
-            transition: all 0.3s ease;
         }
 
         .portfolio-card:hover {
             border-color: var(--primary);
-            transform: translateY(-5px);
         }
 
         .image-container {
@@ -300,19 +349,6 @@
         }
     
 
-/* AOS button hover enhancement */
-button,
-.btn,
-.lux-btn {
-  transition: transform 0.3s ease;
-}
-
-button:hover,
-.btn:hover,
-.lux-btn:hover {
-  transform: scale(1.05);
-}
-
 </style>
 </head>
 
@@ -361,10 +397,14 @@ button:hover,
         </div>
 
         <div class="project-search-box">
-            <h3>Chart / BS / Delivery</h3>
-            <input type="search" id="projectSearch" class="project-search-input" placeholder="Search projects (e.g., chart of accounts, balance sheet, delivery)">
-            <p class="search-note">Type keywords like <strong>chart</strong>, <strong>bs</strong>, <strong>balance sheet</strong>, or <strong>delivery</strong>.</p>
+            <h3>Search Highlights & Headlines</h3>
+            <input type="search" id="projectSearch" class="project-search-input" placeholder="Search by headline or keyword (e.g., chart, balance sheet, reconciliation)">
+            <p class="search-note">Type keywords like <strong>chart</strong>, <strong>bs</strong>, <strong>balance sheet</strong>, <strong>delivery</strong>, or <strong>reconciliation</strong>.</p>
         </div>
+
+        <p id="searchResultsNote" class="search-results-note">Showing all highlights and headlines.</p>
+        <div id="searchEmpty" class="search-empty">No matching highlight found. Try a different keyword.</div>
+
 
         <div class="category-section" data-filter-tags="chart chart of accounts coa delivery">
             <h2 class="category-heading">Chart of Accounts (COA)</h2>
@@ -493,51 +533,46 @@ document.getElementById("menuToggle").addEventListener("click", function() {
 
 const projectSearch = document.getElementById('projectSearch');
 const projectSections = document.querySelectorAll('.category-section');
+const searchResultsNote = document.getElementById('searchResultsNote');
+const searchEmpty = document.getElementById('searchEmpty');
 
 if (projectSearch) {
     projectSearch.addEventListener('input', () => {
         const query = projectSearch.value.trim().toLowerCase();
+        let visibleSections = 0;
 
         projectSections.forEach((section) => {
-            const searchableText = (section.innerText + ' ' + (section.dataset.filterTags || '')).toLowerCase();
-            section.style.display = searchableText.includes(query) ? '' : 'none';
+            const sectionHeadline = (section.querySelector('.category-heading')?.innerText || '').toLowerCase();
+            const sectionIntro = (section.querySelector('.category-intro')?.innerText || '').toLowerCase();
+            const sectionTags = (section.dataset.filterTags || '').toLowerCase();
+            const sectionMatch = !query || `${sectionHeadline} ${sectionIntro} ${sectionTags}`.includes(query);
+
+            let visibleEntries = 0;
+            section.querySelectorAll('.project-entry').forEach((entry) => {
+                const entryText = entry.innerText.toLowerCase();
+                const shouldShowEntry = !query || sectionMatch || entryText.includes(query);
+                entry.style.display = shouldShowEntry ? '' : 'none';
+                if (shouldShowEntry) visibleEntries += 1;
+            });
+
+            const shouldShowSection = !query || sectionMatch || visibleEntries > 0;
+            section.style.display = shouldShowSection ? '' : 'none';
+            if (shouldShowSection) visibleSections += 1;
         });
+
+        if (!query) {
+            searchResultsNote.textContent = 'Showing all highlights and headlines.';
+            searchEmpty.style.display = 'none';
+        } else if (visibleSections > 0) {
+            searchResultsNote.textContent = `Found ${visibleSections} matching section${visibleSections > 1 ? 's' : ''} for "${projectSearch.value.trim()}".`;
+            searchEmpty.style.display = 'none';
+        } else {
+            searchResultsNote.textContent = 'No matching highlights right now.';
+            searchEmpty.style.display = 'block';
+        }
     });
 }
 </script>
-
-
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        document.querySelectorAll('h1, h2').forEach((heading) => {
-            heading.setAttribute('data-aos', 'fade-up');
-        });
-
-        document.querySelectorAll('p').forEach((paragraph, index) => {
-            paragraph.setAttribute('data-aos', 'fade-up');
-            paragraph.setAttribute('data-aos-delay', String(80 + (index % 3) * 40));
-        });
-
-        document.querySelectorAll('#about, .about-section, .about-container, .profile-section').forEach((aboutContainer) => {
-            aboutContainer.setAttribute('data-aos', 'fade-left');
-        });
-
-        document.querySelectorAll('.project-card, .portfolio-card, .project-entry, .certification-card').forEach((projectCard, index) => {
-            projectCard.setAttribute('data-aos', 'zoom-in');
-            projectCard.setAttribute('data-aos-delay', String((index % 4) * 60));
-        });
-
-        document.querySelectorAll('#contact, #consultation, .contact-section, .consultation-section').forEach((contactSection) => {
-            contactSection.setAttribute('data-aos', 'fade-up');
-        });
-
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            offset: 120,
-            once: true
-        });
-    </script>
 
 </body>
 </html>
