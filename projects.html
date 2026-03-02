@@ -536,8 +536,7 @@ const projectSections = document.querySelectorAll('.category-section');
 const searchResultsNote = document.getElementById('searchResultsNote');
 const searchEmpty = document.getElementById('searchEmpty');
 
-if (projectSearch) {
-    projectSearch.addEventListener('input', () => {
+const applyProjectFilter = () => {
         const query = projectSearch.value.trim().toLowerCase();
         let visibleSections = 0;
 
