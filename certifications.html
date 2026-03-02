@@ -7,7 +7,6 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
     
     <style>
         :root {
@@ -91,7 +90,6 @@
             text-decoration: none;
             font-weight: 500;
             font-size: 0.9rem;
-            transition: color 0.3s ease;
         }
         
         .nav-desktop a:hover {
@@ -120,7 +118,6 @@
             padding: 1rem;
             flex-direction: column;
             gap: 1rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
         
         .nav-mobile.active {
@@ -205,16 +202,13 @@
             border-radius: 10px;
             padding: 2rem;
             text-align: center;
-            transition: all 0.3s ease;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
         
         .certification-card:hover {
-            transform: translateY(-5px);
             border-color: var(--primary);
-            box-shadow: 0 10px 30px rgba(212, 175, 55, 0.1);
         }
         
         .certificate-image {
@@ -226,7 +220,6 @@
             border: 2px solid var(--primary);
             box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
             cursor: pointer;
-            transition: transform 0.3s ease;
         }
         
         /* Desktop-only click effect */
@@ -236,7 +229,6 @@
             }
             
             .certificate-image:hover {
-                transform: scale(1.02);
             }
         }
         
@@ -295,7 +287,6 @@
             justify-content: center;
             align-items: center;
             opacity: 0;
-            transition: opacity 0.3s ease;
         }
         
         .image-modal.active {
@@ -327,7 +318,6 @@
             font-size: 2.5rem;
             cursor: pointer;
             padding: 0.5rem;
-            transition: color 0.3s ease;
         }
         
         .modal-close:hover {
@@ -359,7 +349,6 @@
             border-radius: 5px;
             text-decoration: none;
             font-weight: 600;
-            transition: all 0.3s ease;
             display: inline-flex;
             align-items: center;
             gap: 0.5rem;
@@ -378,8 +367,6 @@
         }
         
         .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
         }
         
         /* ===== FOOTER (WHITE BACKGROUND) ===== */
@@ -424,7 +411,6 @@
         .footer-links a {
             color: var(--footer-light);
             text-decoration: none;
-            transition: color 0.3s ease;
             font-size: 0.9rem;
             display: flex;
             align-items: center;
@@ -552,19 +538,6 @@
             }
         }
     
-
-/* AOS button hover enhancement */
-button,
-.btn,
-.lux-btn {
-  transition: transform 0.3s ease;
-}
-
-button:hover,
-.btn:hover,
-.lux-btn:hover {
-  transform: scale(1.05);
-}
 
 </style>
 </head>
@@ -802,38 +775,6 @@ button:hover,
                 }
             });
         }
-    </script>
-
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        document.querySelectorAll('h1, h2').forEach((heading) => {
-            heading.setAttribute('data-aos', 'fade-up');
-        });
-
-        document.querySelectorAll('p').forEach((paragraph, index) => {
-            paragraph.setAttribute('data-aos', 'fade-up');
-            paragraph.setAttribute('data-aos-delay', String(80 + (index % 3) * 40));
-        });
-
-        document.querySelectorAll('#about, .about-section, .about-container, .profile-section').forEach((aboutContainer) => {
-            aboutContainer.setAttribute('data-aos', 'fade-left');
-        });
-
-        document.querySelectorAll('.project-card, .portfolio-card, .project-entry, .certification-card').forEach((projectCard, index) => {
-            projectCard.setAttribute('data-aos', 'zoom-in');
-            projectCard.setAttribute('data-aos-delay', String((index % 4) * 60));
-        });
-
-        document.querySelectorAll('#contact, #consultation, .contact-section, .consultation-section').forEach((contactSection) => {
-            contactSection.setAttribute('data-aos', 'fade-up');
-        });
-
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            offset: 120,
-            once: true
-        });
     </script>
 
 </body>
