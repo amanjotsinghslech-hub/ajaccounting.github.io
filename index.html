@@ -910,7 +910,7 @@ button:hover,
             </p>
             
             <div class="form-container">
-                <form id="consultationForm" action="https://formsubmit.co/slachamanjotsingh@gmail.com" method="POST">
+                <form id="consultationForm" action="https://formsubmit.co/slachamanjotsingh@gmail.com" method="POST" target="hiddenSubmissionFrame">
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" class="form-control" required>
@@ -939,12 +939,12 @@ button:hover,
                     <input type="hidden" name="_subject" value="New Discovery Call Request from Website">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://ajaccounting.github.io/index.html?submitted=true#consultation">
                     <button type="submit" class="btn btn-primary btn-block">
                         <i class="fas fa-paper-plane"></i> Request Free Discovery Call
                     </button>
                     <p id="formStatus" style="margin-top: 0.8rem; color: var(--text-light); font-size: 0.9rem;" aria-live="polite"></p>
                 </form>
+                <iframe name="hiddenSubmissionFrame" title="Hidden submission frame" style="display:none;"></iframe>
             </div>
         </div>
     </section>
@@ -1020,14 +1020,39 @@ button:hover,
                 menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
-        // Show success note after FormSubmit redirect
-        const params = new URLSearchParams(window.location.search);
-        if (params.get('submitted') === 'true') {
-            const formStatus = document.getElementById('formStatus');
-            if (formStatus) {
-                formStatus.textContent = 'Thank you! Your discovery call request was sent successfully.';
-            }
-            window.history.replaceState({}, document.title, window.location.pathname + window.location.hash);
+        // Keep discovery call form submission on-page with no redirect or popup
+        const consultationForm = document.getElementById('consultationForm');
+        const formStatus = document.getElementById('formStatus');
+        const hiddenSubmissionFrame = document.querySelector('iframe[name="hiddenSubmissionFrame"]');
+        let isSubmittingConsultation = false;
+
+        if (consultationForm && formStatus && hiddenSubmissionFrame) {
+            consultationForm.addEventListener('submit', () => {
+                const submitButton = consultationForm.querySelector('button[type="submit"]');
+
+                isSubmittingConsultation = true;
+                formStatus.textContent = 'Sending your request...';
+
+                if (submitButton) {
+                    submitButton.disabled = true;
+                    submitButton.dataset.originalText = submitButton.innerHTML;
+                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                }
+            });
+
+            hiddenSubmissionFrame.addEventListener('load', () => {
+                if (!isSubmittingConsultation) return;
+
+                const submitButton = consultationForm.querySelector('button[type="submit"]');
+                formStatus.textContent = 'Thanks! Your discovery call request has been submitted.';
+                consultationForm.reset();
+                isSubmittingConsultation = false;
+
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = submitButton.dataset.originalText || '<i class="fas fa-paper-plane"></i> Request Free Discovery Call';
+                }
+            });
         }
 
         // Keep discovery call form submission on-page for better UX
