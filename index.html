@@ -465,51 +465,6 @@
         }
         
 
-        /* ===== WHY CLIENTS CHOOSE ME ===== */
-        .positioning-section {
-            background: #111111;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-        }
-
-        .positioning-grid {
-            display: grid;
-            gap: 1rem;
-            margin-top: 2rem;
-            grid-template-columns: 1fr;
-        }
-
-        @media (min-width: 768px) {
-            .positioning-grid {
-                grid-template-columns: repeat(3, 1fr);
-            }
-        }
-
-        .positioning-card {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 1.2rem;
-        }
-
-        .positioning-card h3 {
-            color: var(--primary);
-            font-size: 1rem;
-            margin-bottom: 0.5rem;
-        }
-
-        .positioning-card p {
-            color: var(--text-light);
-            font-size: 0.92rem;
-        }
-
-        .start-note {
-            margin-top: 1.2rem;
-            text-align: center;
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-
         /* ===== CONSULTATION FORM ===== */
         .consultation-section {
             background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(47, 129, 247, 0.1));
@@ -891,48 +846,6 @@
         </div>
     </section>
 
-    <!-- Technical Expertise -->
-    <section class="section">
-        <div class="container">
-            <h2 class="text-center">What I Can Help You With</h2>
-            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">Straightforward services for business owners who need dependable accounting support</p>
-            
-            <div class="skills-grid">
-                <div class="skill-category">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-certificate"></i>
-                        </div>
-                        <h3>Certified Platforms</h3>
-                    </div>
-                    <ul class="skills-list">
-                        <li>AppFolio Property Manager Specialist <span class="skill-level">Expert</span></li>
-                        <li>Buildium Property Management Certificate <span class="skill-level">Expert</span></li>
-                        <li>QuickBooks ProAdvisor <span class="skill-level">Expert</span></li>
-                        <li>Gusto Payroll Specialist <span class="skill-level">Advanced</span></li>
-                        <li>Migration Specialist <span class="skill-level">Expert</span></li>
-                    </ul>
-                </div>
-                
-                <div class="skill-category">
-                    <div class="category-header">
-                        <div class="category-icon">
-                            <i class="fas fa-sitemap"></i>
-                        </div>
-                        <h3>Core Competencies</h3>
-                    </div>
-                    <ul class="skills-list">
-                        <li>Property Trust Accounting <span class="skill-level">Expert</span></li>
-                        <li>CAM Reconciliation Systems <span class="skill-level">Expert</span></li>
-                        <li>Financial Reporting Automation <span class="skill-level">Expert</span></li>
-                        <li>1099 & Tax Compliance <span class="skill-level">Expert</span></li>
-                        <li>Budget Forecasting & Analysis <span class="skill-level">Advanced</span></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Projects Section -->
     <section class="section" style="background: var(--card-bg);">
         <div class="container">
@@ -972,32 +885,6 @@
         </div>
     </section>
 
-
-    <!-- Positioning Section -->
-    <section class="positioning-section section">
-        <div class="container">
-            <h2 class="text-center">Why New Clients Feel Safe Working With Me</h2>
-            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">I built this profile to start freelancing with transparency: clear communication, structured workflows, and measurable accounting outcomes.</p>
-
-            <div class="positioning-grid">
-                <article class="positioning-card">
-                    <h3>Clear Scope Before We Start</h3>
-                    <p>I define deliverables, timeline, and priorities before beginning, so you know exactly what is being done and when.</p>
-                </article>
-                <article class="positioning-card">
-                    <h3>Weekly Progress Visibility</h3>
-                    <p>You receive concise updates on completed reconciliations, issues found, and next steps to avoid surprises.</p>
-                </article>
-                <article class="positioning-card">
-                    <h3>System-First Thinking</h3>
-                    <p>My focus is not only cleanup; I build repeatable accounting systems that reduce errors in future months.</p>
-                </article>
-            </div>
-
-            <p class="start-note">Starting freelance, delivering professional standards.</p>
-        </div>
-    </section>
-
     <!-- Consultation Form -->
     <section id="consultation" class="consultation-section section">
         <div class="container">
@@ -1007,35 +894,40 @@
             </p>
             
             <div class="form-container">
-                <form id="consultationForm">
+                <form id="consultationForm" action="https://formsubmit.co/slachamanjotsingh@gmail.com" method="POST">
                     <div class="form-group">
                         <label for="name">Full Name</label>
-                        <input type="text" id="name" class="form-control" required>
+                        <input type="text" id="name" name="name" class="form-control" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="email">Email Address</label>
-                        <input type="email" id="email" class="form-control" required>
+                        <input type="email" id="email" name="email" class="form-control" required>
                     </div>
                     
                     <div class="form-group">
                         <label for="propertyCount">Number of Properties</label>
-                        <input type="text" id="propertyCount" class="form-control" placeholder="e.g., 10-20 properties">
+                        <input type="text" id="propertyCount" name="property_count" class="form-control" placeholder="e.g., 10-20 properties">
                     </div>
                     
                     <div class="form-group">
                         <label for="currentSoftware">Current Accounting Software</label>
-                        <input type="text" id="currentSoftware" class="form-control" placeholder="e.g., QuickBooks, AppFolio, Buildium, etc.">
+                        <input type="text" id="currentSoftware" name="current_software" class="form-control" placeholder="e.g., QuickBooks, AppFolio, Buildium, etc.">
                     </div>
                     
                     <div class="form-group">
                         <label for="message">What challenges are you facing?</label>
-                        <textarea id="message" class="form-control" rows="3" placeholder="Briefly describe your property accounting needs..."></textarea>
+                        <textarea id="message" name="message" class="form-control" rows="3" placeholder="Briefly describe your property accounting needs..." required></textarea>
                     </div>
                     
+                    <input type="hidden" name="_subject" value="New Discovery Call Request from Website">
+                    <input type="hidden" name="_captcha" value="false">
+                    <input type="hidden" name="_template" value="table">
+                    <input type="hidden" name="_next" value="https://ajaccounting.github.io/index.html?submitted=true#consultation">
                     <button type="submit" class="btn btn-primary btn-block">
                         <i class="fas fa-paper-plane"></i> Request Free Discovery Call
                     </button>
+                    <p id="formStatus" style="margin-top: 0.8rem; color: var(--text-light); font-size: 0.9rem;" aria-live="polite"></p>
                 </form>
             </div>
         </div>
@@ -1112,22 +1004,15 @@
                 menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
-        
-        // Form submission handler
-        document.getElementById('consultationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            
-            // Get form data
-            const name = document.getElementById('name').value;
-            const email = document.getElementById('email').value;
-            
-            // In a real application, you would send this data to a server
-            // For now, we'll just show an alert
-            alert(`Thank you ${name}! Your consultation request has been received by a certified specialist. I'll contact you at ${email} within 24 hours.`);
-            
-            // Reset form
-            this.reset();
-        });
+        // Show success note after FormSubmit redirect
+        const params = new URLSearchParams(window.location.search);
+        if (params.get('submitted') === 'true') {
+            const formStatus = document.getElementById('formStatus');
+            if (formStatus) {
+                formStatus.textContent = 'Thank you! Your discovery call request was sent successfully.';
+            }
+            window.history.replaceState({}, document.title, window.location.pathname + window.location.hash);
+        }
     </script>
 </body>
 </html>
