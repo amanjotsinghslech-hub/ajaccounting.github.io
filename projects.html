@@ -360,7 +360,13 @@ button:hover,
             </p>
         </div>
 
-        <div class="category-section">
+        <div class="project-search-box">
+            <h3>Chart / BS / Delivery</h3>
+            <input type="search" id="projectSearch" class="project-search-input" placeholder="Search projects (e.g., chart of accounts, balance sheet, delivery)">
+            <p class="search-note">Type keywords like <strong>chart</strong>, <strong>bs</strong>, <strong>balance sheet</strong>, or <strong>delivery</strong>.</p>
+        </div>
+
+        <div class="category-section" data-filter-tags="chart chart of accounts coa delivery">
             <h2 class="category-heading">Chart of Accounts (COA)</h2>
             <p class="category-intro">Configured different COA structures based on software and reporting needs for property-focused clients.</p>
 
@@ -383,7 +389,18 @@ button:hover,
             </div>
         </div>
 
-        <div class="category-section">
+        <div class="category-section" data-filter-tags="delivery handover support">
+            <h2 class="category-heading">Delivery</h2>
+            <p class="category-intro">Clear handover, support notes, and practical delivery of accounting workflows for clients.</p>
+
+            <div class="project-entry">
+                <h3>Implementation Delivery</h3>
+                <p>Delivered finalized accounting structures with clear documentation so teams could start using the setup immediately.</p>
+                <span class="proof-note">Delivery checkpoints and documentation samples can be shown here.</span>
+            </div>
+        </div>
+
+        <div class="category-section" data-filter-tags="balance sheet bs delivery">
             <h2 class="category-heading">Balance Sheet Structuring</h2>
             <p class="category-intro">Handled different methods of recording properties and project values across platforms, based on client requirements.</p>
 
@@ -406,7 +423,7 @@ button:hover,
             </div>
         </div>
 
-        <div class="category-section">
+        <div class="category-section" data-filter-tags="bank reconciliations delivery">
             <h2 class="category-heading">Bank Accounts, Feeds & Reconciliations</h2>
 
             <div class="project-entry">
@@ -416,7 +433,7 @@ button:hover,
             </div>
         </div>
 
-        <div class="category-section">
+        <div class="category-section" data-filter-tags="bills payables ap delivery">
             <h2 class="category-heading">Bills & Payables Workflows</h2>
 
             <div class="project-entry">
@@ -438,7 +455,7 @@ button:hover,
             </div>
         </div>
 
-        <div class="category-section">
+        <div class="category-section" data-filter-tags="p&l pnl expenses delivery">
             <h2 class="category-heading">P&L Classification & Expense Analysis</h2>
 
             <div class="project-entry">
@@ -448,7 +465,7 @@ button:hover,
             </div>
         </div>
 
-        <div class="category-section">
+        <div class="category-section" data-filter-tags="backlog cleanup recovery delivery">
             <h2 class="category-heading">Backlog Cleanup & Recovery</h2>
 
             <div class="project-entry">
@@ -472,6 +489,21 @@ button:hover,
 document.getElementById("menuToggle").addEventListener("click", function() {
     document.getElementById("mobileNav").classList.toggle("active");
 });
+
+
+const projectSearch = document.getElementById('projectSearch');
+const projectSections = document.querySelectorAll('.category-section');
+
+if (projectSearch) {
+    projectSearch.addEventListener('input', () => {
+        const query = projectSearch.value.trim().toLowerCase();
+
+        projectSections.forEach((section) => {
+            const searchableText = (section.innerText + ' ' + (section.dataset.filterTags || '')).toLowerCase();
+            section.style.display = searchableText.includes(query) ? '' : 'none';
+        });
+    });
+}
 </script>
 
 
