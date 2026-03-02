@@ -1029,6 +1029,52 @@ button:hover,
             }
             window.history.replaceState({}, document.title, window.location.pathname + window.location.hash);
         }
+
+        // Keep discovery call form submission on-page for better UX
+        const consultationForm = document.getElementById('consultationForm');
+        const formStatus = document.getElementById('formStatus');
+
+        if (consultationForm && formStatus) {
+            consultationForm.addEventListener('submit', async (event) => {
+                event.preventDefault();
+
+                const submitButton = consultationForm.querySelector('button[type="submit"]');
+                const originalButtonText = submitButton ? submitButton.innerHTML : '';
+
+                formStatus.textContent = 'Sending your request...';
+
+                if (submitButton) {
+                    submitButton.disabled = true;
+                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                }
+
+                try {
+                    const response = await fetch(consultationForm.action, {
+                        method: 'POST',
+                        body: new FormData(consultationForm),
+                        headers: {
+                            Accept: 'application/json'
+                        }
+                    });
+
+                    if (!response.ok) {
+                        throw new Error('Request failed');
+                    }
+
+                    formStatus.textContent = 'Thank you! Your discovery call request was sent successfully.';
+                    consultationForm.reset();
+                } catch (error) {
+                    formStatus.textContent = 'Redirecting to secure form submission...';
+                    consultationForm.submit();
+                    return;
+                } finally {
+                    if (submitButton) {
+                        submitButton.disabled = false;
+                        submitButton.innerHTML = originalButtonText;
+                    }
+                }
+            });
+        }
     </script>
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
