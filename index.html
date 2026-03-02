@@ -286,6 +286,33 @@
             margin-bottom: 1.5rem;
             line-height: 1.6;
         }
+
+        .hero-highlights {
+            list-style: none;
+            margin-bottom: 1.2rem;
+        }
+
+        .hero-highlights li {
+            color: var(--text-light);
+            margin-bottom: 0.45rem;
+            display: flex;
+            align-items: flex-start;
+            gap: 0.5rem;
+            font-size: 0.95rem;
+        }
+
+        .hero-highlights i {
+            color: var(--primary);
+            margin-top: 0.25rem;
+        }
+
+        .story-note {
+            border-left: 3px solid var(--primary);
+            padding-left: 0.9rem;
+            margin-bottom: 1.3rem;
+            color: var(--text-light);
+            font-size: 0.95rem;
+        }
         
         /* ===== ACHIEVEMENTS SECTION ===== */
         .achievements-section {
@@ -784,6 +811,7 @@
                 <div class="hero-text">
                     <h1>AmanJot Singh <span>Slach</span></h1>
                     <h2>Certified Property Accounting Specialist</h2>
+                    <p class="tagline">I help property management teams turn accounting chaos into clean monthly closes, compliant trust books, and decision-ready reports.</p>
                     
                     <div class="certification-badges">
                         <span class="certification-badge gold-badge">
@@ -795,10 +823,18 @@
                     </div>
                     
                     <p class="hero-description">
-                        As a certified property accounting specialist with expertise in AppFolio and QuickBooks, 
-                        I provide expert financial management solutions for real estate portfolios. With over 5 years 
-                        of specialized experience, I optimize accounting systems to ensure accuracy, compliance, and 
-                        operational efficiency for property management firms.
+                        I work with operators who are tired of unclear books and last-minute fire drills. 
+                        My goal is simple: predictable month-end closes, fewer compliance surprises, and reporting owners can trust.
+                    </p>
+
+                    <ul class="hero-highlights">
+                        <li><i class="fas fa-check-circle"></i><span><strong>Who I help:</strong> property managers and real estate teams scaling from survival mode to stable operations.</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>What I improve:</strong> reconciliations, trust accounting, CAM workflows, and owner-ready month-end reporting.</span></li>
+                        <li><i class="fas fa-check-circle"></i><span><strong>How I work:</strong> clear weekly updates, documented SOPs, and transparent priorities from day one.</span></li>
+                    </ul>
+
+                    <p class="story-note">
+                        I started in hands-on bookkeeping and moved into property accounting because I care about building calm, reliable systems teams can trust under pressure.
                     </p>
                     
                     <div class="certification-badges">
@@ -814,8 +850,8 @@
                     </div>
 
                     <div class="cta-buttons" style="justify-content: flex-start; margin-top: 1.2rem;">
-                        <a href="about.html" class="btn btn-primary"><i class="fas fa-user"></i> About Me</a>
-                        <a href="#consultation" class="btn btn-outline"><i class="fas fa-comments"></i> Let’s Talk</a>
+                        <a href="#consultation" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book a Free Discovery Call</a>
+                        <a href="about.html" class="btn btn-outline"><i class="fas fa-user"></i> Read My Story</a>
                     </div>
                 </div>
             </div>
