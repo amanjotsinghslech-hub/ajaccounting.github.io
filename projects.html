@@ -218,6 +218,37 @@
             font-size: 0.9rem;
         }
 
+        .project-keywords {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.55rem;
+            margin-top: 0.8rem;
+        }
+
+        .keyword-chip {
+            border: 1px solid rgba(212, 175, 55, 0.35);
+            background: rgba(212, 175, 55, 0.1);
+            color: var(--text);
+            border-radius: 999px;
+            padding: 0.36rem 0.8rem;
+            font-size: 0.88rem;
+            font-weight: 600;
+            line-height: 1;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+
+        .keyword-chip:hover {
+            border-color: var(--primary);
+            color: var(--primary);
+        }
+
+        .keyword-chip.active {
+            background: var(--primary);
+            color: #111;
+            border-color: var(--primary);
+        }
+
         .search-results-note {
             color: var(--text-light);
             margin-bottom: 1.4rem;
@@ -400,6 +431,14 @@
             <h3>Search Highlights & Headlines</h3>
             <input type="search" id="projectSearch" class="project-search-input" placeholder="Search by headline or keyword (e.g., chart, balance sheet, reconciliation)">
             <p class="search-note">Type keywords like <strong>chart</strong>, <strong>bs</strong>, <strong>balance sheet</strong>, <strong>delivery</strong>, or <strong>reconciliation</strong>.</p>
+            <div class="project-keywords" aria-label="Quick keyword filters">
+                <button type="button" class="keyword-chip active" data-keyword="">All</button>
+                <button type="button" class="keyword-chip" data-keyword="BS">BS</button>
+                <button type="button" class="keyword-chip" data-keyword="Chart">Chart</button>
+                <button type="button" class="keyword-chip" data-keyword="Delivery">Delivery</button>
+                <button type="button" class="keyword-chip" data-keyword="Reconciliation">Reconciliation</button>
+                <button type="button" class="keyword-chip" data-keyword="Payables">Payables</button>
+            </div>
         </div>
 
         <p id="searchResultsNote" class="search-results-note">Showing all highlights and headlines.</p>
@@ -530,47 +569,70 @@ document.getElementById("menuToggle").addEventListener("click", function() {
     document.getElementById("mobileNav").classList.toggle("active");
 });
 
-
 const projectSearch = document.getElementById('projectSearch');
 const projectSections = document.querySelectorAll('.category-section');
 const searchResultsNote = document.getElementById('searchResultsNote');
 const searchEmpty = document.getElementById('searchEmpty');
+const keywordChips = document.querySelectorAll('.keyword-chip');
 
 const applyProjectFilter = () => {
-        const query = projectSearch.value.trim().toLowerCase();
-        let visibleSections = 0;
+    const query = projectSearch.value.trim().toLowerCase();
+    let visibleSections = 0;
 
-        projectSections.forEach((section) => {
-            const sectionHeadline = (section.querySelector('.category-heading')?.innerText || '').toLowerCase();
-            const sectionIntro = (section.querySelector('.category-intro')?.innerText || '').toLowerCase();
-            const sectionTags = (section.dataset.filterTags || '').toLowerCase();
-            const sectionMatch = !query || `${sectionHeadline} ${sectionIntro} ${sectionTags}`.includes(query);
+    projectSections.forEach((section) => {
+        const sectionHeadline = (section.querySelector('.category-heading')?.innerText || '').toLowerCase();
+        const sectionIntro = (section.querySelector('.category-intro')?.innerText || '').toLowerCase();
+        const sectionTags = (section.dataset.filterTags || '').toLowerCase();
+        const sectionMatch = !query || `${sectionHeadline} ${sectionIntro} ${sectionTags}`.includes(query);
 
-            let visibleEntries = 0;
-            section.querySelectorAll('.project-entry').forEach((entry) => {
-                const entryText = entry.innerText.toLowerCase();
-                const shouldShowEntry = !query || sectionMatch || entryText.includes(query);
-                entry.style.display = shouldShowEntry ? '' : 'none';
-                if (shouldShowEntry) visibleEntries += 1;
-            });
-
-            const shouldShowSection = !query || sectionMatch || visibleEntries > 0;
-            section.style.display = shouldShowSection ? '' : 'none';
-            if (shouldShowSection) visibleSections += 1;
+        let visibleEntries = 0;
+        section.querySelectorAll('.project-entry').forEach((entry) => {
+            const entryText = entry.innerText.toLowerCase();
+            const shouldShowEntry = !query || sectionMatch || entryText.includes(query);
+            entry.style.display = shouldShowEntry ? '' : 'none';
+            if (shouldShowEntry) visibleEntries += 1;
         });
 
-        if (!query) {
-            searchResultsNote.textContent = 'Showing all highlights and headlines.';
-            searchEmpty.style.display = 'none';
-        } else if (visibleSections > 0) {
-            searchResultsNote.textContent = `Found ${visibleSections} matching section${visibleSections > 1 ? 's' : ''} for "${projectSearch.value.trim()}".`;
-            searchEmpty.style.display = 'none';
-        } else {
-            searchResultsNote.textContent = 'No matching highlights right now.';
-            searchEmpty.style.display = 'block';
-        }
+        const shouldShowSection = !query || sectionMatch || visibleEntries > 0;
+        section.style.display = shouldShowSection ? '' : 'none';
+        if (shouldShowSection) visibleSections += 1;
     });
-}
+
+    if (!query) {
+        searchResultsNote.textContent = 'Showing all highlights and headlines.';
+        searchEmpty.style.display = 'none';
+    } else if (visibleSections > 0) {
+        searchResultsNote.textContent = `Found ${visibleSections} matching section${visibleSections > 1 ? 's' : ''} for "${projectSearch.value.trim()}".`;
+        searchEmpty.style.display = 'none';
+    } else {
+        searchResultsNote.textContent = 'No matching highlights right now.';
+        searchEmpty.style.display = 'block';
+    }
+};
+
+projectSearch.addEventListener('input', () => {
+    keywordChips.forEach((chip) => chip.classList.remove('active'));
+    const typedText = projectSearch.value.trim().toLowerCase();
+    const matchingChip = Array.from(keywordChips).find((chip) => (chip.dataset.keyword || '').toLowerCase() === typedText);
+    if (matchingChip) {
+        matchingChip.classList.add('active');
+    } else {
+        keywordChips[0]?.classList.toggle('active', typedText === '');
+    }
+    applyProjectFilter();
+});
+
+keywordChips.forEach((chip) => {
+    chip.addEventListener('click', () => {
+        const keyword = chip.dataset.keyword || '';
+        projectSearch.value = keyword;
+        keywordChips.forEach((item) => item.classList.remove('active'));
+        chip.classList.add('active');
+        applyProjectFilter();
+    });
+});
+
+applyProjectFilter();
 </script>
 
 </body>
