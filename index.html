@@ -7,6 +7,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
     
     <style>
         :root {
@@ -723,7 +724,22 @@
                 scroll-padding-top: 60px;
             }
         }
-    </style>
+    
+
+/* AOS button hover enhancement */
+button,
+.btn,
+.lux-btn {
+  transition: transform 0.3s ease;
+}
+
+button:hover,
+.btn:hover,
+.lux-btn:hover {
+  transform: scale(1.05);
+}
+
+</style>
 </head>
 <body>
     <!-- Header with Mobile Hamburger Menu -->
@@ -894,7 +910,7 @@
             </p>
             
             <div class="form-container">
-                <form id="consultationForm" action="https://formsubmit.co/slachamanjotsingh@gmail.com" method="POST">
+                <form id="consultationForm" action="https://formsubmit.co/slachamanjotsingh@gmail.com" method="POST" target="hiddenSubmissionFrame">
                     <div class="form-group">
                         <label for="name">Full Name</label>
                         <input type="text" id="name" name="name" class="form-control" required>
@@ -923,12 +939,12 @@
                     <input type="hidden" name="_subject" value="New Discovery Call Request from Website">
                     <input type="hidden" name="_captcha" value="false">
                     <input type="hidden" name="_template" value="table">
-                    <input type="hidden" name="_next" value="https://ajaccounting.github.io/index.html?submitted=true#consultation">
                     <button type="submit" class="btn btn-primary btn-block">
                         <i class="fas fa-paper-plane"></i> Request Free Discovery Call
                     </button>
                     <p id="formStatus" style="margin-top: 0.8rem; color: var(--text-light); font-size: 0.9rem;" aria-live="polite"></p>
                 </form>
+                <iframe name="hiddenSubmissionFrame" title="Hidden submission frame" style="display:none;"></iframe>
             </div>
         </div>
     </section>
@@ -1004,15 +1020,73 @@
                 menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
             });
         });
-        // Show success note after FormSubmit redirect
-        const params = new URLSearchParams(window.location.search);
-        if (params.get('submitted') === 'true') {
-            const formStatus = document.getElementById('formStatus');
-            if (formStatus) {
-                formStatus.textContent = 'Thank you! Your discovery call request was sent successfully.';
-            }
-            window.history.replaceState({}, document.title, window.location.pathname + window.location.hash);
+        // Keep discovery call form submission on-page with no redirect or popup
+        const consultationForm = document.getElementById('consultationForm');
+        const formStatus = document.getElementById('formStatus');
+        const hiddenSubmissionFrame = document.querySelector('iframe[name="hiddenSubmissionFrame"]');
+        let isSubmittingConsultation = false;
+
+        if (consultationForm && formStatus && hiddenSubmissionFrame) {
+            consultationForm.addEventListener('submit', () => {
+                const submitButton = consultationForm.querySelector('button[type="submit"]');
+
+                isSubmittingConsultation = true;
+                formStatus.textContent = 'Sending your request...';
+
+                if (submitButton) {
+                    submitButton.disabled = true;
+                    submitButton.dataset.originalText = submitButton.innerHTML;
+                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+                }
+            });
+
+            hiddenSubmissionFrame.addEventListener('load', () => {
+                if (!isSubmittingConsultation) return;
+
+                const submitButton = consultationForm.querySelector('button[type="submit"]');
+                formStatus.textContent = 'Thanks! Your discovery call request has been submitted.';
+                consultationForm.reset();
+                isSubmittingConsultation = false;
+
+                if (submitButton) {
+                    submitButton.disabled = false;
+                    submitButton.innerHTML = submitButton.dataset.originalText || '<i class="fas fa-paper-plane"></i> Request Free Discovery Call';
+                }
+            });
         }
     </script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        document.querySelectorAll('h1, h2').forEach((heading) => {
+            heading.setAttribute('data-aos', 'fade-up');
+        });
+
+        document.querySelectorAll('p').forEach((paragraph, index) => {
+            paragraph.setAttribute('data-aos', 'fade-up');
+            paragraph.setAttribute('data-aos-delay', String(80 + (index % 3) * 40));
+        });
+
+        document.querySelectorAll('#about, .about-section, .about-container, .profile-section').forEach((aboutContainer) => {
+            aboutContainer.setAttribute('data-aos', 'fade-left');
+        });
+
+        document.querySelectorAll('.project-card, .portfolio-card, .project-entry, .certification-card').forEach((projectCard, index) => {
+            projectCard.setAttribute('data-aos', 'zoom-in');
+            projectCard.setAttribute('data-aos-delay', String((index % 4) * 60));
+        });
+
+        document.querySelectorAll('#contact, #consultation, .contact-section, .consultation-section').forEach((contactSection) => {
+            contactSection.setAttribute('data-aos', 'fade-up');
+        });
+
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            offset: 120,
+            once: true
+        });
+    </script>
+
 </body>
 </html>
