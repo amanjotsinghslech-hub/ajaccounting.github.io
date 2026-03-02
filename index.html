@@ -7,6 +7,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
     
     <style>
         :root {
@@ -723,7 +724,22 @@
                 scroll-padding-top: 60px;
             }
         }
-    </style>
+    
+
+/* AOS button hover enhancement */
+button,
+.btn,
+.lux-btn {
+  transition: transform 0.3s ease;
+}
+
+button:hover,
+.btn:hover,
+.lux-btn:hover {
+  transform: scale(1.05);
+}
+
+</style>
 </head>
 <body>
     <!-- Header with Mobile Hamburger Menu -->
@@ -1014,5 +1030,38 @@
             window.history.replaceState({}, document.title, window.location.pathname + window.location.hash);
         }
     </script>
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        document.querySelectorAll('h1, h2').forEach((heading) => {
+            heading.setAttribute('data-aos', 'fade-up');
+        });
+
+        document.querySelectorAll('p').forEach((paragraph, index) => {
+            paragraph.setAttribute('data-aos', 'fade-up');
+            paragraph.setAttribute('data-aos-delay', String(80 + (index % 3) * 40));
+        });
+
+        document.querySelectorAll('#about, .about-section, .about-container, .profile-section').forEach((aboutContainer) => {
+            aboutContainer.setAttribute('data-aos', 'fade-left');
+        });
+
+        document.querySelectorAll('.project-card, .portfolio-card, .project-entry, .certification-card').forEach((projectCard, index) => {
+            projectCard.setAttribute('data-aos', 'zoom-in');
+            projectCard.setAttribute('data-aos-delay', String((index % 4) * 60));
+        });
+
+        document.querySelectorAll('#contact, #consultation, .contact-section, .consultation-section').forEach((contactSection) => {
+            contactSection.setAttribute('data-aos', 'fade-up');
+        });
+
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            offset: 120,
+            once: true
+        });
+    </script>
+
 </body>
 </html>
