@@ -218,30 +218,6 @@
             font-size: 0.9rem;
         }
 
-        .search-keywords {
-            margin-top: 0.8rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.55rem;
-        }
-
-        .keyword-chip {
-            border: 1px solid var(--border);
-            background: #101010;
-            color: var(--text-light);
-            border-radius: 999px;
-            padding: 0.38rem 0.8rem;
-            font-size: 0.84rem;
-            font-weight: 600;
-            cursor: pointer;
-        }
-
-        .keyword-chip.active {
-            background: var(--primary);
-            border-color: var(--primary);
-            color: #111;
-        }
-
         .search-results-note {
             color: var(--text-light);
             margin-bottom: 1.4rem;
@@ -424,16 +400,6 @@
             <h3>Search Highlights & Headlines</h3>
             <input type="search" id="projectSearch" class="project-search-input" placeholder="Search by headline or keyword (e.g., chart, balance sheet, reconciliation)">
             <p class="search-note">Type keywords like <strong>chart</strong>, <strong>bs</strong>, <strong>balance sheet</strong>, <strong>delivery</strong>, or <strong>reconciliation</strong>.</p>
-            <div class="search-keywords" aria-label="Quick project keyword filters">
-                <button type="button" class="keyword-chip active" data-keyword="">All</button>
-                <button type="button" class="keyword-chip" data-keyword="coa">COA</button>
-                <button type="button" class="keyword-chip" data-keyword="bs">BS</button>
-                <button type="button" class="keyword-chip" data-keyword="delivery">Delivery</button>
-                <button type="button" class="keyword-chip" data-keyword="reconciliation">Reconciliation</button>
-                <button type="button" class="keyword-chip" data-keyword="ap">AP</button>
-                <button type="button" class="keyword-chip" data-keyword="p&l">P&amp;L</button>
-                <button type="button" class="keyword-chip" data-keyword="cleanup">Cleanup</button>
-            </div>
         </div>
 
         <p id="searchResultsNote" class="search-results-note">Showing all highlights and headlines.</p>
@@ -569,7 +535,6 @@ const projectSearch = document.getElementById('projectSearch');
 const projectSections = document.querySelectorAll('.category-section');
 const searchResultsNote = document.getElementById('searchResultsNote');
 const searchEmpty = document.getElementById('searchEmpty');
-const keywordChips = document.querySelectorAll('.keyword-chip');
 
 const applyProjectFilter = () => {
         const query = projectSearch.value.trim().toLowerCase();
@@ -604,23 +569,6 @@ const applyProjectFilter = () => {
             searchResultsNote.textContent = 'No matching highlights right now.';
             searchEmpty.style.display = 'block';
         }
-};
-
-if (projectSearch) {
-    projectSearch.addEventListener('input', () => {
-        keywordChips.forEach((chip) => {
-            chip.classList.toggle('active', chip.dataset.keyword === projectSearch.value.trim().toLowerCase());
-        });
-        applyProjectFilter();
-    });
-
-    keywordChips.forEach((chip) => {
-        chip.addEventListener('click', () => {
-            const keyword = chip.dataset.keyword || '';
-            projectSearch.value = keyword;
-            keywordChips.forEach((item) => item.classList.toggle('active', item === chip));
-            applyProjectFilter();
-        });
     });
 }
 </script>
