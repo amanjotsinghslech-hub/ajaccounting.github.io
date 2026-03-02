@@ -7,6 +7,7 @@
     
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
 
     <style>
         :root {
@@ -299,88 +300,18 @@
         }
     
 
+/* AOS button hover enhancement */
+button,
+.btn,
+.lux-btn {
+  transition: transform 0.3s ease;
+}
 
-        .project-search-box {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1rem;
-            margin-bottom: 1.5rem;
-        }
-
-        .project-search-box h3 {
-            color: var(--primary);
-            font-size: 1rem;
-            margin-bottom: 0.7rem;
-        }
-
-        .project-search-row {
-            display: flex;
-            gap: 0.6rem;
-            align-items: center;
-        }
-
-        .project-search-input {
-            width: 100%;
-            padding: 0.8rem 0.9rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background: #111;
-            color: var(--text);
-            font-size: 0.95rem;
-        }
-
-        .project-search-btn {
-            padding: 0.8rem 1rem;
-            border-radius: 8px;
-            border: 1px solid var(--primary);
-            background: var(--primary);
-            color: #111;
-            font-weight: 600;
-            cursor: pointer;
-            white-space: nowrap;
-        }
-
-        .project-search-input:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-
-        .search-note {
-            color: var(--text-light);
-            font-size: 0.85rem;
-            margin-top: 0.6rem;
-        }
-
-        .search-results {
-            margin-top: 0.8rem;
-            display: grid;
-            gap: 0.45rem;
-        }
-
-        .search-result-link {
-            display: block;
-            color: var(--text);
-            text-decoration: none;
-            font-size: 0.92rem;
-            padding: 0.45rem 0.55rem;
-            border-radius: 6px;
-            border: 1px solid var(--border);
-            background: rgba(255, 255, 255, 0.02);
-        }
-
-        .search-result-link:hover {
-            border-color: var(--primary);
-            color: var(--primary);
-        }
-
-        @media (max-width: 640px) {
-            .project-search-row {
-                flex-direction: column;
-                align-items: stretch;
-            }
-        }
-
+button:hover,
+.btn:hover,
+.lux-btn:hover {
+  transform: scale(1.05);
+}
 
 </style>
 </head>
@@ -431,12 +362,8 @@
 
         <div class="project-search-box">
             <h3>Chart / BS / Delivery</h3>
-            <div class="project-search-row">
-                <input type="search" id="projectSearch" class="project-search-input" placeholder="Search highlights or headlines (e.g., chart, balance sheet, delivery)">
-                <button type="button" id="projectSearchButton" class="project-search-btn">Go</button>
-            </div>
-            <p class="search-note">Search any headline/highlight and jump directly without scrolling to the end.</p>
-            <div id="projectSearchResults" class="search-results" aria-live="polite"></div>
+            <input type="search" id="projectSearch" class="project-search-input" placeholder="Search projects (e.g., chart of accounts, balance sheet, delivery)">
+            <p class="search-note">Type keywords like <strong>chart</strong>, <strong>bs</strong>, <strong>balance sheet</strong>, or <strong>delivery</strong>.</p>
         </div>
 
         <div class="category-section" data-filter-tags="chart chart of accounts coa delivery">
@@ -565,58 +492,52 @@ document.getElementById("menuToggle").addEventListener("click", function() {
 
 
 const projectSearch = document.getElementById('projectSearch');
-const projectSearchButton = document.getElementById('projectSearchButton');
-const projectSearchResults = document.getElementById('projectSearchResults');
-const searchTargets = [...document.querySelectorAll('.category-heading, .project-entry h3')];
-
-const toSlug = (text) => text.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/(^-|-$)/g, '');
-
-searchTargets.forEach((target, index) => {
-    if (!target.id) {
-        target.id = `project-target-${toSlug(target.textContent)}-${index}`;
-    }
-});
-
-const buildResults = (query = '') => {
-    if (!projectSearchResults) return [];
-
-    const normalized = query.trim().toLowerCase();
-    const matched = searchTargets.filter((target) => {
-        if (!normalized) return true;
-        return target.textContent.toLowerCase().includes(normalized);
-    }).slice(0, 8);
-
-    projectSearchResults.innerHTML = matched.map((target) => (
-        `<a class="search-result-link" href="#${target.id}">${target.textContent}</a>`
-    )).join('');
-
-    return matched;
-};
-
-const jumpToFirstMatch = () => {
-    if (!projectSearch) return;
-    const matches = buildResults(projectSearch.value);
-    if (matches.length) {
-        matches[0].scrollIntoView({ behavior: 'smooth', block: 'start' });
-        window.location.hash = matches[0].id;
-    }
-};
+const projectSections = document.querySelectorAll('.category-section');
 
 if (projectSearch) {
-    buildResults('');
-    projectSearch.addEventListener('input', () => buildResults(projectSearch.value));
-    projectSearch.addEventListener('keydown', (event) => {
-        if (event.key === 'Enter') {
-            event.preventDefault();
-            jumpToFirstMatch();
-        }
+    projectSearch.addEventListener('input', () => {
+        const query = projectSearch.value.trim().toLowerCase();
+
+        projectSections.forEach((section) => {
+            const searchableText = (section.innerText + ' ' + (section.dataset.filterTags || '')).toLowerCase();
+            section.style.display = searchableText.includes(query) ? '' : 'none';
+        });
     });
 }
-
-if (projectSearchButton) {
-    projectSearchButton.addEventListener('click', jumpToFirstMatch);
-}
 </script>
+
+
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script>
+        document.querySelectorAll('h1, h2').forEach((heading) => {
+            heading.setAttribute('data-aos', 'fade-up');
+        });
+
+        document.querySelectorAll('p').forEach((paragraph, index) => {
+            paragraph.setAttribute('data-aos', 'fade-up');
+            paragraph.setAttribute('data-aos-delay', String(80 + (index % 3) * 40));
+        });
+
+        document.querySelectorAll('#about, .about-section, .about-container, .profile-section').forEach((aboutContainer) => {
+            aboutContainer.setAttribute('data-aos', 'fade-left');
+        });
+
+        document.querySelectorAll('.project-card, .portfolio-card, .project-entry, .certification-card').forEach((projectCard, index) => {
+            projectCard.setAttribute('data-aos', 'zoom-in');
+            projectCard.setAttribute('data-aos-delay', String((index % 4) * 60));
+        });
+
+        document.querySelectorAll('#contact, #consultation, .contact-section, .consultation-section').forEach((contactSection) => {
+            contactSection.setAttribute('data-aos', 'fade-up');
+        });
+
+        AOS.init({
+            duration: 800,
+            easing: 'ease-in-out',
+            offset: 120,
+            once: true
+        });
+    </script>
 
 </body>
 </html>
