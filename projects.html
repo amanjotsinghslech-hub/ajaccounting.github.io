@@ -1,485 +1,180 @@
 <!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | AmanJot Singh Slach | Property Accounting Specialist</title>
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root {
-            --primary: #E3BF4D;
-            --primary-dark: #C49A26;
-            --accent: #63B3ED;
-            --dark: #0A0A0A;
-            --light: #FFFFFF;
-            --card-bg: #14181D;
-            --text: #F0F0F0;
-            --text-light: #C2CAD5;
-            --border: #2A313A;
-            --footer-bg: #FFFFFF;
-            --footer-text: #333333;
-            --footer-light: #666666;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 70px;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--dark);
-            color: var(--text);
-            line-height: 1.6;
-            padding-top: 70px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .section {
-            padding: 3rem 0;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
-            height: 70px;
-            display: flex;
-            align-items: center;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--text);
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        .nav-desktop {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-desktop a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .nav-desktop a:hover {
-            color: var(--primary);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text);
-            font-size: 1.4rem;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .nav-mobile {
-            display: none;
-            position: absolute;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background: var(--card-bg);
-            border-bottom: 1px solid var(--border);
-            padding: 1rem;
-            flex-direction: column;
-            gap: 1rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav-mobile.active {
-            display: flex;
-        }
-
-        .nav-mobile a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .projects-hero {
-            padding-top: 30px;
-            padding-bottom: 2rem;
-            background: linear-gradient(135deg, #0A0A0A 0%, #050505 100%);
-        }
-
-        .projects-hero h1 {
-            font-size: clamp(1.9rem, 3vw, 2.5rem);
-            margin-bottom: 0.5rem;
-        }
-
-        .projects-hero h1 span {
-            color: var(--primary);
-        }
-
-        .projects-hero p {
-            max-width: 760px;
-            margin: 0 auto;
-            color: var(--text-light);
-        }
-
-        .search-panel {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1rem;
-            margin: 1.6rem auto 2rem;
-            max-width: 860px;
-        }
-
-        .search-panel h3 {
-            color: var(--primary);
-            margin-bottom: 0.7rem;
-            font-size: 1.1rem;
-        }
-
-        .project-search-input {
-            width: 100%;
-            padding: 0.8rem 0.9rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background: #0e1217;
-            color: var(--text);
-            font-size: 0.95rem;
-        }
-
-        .project-search-input:focus {
-            outline: 1px solid var(--primary);
-            border-color: var(--primary);
-        }
-
-        .search-note,
-        .search-results-note {
-            margin-top: 0.55rem;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        .software-highlight-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 0.8rem;
-            margin-bottom: 2rem;
-        }
-
-        .software-highlight {
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            background: #11161b;
-            padding: 0.75rem 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-        }
-
-        .software-highlight i {
-            color: var(--primary);
-        }
-
-        .category-section {
-            margin-bottom: 2.1rem;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.25rem;
-            background: rgba(20, 24, 29, 0.88);
-        }
-
-        .category-heading {
-            color: var(--primary);
-            margin-bottom: 0.45rem;
-            font-size: 1.4rem;
-        }
-
-        .category-intro {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-        }
-
-        .project-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 0.9rem;
-        }
-
-        .project-entry {
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--primary);
-            border-radius: 10px;
-            padding: 0.95rem;
-            background: #11161b;
-        }
-
-        .project-entry h3 {
-            font-size: 1rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .project-entry p {
-            color: var(--text-light);
-            font-size: 0.92rem;
-        }
-
-        .skill-tags {
-            margin-top: 0.7rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.45rem;
-        }
-
-        .tag {
-            font-size: 0.78rem;
-            border-radius: 999px;
-            padding: 0.25rem 0.6rem;
-            border: 1px solid rgba(227, 191, 77, 0.45);
-            color: var(--primary);
-            background: rgba(227, 191, 77, 0.08);
-        }
-
-        .coa-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .coa-item {
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            background: #0f1318;
-            padding: 0.75rem;
-        }
-
-        .coa-thumb-btn {
-            border: 0;
-            width: 100%;
-            padding: 0;
-            background: transparent;
-            cursor: zoom-in;
-            border-radius: 8px;
-            overflow: hidden;
-            aspect-ratio: 16 / 10;
-        }
-
-        .coa-thumb-btn img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.25s ease;
-        }
-
-        .coa-thumb-btn:hover img {
-            transform: scale(1.02);
-        }
-
-        .software-box {
-            margin-top: 0.6rem;
-            border-radius: 8px;
-            border: 1px solid;
-            padding: 0.4rem 0.6rem;
-            text-align: center;
-            font-size: 0.82rem;
-            font-weight: 600;
-        }
-
-        .software-box.appfolio {
-            border-color: #35c47e;
-            color: #8df5bf;
-            background: rgba(53, 196, 126, 0.12);
-        }
-
-        .software-box.quickbooks {
-            border-color: #34a4f3;
-            color: #9ad8ff;
-            background: rgba(52, 164, 243, 0.12);
-        }
-
-        .proof-note {
-            margin-top: 0.8rem;
-            color: var(--text-light);
-            font-size: 0.84rem;
-        }
-
-        .search-empty {
-            display: none;
-            padding: 0.9rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: #11161b;
-            color: var(--text-light);
-            margin-bottom: 1rem;
-        }
-
-        .lightbox {
-            position: fixed;
-            inset: 0;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            z-index: 2500;
-            background: rgba(0, 0, 0, 0.86);
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox-content {
-            width: min(1100px, 95vw);
-            background: #0f0f0f;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .lightbox-image {
-            width: 100%;
-            max-height: 85vh;
-            object-fit: contain;
-            display: block;
-            background: #000;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            right: 0.6rem;
-            top: 0.5rem;
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            border: 1px solid var(--border);
-            background: rgba(17, 17, 17, 0.9);
-            color: #fff;
-            font-size: 1.1rem;
-            cursor: pointer;
-        }
-
-        .lightbox-caption {
-            color: var(--text-light);
-            padding: 0.7rem 1rem;
-            border-top: 1px solid var(--border);
-            font-size: 0.9rem;
-        }
-
-        .footer-minimal {
-            background: var(--footer-bg);
-            border-top: 1px solid #E5E7EB;
-            padding: 3rem 0 2rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            .footer-content {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
-            }
-        }
-
-        .footer-section h4 {
-            color: var(--footer-text);
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.6rem;
-            color: var(--footer-light);
-            font-size: 0.9rem;
-        }
-
-        .footer-links a {
-            color: var(--footer-light);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid #E5E7EB;
-            color: var(--footer-light);
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding-top: 60px;
-            }
-
-            header {
-                height: 60px;
-            }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Projects | AmanJot Singh Slach</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+--primary:#D4AF37;
+--dark:#0A0A0A;
+--card:#1A1A1A;
+--text:#F0F0F0;
+--light:#999;
+--border:#333;
+}
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
+
+body{
+font-family:'Inter',sans-serif;
+background:var(--dark);
+color:var(--text);
+line-height:1.6;
+}
+
+.container{
+max-width:1200px;
+margin:auto;
+padding:0 20px;
+}
+
+header{
+background:#000;
+padding:18px 0;
+border-bottom:1px solid var(--border);
+}
+
+.logo{
+font-weight:700;
+font-size:18px;
+color:white;
+text-decoration:none;
+}
+
+.logo span{
+color:var(--primary);
+}
+
+.nav{
+float:right;
+}
+
+.nav a{
+margin-left:20px;
+color:#bbb;
+text-decoration:none;
+font-size:14px;
+}
+
+.nav a:hover{
+color:var(--primary);
+}
+
+.hero{
+padding:60px 0 30px 0;
+text-align:center;
+}
+
+.hero h1{
+font-size:32px;
+margin-bottom:10px;
+}
+
+.hero span{
+color:var(--primary);
+}
+
+.hero p{
+color:var(--light);
+}
+
+.section{
+padding:40px 0;
+}
+
+.section h2{
+font-size:26px;
+margin-bottom:10px;
+}
+
+.section p{
+color:var(--light);
+margin-bottom:25px;
+}
+
+.coa-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(320px,1fr));
+gap:30px;
+}
+
+.software-box{
+background:var(--card);
+padding:20px;
+border-radius:12px;
+border:1px solid var(--border);
+}
+
+.software-box h3{
+margin-bottom:15px;
+}
+
+.appfolio{
+border-left:5px solid #4AA3FF;
+}
+
+.qbo{
+border-left:5px solid #2ECC71;
+}
+
+.image-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(120px,1fr));
+gap:12px;
+}
+
+.image-grid img{
+width:100%;
+border-radius:6px;
+cursor:pointer;
+transition:0.3s;
+}
+
+.image-grid img:hover{
+transform:scale(1.05);
+}
+
+.lightbox{
+display:none;
+position:fixed;
+z-index:999;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:rgba(0,0,0,0.9);
+align-items:center;
+justify-content:center;
+}
+
+.lightbox img{
+max-width:90%;
+max-height:90%;
+}
+
+footer{
+margin-top:60px;
+padding:30px 0;
+text-align:center;
+background:white;
+color:#333;
+font-size:14px;
+}
+
+</style>
+
+</head>
 
             .menu-toggle {
                 display: block;
@@ -501,300 +196,108 @@
 </head>
 <body>
 <header>
-    <div class="header-content">
-        <a href="index.html" class="logo">AmanJot Singh <span>Slach</span></a>
+<div class="container">
 
-        <nav class="nav-desktop">
-            <a href="index.html">Home</a>
-            <a href="projects.html" style="color: var(--primary);">Projects</a>
-            <a href="certifications.html">Certifications</a>
-            <a href="#contact">Connect</a>
-        </nav>
+<a href="index.html" class="logo">
+AmanJot Singh <span>Slach</span>
+</a>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
-            <i class="fas fa-bars"></i>
-        </button>
+<div class="nav">
+<a href="index.html">Home</a>
+<a href="projects.html">Projects</a>
+<a href="certifications.html">Certifications</a>
+</div>
 
-        <nav class="nav-mobile" id="mobileNav">
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="certifications.html">Certifications</a>
-            <a href="#contact">Connect</a>
-        </nav>
-    </div>
+</div>
 </header>
 
-<section class="projects-hero section text-center">
-    <div class="container">
-        <h1>Freelancing <span>Project Samples</span></h1>
-        <p>
-            Practical property-accounting project samples designed for recruiter-friendly review.
-            I have added software-wise work examples (Chart of Accounts, Bills, Vendors, P&amp;L, and Bank Reconciliation)
-            so you can quickly assess my workflow quality and cross-platform experience.
-        </p>
-    </div>
+<section class="hero">
+
+<div class="container">
+
+<h1>Accounting <span>Projects</span></h1>
+
+<p>
+Examples of accounting systems and structures implemented across different softwares.
+</p>
+
+</div>
+
 </section>
 
 <section class="section">
-    <div class="container">
-        <div class="search-panel">
-            <h3>Search Projects by Headline</h3>
-            <input type="search" id="projectSearch" class="project-search-input" placeholder="Search by headline or topic (e.g., chart of accounts, bills, vendors, p&l, bank reconciliation)">
-            <p class="search-note">Try keywords like <strong>chart</strong>, <strong>bills</strong>, <strong>vendors</strong>, <strong>p&amp;l</strong>, <strong>bank reco</strong>, or <strong>quickbooks</strong>.</p>
-            <p class="search-results-note" id="searchResultsNote">Showing all project headlines and samples.</p>
-        </div>
 
-        <div class="software-highlight-grid" aria-label="Softwares used">
-            <div class="software-highlight"><i class="fas fa-building"></i> AppFolio</div>
-            <div class="software-highlight"><i class="fas fa-calculator"></i> QuickBooks Online</div>
-            <div class="software-highlight"><i class="fas fa-layer-group"></i> Xero</div>
-            <div class="software-highlight"><i class="fas fa-city"></i> Buildium</div>
-            <div class="software-highlight"><i class="fas fa-file-invoice-dollar"></i> Gusto</div>
-            <div class="software-highlight"><i class="fas fa-receipt"></i> Hubdoc</div>
-        </div>
+<div class="container">
 
-        <div id="searchEmpty" class="search-empty">No matching project found. Please try another headline or software keyword.</div>
+<h2>Chart of Accounts</h2>
 
-        <article class="category-section searchable-section" data-filter-tags="chart chart of accounts coa appfolio quickbooks property accounting setup">
-            <h2 class="category-heading">Chart of Accounts</h2>
-            <p class="category-intro">Below are real COA snapshots organized software-wise. Thumbnails are intentionally compact for laptop/desktop review and can be enlarged on click.</p>
+<p>
+Examples of Chart of Accounts structures built across different accounting softwares.
+Click any image to enlarge.
+</p>
 
-            <div class="coa-gallery">
-                <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="Appfolio COA (2).PNG" data-caption="Appfolio COA (2)">
-                        <img src="Appfolio COA (2).PNG" alt="Appfolio COA (2) sample">
-                    </button>
-                    <div class="software-box appfolio">Software: AppFolio</div>
-                </article>
+<div class="coa-grid">
 
-                <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="Appfolio COA.PNG" data-caption="Appfolio COA">
-                        <img src="Appfolio COA.PNG" alt="Appfolio COA sample">
-                    </button>
-                    <div class="software-box appfolio">Software: AppFolio</div>
-                </article>
+<div class="software-box appfolio">
 
-                <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO chart3.png" data-caption="QBO chart3">
-                        <img src="QBO chart3.png" alt="QBO chart3 sample">
-                    </button>
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
+<h3>AppFolio</h3>
 
-                <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO Chart.png" data-caption="QBO Chart">
-                        <img src="QBO Chart.png" alt="QBO Chart sample">
-                    </button>
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
+<div class="image-grid">
 
-                <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO chart2.png" data-caption="QBO chart2">
-                        <img src="QBO chart2.png" alt="QBO chart2 sample">
-                    </button>
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-            </div>
+<img src="Appfolio COA.PNG">
+<img src="Appfolio COA (2).PNG">
 
-            <p class="proof-note">Click any image to enlarge and inspect account grouping logic.</p>
-        </article>
+</div>
 
-        <article class="category-section searchable-section" data-filter-tags="bills payables invoice approvals vendor coding appfolio quickbooks xero">
-            <h2 class="category-heading">Bills &amp; Vendor Management</h2>
-            <p class="category-intro">Freelance AP workflows focused on clean coding, approvals, and faster month-end close for property clients.</p>
+</div>
 
-            <div class="project-cards">
-                <div class="project-entry">
-                    <h3>AppFolio - Utility &amp; Recurring Bills</h3>
-                    <p>Created recurring bill templates and approval routing for utility-heavy portfolios, reducing posting delays and coding mistakes.</p>
-                    <div class="skill-tags"><span class="tag">AppFolio</span><span class="tag">Bills</span><span class="tag">Vendor Coding</span></div>
-                </div>
+<div class="software-box qbo">
 
-                <div class="project-entry">
-                    <h3>QuickBooks Online - Multi-Vendor AP Cleanup</h3>
-                    <p>Standardized vendor naming, tax setup, and bill categorization so aging and expense reports became cleaner for management review.</p>
-                    <div class="skill-tags"><span class="tag">QuickBooks Online</span><span class="tag">Vendors</span><span class="tag">AP Controls</span></div>
-                </div>
+<h3>QuickBooks Online</h3>
 
-                <div class="project-entry">
-                    <h3>Xero - AP Workflow Rollout</h3>
-                    <p>Built a simple intake-to-payment process for freelancer teams, improving visibility from invoice entry to final payment run.</p>
-                    <div class="skill-tags"><span class="tag">Xero</span><span class="tag">Payables</span><span class="tag">Workflow</span></div>
-                </div>
-            </div>
-        </article>
+<div class="image-grid">
 
-        <article class="category-section searchable-section" data-filter-tags="profit and loss p&l financial reporting class tracking property performance">
-            <h2 class="category-heading">P&amp;L Structuring &amp; Expense Analysis</h2>
-            <p class="category-intro">Project samples focused on giving recruiters and clients clearer profitability stories in 1-2 pages.</p>
+<img src="QBO Chart.png">
+<img src="QBO chart2.png">
+<img src="QBO chart3.png">
 
-            <div class="project-cards">
-                <div class="project-entry">
-                    <h3>Department-Wise P&amp;L for Property Operations</h3>
-                    <p>Designed department and class mappings so each property owner could compare profitability and expense behavior month over month.</p>
-                    <div class="skill-tags"><span class="tag">P&amp;L</span><span class="tag">Management Reporting</span></div>
-                </div>
+</div>
 
-                <div class="project-entry">
-                    <h3>Expense Reclassification Sprint</h3>
-                    <p>Reviewed historical postings and reclassified key cost buckets, resulting in more accurate NOI and cleaner owner reports.</p>
-                    <div class="skill-tags"><span class="tag">Financial Cleanup</span><span class="tag">NOI Focus</span></div>
-                </div>
-            </div>
-        </article>
+</div>
 
-        <article class="category-section searchable-section" data-filter-tags="bank reconciliation bank reco feeds clearing accounts cash control quickbooks appfolio">
-            <h2 class="category-heading">Bank Reconciliation Projects</h2>
-            <p class="category-intro">Hands-on reconciliation work for high-volume bank feeds, unreconciled balances, and month-end accuracy.</p>
+</div>
 
-            <div class="project-cards">
-                <div class="project-entry">
-                    <h3>High-Volume Bank Feed Reconciliation</h3>
-                    <p>Managed 40+ bank and credit card feeds across client portfolios and resolved uncleared entries through structured recon reviews.</p>
-                    <div class="skill-tags"><span class="tag">Bank Reco</span><span class="tag">Cash Controls</span><span class="tag">Month-End</span></div>
-                </div>
+</div>
 
-                <div class="project-entry">
-                    <h3>Historical Reconciliation Recovery</h3>
-                    <p>Recovered multi-period bank mismatches by tracing opening differences, fixing mapping errors, and documenting close-ready adjustments.</p>
-                    <div class="skill-tags"><span class="tag">Recovery</span><span class="tag">Audit Trail</span></div>
-                </div>
-            </div>
-        </article>
-    </div>
 </section>
 
-<div class="lightbox" id="imageLightbox" aria-hidden="true" role="dialog" aria-label="Expanded chart image">
+<div class="lightbox" id="lightbox">
+
+<img id="lightbox-img">
+
+</div>
+
+<footer>
+
+© 2026 AmanJot Singh Slach — Property Accounting Specialist
+
+</footer>
+
+<div class="lightbox" id="imageLightbox" aria-hidden="true" role="dialog" aria-label="Expanded chart of accounts screenshot">
     <div class="lightbox-content">
         <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close enlarged image">×</button>
-        <img id="lightboxImage" class="lightbox-image" src="" alt="Expanded chart sample">
-        <p id="lightboxCaption" class="lightbox-caption"></p>
+        <img id="lightboxImage" src="" alt="Expanded chart of accounts screenshot">
+        <p class="lightbox-caption" id="lightboxCaption"></p>
     </div>
 </div>
 
-<footer class="footer-minimal" id="contact">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="projects.html"><i class="fas fa-folder"></i> Projects</a></li>
-                    <li><a href="certifications.html"><i class="fas fa-certificate"></i> Certifications</a></li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h4>Connect With Me</h4>
-                <ul class="footer-links">
-                    <li><a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-                    <li><a href="mailto:Slachamanjotsingh@gmail.com"><i class="fas fa-envelope"></i> Slachamanjotsingh@gmail.com</a></li>
-                    <li><i class="fas fa-phone"></i> +91 991 115 5541</li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h4>Project Focus Areas</h4>
-                <ul class="footer-links">
-                    <li>Chart of Accounts Setup</li>
-                    <li>Bills & Vendor Workflow</li>
-                    <li>P&amp;L Reporting</li>
-                    <li>Bank Reconciliation</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="copyright">© 2024 AmanJot Singh Slach | Property Accounting Specialist</div>
-    </div>
-</footer>
-
 <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileNav = document.getElementById('mobileNav');
 
-    menuToggle.addEventListener('click', () => {
-        mobileNav.classList.toggle('active');
-        menuToggle.innerHTML = mobileNav.classList.contains('active')
-            ? '<i class="fas fa-times"></i>'
-            : '<i class="fas fa-bars"></i>';
-    });
+const images=document.querySelectorAll(".image-grid img");
+const lightbox=document.getElementById("lightbox");
+const lightboxImg=document.getElementById("lightbox-img");
 
-    document.addEventListener('click', (event) => {
-        if (!menuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
-            mobileNav.classList.remove('active');
-            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-        }
-    });
+images.forEach(img=>{
 
-    const projectSearch = document.getElementById('projectSearch');
-    const searchableSections = document.querySelectorAll('.searchable-section');
-    const searchResultsNote = document.getElementById('searchResultsNote');
-    const searchEmpty = document.getElementById('searchEmpty');
-
-    const applyProjectSearch = () => {
-        const query = projectSearch.value.trim().toLowerCase();
-        let visibleCount = 0;
-
-        searchableSections.forEach((section) => {
-            const heading = section.querySelector('.category-heading')?.innerText.toLowerCase() || '';
-            const intro = section.querySelector('.category-intro')?.innerText.toLowerCase() || '';
-            const tags = (section.dataset.filterTags || '').toLowerCase();
-            const content = section.innerText.toLowerCase();
-            const matched = !query || `${heading} ${intro} ${tags} ${content}`.includes(query);
-            section.style.display = matched ? '' : 'none';
-            if (matched) visibleCount += 1;
-        });
-
-        if (!query) {
-            searchResultsNote.textContent = 'Showing all project headlines and samples.';
-            searchEmpty.style.display = 'none';
-        } else if (visibleCount > 0) {
-            searchResultsNote.textContent = `Found ${visibleCount} matching headline${visibleCount > 1 ? 's' : ''} for "${projectSearch.value.trim()}".`;
-            searchEmpty.style.display = 'none';
-        } else {
-            searchResultsNote.textContent = 'No matching headline found.';
-            searchEmpty.style.display = 'block';
-        }
-    };
-
-    projectSearch.addEventListener('input', applyProjectSearch);
-    applyProjectSearch();
-
-    const lightbox = document.getElementById('imageLightbox');
-    const lightboxImage = document.getElementById('lightboxImage');
-    const lightboxCaption = document.getElementById('lightboxCaption');
-    const lightboxClose = document.getElementById('lightboxClose');
-    const thumbs = document.querySelectorAll('.coa-thumb-btn');
-
-    thumbs.forEach((thumb) => {
-        thumb.addEventListener('click', () => {
-            const imagePath = thumb.dataset.fullImage;
-            const caption = thumb.dataset.caption || 'Chart sample';
-            if (!imagePath) return;
-            lightboxImage.src = imagePath;
-            lightboxImage.alt = `${caption} enlarged`;
-            lightboxCaption.textContent = caption;
-            lightbox.classList.add('active');
-            lightbox.setAttribute('aria-hidden', 'false');
-        });
-    });
-
-    const closeLightbox = () => {
-        lightbox.classList.remove('active');
-        lightbox.setAttribute('aria-hidden', 'true');
-        lightboxImage.src = '';
-    };
-
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (event) => {
-        if (event.target === lightbox) closeLightbox();
-    });
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && lightbox.classList.contains('active')) {
-            closeLightbox();
-        }
-    });
-</script>
-</body>
-</html>
+img.onclick=()=>{
+lightbox.style.displ
