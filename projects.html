@@ -266,6 +266,14 @@ Click any image to enlarge.
 
 </footer>
 
+<div class="lightbox" id="imageLightbox" aria-hidden="true" role="dialog" aria-label="Expanded chart of accounts screenshot">
+    <div class="lightbox-content">
+        <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close enlarged image">×</button>
+        <img id="lightboxImage" src="" alt="Expanded chart of accounts screenshot">
+        <p class="lightbox-caption" id="lightboxCaption"></p>
+    </div>
+</div>
+
 <script>
 
 const images=document.querySelectorAll(".image-grid img");
