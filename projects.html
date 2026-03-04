@@ -343,6 +343,12 @@
             background: rgba(52, 164, 243, 0.12);
         }
 
+        .software-box.zoho {
+            border-color: #ff6f61;
+            color: #ffb4ad;
+            background: rgba(255, 111, 97, 0.12);
+        }
+
         .proof-note {
             margin-top: 0.8rem;
             color: var(--text-light);
@@ -529,7 +535,7 @@
         <h1>Accounting <span>Projects</span></h1>
         <p>
             Practical property-accounting project samples designed for recruiter-friendly review.
-            I have added software-wise work examples (Chart of Accounts, Bills, Vendors, P&amp;L, and Bank Reconciliation)
+            I have added software-wise work examples (Chart of Accounts, Bills, Vendors, P&amp;L, Bank Reconciliation, and 1099 Preparation)
             so you can quickly assess my workflow quality and cross-platform experience.
         </p>
     </div>
@@ -539,8 +545,8 @@
     <div class="container">
         <div class="search-panel">
             <h3>Search Projects by Headline</h3>
-            <input type="search" id="projectSearch" class="project-search-input" placeholder="Search by headline or topic (e.g., chart of accounts, bills, vendors, p&l, bank reconciliation)">
-            <p class="search-note">Try keywords like <strong>chart</strong>, <strong>bills</strong>, <strong>vendors</strong>, <strong>p&amp;l</strong>, <strong>bank reco</strong>, or <strong>quickbooks</strong>.</p>
+            <input type="search" id="projectSearch" class="project-search-input" placeholder="Search by headline or topic (e.g., chart of accounts, bills, vendors, p&l, bank reconciliation, 1099)">
+            <p class="search-note">Try keywords like <strong>chart</strong>, <strong>bills</strong>, <strong>vendors</strong>, <strong>p&amp;l</strong>, <strong>bank reco</strong>, <strong>1099</strong>, or <strong>quickbooks</strong>.</p>
             <p class="search-results-note" id="searchResultsNote">Showing all project headlines and samples.</p>
         </div>
 
@@ -656,23 +662,78 @@
             </div>
         </article>
 
-        <article class="category-section searchable-section" data-filter-tags="bank reconciliation bank reco feeds clearing accounts cash control quickbooks appfolio">
+        <article class="category-section searchable-section" data-filter-tags="bank reconciliation bank reco feeds clearing accounts cash control quickbooks appfolio zoho">
             <h2 class="category-heading">Bank Reconciliation Projects</h2>
-            <p class="category-intro">Hands-on reconciliation work for high-volume bank feeds, unreconciled balances, and month-end accuracy.</p>
+            <p class="category-intro">Below are real Bank Reconciliation snapshots organized software-wise. Click any thumbnail to review reconciliation details in full size.</p>
 
-            <div class="project-cards">
-                <div class="project-entry">
-                    <h3>High-Volume Bank Feed Reconciliation</h3>
-                    <p>Managed 40+ bank and credit card feeds across client portfolios and resolved uncleared entries through structured recon reviews.</p>
-                    <div class="skill-tags"><span class="tag">Bank Reco</span><span class="tag">Cash Controls</span><span class="tag">Month-End</span></div>
-                </div>
+            <div class="coa-gallery">
+                <article class="coa-item">
+                    <button class="coa-thumb-btn" type="button" data-full-image="Appfolio Bank Accounts.png" data-caption="AppFolio Bank Accounts">
+                        <img src="Appfolio Bank Accounts.png" alt="AppFolio Bank Accounts sample">
+                    </button>
+                    <div class="software-box appfolio">Software: AppFolio</div>
+                </article>
 
-                <div class="project-entry">
-                    <h3>Historical Reconciliation Recovery</h3>
-                    <p>Recovered multi-period bank mismatches by tracing opening differences, fixing mapping errors, and documenting close-ready adjustments.</p>
-                    <div class="skill-tags"><span class="tag">Recovery</span><span class="tag">Audit Trail</span></div>
-                </div>
+                <article class="coa-item">
+                    <button class="coa-thumb-btn" type="button" data-full-image="Appfolio Bank.png" data-caption="AppFolio Bank">
+                        <img src="Appfolio Bank.png" alt="AppFolio Bank sample">
+                    </button>
+                    <div class="software-box appfolio">Software: AppFolio</div>
+                </article>
+
+                <article class="coa-item">
+                    <button class="coa-thumb-btn" type="button" data-full-image="QBO Bank Accounts.png" data-caption="QBO Bank Accounts">
+                        <img src="QBO Bank Accounts.png" alt="QBO Bank Accounts sample">
+                    </button>
+                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
+                </article>
+
+                <article class="coa-item">
+                    <button class="coa-thumb-btn" type="button" data-full-image="QBO Bank.png" data-caption="QBO Bank">
+                        <img src="QBO Bank.png" alt="QBO Bank sample">
+                    </button>
+                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
+                </article>
+
+                <article class="coa-item">
+                    <button class="coa-thumb-btn" type="button" data-full-image="Zoho Bank 2.png" data-caption="Zoho Bank 2">
+                        <img src="Zoho Bank 2.png" alt="Zoho Bank 2 sample">
+                    </button>
+                    <div class="software-box zoho">Software: Zoho Books</div>
+                </article>
+
+                <article class="coa-item">
+                    <button class="coa-thumb-btn" type="button" data-full-image="Zoho Bank.png" data-caption="Zoho Bank">
+                        <img src="Zoho Bank.png" alt="Zoho Bank sample">
+                    </button>
+                    <div class="software-box zoho">Software: Zoho Books</div>
+                </article>
             </div>
+
+            <p class="proof-note">Click any image to enlarge and inspect matching and reconciliation status.</p>
+        </article>
+
+        <article class="category-section searchable-section" data-filter-tags="1099 preparation filing tax compliance contractor vendor reporting year end quickbooks appfolio">
+            <h2 class="category-heading">1099 Preparation and Filing</h2>
+            <p class="category-intro">Below are real 1099 preparation snapshots used for year-end contractor reporting and filing review.</p>
+
+            <div class="coa-gallery">
+                <article class="coa-item">
+                    <button class="coa-thumb-btn" type="button" data-full-image="1099 1.png" data-caption="1099 Preparation Snapshot 1">
+                        <img src="1099 1.png" alt="1099 preparation sample 1">
+                    </button>
+                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
+                </article>
+
+                <article class="coa-item">
+                    <button class="coa-thumb-btn" type="button" data-full-image="1099 2.png" data-caption="1099 Preparation Snapshot 2">
+                        <img src="1099 2.png" alt="1099 preparation sample 2">
+                    </button>
+                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
+                </article>
+            </div>
+
+            <p class="proof-note">Click any image to enlarge and inspect 1099 mapping, status, and filing-ready details.</p>
         </article>
     </div>
 </section>
@@ -714,6 +775,7 @@
                     <li>Vendor Management</li>
                     <li>P&amp;L Reporting</li>
                     <li>Bank Reconciliation</li>
+                    <li>1099 Preparation &amp; Filing</li>
                 </ul>
             </div>
         </div>
