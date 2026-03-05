@@ -466,44 +466,6 @@
         }
         
 
-        /* ===== CONSULTATION FORM ===== */
-        .consultation-section {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.1), rgba(47, 129, 247, 0.1));
-        }
-        
-        .form-container {
-            max-width: 500px;
-            margin: 2rem auto 0;
-        }
-        
-        .form-group {
-            margin-bottom: 1.2rem;
-        }
-        
-        .form-group label {
-            display: block;
-            margin-bottom: 0.5rem;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-        
-        .form-control {
-            width: 100%;
-            padding: 0.8rem 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            border-radius: 5px;
-            color: var(--text);
-            font-family: 'Inter', sans-serif;
-            font-size: 1rem;
-            transition: border-color 0.3s ease;
-        }
-        
-        .form-control:focus {
-            outline: none;
-            border-color: var(--primary);
-        }
-        
         /* ===== BUTTONS ===== */
         .btn {
             padding: 0.9rem 1.8rem;
@@ -753,7 +715,7 @@ button:hover,
                 <a href="about.html">About</a>
                 <a href="projects.html">Projects</a>
                 <a href="certifications.html">Certifications</a>
-                <a href="#consultation">Consultation</a>
+                <a href="about.html#consultation">Consultation</a>
             </nav>
             
             <!-- Mobile Hamburger Menu -->
@@ -767,7 +729,7 @@ button:hover,
                 <a href="about.html">About</a>
                 <a href="projects.html">Projects</a>
                 <a href="certifications.html">Certifications</a>
-                <a href="#consultation">Consultation</a>
+                <a href="about.html#consultation">Consultation</a>
             </nav>
         </div>
     </header>
@@ -821,7 +783,7 @@ button:hover,
                     </div>
 
                     <div class="cta-buttons" style="justify-content: flex-start; margin-top: 1.2rem;">
-                        <a href="#consultation" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book a Free Discovery Call</a>
+                        <a href="about.html#consultation" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book a Free Discovery Call</a>
                         <a href="about.html" class="btn btn-outline"><i class="fas fa-user"></i> Read My Story</a>
                     </div>
                 </div>
@@ -901,54 +863,6 @@ button:hover,
         </div>
     </section>
 
-    <!-- Consultation Form -->
-    <section id="consultation" class="consultation-section section">
-        <div class="container">
-            <h2 class="text-center">Free Discovery Call</h2>
-            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">
-                Tell me your current bookkeeping challenge and I will suggest a practical plan.
-            </p>
-            
-            <div class="form-container">
-                <form id="consultationForm" action="https://formsubmit.co/slachamanjotsingh@gmail.com" method="POST" target="hiddenSubmissionFrame">
-                    <div class="form-group">
-                        <label for="name">Full Name</label>
-                        <input type="text" id="name" name="name" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="email">Email Address</label>
-                        <input type="email" id="email" name="email" class="form-control" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="propertyCount">Number of Properties</label>
-                        <input type="text" id="propertyCount" name="property_count" class="form-control" placeholder="e.g., 10-20 properties">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="currentSoftware">Current Accounting Software</label>
-                        <input type="text" id="currentSoftware" name="current_software" class="form-control" placeholder="e.g., QuickBooks, AppFolio, Buildium, etc.">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label for="message">What challenges are you facing?</label>
-                        <textarea id="message" name="message" class="form-control" rows="3" placeholder="Briefly describe your property accounting needs..." required></textarea>
-                    </div>
-                    
-                    <input type="hidden" name="_subject" value="New Discovery Call Request from Website">
-                    <input type="hidden" name="_captcha" value="false">
-                    <input type="hidden" name="_template" value="table">
-                    <button type="submit" class="btn btn-primary btn-block">
-                        <i class="fas fa-paper-plane"></i> Request Free Discovery Call
-                    </button>
-                    <p id="formStatus" style="margin-top: 0.8rem; color: var(--text-light); font-size: 0.9rem;" aria-live="polite"></p>
-                </form>
-                <iframe name="hiddenSubmissionFrame" title="Hidden submission frame" style="display:none;"></iframe>
-            </div>
-        </div>
-    </section>
-
     <!-- Footer (White Background) -->
     <footer class="footer-minimal">
         <div class="container">
@@ -1024,51 +938,6 @@ button:hover,
             });
         }
 
-        // Keep discovery call form submission on-page with no redirect or popup
-        const consultationForm = document.getElementById('consultationForm');
-        const formStatus = document.getElementById('formStatus');
-
-        if (consultationForm && formStatus) {
-            consultationForm.addEventListener('submit', async (event) => {
-                event.preventDefault();
-
-                const submitButton = consultationForm.querySelector('button[type="submit"]');
-                const originalButtonText = submitButton ? submitButton.innerHTML : '';
-
-                formStatus.textContent = 'Sending your request...';
-
-                if (submitButton) {
-                    submitButton.disabled = true;
-                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
-                }
-
-                try {
-                    const response = await fetch(consultationForm.action, {
-                        method: 'POST',
-                        body: new FormData(consultationForm),
-                        headers: {
-                            Accept: 'application/json'
-                        }
-                    });
-
-                    if (!response.ok) {
-                        throw new Error('Request failed');
-                    }
-
-                    formStatus.textContent = 'Thank you! Your discovery call request was sent successfully.';
-                    consultationForm.reset();
-                } catch (error) {
-                    formStatus.textContent = 'Redirecting to secure form submission...';
-                    consultationForm.submit();
-                    return;
-                } finally {
-                    if (submitButton) {
-                        submitButton.disabled = false;
-                        submitButton.innerHTML = originalButtonText;
-                    }
-                }
-            });
-        }
     </script>
 
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
@@ -1091,7 +960,7 @@ button:hover,
             projectCard.setAttribute('data-aos-delay', String((index % 4) * 60));
         });
 
-        document.querySelectorAll('#contact, #consultation, .contact-section, .consultation-section').forEach((contactSection) => {
+        document.querySelectorAll('#contact, .contact-section').forEach((contactSection) => {
             contactSection.setAttribute('data-aos', 'fade-up');
         });
 

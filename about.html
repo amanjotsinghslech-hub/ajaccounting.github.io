@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
 <title>About Me | AmanJot Singh | Accounting Specialist</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;900&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
 <style>
@@ -25,7 +25,7 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Inter', sans-serif;
 }
 html {
   scroll-behavior: smooth;
@@ -69,9 +69,8 @@ header {
 .nav-desktop a {
   color: var(--text);
   text-decoration: none;
-  font-weight: 600;
-  letter-spacing: 1px;
-  font-size: clamp(0.8rem, 2vw, 0.95rem);
+  font-weight: 500;
+  font-size: 0.9rem;
   padding: 0.5rem 0;
   white-space: nowrap;
 }
@@ -118,27 +117,27 @@ header {
 
 /* PAGE HERO */
 .page-hero {
-  min-height: 70vh;
+  min-height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   text-align: center;
-  padding: clamp(6rem, 10vw, 8rem) 1.5rem 3rem;
+  padding: 3.5rem 1.5rem 2.2rem;
   background: radial-gradient(circle at top, #121212, #050505 70%);
   position: relative;
   width: 100%;
 }
 .page-hero h1 {
-  font-size: clamp(2.5rem, 5vw, 3.6rem);
-  font-weight: 900;
-  letter-spacing: 2px;
+  font-size: clamp(1.9rem, 3vw, 2.5rem);
+  font-weight: 700;
+  letter-spacing: 0;
   color: var(--primary);
   line-height: 1.2;
   margin-bottom: 1rem;
 }
 .page-hero p {
-  font-size: clamp(1rem, 2vw, 1.3rem);
+  font-size: 1rem;
   opacity: 0.85;
   max-width: 700px;
   line-height: 1.6;
@@ -147,14 +146,14 @@ header {
 
 /* SECTIONS */
 .section {
-  padding: clamp(4rem, 8vw, 6rem) clamp(1.5rem, 5vw, 12%);
+  padding: 3rem 1.5rem;
   text-align: center;
   width: 100%;
-  max-width: 1400px;
+  max-width: 1200px;
   margin: 0 auto;
 }
 .section h2 {
-  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-size: clamp(1.7rem, 3vw, 2.3rem);
   letter-spacing: 1px;
   color: var(--primary);
   margin-bottom: 1.5rem;
@@ -298,7 +297,7 @@ header {
   display: flex;
   align-items: center;
   justify-content: center;
-  font-weight: 900;
+  font-weight: 700;
   font-size: 1.3rem;
   margin: 0 auto 1.5rem;
 }
@@ -360,6 +359,92 @@ header {
   margin: 0;
   font-size: 0.9rem;
   color: var(--text-light);
+}
+
+
+/* CONSULTATION SECTION */
+.consultation-section {
+  padding-top: 1rem;
+}
+
+.consultation-card {
+  max-width: 820px;
+  margin: 0 auto;
+  background: linear-gradient(145deg, rgba(20, 24, 29, 0.95), rgba(10, 10, 10, 0.95));
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 2rem;
+  text-align: left;
+}
+
+.consultation-card h3 {
+  color: var(--primary);
+  font-size: 1.35rem;
+  margin-bottom: 0.5rem;
+}
+
+.consultation-card > p {
+  margin: 0 0 1.2rem;
+  color: var(--text-light);
+  font-size: 0.95rem;
+}
+
+.consultation-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.45rem;
+}
+
+.form-group.full-width {
+  grid-column: 1 / -1;
+}
+
+.form-group label {
+  font-size: 0.9rem;
+  color: var(--text-light);
+}
+
+.form-control {
+  width: 100%;
+  padding: 0.78rem 0.9rem;
+  background: #0f1419;
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 0.95rem;
+}
+
+.form-control:focus {
+  outline: none;
+  border-color: var(--primary);
+}
+
+.btn-primary {
+  border: 0;
+  border-radius: 8px;
+  padding: 0.85rem 1.2rem;
+  background: var(--primary);
+  color: #0a0a0a;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-primary:hover {
+  transform: translateY(-1px);
+}
+
+.form-status {
+  margin-top: 0.8rem;
+  font-size: 0.92rem;
+  color: var(--text-light);
+  min-height: 1.2rem;
 }
 
 /* FOOTER */
@@ -439,7 +524,8 @@ header {
   }
   
   .experience-strip,
-  .service-grid {
+  .service-grid,
+  .consultation-grid {
     grid-template-columns: 1fr;
   }
   
@@ -489,7 +575,7 @@ header {
       <a href="about.html" class="active">About</a>
       <a href="projects.html">Projects</a>
       <a href="certifications.html">Certifications</a>
-      <a href="#contact">Connect</a>
+      <a href="#consultation">Consultation</a>
     </nav>
 
     <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
@@ -501,7 +587,7 @@ header {
       <a href="about.html" class="active">About</a>
       <a href="projects.html">Projects</a>
       <a href="certifications.html">Certifications</a>
-      <a href="#contact">Connect</a>
+      <a href="#consultation">Consultation</a>
     </nav>
   </div>
 </header>
@@ -676,6 +762,52 @@ I work remotely with global clients and deliver practical solutions with clear c
 <a href="projects.html" class="lux-btn">View My Work</a>
 </section>
 
+
+<section id="consultation" class="section consultation-section">
+  <div class="consultation-card">
+    <h3>Book a Free Consultation</h3>
+    <p>Share your current accounting challenge and I will reply with practical next steps.</p>
+
+    <form id="consultationForm" action="https://formsubmit.co/slachamanjotsingh@gmail.com" method="POST">
+      <div class="consultation-grid">
+        <div class="form-group">
+          <label for="name">Full Name</label>
+          <input type="text" id="name" name="name" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="email">Email Address</label>
+          <input type="email" id="email" name="email" class="form-control" required>
+        </div>
+
+        <div class="form-group">
+          <label for="propertyCount">Number of Properties</label>
+          <input type="text" id="propertyCount" name="property_count" class="form-control" placeholder="e.g., 10-20 properties">
+        </div>
+
+        <div class="form-group">
+          <label for="currentSoftware">Current Software</label>
+          <input type="text" id="currentSoftware" name="current_software" class="form-control" placeholder="e.g., QuickBooks, AppFolio, Buildium">
+        </div>
+
+        <div class="form-group full-width">
+          <label for="message">How can I help?</label>
+          <textarea id="message" name="message" class="form-control" rows="4" placeholder="Briefly describe your accounting needs..." required></textarea>
+        </div>
+      </div>
+
+      <input type="hidden" name="_subject" value="New Consultation Request from Website">
+      <input type="hidden" name="_captcha" value="false">
+      <input type="hidden" name="_template" value="table">
+
+      <button type="submit" class="btn-primary" id="consultationSubmitBtn">
+        <i class="fas fa-paper-plane"></i> Submit Request
+      </button>
+      <p id="formStatus" class="form-status" aria-live="polite"></p>
+    </form>
+  </div>
+</section>
+
 <!-- FOOTER -->
 <footer id="contact" class="lux-footer">
 
@@ -686,7 +818,7 @@ I work remotely with global clients and deliver practical solutions with clear c
 <a href="index.html">Home</a>
 <a href="projects.html">Projects</a>
 <a href="certifications.html">Certifications</a>
-<a href="#contact">Connect</a>
+<a href="#consultation">Consultation</a>
 </div>
 
 <div class="footer-box">
@@ -750,6 +882,44 @@ I work remotely with global clients and deliver practical solutions with clear c
       link.addEventListener('click', closeMobileNav);
     });
   }
+
+  const consultationForm = document.getElementById('consultationForm');
+  const formStatus = document.getElementById('formStatus');
+  const submitBtn = document.getElementById('consultationSubmitBtn');
+
+  if (consultationForm && formStatus && submitBtn) {
+    consultationForm.addEventListener('submit', async (event) => {
+      event.preventDefault();
+      const originalLabel = submitBtn.innerHTML;
+
+      submitBtn.disabled = true;
+      submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+      formStatus.textContent = 'Sending your request...';
+
+      try {
+        const response = await fetch(consultationForm.action, {
+          method: 'POST',
+          body: new FormData(consultationForm),
+          headers: {
+            Accept: 'application/json'
+          }
+        });
+
+        if (!response.ok) {
+          throw new Error('Request failed');
+        }
+
+        consultationForm.reset();
+        formStatus.textContent = 'Thank you for your interest in our services.';
+      } catch (error) {
+        formStatus.textContent = 'Sorry, something went wrong. Please try again in a moment.';
+      } finally {
+        submitBtn.disabled = false;
+        submitBtn.innerHTML = originalLabel;
+      }
+    });
+  }
+
 </script>
 
 </body>
