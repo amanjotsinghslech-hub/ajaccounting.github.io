@@ -757,7 +757,7 @@ button:hover,
             </nav>
             
             <!-- Mobile Hamburger Menu -->
-            <button class="menu-toggle" id="menuToggle">
+            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
                 <i class="fas fa-bars"></i>
             </button>
             
@@ -997,65 +997,34 @@ button:hover,
         // Mobile Navigation Toggle
         const menuToggle = document.getElementById('menuToggle');
         const mobileNav = document.getElementById('mobileNav');
-        
-        menuToggle.addEventListener('click', () => {
-            mobileNav.classList.toggle('active');
-            menuToggle.innerHTML = mobileNav.classList.contains('active') 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (event) => {
-            if (!menuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
+
+        if (menuToggle && mobileNav) {
+            const closeMobileNav = () => {
                 mobileNav.classList.remove('active');
                 menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            }
-        });
-        
-        // Close mobile menu when clicking a link
-        mobileNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                mobileNav.classList.remove('active');
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
+                menuToggle.setAttribute('aria-expanded', 'false');
+            };
+
+            menuToggle.addEventListener('click', () => {
+                const isActive = mobileNav.classList.toggle('active');
+                menuToggle.innerHTML = isActive
+                    ? '<i class="fas fa-times"></i>'
+                    : '<i class="fas fa-bars"></i>';
+                menuToggle.setAttribute('aria-expanded', String(isActive));
             });
-        });
-        // Keep discovery call form submission on-page with no redirect or popup
-        const consultationForm = document.getElementById('consultationForm');
-        const formStatus = document.getElementById('formStatus');
-        const hiddenSubmissionFrame = document.querySelector('iframe[name="hiddenSubmissionFrame"]');
-        let isSubmittingConsultation = false;
 
-        if (consultationForm && formStatus && hiddenSubmissionFrame) {
-            consultationForm.addEventListener('submit', () => {
-                const submitButton = consultationForm.querySelector('button[type="submit"]');
-
-                isSubmittingConsultation = true;
-                formStatus.textContent = 'Sending your request...';
-
-                if (submitButton) {
-                    submitButton.disabled = true;
-                    submitButton.dataset.originalText = submitButton.innerHTML;
-                    submitButton.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Sending...';
+            document.addEventListener('click', (event) => {
+                if (!menuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
+                    closeMobileNav();
                 }
             });
 
-            hiddenSubmissionFrame.addEventListener('load', () => {
-                if (!isSubmittingConsultation) return;
-
-                const submitButton = consultationForm.querySelector('button[type="submit"]');
-                formStatus.textContent = 'Thanks! Your discovery call request has been submitted.';
-                consultationForm.reset();
-                isSubmittingConsultation = false;
-
-                if (submitButton) {
-                    submitButton.disabled = false;
-                    submitButton.innerHTML = submitButton.dataset.originalText || '<i class="fas fa-paper-plane"></i> Request Free Discovery Call';
-                }
+            mobileNav.querySelectorAll('a').forEach((link) => {
+                link.addEventListener('click', closeMobileNav);
             });
         }
 
-        // Keep discovery call form submission on-page for better UX
+        // Keep discovery call form submission on-page with no redirect or popup
         const consultationForm = document.getElementById('consultationForm');
         const formStatus = document.getElementById('formStatus');
 
