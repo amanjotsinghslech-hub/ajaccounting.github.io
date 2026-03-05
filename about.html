@@ -425,21 +425,13 @@ header {
   border-color: var(--primary);
 }
 
-.consultation-actions {
-  margin-top: 1.1rem;
-  display: flex;
-  justify-content: center;
-}
-
 .btn-primary {
   border: 0;
-  border-radius: 10px;
-  padding: 0.95rem 2.2rem;
-  min-width: 190px;
+  border-radius: 8px;
+  padding: 0.85rem 1.2rem;
   background: var(--primary);
   color: #0a0a0a;
-  font-weight: 700;
-  font-size: 1rem;
+  font-weight: 600;
   cursor: pointer;
   transition: transform 0.2s ease;
 }
@@ -453,7 +445,6 @@ header {
   font-size: 0.92rem;
   color: var(--text-light);
   min-height: 1.2rem;
-  text-align: center;
 }
 
 /* FOOTER */
@@ -809,11 +800,9 @@ I work remotely with global clients and deliver practical solutions with clear c
       <input type="hidden" name="_captcha" value="false">
       <input type="hidden" name="_template" value="table">
 
-      <div class="consultation-actions">
-        <button type="submit" class="btn-primary" id="consultationSubmitBtn">
-          <i class="fas fa-paper-plane"></i> Submit
-        </button>
-      </div>
+      <button type="submit" class="btn-primary" id="consultationSubmitBtn">
+        <i class="fas fa-paper-plane"></i> Submit Request
+      </button>
       <p id="formStatus" class="form-status" aria-live="polite"></p>
     </form>
   </div>
