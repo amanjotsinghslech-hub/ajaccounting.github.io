@@ -713,33 +713,41 @@
         const menuToggle = document.getElementById('menuToggle');
         const mobileNav = document.getElementById('mobileNav');
         
-        const closeMobileNav = () => {
-            mobileNav.classList.remove('active');
-            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            menuToggle.setAttribute('aria-expanded', 'false');
-        };
+        if (menuToggle && mobileNav) {
+            const setMobileNavState = (isOpen) => {
+                mobileNav.classList.toggle('active', isOpen);
+                menuToggle.innerHTML = isOpen
+                    ? '<i class="fas fa-times"></i>'
+                    : '<i class="fas fa-bars"></i>';
+                menuToggle.setAttribute('aria-expanded', String(isOpen));
+            };
 
-        menuToggle.addEventListener('click', () => {
-            const isActive = mobileNav.classList.toggle('active');
-            menuToggle.innerHTML = isActive 
-                ? '<i class="fas fa-times"></i>' 
-                : '<i class="fas fa-bars"></i>';
-            menuToggle.setAttribute('aria-expanded', String(isActive));
-        });
-        
-        // Close mobile menu when clicking outside
-        document.addEventListener('click', (event) => {
-            if (!menuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
-                closeMobileNav();
-            }
-        });
-        
-        // Close mobile menu when clicking a link
-        mobileNav.querySelectorAll('a').forEach(link => {
-            link.addEventListener('click', () => {
-                closeMobileNav();
+            const closeMobileNav = () => setMobileNavState(false);
+
+            menuToggle.addEventListener('click', (event) => {
+                event.stopPropagation();
+                const shouldOpen = !mobileNav.classList.contains('active');
+                setMobileNavState(shouldOpen);
             });
-        });
+            
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', (event) => {
+                if (!menuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
+                    closeMobileNav();
+                }
+            });
+            
+            // Close mobile menu when clicking a link
+            mobileNav.querySelectorAll('a').forEach(link => {
+                link.addEventListener('click', closeMobileNav);
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    closeMobileNav();
+                }
+            });
+        }
         
         // Image Modal Functionality (Desktop Only)
         const imageModal = document.getElementById('imageModal');

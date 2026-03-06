@@ -948,29 +948,39 @@
     const menuToggle = document.getElementById('menuToggle');
     const mobileNav = document.getElementById('mobileNav');
 
-    menuToggle.addEventListener('click', () => {
-        const isActive = mobileNav.classList.toggle('active');
-        menuToggle.innerHTML = isActive
-            ? '<i class="fas fa-times"></i>'
-            : '<i class="fas fa-bars"></i>';
-        menuToggle.setAttribute('aria-expanded', String(isActive));
-    });
+    if (menuToggle && mobileNav) {
+        const setMobileNavState = (isOpen) => {
+            mobileNav.classList.toggle('active', isOpen);
+            menuToggle.innerHTML = isOpen
+                ? '<i class="fas fa-times"></i>'
+                : '<i class="fas fa-bars"></i>';
+            menuToggle.setAttribute('aria-expanded', String(isOpen));
+        };
 
-    document.addEventListener('click', (event) => {
-        if (!menuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
-            mobileNav.classList.remove('active');
-            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            menuToggle.setAttribute('aria-expanded', 'false');
-        }
-    });
+        const closeMobileNav = () => setMobileNavState(false);
 
-    mobileNav.querySelectorAll('a').forEach((link) => {
-        link.addEventListener('click', () => {
-            mobileNav.classList.remove('active');
-            menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-            menuToggle.setAttribute('aria-expanded', 'false');
+        menuToggle.addEventListener('click', (event) => {
+            event.stopPropagation();
+            const shouldOpen = !mobileNav.classList.contains('active');
+            setMobileNavState(shouldOpen);
         });
-    });
+
+        document.addEventListener('click', (event) => {
+            if (!menuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
+                closeMobileNav();
+            }
+        });
+
+        mobileNav.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', closeMobileNav);
+        });
+
+        document.addEventListener('keydown', (event) => {
+            if (event.key === 'Escape') {
+                closeMobileNav();
+            }
+        });
+    }
 
     const projectSearch = document.getElementById('projectSearch');
     const searchResultsNote = document.getElementById('searchResultsNote');

@@ -913,18 +913,20 @@ button:hover,
         const mobileNav = document.getElementById('mobileNav');
 
         if (menuToggle && mobileNav) {
-            const closeMobileNav = () => {
-                mobileNav.classList.remove('active');
-                menuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-                menuToggle.setAttribute('aria-expanded', 'false');
-            };
-
-            menuToggle.addEventListener('click', () => {
-                const isActive = mobileNav.classList.toggle('active');
-                menuToggle.innerHTML = isActive
+            const setMobileNavState = (isOpen) => {
+                mobileNav.classList.toggle('active', isOpen);
+                menuToggle.innerHTML = isOpen
                     ? '<i class="fas fa-times"></i>'
                     : '<i class="fas fa-bars"></i>';
-                menuToggle.setAttribute('aria-expanded', String(isActive));
+                menuToggle.setAttribute('aria-expanded', String(isOpen));
+            };
+
+            const closeMobileNav = () => setMobileNavState(false);
+
+            menuToggle.addEventListener('click', (event) => {
+                event.stopPropagation();
+                const shouldOpen = !mobileNav.classList.contains('active');
+                setMobileNavState(shouldOpen);
             });
 
             document.addEventListener('click', (event) => {
@@ -935,6 +937,12 @@ button:hover,
 
             mobileNav.querySelectorAll('a').forEach((link) => {
                 link.addEventListener('click', closeMobileNav);
+            });
+
+            document.addEventListener('keydown', (event) => {
+                if (event.key === 'Escape') {
+                    closeMobileNav();
+                }
             });
         }
 
