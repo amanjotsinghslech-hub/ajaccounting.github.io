@@ -237,10 +237,6 @@
             background: rgba(227, 191, 77, 0.12);
         }
 
-        .software-highlight i {
-            color: var(--primary);
-        }
-
         .category-section {
             margin-bottom: 2.1rem;
             border: 1px solid var(--border);
@@ -314,30 +310,7 @@
             padding: 0.75rem;
         }
 
-        .coa-thumb-btn {
-            border: 0;
-            width: 100%;
-            padding: 0;
-            background: transparent;
-            cursor: zoom-in;
-            border-radius: 8px;
-            overflow: hidden;
-            aspect-ratio: 16 / 10;
-        }
-
-        .coa-thumb-btn img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.25s ease;
-        }
-
-        .coa-thumb-btn:hover img {
-            transform: scale(1.02);
-        }
-
         .software-box {
-            margin-top: 0.6rem;
             border-radius: 8px;
             border: 1px solid;
             padding: 0.4rem 0.6rem;
@@ -378,59 +351,6 @@
             background: #11161b;
             color: var(--text-light);
             margin-bottom: 1rem;
-        }
-
-        .lightbox {
-            position: fixed;
-            inset: 0;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            padding: 1rem;
-            z-index: 2500;
-            background: rgba(0, 0, 0, 0.86);
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox-content {
-            width: min(1100px, 95vw);
-            background: #0f0f0f;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            overflow: hidden;
-            position: relative;
-        }
-
-        .lightbox-image {
-            width: 100%;
-            max-height: 85vh;
-            object-fit: contain;
-            display: block;
-            background: #000;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            right: 0.6rem;
-            top: 0.5rem;
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            border: 1px solid var(--border);
-            background: rgba(17, 17, 17, 0.9);
-            color: #fff;
-            font-size: 1.1rem;
-            cursor: pointer;
-        }
-
-        .lightbox-caption {
-            color: var(--text-light);
-            padding: 0.7rem 1rem;
-            border-top: 1px solid var(--border);
-            font-size: 0.9rem;
         }
 
         .footer-minimal {
@@ -566,140 +486,98 @@
         </div>
 
         <div class="software-highlight-grid" aria-label="Softwares used as filters">
-            <button type="button" class="software-highlight filter-btn active" data-software="all"><i class="fas fa-border-all"></i> All Software</button>
-            <button type="button" class="software-highlight filter-btn" data-software="appfolio"><i class="fas fa-building"></i> AppFolio</button>
-            <button type="button" class="software-highlight filter-btn" data-software="quickbooks"><i class="fas fa-calculator"></i> QuickBooks Online</button>
-            <button type="button" class="software-highlight filter-btn" data-software="xero"><i class="fas fa-layer-group"></i> Xero</button>
-            <button type="button" class="software-highlight filter-btn" data-software="buildium"><i class="fas fa-city"></i> Buildium</button>
-            <button type="button" class="software-highlight filter-btn" data-software="gusto"><i class="fas fa-file-invoice-dollar"></i> Gusto</button>
-            <button type="button" class="software-highlight filter-btn" data-software="hubdoc"><i class="fas fa-receipt"></i> Hubdoc</button>
+            <button type="button" class="software-highlight filter-btn active" data-software="all">All Software</button>
+            <button type="button" class="software-highlight filter-btn" data-software="appfolio">AppFolio</button>
+            <button type="button" class="software-highlight filter-btn" data-software="quickbooks">QuickBooks Online</button>
+            <button type="button" class="software-highlight filter-btn" data-software="xero">Xero</button>
+            <button type="button" class="software-highlight filter-btn" data-software="buildium">Buildium</button>
+            <button type="button" class="software-highlight filter-btn" data-software="gusto">Gusto</button>
+            <button type="button" class="software-highlight filter-btn" data-software="hubdoc">Hubdoc</button>
         </div>
 
         <div id="searchEmpty" class="search-empty">No matching project found. Please try another headline or software keyword.</div>
 
         <article class="category-section searchable-section" data-filter-tags="chart chart of accounts coa appfolio quickbooks property accounting setup">
             <h2 class="category-heading">Chart of Accounts</h2>
-            <p class="category-intro">Below are real COA snapshots organized software-wise. Thumbnails are intentionally compact for laptop/desktop review and can be enlarged on click.</p>
+            <p class="category-intro">Below are real COA snapshots organized software-wise. Software photo samples have been removed.</p>
 
             <div class="coa-gallery">
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="Appfolio COA (2).PNG" data-caption="Appfolio COA (2)">
-                        <img src="Appfolio COA (2).PNG" alt="Appfolio COA (2) sample">
-                    </button>
                     <div class="software-box appfolio">Software: AppFolio</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="Appfolio COA.PNG" data-caption="Appfolio COA">
-                        <img src="Appfolio COA.PNG" alt="Appfolio COA sample">
-                    </button>
                     <div class="software-box appfolio">Software: AppFolio</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO chart3.png" data-caption="QBO chart3">
-                        <img src="QBO chart3.png" alt="QBO chart3 sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO Chart.png" data-caption="QBO Chart">
-                        <img src="QBO Chart.png" alt="QBO Chart sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO chart2.png" data-caption="QBO chart2">
-                        <img src="QBO chart2.png" alt="QBO chart2 sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
             </div>
 
-            <p class="proof-note">Click any image to enlarge and inspect account grouping logic.</p>
+            <p class="proof-note">Software sample photos removed.</p>
         </article>
 
         <article class="category-section searchable-section" data-filter-tags="property management appfolio quickbooks inventory units operations ledger rent roll">
             <h2 class="category-heading">Property Management</h2>
-            <p class="category-intro">Below are real Property Management snapshots organized software-wise. Click any thumbnail to review property-level workflow details in full size.</p>
+            <p class="category-intro">Below are real Property Management snapshots organized software-wise. Software photo samples have been removed.</p>
 
             <div class="coa-gallery">
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="Appfolio Propert.png" data-caption="Appfolio Propert">
-                        <img src="Appfolio Propert.png" alt="Appfolio Propert sample">
-                    </button>
                     <div class="software-box appfolio">Software: AppFolio</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="Appfolio Property.PNG" data-caption="Appfolio Property">
-                        <img src="Appfolio Property.PNG" alt="Appfolio Property sample">
-                    </button>
                     <div class="software-box appfolio">Software: AppFolio</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO BS Inventory.png" data-caption="QBO BS Inventory">
-                        <img src="QBO BS Inventory.png" alt="QBO BS Inventory sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO BS Inventory2.png" data-caption="QBO BS Inventory2">
-                        <img src="QBO BS Inventory2.png" alt="QBO BS Inventory2 sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO BS Inventory3.png" data-caption="QBO BS Inventory3">
-                        <img src="QBO BS Inventory3.png" alt="QBO BS Inventory3 sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
             </div>
 
-            <p class="proof-note">Click any image to enlarge and inspect property setup, tracking, and inventory detail.</p>
+            <p class="proof-note">Software sample photos removed.</p>
         </article>
 
         <article class="category-section searchable-section" data-filter-tags="vendor bills expense je hud report appfolio zoho accounts payable">
             <h2 class="category-heading">Vendor Bills, Expense &amp; JE (HUD Report)</h2>
-            <p class="category-intro">Below are real Vendor Bills, Expense, and Journal Entry (HUD Report) snapshots organized software-wise. Click any thumbnail to review details in full size.</p>
+            <p class="category-intro">Below are real Vendor Bills, Expense, and Journal Entry (HUD Report) snapshots organized software-wise. Software photo samples have been removed.</p>
 
             <div class="coa-gallery">
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="Appfolio Bill.png" data-caption="Appfolio Bill">
-                        <img src="Appfolio Bill.png" alt="Appfolio Bill sample">
-                    </button>
                     <div class="software-box appfolio">Software: AppFolio</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="Appfolio Smart Bill.jpg" data-caption="Appfolio Smart Bill">
-                        <img src="Appfolio Smart Bill.jpg" alt="Appfolio Smart Bill sample">
-                    </button>
                     <div class="software-box appfolio">Software: AppFolio</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="Zoho Exp entry.png" data-caption="Zoho Exp entry">
-                        <img src="Zoho Exp entry.png" alt="Zoho Exp entry sample">
-                    </button>
                     <div class="software-box zoho">Software: Zoho</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="Zoho Exp.png" data-caption="Zoho Exp">
-                        <img src="Zoho Exp.png" alt="Zoho Exp sample">
-                    </button>
                     <div class="software-box zoho">Software: Zoho</div>
                 </article>
             </div>
 
-            <p class="proof-note">Click any image to enlarge and inspect vendor bill, expense entry, and JE (HUD report) details.</p>
+            <p class="proof-note">Software sample photos removed.</p>
         </article>
 
         <article class="category-section searchable-section" data-filter-tags="vendors supplier master vendor setup compliance appfolio quickbooks xero">
@@ -723,189 +601,122 @@
 
         <article class="category-section searchable-section" data-filter-tags="profit and loss p&l income statement reporting appfolio quickbooks zoho financial reports">
             <h2 class="category-heading">Profit &amp; Loss / Income Statement Reporting</h2>
-            <p class="category-intro">Below are real Profit &amp; Loss (Income Statement) and reporting snapshots organized software-wise. Click any thumbnail to review report formatting details in full size.</p>
+            <p class="category-intro">Below are real Profit &amp; Loss (Income Statement) and reporting snapshots organized software-wise. Software photo samples have been removed.</p>
 
             <div class="coa-gallery">
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="Appfolio P&amp;L.PNG" data-caption="Appfolio P&amp;L">
-                        <img src="Appfolio P&amp;L.PNG" alt="Appfolio P&amp;L sample">
-                    </button>
                     <div class="software-box appfolio">Software: AppFolio</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="Appfolio Reports.PNG" data-caption="Appfolio Reports">
-                        <img src="Appfolio Reports.PNG" alt="Appfolio Reports sample">
-                    </button>
                     <div class="software-box appfolio">Software: AppFolio</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO PL.png" data-caption="QBO PL">
-                        <img src="QBO PL.png" alt="QBO PL sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="Zoho P&amp;L.png" data-caption="Zoho P&amp;L">
-                        <img src="Zoho P&amp;L.png" alt="Zoho P&amp;L sample">
-                    </button>
                     <div class="software-box zoho">Software: Zoho Books</div>
                 </article>
             </div>
 
-            <p class="proof-note">Click any image to enlarge and inspect profit, expense grouping, and reporting layout.</p>
+            <p class="proof-note">Software sample photos removed.</p>
         </article>
 
         <article class="category-section searchable-section" data-filter-tags="balance sheet bs assets liabilities equity inventory loans depreciation quickbooks reporting">
             <h2 class="category-heading">Balance Sheet Projects</h2>
-            <p class="category-intro">Below are real Balance Sheet snapshots organized software-wise. Click any thumbnail to review reporting detail in full size.</p>
+            <p class="category-intro">Below are real Balance Sheet snapshots organized software-wise. Software photo samples have been removed.</p>
 
             <div class="coa-gallery">
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO BS.png" data-caption="QBO BS">
-                        <img src="QBO BS.png" alt="QBO BS sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO BS Inventory.png" data-caption="QBO BS Inventory">
-                        <img src="QBO BS Inventory.png" alt="QBO BS Inventory sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO BS Inventory2.png" data-caption="QBO BS Inventory2">
-                        <img src="QBO BS Inventory2.png" alt="QBO BS Inventory2 sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO BS Inventory3.png" data-caption="QBO BS Inventory3">
-                        <img src="QBO BS Inventory3.png" alt="QBO BS Inventory3 sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO BS Loan.png" data-caption="QBO BS Loan">
-                        <img src="QBO BS Loan.png" alt="QBO BS Loan sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO loan2.png" data-caption="QBO loan2">
-                        <img src="QBO loan2.png" alt="QBO loan2 sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO Loans.png" data-caption="QBO Loans">
-                        <img src="QBO Loans.png" alt="QBO Loans sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO Dep.png" data-caption="QBO Dep">
-                        <img src="QBO Dep.png" alt="QBO Dep sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
             </div>
 
-            <p class="proof-note">Click any image to enlarge and inspect asset, liability, and equity presentation.</p>
+            <p class="proof-note">Software sample photos removed.</p>
         </article>
 
         <article class="category-section searchable-section" data-filter-tags="bank reconciliation bank reco feeds clearing accounts cash control quickbooks appfolio zoho">
             <h2 class="category-heading">Bank Reconciliation Projects</h2>
-            <p class="category-intro">Below are real Bank Reconciliation snapshots organized software-wise. Click any thumbnail to review reconciliation details in full size.</p>
+            <p class="category-intro">Below are real Bank Reconciliation snapshots organized software-wise. Software photo samples have been removed.</p>
 
             <div class="coa-gallery">
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="Appfolio Bank Accounts.png" data-caption="AppFolio Bank Accounts">
-                        <img src="Appfolio Bank Accounts.png" alt="AppFolio Bank Accounts sample">
-                    </button>
                     <div class="software-box appfolio">Software: AppFolio</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="Appfolio Bank.png" data-caption="AppFolio Bank">
-                        <img src="Appfolio Bank.png" alt="AppFolio Bank sample">
-                    </button>
                     <div class="software-box appfolio">Software: AppFolio</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO Bank Accounts.png" data-caption="QBO Bank Accounts">
-                        <img src="QBO Bank Accounts.png" alt="QBO Bank Accounts sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="QBO Bank.png" data-caption="QBO Bank">
-                        <img src="QBO Bank.png" alt="QBO Bank sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="Zoho Bank 2.png" data-caption="Zoho Bank 2">
-                        <img src="Zoho Bank 2.png" alt="Zoho Bank 2 sample">
-                    </button>
                     <div class="software-box zoho">Software: Zoho Books</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="Zoho Bank.png" data-caption="Zoho Bank">
-                        <img src="Zoho Bank.png" alt="Zoho Bank sample">
-                    </button>
                     <div class="software-box zoho">Software: Zoho Books</div>
                 </article>
             </div>
 
-            <p class="proof-note">Click any image to enlarge and inspect matching and reconciliation status.</p>
+            <p class="proof-note">Software sample photos removed.</p>
         </article>
 
         <article class="category-section searchable-section" data-filter-tags="1099 preparation filing tax forms compliance vendor reports annual filing">
             <h2 class="category-heading">1099 Preparation &amp; Filing</h2>
-            <p class="category-intro">Below are real 1099 Preparation &amp; Filing snapshots. Click any thumbnail to review filing workflow details in full size.</p>
+            <p class="category-intro">Below are real 1099 Preparation &amp; Filing snapshots. Software photo samples have been removed.</p>
 
             <div class="coa-gallery">
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="1099 1.png" data-caption="1099 1">
-                        <img src="1099 1.png" alt="1099 1 sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
 
                 <article class="coa-item">
-                    <button class="coa-thumb-btn" type="button" data-full-image="1099 2.png" data-caption="1099 2">
-                        <img src="1099 2.png" alt="1099 2 sample">
-                    </button>
                     <div class="software-box quickbooks">Software: QuickBooks Online</div>
                 </article>
             </div>
 
-            <p class="proof-note">Click any image to enlarge and inspect vendor 1099 mapping and filing status.</p>
+            <p class="proof-note">Software sample photos removed.</p>
         </article>
     </div>
 </section>
 
-<div class="lightbox" id="imageLightbox" aria-hidden="true" role="dialog" aria-label="Expanded chart image">
-    <div class="lightbox-content">
-        <button type="button" class="lightbox-close" id="lightboxClose" aria-label="Close enlarged image">×</button>
-        <img id="lightboxImage" class="lightbox-image" src="" alt="Expanded chart sample">
-        <p id="lightboxCaption" class="lightbox-caption"></p>
-    </div>
-</div>
 
 <footer class="footer-minimal" id="contact">
     <div class="container">
@@ -1060,42 +871,6 @@
 
     projectSearch.addEventListener('input', applyProjectSearch);
     applyProjectSearch();
-
-    const lightbox = document.getElementById('imageLightbox');
-    const lightboxImage = document.getElementById('lightboxImage');
-    const lightboxCaption = document.getElementById('lightboxCaption');
-    const lightboxClose = document.getElementById('lightboxClose');
-    const thumbs = document.querySelectorAll('.coa-thumb-btn');
-
-    thumbs.forEach((thumb) => {
-        thumb.addEventListener('click', () => {
-            const imagePath = thumb.dataset.fullImage;
-            const caption = thumb.dataset.caption || 'Chart sample';
-            if (!imagePath) return;
-            lightboxImage.src = imagePath;
-            lightboxImage.alt = `${caption} enlarged`;
-            lightboxCaption.textContent = caption;
-            lightbox.classList.add('active');
-            lightbox.setAttribute('aria-hidden', 'false');
-        });
-    });
-
-    const closeLightbox = () => {
-        lightbox.classList.remove('active');
-        lightbox.setAttribute('aria-hidden', 'true');
-        lightboxImage.src = '';
-    };
-
-    lightboxClose.addEventListener('click', closeLightbox);
-    lightbox.addEventListener('click', (event) => {
-        if (event.target === lightbox) closeLightbox();
-    });
-
-    document.addEventListener('keydown', (event) => {
-        if (event.key === 'Escape' && lightbox.classList.contains('active')) {
-            closeLightbox();
-        }
-    });
 </script>
 </body>
 </html>
