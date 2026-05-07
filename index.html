@@ -1,985 +1,1367 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AmanJot Singh Slach | Certified Property Accounting Specialist</title>
-    <link rel="icon" type="image/png" href="profile.png">
-    
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-<link rel="stylesheet" href="https://unpkg.com/aos@2.3.4/dist/aos.css">
-    
-    <style>
-        :root {
-            --primary: #E3BF4D; /* Warm gold for clearer contrast */
-            --primary-dark: #C49A26;
-            --accent: #63B3ED;
-            --dark: #0A0A0A;
-            --light: #FFFFFF;
-            --card-bg: #14181D;
-            --text: #F0F0F0;
-            --text-light: #C2CAD5;
-            --border: #2A313A;
-            --footer-bg: #FFFFFF;
-            --footer-text: #333333;
-            --footer-light: #666666;
-        }
-        
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
-        
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--dark);
-            color: var(--text);
-            line-height: 1.6;
-            padding-top: 70px;
-        }
-        
-        /* ===== UTILITY CLASSES ===== */
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-        
-        .section {
-            padding: 3rem 0;
-        }
-        
-        .section-sm {
-            padding: 2rem 0;
-        }
-        
-        .text-center {
-            text-align: center;
-        }
-        
-        /* ===== HEADER WITH HAMBURGER MENU ===== */
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
-            height: 70px;
-            display: flex;
-            align-items: center;
-        }
-        
-        .header-content {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .logo {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--text);
-            text-decoration: none;
-        }
-        
-        .logo span {
-            color: var(--primary);
-        }
-        
-        /* Desktop Navigation */
-        .nav-desktop {
-            display: flex;
-            gap: 2rem;
-        }
-        
-        .nav-desktop a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-        
-        .nav-desktop a:hover {
-            color: var(--primary);
-        }
-        
-        /* Mobile Navigation */
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text);
-            font-size: 1.4rem;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-        
-        .nav-mobile {
-            display: none;
-            position: absolute;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background: var(--card-bg);
-            border-bottom: 1px solid var(--border);
-            padding: 1rem;
-            flex-direction: column;
-            gap: 1rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .nav-mobile.active {
-            display: flex;
-        }
-        
-        .nav-mobile a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-        
-        .nav-mobile a:hover {
-            color: var(--primary);
-        }
-        
-        /* ===== BRAND RIBBON ===== */
-        #brand-ribbon {
-            width: 100%;
-            overflow: hidden;
-            background: #050505;
-            border-top: 1px solid var(--border);
-            border-bottom: 1px solid var(--border);
-            padding: 0.8rem 0;
-        }
-        
-        .ribbon-container {
-            display: flex;
-            width: max-content;
-            min-width: 100%;
-        }
-        
-        .ribbon {
-            display: flex;
-            gap: clamp(3rem, 6vw, 6rem);
-            animation: scroll 40s linear infinite;
-            will-change: transform;
-        }
-        
-        .ribbon span {
-            white-space: nowrap;
-            padding: 0.8rem 0;
-            font-weight: 700;
-            letter-spacing: 2px;
-            font-size: clamp(0.85rem, 1.5vw, 1.05rem);
-            color: #aaa;
-        }
-        
-        @keyframes scroll {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-        
-        /* ===== CERTIFICATION BADGES ===== */
-        .certification-badges {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.5rem;
-            margin-bottom: 1.5rem;
-            justify-content: center;
-        }
-        
-        .certification-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
-            color: var(--primary);
-            padding: 0.5rem 1.2rem;
-            border-radius: 20px;
-            font-size: 0.9rem;
-            font-weight: 600;
-            border: 1px solid var(--primary);
-        }
-        
-        .gold-badge {
-            background: linear-gradient(135deg, rgba(212, 175, 55, 0.15), rgba(212, 175, 55, 0.05));
-            color: var(--primary);
-            border: 1px solid var(--primary);
-        }
-        
-        /* ===== HERO SECTION ===== */
-        .hero-minimal {
-            padding-top: 30px;
-            padding-bottom: 3rem;
-            background: linear-gradient(135deg, #0A0A0A 0%, #050505 100%);
-        }
-        
-        .hero-content {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2.5rem;
-            align-items: center;
-        }
-        
-        @media (min-width: 768px) {
-            .hero-content {
-                grid-template-columns: 1fr 1fr;
-            }
-        }
-        
-        .profile-container {
-            position: relative;
-            display: flex;
-            justify-content: center;
-        }
-        
-        .profile-img {
-            width: 220px;
-            height: 220px;
-            border-radius: 50%;
-            border: 3px solid var(--primary);
-            object-fit: cover;
-            display: block;
-        }
-        
-        .hero-text h1 {
-            font-size: 2.2rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            line-height: 1.2;
-        }
-        
-        .hero-text h1 span {
-            color: var(--primary);
-        }
-        
-        .hero-text h2 {
-            font-size: 1.5rem;
-            color: var(--primary);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        .tagline {
-            font-size: 1.1rem;
-            color: var(--accent);
-            font-weight: 600;
-            margin-bottom: 1rem;
-        }
-        
-        .hero-description {
-            color: var(--text-light);
-            margin-bottom: 1.5rem;
-            line-height: 1.6;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>AmanJot Singh Slach | Property Management Accountant</title>
+<link rel="icon" type="image/png" href="profile.png">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        .hero-highlights {
-            list-style: none;
-            margin-bottom: 1.2rem;
-        }
-
-        .hero-highlights li {
-            color: var(--text-light);
-            margin-bottom: 0.45rem;
-            display: flex;
-            align-items: flex-start;
-            gap: 0.5rem;
-            font-size: 0.95rem;
-        }
-
-        .hero-highlights i {
-            color: var(--primary);
-            margin-top: 0.25rem;
-        }
-
-        .story-note {
-            border-left: 3px solid var(--primary);
-            padding-left: 0.9rem;
-            margin-bottom: 1.3rem;
-            color: var(--text-light);
-            font-size: 0.95rem;
-        }
-        
-        /* ===== ACHIEVEMENTS SECTION ===== */
-        .achievements-section {
-            background: var(--card-bg);
-        }
-        
-        .achievements-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        @media (max-width: 768px) {
-            .achievements-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .achievements-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-        
-        .achievement-card {
-            text-align: center;
-            padding: 1.5rem 1rem;
-            background: rgba(255, 255, 255, 0.05);
-            border-radius: 8px;
-            transition: transform 0.3s ease;
-        }
-        
-        .achievement-card:hover {
-            transform: translateY(-3px);
-            border: 1px solid var(--primary);
-        }
-        
-        .achievement-value {
-            font-size: 1.8rem;
-            font-weight: 700;
-            color: var(--primary);
-            margin-bottom: 0.5rem;
-        }
-        
-        /* ===== TECHNICAL EXPERTISE ===== */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .skills-grid {
-                grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            }
-        }
-        
-        .skill-category {
-            background: rgba(255, 255, 255, 0.05);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .skill-category:hover {
-            transform: translateY(-3px);
-            border-color: var(--primary);
-        }
-        
-        .category-header {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.2rem;
-        }
-        
-        .category-icon {
-            width: 45px;
-            height: 45px;
-            background: var(--primary);
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 1.3rem;
-        }
-        
-        .skills-list {
-            list-style: none;
-        }
-        
-        .skills-list li {
-            padding: 0.6rem 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        
-        .skills-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .skill-level {
-            color: var(--accent);
-            font-size: 0.85rem;
-            font-weight: 600;
-        }
-        
-        /* ===== PORTFOLIO SECTION ===== */
-        .portfolio-grid {
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 1.5rem;
-            margin-top: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .portfolio-grid {
-                grid-template-columns: repeat(2, 1fr);
-            }
-        }
-        
-        .portfolio-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: transform 0.3s ease;
-        }
-        
-        .portfolio-card:hover {
-            transform: translateY(-3px);
-            border-color: var(--primary);
-        }
-        
-        .portfolio-card h3 {
-            color: var(--primary);
-            margin-bottom: 0.8rem;
-            font-size: 1.1rem;
-        }
-        
-        .portfolio-card p {
-            font-size: 0.95rem;
-            color: var(--text-light);
-        }
-        
-
-        /* ===== BUTTONS ===== */
-        .btn {
-            padding: 0.9rem 1.8rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            border: none;
-            cursor: pointer;
-            font-size: 0.95rem;
-        }
-        
-        .btn-primary {
-            background: var(--primary);
-            color: var(--dark);
-        }
-        
-        .btn-outline {
-            background: transparent;
-            border: 2px solid var(--primary);
-            color: var(--primary);
-        }
-        
-        .btn-gold {
-            background: linear-gradient(135deg, var(--primary), #FFAA00);
-            color: var(--dark);
-            border: none;
-        }
-        
-        .btn-block {
-            width: 100%;
-        }
-        
-        .btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-        
-        .cta-buttons {
-            display: flex;
-            gap: 1rem;
-            justify-content: center;
-            margin-top: 2rem;
-            flex-wrap: wrap;
-        }
-        
-        /* ===== FOOTER (WHITE BACKGROUND) ===== */
-        .footer-minimal {
-            background: var(--footer-bg);
-            border-top: 1px solid #E5E7EB;
-            padding: 3rem 0 2rem;
-        }
-        
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-        
-        @media (min-width: 768px) {
-            .footer-content {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
-            }
-        }
-        
-        .footer-section h4 {
-            color: var(--footer-text);
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-        
-        .footer-links {
-            list-style: none;
-        }
-        
-        .footer-links li {
-            margin-bottom: 0.6rem;
-        }
-        
-        .footer-links a {
-            color: var(--footer-light);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            font-size: 0.9rem;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-        
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-        
-        .footer-links li:not(a) {
-            color: var(--footer-light);
-            font-size: 0.9rem;
-        }
-        
-        .copyright {
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid #E5E7EB;
-            color: var(--footer-light);
-            font-size: 0.85rem;
-        }
-        
-        /* ===== MOBILE RESPONSIVE ===== */
-        @media (max-width: 768px) {
-            body {
-                padding-top: 60px;
-            }
-            
-            header {
-                height: 60px;
-            }
-            
-            .menu-toggle {
-                display: block;
-            }
-            
-            .nav-desktop {
-                display: none;
-            }
-            
-            .nav-mobile {
-                top: 60px;
-            }
-            
-            .hero-minimal {
-                padding-top: 20px;
-            }
-            
-            .hero-text h1 {
-                font-size: 1.8rem;
-            }
-            
-            .hero-text h2 {
-                font-size: 1.3rem;
-            }
-            
-            .section {
-                padding: 2rem 0;
-            }
-            
-            .cta-buttons {
-                flex-direction: column;
-            }
-            
-            .btn {
-                width: 100%;
-                text-align: center;
-            }
-            
-            .achievement-card {
-                padding: 1.2rem 0.8rem;
-            }
-            
-            .achievement-value {
-                font-size: 1.6rem;
-            }
-            
-            .skill-category {
-                padding: 1.2rem;
-            }
-            
-            .portfolio-card {
-                padding: 1.2rem;
-            }
-            
-            .profile-img {
-                width: 180px;
-                height: 180px;
-            }
-            
-            .certification-badges {
-                flex-direction: column;
-                align-items: flex-start;
-            }
-            
-            .certification-badge {
-                width: 100%;
-                justify-content: center;
-            }
-            
-            .footer-content {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-        
-        @media (max-width: 480px) {
-            .hero-content {
-                gap: 2rem;
-            }
-            
-            .portfolio-grid {
-                gap: 1rem;
-            }
-        }
-        
-        /* Smooth scrolling for anchor links */
-        html {
-            scroll-padding-top: 70px;
-        }
-        
-        @media (max-width: 768px) {
-            html {
-                scroll-padding-top: 60px;
-            }
-        }
-    
-
-/* AOS button hover enhancement */
-button,
-.btn,
-.lux-btn {
-  transition: transform 0.3s ease;
+<style>
+:root {
+  --gold: #E3BF4D;
+  --gold-light: #F0D080;
+  --gold-dim: rgba(227,191,77,0.15);
+  --dark: #080A0C;
+  --dark-2: #0F1318;
+  --dark-3: #161C23;
+  --border: rgba(227,191,77,0.18);
+  --border-soft: rgba(255,255,255,0.07);
+  --text: #EEF0F2;
+  --text-muted: #8A96A3;
+  --accent-blue: #4A9ECC;
 }
 
-button:hover,
-.btn:hover,
-.lux-btn:hover {
-  transform: scale(1.05);
+* { margin: 0; padding: 0; box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+
+body {
+  background: var(--dark);
+  color: var(--text);
+  font-family: 'DM Sans', sans-serif;
+  overflow-x: hidden;
+  padding-top: 68px;
 }
 
+/* ─── NOISE TEXTURE OVERLAY ─── */
+body::before {
+  content: '';
+  position: fixed;
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  pointer-events: none;
+  z-index: 0;
+  opacity: 0.4;
+}
+
+/* ─── NAVBAR ─── */
+header {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  height: 68px;
+  background: rgba(8,10,12,0.92);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-soft);
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+}
+.header-inner {
+  max-width: 1280px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Logo / Name Badge */
+.nav-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+}
+.brand-badge {
+  width: 36px;
+  height: 36px;
+  background: linear-gradient(135deg, var(--gold) 0%, #C49A26 100%);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #080A0C;
+  letter-spacing: -0.5px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 12px rgba(227,191,77,0.3);
+}
+.brand-text {
+  font-family: 'DM Sans', sans-serif;
+  font-size: 0.95rem;
+  font-weight: 600;
+  color: var(--text);
+  line-height: 1.1;
+}
+.brand-text span {
+  color: var(--gold);
+}
+
+.nav-links {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+.nav-links a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.88rem;
+  font-weight: 500;
+  letter-spacing: 0.3px;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+.nav-links a:hover, .nav-links a.active { color: var(--gold); }
+
+.nav-cta {
+  background: var(--gold);
+  color: #080A0C !important;
+  padding: 0.45rem 1.1rem;
+  border-radius: 6px;
+  font-weight: 600 !important;
+  font-size: 0.84rem !important;
+  transition: background 0.2s, transform 0.15s !important;
+}
+.nav-cta:hover { background: var(--gold-light) !important; transform: translateY(-1px); }
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: var(--text);
+  font-size: 1.3rem;
+  cursor: pointer;
+  padding: 0.4rem;
+}
+.nav-mobile {
+  display: none;
+  position: absolute;
+  top: 68px; left: 0; right: 0;
+  background: var(--dark-2);
+  border-bottom: 1px solid var(--border-soft);
+  padding: 1.2rem 2rem;
+  flex-direction: column;
+  gap: 0.7rem;
+}
+.nav-mobile.open { display: flex; }
+.nav-mobile a {
+  color: var(--text-muted);
+  text-decoration: none;
+  font-size: 0.95rem;
+  font-weight: 500;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--border-soft);
+}
+.nav-mobile a:hover, .nav-mobile a.active { color: var(--gold); }
+
+/* ─── HERO ─── */
+.hero {
+  position: relative;
+  min-height: calc(100vh - 68px);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  align-items: center;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 2rem 5rem;
+  gap: 5rem;
+  z-index: 1;
+}
+
+/* Radial glow background */
+.hero::before {
+  content: '';
+  position: absolute;
+  top: 10%;
+  right: -5%;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(227,191,77,0.06) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* LEFT — text */
+.hero-text { position: relative; z-index: 2; }
+
+.hero-availability {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: rgba(74,158,204,0.1);
+  border: 1px solid rgba(74,158,204,0.25);
+  border-radius: 999px;
+  padding: 0.35rem 0.9rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--accent-blue);
+  margin-bottom: 1.5rem;
+  letter-spacing: 0.4px;
+}
+.hero-availability .dot {
+  width: 7px; height: 7px;
+  background: #4dcc7a;
+  border-radius: 50%;
+  animation: pulse-dot 2s infinite;
+  flex-shrink: 0;
+}
+@keyframes pulse-dot {
+  0%,100% { opacity: 1; transform: scale(1); }
+  50% { opacity: 0.5; transform: scale(1.3); }
+}
+
+.hero-name {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.6rem, 4vw, 3.8rem);
+  font-weight: 700;
+  line-height: 1.05;
+  letter-spacing: -0.5px;
+  color: var(--text);
+  margin-bottom: 0.4rem;
+}
+.hero-name .gold { color: var(--gold); }
+
+.hero-title {
+  font-size: clamp(0.9rem, 1.3vw, 1.05rem);
+  color: var(--text-muted);
+  font-weight: 400;
+  letter-spacing: 0.5px;
+  margin-bottom: 1.8rem;
+  line-height: 1.5;
+}
+.hero-title strong { color: var(--gold); font-weight: 600; }
+
+.hero-desc {
+  font-size: clamp(1rem, 1.3vw, 1.1rem);
+  line-height: 1.75;
+  color: rgba(238,240,242,0.82);
+  max-width: 520px;
+  margin-bottom: 2rem;
+}
+
+/* Bullet points */
+.hero-bullets {
+  list-style: none;
+  margin-bottom: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+}
+.hero-bullets li {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-size: 0.92rem;
+  color: rgba(238,240,242,0.78);
+  line-height: 1.5;
+}
+.hero-bullets li i {
+  color: var(--gold);
+  font-size: 0.7rem;
+  margin-top: 0.3rem;
+  flex-shrink: 0;
+}
+.hero-bullets li strong { color: var(--text); }
+
+/* Cert badges */
+.cert-badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-bottom: 2.4rem;
+}
+.cert-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: var(--gold-dim);
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  padding: 0.3rem 0.75rem;
+  font-size: 0.77rem;
+  font-weight: 500;
+  color: var(--gold-light);
+  white-space: nowrap;
+}
+.cert-badge i { font-size: 0.65rem; }
+
+/* CTA buttons */
+.hero-ctas {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: var(--gold);
+  color: #080A0C;
+  padding: 0.8rem 1.8rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-decoration: none;
+  letter-spacing: 0.3px;
+  transition: background 0.2s, transform 0.15s, box-shadow 0.2s;
+  box-shadow: 0 4px 20px rgba(227,191,77,0.25);
+}
+.btn-primary:hover {
+  background: var(--gold-light);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 28px rgba(227,191,77,0.35);
+}
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  border: 1px solid var(--border);
+  color: var(--text);
+  padding: 0.78rem 1.6rem;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  transition: border-color 0.2s, color 0.2s, transform 0.15s;
+}
+.btn-secondary:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  transform: translateY(-2px);
+}
+
+/* CV download */
+.cv-download {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  color: var(--text-muted);
+  font-size: 0.82rem;
+  text-decoration: none;
+  margin-top: 1rem;
+  transition: color 0.2s;
+}
+.cv-download:hover { color: var(--gold); }
+.cv-download i { font-size: 0.75rem; }
+
+/* RIGHT — photo */
+.hero-photo-col {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+.photo-frame {
+  position: relative;
+  width: clamp(280px, 35vw, 440px);
+}
+/* Gold ring */
+.photo-frame::before {
+  content: '';
+  position: absolute;
+  inset: -10px;
+  border-radius: 28px;
+  background: linear-gradient(135deg, var(--gold) 0%, transparent 50%, var(--gold) 100%);
+  opacity: 0.25;
+  z-index: 0;
+}
+.photo-frame::after {
+  content: '';
+  position: absolute;
+  inset: -3px;
+  border-radius: 22px;
+  border: 1.5px solid rgba(227,191,77,0.4);
+  z-index: 0;
+}
+.hero-photo {
+  width: 100%;
+  border-radius: 20px;
+  display: block;
+  position: relative;
+  z-index: 1;
+  object-fit: cover;
+  aspect-ratio: 3/4;
+  box-shadow: 0 24px 64px rgba(0,0,0,0.6);
+}
+
+/* Floating stat cards */
+.stat-float {
+  position: absolute;
+  background: var(--dark-2);
+  border: 1px solid var(--border);
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  z-index: 2;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 8px 24px rgba(0,0,0,0.4);
+}
+.stat-float .num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  display: block;
+}
+.stat-float .lbl {
+  font-size: 0.72rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  white-space: nowrap;
+}
+.stat-float.top-left {
+  top: 8%;
+  left: -14%;
+}
+.stat-float.bottom-right {
+  bottom: 10%;
+  right: -12%;
+}
+.stat-float.bottom-left {
+  bottom: 25%;
+  left: -16%;
+}
+
+/* LinkedIn floating badge */
+.linkedin-float {
+  position: absolute;
+  top: -4%;
+  right: -10%;
+  background: #0A66C2;
+  color: #fff;
+  border-radius: 10px;
+  padding: 0.55rem 0.9rem;
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  text-decoration: none;
+  z-index: 2;
+  box-shadow: 0 4px 16px rgba(10,102,194,0.4);
+  transition: transform 0.2s;
+}
+.linkedin-float:hover { transform: translateY(-2px); }
+.linkedin-float i { font-size: 0.9rem; }
+
+/* ─── TICKER RIBBON ─── */
+.ribbon-wrapper {
+  overflow: hidden;
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+  background: var(--dark-2);
+  padding: 0.8rem 0;
+  position: relative;
+  z-index: 1;
+}
+.ribbon-track {
+  display: flex;
+  width: max-content;
+  animation: ticker 30s linear infinite;
+}
+.ribbon-track:hover { animation-play-state: paused; }
+@keyframes ticker {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+.ribbon-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0 2rem;
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+.ribbon-item .dot { color: var(--gold); font-size: 0.5rem; }
+.ribbon-item span { color: var(--gold-light); }
+
+/* ─── ACHIEVEMENTS / STATS STRIP ─── */
+.stats-strip {
+  max-width: 1280px;
+  margin: 5rem auto 0;
+  padding: 0 2rem;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 1.5px;
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  overflow: hidden;
+  background: var(--border-soft);
+  position: relative;
+  z-index: 1;
+}
+.stat-cell {
+  background: var(--dark-2);
+  padding: 2.2rem 1.8rem;
+  text-align: center;
+  transition: background 0.2s;
+}
+.stat-cell:hover { background: var(--dark-3); }
+.stat-cell .big-num {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2.8rem;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  display: block;
+  margin-bottom: 0.4rem;
+}
+.stat-cell .stat-label {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  font-weight: 400;
+  line-height: 1.4;
+}
+.stat-cell .stat-sub {
+  font-size: 0.7rem;
+  color: rgba(138,150,163,0.6);
+  margin-top: 0.2rem;
+}
+
+/* ─── WHAT I BRING TO YOUR TEAM ─── */
+.section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+.section-label {
+  font-size: 0.73rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: 0.8rem;
+  display: block;
+}
+.section-title {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.9rem, 3vw, 2.8rem);
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.15;
+  margin-bottom: 1rem;
+}
+.section-subtitle {
+  font-size: 1rem;
+  color: var(--text-muted);
+  max-width: 580px;
+  line-height: 1.65;
+}
+
+.expertise-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.exp-card {
+  background: var(--dark-2);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  padding: 2rem;
+  transition: border-color 0.25s, transform 0.2s;
+  position: relative;
+  overflow: hidden;
+}
+.exp-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+.exp-card:hover { border-color: var(--border); transform: translateY(-3px); }
+.exp-card:hover::before { opacity: 1; }
+.exp-icon {
+  width: 44px; height: 44px;
+  background: var(--gold-dim);
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--gold);
+  font-size: 1.1rem;
+  margin-bottom: 1.2rem;
+}
+.exp-card h3 {
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+.exp-card p {
+  font-size: 0.87rem;
+  color: var(--text-muted);
+  line-height: 1.65;
+}
+
+/* ─── EXPERIENCE TIMELINE ─── */
+.timeline-section {
+  background: var(--dark-2);
+  border-top: 1px solid var(--border-soft);
+  border-bottom: 1px solid var(--border-soft);
+}
+.timeline-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+
+.timeline {
+  position: relative;
+  margin-top: 3rem;
+}
+.timeline::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0; bottom: 0;
+  width: 1px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+}
+.timeline-item {
+  position: relative;
+  padding-left: 2.5rem;
+  margin-bottom: 3rem;
+}
+.timeline-item:last-child { margin-bottom: 0; }
+.timeline-dot {
+  position: absolute;
+  left: -5px;
+  top: 0.25rem;
+  width: 11px; height: 11px;
+  border-radius: 50%;
+  background: var(--gold);
+  box-shadow: 0 0 0 3px rgba(227,191,77,0.2);
+}
+.timeline-date {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 0.3rem;
+}
+.timeline-role {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.35rem;
+  font-weight: 600;
+  color: var(--text);
+  margin-bottom: 0.2rem;
+}
+.timeline-company {
+  font-size: 0.87rem;
+  color: var(--text-muted);
+  margin-bottom: 0.8rem;
+}
+.timeline-company em {
+  color: rgba(238,240,242,0.55);
+  font-style: normal;
+}
+.timeline-bullets {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+.timeline-bullets li {
+  font-size: 0.88rem;
+  color: rgba(238,240,242,0.72);
+  padding-left: 1rem;
+  position: relative;
+  line-height: 1.55;
+}
+.timeline-bullets li::before {
+  content: '→';
+  position: absolute;
+  left: 0;
+  color: var(--gold);
+  font-size: 0.7rem;
+  top: 0.15rem;
+}
+
+/* ─── TESTIMONIALS ─── */
+.testimonials-section {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 5rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+.testimonials-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 3rem;
+}
+.testi-card {
+  background: var(--dark-2);
+  border: 1px solid var(--border-soft);
+  border-radius: 16px;
+  padding: 2rem;
+  position: relative;
+  transition: border-color 0.25s;
+}
+.testi-card:hover { border-color: var(--border); }
+.testi-quote {
+  color: var(--gold);
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  line-height: 0.5;
+  margin-bottom: 1rem;
+  display: block;
+  opacity: 0.5;
+}
+.testi-text {
+  font-size: 0.92rem;
+  color: rgba(238,240,242,0.8);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  font-style: italic;
+}
+.testi-author {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+.testi-avatar {
+  width: 40px; height: 40px;
+  border-radius: 50%;
+  background: var(--gold-dim);
+  border: 1.5px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: 'Cormorant Garamond', serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+.testi-author-info .name {
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--text);
+}
+.testi-author-info .role {
+  font-size: 0.77rem;
+  color: var(--text-muted);
+}
+.testi-stars {
+  color: var(--gold);
+  font-size: 0.7rem;
+  letter-spacing: 1px;
+  margin-bottom: 0.6rem;
+}
+
+/* ─── TOOLS STRIP ─── */
+.tools-section {
+  background: var(--dark-2);
+  border-top: 1px solid var(--border-soft);
+}
+.tools-inner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 4rem 2rem;
+  position: relative;
+  z-index: 1;
+}
+.tools-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 2rem;
+}
+.tool-tag {
+  background: var(--dark-3);
+  border: 1px solid var(--border-soft);
+  border-radius: 8px;
+  padding: 0.45rem 1rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  font-weight: 500;
+  transition: border-color 0.2s, color 0.2s;
+}
+.tool-tag:hover {
+  border-color: var(--border);
+  color: var(--gold-light);
+}
+
+/* ─── CTA BANNER ─── */
+.cta-banner {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 2rem 5rem;
+  position: relative;
+  z-index: 1;
+}
+.cta-inner {
+  background: linear-gradient(135deg, var(--dark-3) 0%, var(--dark-2) 100%);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+  position: relative;
+  overflow: hidden;
+}
+.cta-inner::before {
+  content: '';
+  position: absolute;
+  top: -60px; right: -60px;
+  width: 220px; height: 220px;
+  background: radial-gradient(circle, rgba(227,191,77,0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+.cta-text h2 {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(1.6rem, 2.5vw, 2.1rem);
+  font-weight: 700;
+  color: var(--text);
+  margin-bottom: 0.6rem;
+  line-height: 1.2;
+}
+.cta-text p {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+  max-width: 480px;
+}
+.cta-actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 0.75rem;
+  flex-shrink: 0;
+}
+.cta-contact-line {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}
+.cta-contact-line a { color: var(--gold); text-decoration: none; }
+
+/* ─── FOOTER ─── */
+.lux-footer {
+  background: #f6f6f6;
+  color: #111;
+  padding: clamp(3rem,6vw,6rem) clamp(1.5rem,5vw,14%) 2.8rem;
+  width: 100%;
+  position: relative;
+  z-index: 1;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: clamp(2rem,4vw,4rem);
+}
+.footer-box h4 {
+  font-weight: 700;
+  letter-spacing: 1px;
+  margin-bottom: 1.2rem;
+  font-size: 1rem;
+  color: #000;
+}
+.footer-box a, .footer-box p {
+  display: block;
+  margin: 0.6rem 0;
+  color: #111;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.footer-box a:hover { color: #c5a880; }
+.footer-bottom {
+  text-align: center;
+  margin-top: 3rem;
+  font-size: 0.85rem;
+  color: #666;
+  border-top: 1px solid #ddd;
+  padding-top: 1.5rem;
+}
+
+/* ─── ANIMATIONS ─── */
+.fade-up {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.65s ease, transform 0.65s ease;
+}
+.fade-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── RESPONSIVE ─── */
+@media (max-width: 1024px) {
+  .hero { grid-template-columns: 1fr; gap: 3rem; text-align: center; padding-top: 3rem; min-height: auto; }
+  .hero-text { order: 2; }
+  .hero-photo-col { order: 1; }
+  .hero-desc, .hero-bullets, .hero-ctas, .cert-badges { margin-left: auto; margin-right: auto; }
+  .hero-bullets li { justify-content: flex-start; text-align: left; max-width: 480px; margin: 0 auto; }
+  .hero-availability { justify-content: center; }
+  .cert-badges { justify-content: center; }
+  .hero-ctas { justify-content: center; }
+  .photo-frame { max-width: 300px; }
+  .stat-float.top-left { top: -6%; left: -2%; }
+  .stat-float.bottom-right { bottom: -4%; right: -2%; }
+  .stat-float.bottom-left { display: none; }
+  .linkedin-float { top: -4%; right: 0%; }
+  .stats-strip { grid-template-columns: repeat(2, 1fr); }
+  .expertise-grid { grid-template-columns: repeat(2, 1fr); }
+  .testimonials-grid { grid-template-columns: 1fr; }
+  .cta-inner { flex-direction: column; text-align: center; }
+  .cta-actions { align-items: center; }
+}
+@media (max-width: 768px) {
+  .nav-links { display: none; }
+  .menu-toggle { display: block; }
+  .expertise-grid { grid-template-columns: 1fr; }
+  .stats-strip { grid-template-columns: repeat(2, 1fr); }
+  .timeline::before { display: none; }
+  .timeline-item { padding-left: 0; }
+  .timeline-dot { display: none; }
+}
+@media (max-width: 480px) {
+  .stats-strip { grid-template-columns: 1fr 1fr; }
+  .cta-inner { padding: 2rem 1.5rem; }
+}
 </style>
 </head>
 <body>
-    <!-- Header with Mobile Hamburger Menu -->
-    <header>
-        <div class="header-content">
-            <a href="index.html" class="logo">AmanJot Singh <span>Slach</span></a>
-            
-            <!-- Desktop Navigation -->
-            <nav class="nav-desktop">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="projects.html">Projects</a>
-                <a href="certifications.html">Certifications</a>
-                <a href="about.html#consultation">Consultation</a>
-            </nav>
-            
-            <!-- Mobile Hamburger Menu -->
-            <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
-                <i class="fas fa-bars"></i>
-            </button>
-            
-            <!-- Mobile Navigation Menu -->
-            <nav class="nav-mobile" id="mobileNav">
-                <a href="index.html">Home</a>
-                <a href="about.html">About</a>
-                <a href="projects.html">Projects</a>
-                <a href="certifications.html">Certifications</a>
-                <a href="about.html#consultation">Consultation</a>
-            </nav>
+
+<!-- ─── NAVBAR ─── -->
+<header>
+  <div class="header-inner">
+    <a href="index.html" class="nav-brand">
+      <div class="brand-badge">AJ</div>
+      <div class="brand-text">AmanJot Singh <span>Slach</span></div>
+    </a>
+    <nav class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="about.html#consultation" class="nav-cta">Hire Me</a>
+    </nav>
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+      <i class="fas fa-bars"></i>
+    </button>
+  </div>
+  <nav class="nav-mobile" id="mobileNav">
+    <a href="index.html" class="active">Home</a>
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="about.html#consultation">Hire Me</a>
+  </nav>
+</header>
+
+<!-- ─── HERO ─── -->
+<section class="hero">
+  <!-- LEFT -->
+  <div class="hero-text">
+    <div class="hero-availability">
+      <span class="dot"></span>
+      Open to Full-Time Remote Roles — US EST / PST
+    </div>
+
+    <h1 class="hero-name">AmanJot Singh <span class="gold">Slach</span></h1>
+
+    <p class="hero-title">
+      <strong>Property Management Accountant</strong> &nbsp;·&nbsp; 5+ Years &nbsp;·&nbsp; CPA Candidate (AICPA)
+    </p>
+
+    <p class="hero-desc">
+      I bring trust accounting expertise, clean month-end closes, and audit-ready financials to property management teams. AppFolio &amp; Buildium specialist with deep experience across multi-LLC, multi-state US portfolios.
+    </p>
+
+    <ul class="hero-bullets">
+      <li><i class="fas fa-circle"></i><span><strong>What I deliver:</strong> Reconciliations, trust accounting, owner statements, and 1099 compliance — zero errors, zero fire drills.</span></li>
+      <li><i class="fas fa-circle"></i><span><strong>How I work:</strong> Clear weekly updates, documented SOPs, and full ownership from day one — you'll always know where things stand.</span></li>
+      <li><i class="fas fa-circle"></i><span><strong>Availability:</strong> Full-time remote, aligned with EST / PST time zones, ready immediately.</span></li>
+    </ul>
+
+    <div class="cert-badges">
+      <span class="cert-badge"><i class="fas fa-award"></i> AppFolio Specialist</span>
+      <span class="cert-badge"><i class="fas fa-award"></i> Buildium Certified</span>
+      <span class="cert-badge"><i class="fas fa-award"></i> QBO ProAdvisor</span>
+      <span class="cert-badge"><i class="fas fa-award"></i> Xero Advisor</span>
+      <span class="cert-badge"><i class="fas fa-award"></i> Gusto Payroll Certified</span>
+    </div>
+
+    <div class="hero-ctas">
+      <a href="about.html#consultation" class="btn-primary">
+        <i class="fas fa-paper-plane"></i> Connect With Me
+      </a>
+      <a href="about.html" class="btn-secondary">
+        <i class="fas fa-user"></i> Read My Story
+      </a>
+    </div>
+
+    <a href="https://www.linkedin.com/in/amanjot-singh-slach-55a63b234" target="_blank" class="cv-download">
+      <i class="fab fa-linkedin"></i>&nbsp; View Full LinkedIn Profile &nbsp;<i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+
+  <!-- RIGHT — Photo -->
+  <div class="hero-photo-col">
+    <div class="photo-frame">
+      <img src="profile.png" alt="AmanJot Singh Slach" class="hero-photo">
+
+      <!-- Floating stats -->
+      <div class="stat-float top-left">
+        <span class="num">5+</span>
+        <span class="lbl">Years Experience</span>
+      </div>
+      <div class="stat-float bottom-right">
+        <span class="num">100+</span>
+        <span class="lbl">1099s Filed — Zero Errors</span>
+      </div>
+      <div class="stat-float bottom-left">
+        <span class="num">15+</span>
+        <span class="lbl">US Portfolios Managed</span>
+      </div>
+
+      <!-- LinkedIn badge -->
+      <a href="https://www.linkedin.com/in/amanjot-singh-slach-55a63b234" target="_blank" class="linkedin-float">
+        <i class="fab fa-linkedin"></i> LinkedIn
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- ─── TICKER RIBBON ─── -->
+<div class="ribbon-wrapper">
+  <div class="ribbon-track">
+    <!-- Duplicated for seamless loop -->
+    <span class="ribbon-item"><span>AppFolio</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>Buildium</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>Trust Accounting</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>QuickBooks ProAdvisor</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>Month-End Close</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>1099 Compliance</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>Platform Migration</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>Xero Advisor</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>Multi-State Portfolios</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>Bank Reconciliation</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>Owner Statements</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>Gusto Payroll</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>AppFolio</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>Buildium</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>Trust Accounting</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>QuickBooks ProAdvisor</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>Month-End Close</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>1099 Compliance</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>Platform Migration</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>Xero Advisor</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>Multi-State Portfolios</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>Bank Reconciliation</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>Owner Statements</span> <span class="dot">◆</span></span>
+    <span class="ribbon-item"><span>Gusto Payroll</span> <span class="dot">◆</span></span>
+  </div>
+</div>
+
+<!-- ─── ACHIEVEMENTS STRIP ─── -->
+<div class="stats-strip fade-up">
+  <div class="stat-cell">
+    <span class="big-num">35%</span>
+    <div class="stat-label">Faster Month-End Close</div>
+    <div class="stat-sub">15 → 11 days across 15+ portfolios</div>
+  </div>
+  <div class="stat-cell">
+    <span class="big-num">2,500+</span>
+    <div class="stat-label">Transactions Reconciled Monthly</div>
+    <div class="stat-sub">60+ bank & credit card accounts</div>
+  </div>
+  <div class="stat-cell">
+    <span class="big-num">20+</span>
+    <div class="stat-label">LLC Migrations Led</div>
+    <div class="stat-sub">QBO → AppFolio with zero data loss</div>
+  </div>
+  <div class="stat-cell">
+    <span class="big-num">5 Yrs</span>
+    <div class="stat-label">Books Restored</div>
+    <div class="stat-sub">Multi-year unreconciled history cleared</div>
+  </div>
+</div>
+
+<!-- ─── WHAT I BRING ─── -->
+<section class="section">
+  <span class="section-label fade-up">Core Expertise</span>
+  <h2 class="section-title fade-up">What I bring to your team</h2>
+  <p class="section-subtitle fade-up">Not a generalist — a specialist who has done this work daily across 15+ US rental portfolios.</p>
+
+  <div class="expertise-grid">
+    <div class="exp-card fade-up">
+      <div class="exp-icon"><i class="fas fa-building"></i></div>
+      <h3>Property Trust Accounting</h3>
+      <p>Full-cycle trust accounting compliance for operating, security deposit, and owner contribution accounts. Audit-ready reconciliations every month, no exceptions.</p>
+    </div>
+    <div class="exp-card fade-up">
+      <div class="exp-icon"><i class="fas fa-sync-alt"></i></div>
+      <h3>Month-End Close & Reporting</h3>
+      <p>Structured close processes that cut cycle time. Owner-ready financial packages, investor statements, and variance reports delivered on schedule.</p>
+    </div>
+    <div class="exp-card fade-up">
+      <div class="exp-icon"><i class="fas fa-exchange-alt"></i></div>
+      <h3>Platform Migrations</h3>
+      <p>Led 20+ LLC migrations from QuickBooks Online to AppFolio — data mapping, COA restructuring, opening balance validation, and post-migration reconciliation.</p>
+    </div>
+    <div class="exp-card fade-up">
+      <div class="exp-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+      <h3>1099 & Tax Compliance</h3>
+      <p>Filed 100+ 1099-MISC / NEC forms annually via Track1099. Zero IRS rejections, zero amendments across all filing years. Vendor classification and year-end prep handled end-to-end.</p>
+    </div>
+    <div class="exp-card fade-up">
+      <div class="exp-icon"><i class="fas fa-history"></i></div>
+      <h3>Books Restoration</h3>
+      <p>Restored and reconciled up to 5 years of unreconciled books for multiple clients. Eliminated investor reporting gaps and restored financial confidence.</p>
+    </div>
+    <div class="exp-card fade-up">
+      <div class="exp-icon"><i class="fas fa-users-cog"></i></div>
+      <h3>AR Management & Vendor Ops</h3>
+      <p>Reduced outstanding receivables by 25% through structured follow-up protocols. Full Bill.com and Hubdoc vendor payment management across all portfolios.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ─── EXPERIENCE TIMELINE ─── -->
+<div class="timeline-section">
+  <div class="timeline-inner">
+    <span class="section-label fade-up">Work History</span>
+    <h2 class="section-title fade-up">Professional Experience</h2>
+
+    <div class="timeline">
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Dec 2024 – Present</div>
+        <div class="timeline-role">Senior Accountant</div>
+        <div class="timeline-company">MKVS &amp; Co. — CPA Firm &nbsp;<em>· Remote, US Property Management</em></div>
+        <ul class="timeline-bullets">
+          <li>End-to-end trust accounting, bookkeeping &amp; financial reporting for 15+ US rental portfolios across AppFolio, Buildium &amp; QuickBooks Online</li>
+          <li>Led full migration of 20+ LLCs from QBO to AppFolio — data mapping, COA restructuring, opening balances &amp; post-migration reconciliation</li>
+          <li>Filed 100+ 1099-MISC/NEC forms annually — zero IRS rejections, zero amendments across all years</li>
+          <li>Cut month-end close from 15 to 11 days (35% improvement) across all portfolios</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Jan 2021 – Dec 2024</div>
+        <div class="timeline-role">Accountant</div>
+        <div class="timeline-company">Mayank Malik &amp; Associates — CPA Firm &nbsp;<em>· Remote, US Clients</em></div>
+        <ul class="timeline-bullets">
+          <li>Full-cycle bookkeeping &amp; month-end close for US clients across E-commerce, legal &amp; construction sectors</li>
+          <li>Restored &amp; reconciled up to 5 years of unreconciled accounts for multiple clients</li>
+          <li>Reduced outstanding AR by 25% via structured follow-up &amp; escalation workflows</li>
+          <li>Automated transaction categorisation via QBO integrations — cut manual processing time by 20%</li>
+        </ul>
+      </div>
+
+      <div class="timeline-item fade-up">
+        <div class="timeline-dot"></div>
+        <div class="timeline-date">Feb 2020 – Dec 2020</div>
+        <div class="timeline-role">Property Management Accountant</div>
+        <div class="timeline-company">True Ledgers Bookkeepers &nbsp;<em>· Remote, US Property Management</em></div>
+        <ul class="timeline-bullets">
+          <li>Full-cycle remote accounting &amp; admin support for US landlords and property managers</li>
+          <li>Managed tenant &amp; landlord communications across US time zones with consistent response standards</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ─── TESTIMONIALS ─── -->
+<section class="testimonials-section">
+  <span class="section-label fade-up">Testimonials</span>
+  <h2 class="section-title fade-up">What people say</h2>
+  <p class="section-subtitle fade-up">Feedback from managers and clients I've worked with directly.</p>
+
+  <div class="testimonials-grid">
+    <div class="testi-card fade-up">
+      <div class="testi-stars">★★★★★</div>
+      <span class="testi-quote">"</span>
+      <p class="testi-text">AmanJot took over our AppFolio reconciliations when we were 4 months behind. Within six weeks every account was clean, every owner statement was accurate, and our month-end close actually happened on time for the first time in two years. He owns the work completely.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">S</div>
+        <div class="testi-author-info">
+          <div class="name">Sarah K.</div>
+          <div class="role">Property Operations Manager · Dallas, TX</div>
         </div>
-    </header>
+      </div>
+    </div>
 
-    <!-- Hero Section -->
-    <section class="hero-minimal section">
-        <div class="container">
-            <div class="hero-content">
-                <div class="profile-container">
-                    <img src="profile.png" alt="AmanJot Singh Slach" class="profile-img">
-                </div>
-                <div class="hero-text">
-                    <h1>AmanJot Singh <span>Slach</span></h1>
-                    <h2>Certified Property Accounting Specialist</h2>
-                    <p class="tagline">I help property management teams turn accounting chaos into clean monthly closes, compliant trust books, and decision-ready reports.</p>
-                    
-                    <div class="certification-badges">
-                        <span class="certification-badge gold-badge">
-                            <i class="fas fa-award"></i> AppFolio Property Manager Specialist
-                        </span>
-                        <span class="certification-badge">
-                            <i class="fas fa-award"></i> Buildium Property Management Certificate
-                        </span>
-                    </div>
-                    
-                    <p class="hero-description">
-                        I work with operators who are tired of unclear books and last-minute fire drills. 
-                        My goal is simple: predictable month-end closes, fewer compliance surprises, and reporting owners can trust.
-                    </p>
-
-                    <ul class="hero-highlights">
-                        <li><i class="fas fa-check-circle"></i><span><strong>Who I help:</strong> property managers and real estate teams scaling from survival mode to stable operations.</span></li>
-                        <li><i class="fas fa-check-circle"></i><span><strong>What I improve:</strong> reconciliations, trust accounting, CAM workflows, and owner-ready month-end reporting.</span></li>
-                        <li><i class="fas fa-check-circle"></i><span><strong>How I work:</strong> clear weekly updates, documented SOPs, and transparent priorities from day one.</span></li>
-                    </ul>
-
-                    <p class="story-note">
-                        I started in hands-on bookkeeping and moved into property accounting because I care about building calm, reliable systems teams can trust under pressure.
-                    </p>
-                    
-                    <div class="certification-badges">
-                        <span class="certification-badge">
-                            <i class="fas fa-certificate"></i> QuickBooks ProAdvisor Certified
-                        </span>
-                        <span class="certification-badge">
-                            <i class="fas fa-certificate"></i> Payroll Specialist
-                        </span>
-                        <span class="certification-badge">
-                            <i class="fas fa-certificate"></i> Data Migration Specialist
-                        </span>
-                    </div>
-
-                    <div class="cta-buttons" style="justify-content: flex-start; margin-top: 1.2rem;">
-                        <a href="about.html#consultation" class="btn btn-primary"><i class="fas fa-calendar-check"></i> Book a Free Discovery Call</a>
-                        <a href="about.html" class="btn btn-outline"><i class="fas fa-user"></i> Read My Story</a>
-                    </div>
-                </div>
-            </div>
+    <div class="testi-card fade-up">
+      <div class="testi-stars">★★★★★</div>
+      <span class="testi-quote">"</span>
+      <p class="testi-text">We hired AmanJot to migrate 18 LLCs from QuickBooks to AppFolio — a project we'd been dreading for months. He delivered every opening balance verified, every account reconciled, and zero surprises post-migration. His documentation made the handoff seamless.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">M</div>
+        <div class="testi-author-info">
+          <div class="name">Michael R.</div>
+          <div class="role">Principal, MKVS & Co. CPA Firm</div>
         </div>
-    </section>
+      </div>
+    </div>
 
-    <!-- Brand Ribbon -->
-    <section id="brand-ribbon">
-        <div class="ribbon-container">
-            <div class="ribbon">
-                <span>PROPERTY MANAGEMENT SOFTWARE SPECIALIST • FINANCIAL OPERATIONS • APPFOLIO & BUILDIUM PROPERTY MANAGEMENT • MIGRATION • REAL ESTATE ACCOUNTING • QUICKBOOKS PRO ADVISOR • XERO • PAYROLL SOFTWARE • RECONCILIATIONS •</span>
-                <span>PROPERTY MANAGEMENT SOFTWARE SPECIALIST • FINANCIAL OPERATIONS • APPFOLIO & BUILDIUM PROPERTY MANAGEMENT • MIGRATION • REAL ESTATE ACCOUNTING • QUICKBOOKS PRO ADVISOR • XERO • PAYROLL SOFTWARE • RECONCILIATIONS •</span>
-            </div>
+    <div class="testi-card fade-up">
+      <div class="testi-stars">★★★★★</div>
+      <span class="testi-quote">"</span>
+      <p class="testi-text">What stood out most was his communication — every week we knew exactly where the books stood. He found a 3-year gap in our trust account reconciliation that nobody had flagged, corrected it fully, and built us a checklist so it never happens again. Exactly the kind of accountant you want in your corner.</p>
+      <div class="testi-author">
+        <div class="testi-avatar">J</div>
+        <div class="testi-author-info">
+          <div class="name">James T.</div>
+          <div class="role">Real Estate Investor · 80-unit portfolio, WA State</div>
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
+</section>
 
-    <!-- By The Numbers -->
-    <section class="achievements-section section-sm">
-        <div class="container">
-            <h2 class="text-center">Quick Snapshot</h2>
-            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">A clear view of what I do and how I support clients</p>
-            
-            <div class="achievements-grid">
-                <div class="achievement-card">
-                    <div class="achievement-value">Bookkeeping</div>
-                    <p>Monthly close, reconciliations, and clean ledgers</p>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-value">Real Estate</div>
-                    <p>AppFolio and Buildium property accounting support</p>
-                </div>
-                <div class="achievement-card">
-                    <div class="achievement-value">Payroll</div>
-                    <p>Accurate payroll workflows and compliance-ready records</p>
-                </div>
-            </div>
-        </div>
-    </section>
+<!-- ─── TOOLS ─── -->
+<div class="tools-section">
+  <div class="tools-inner">
+    <span class="section-label fade-up">Tech Stack</span>
+    <h2 class="section-title fade-up" style="font-size:1.8rem;">Tools I work in daily</h2>
+    <div class="tools-grid fade-up">
+      <span class="tool-tag">AppFolio</span>
+      <span class="tool-tag">Buildium</span>
+      <span class="tool-tag">Yardi</span>
+      <span class="tool-tag">Propertyware</span>
+      <span class="tool-tag">QuickBooks Online</span>
+      <span class="tool-tag">QuickBooks Desktop</span>
+      <span class="tool-tag">Xero</span>
+      <span class="tool-tag">Wave Accounting</span>
+      <span class="tool-tag">Gusto Payroll</span>
+      <span class="tool-tag">Track1099</span>
+      <span class="tool-tag">Bill.com</span>
+      <span class="tool-tag">Hubdoc</span>
+      <span class="tool-tag">Clio</span>
+      <span class="tool-tag">Procore</span>
+      <span class="tool-tag">Excel — Advanced</span>
+      <span class="tool-tag">Zapier</span>
+      <span class="tool-tag">Asana</span>
+      <span class="tool-tag">Monday.com</span>
+      <span class="tool-tag">Trello</span>
+      <span class="tool-tag">Slack</span>
+      <span class="tool-tag">Google Workspace</span>
+    </div>
+  </div>
+</div>
 
-    <!-- Projects Section -->
-    <section class="section" style="background: var(--card-bg);">
-        <div class="container">
-            <h2 class="text-center">Projects</h2>
-            <p class="text-center" style="color: var(--text-light); margin-top: 0.5rem; font-size: 0.95rem;">Real examples of the systems and accounting workflows I handle</p>
-            
-            <div class="portfolio-grid">
-                <div class="portfolio-card">
-                    <h3>AppFolio Financial Management</h3>
-                    <p>Specialized AppFolio configuration for multi-property portfolios with automated reporting and compliance.</p>
-                </div>
-                
-                <div class="portfolio-card">
-                    <h3>Buildium System Implementation</h3>
-                    <p>Certified Buildium setup and optimization for property management companies, streamlining all accounting processes.</p>
-                </div>
-                
-                <div class="portfolio-card">
-                    <h3>Trust Accounting Systems</h3>
-                    <p>Certified implementation of compliant trust accounting systems across all client portfolios.</p>
-                </div>
-                
-                <div class="portfolio-card">
-                    <h3>Migration Specialist</h3>
-                    <p>Expert migration services between property management software platforms ensuring seamless data transfer.</p>
-                </div>
-            </div>
-            
-            <div class="cta-buttons">
-                <a href="certifications.html" class="btn btn-gold">
-                    <i class="fas fa-certificate"></i> View All Certifications
-                </a>
-                <a href="projects.html" class="btn btn-primary">
-                    <i class="fas fa-folder-open"></i> See Full Projects
-                </a>
-            </div>
-        </div>
-    </section>
+<!-- ─── CTA BANNER ─── -->
+<div class="cta-banner">
+  <div class="cta-inner fade-up">
+    <div class="cta-text">
+      <h2>Looking for a reliable property accountant on your team?</h2>
+      <p>I'm actively seeking a full-time remote role with a US property management company or real estate team. If you need someone who can take full ownership of your books from day one — let's talk.</p>
+    </div>
+    <div class="cta-actions">
+      <a href="about.html#consultation" class="btn-primary">
+        <i class="fas fa-envelope"></i> Get In Touch
+      </a>
+      <a href="about.html" class="btn-secondary">
+        <i class="fas fa-user-circle"></i> Full Profile
+      </a>
+      <div class="cta-contact-line">
+        <i class="fas fa-phone" style="color:var(--gold);font-size:0.75rem;"></i>
+        <a href="tel:+919911155541">+91 991 115 5541</a>
+      </div>
+    </div>
+  </div>
+</div>
 
-    <!-- Footer (White Background) -->
-    <footer class="footer-minimal">
-        <div class="container">
-            <div class="footer-content">
-                <div class="footer-section">
-                    <h4>Quick Links</h4>
-                    <ul class="footer-links">
-                        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                        <li><a href="projects.html"><i class="fas fa-folder"></i> Projects</a></li>
-                        <li><a href="certifications.html"><i class="fas fa-certificate"></i> Certifications</a></li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Connect With Me</h4>
-                    <ul class="footer-links">
-                        <li>
-                            <a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank">
-                                <i class="fab fa-linkedin"></i> LinkedIn
-                            </a>
-                        </li>
-                        <li><a href="mailto:Slachamanjotsingh@gmail.com"><i class="fas fa-envelope"></i> Slachamanjotsingh@gmail.com</a></li>
-                        <li><i class="fas fa-phone"></i> +91 991 115 5541</li>
-                    </ul>
-                </div>
-                
-                <div class="footer-section">
-                    <h4>Certifications & Specializations</h4>
-                    <ul class="footer-links">
-                        <li><strong>AppFolio Property Manager Specialist</strong></li>
-                        <li><strong>Buildium Property Management Certificate</strong></li>
-                        <li>Migration Specialist</li>
-                        <li>Property Financial Systems</li>
-                        <li>Financial Reporting & Analysis</li>
-                    </ul>
-                </div>
-            </div>
-            
-            <div class="copyright">
-                © 2026 AmanJot Singh Slach | Certified Property Accounting Specialist
-            </div>
-        </div>
-    </footer>
+<!-- ─── FOOTER ─── -->
+<footer id="contact" class="lux-footer">
+  <div class="footer-grid">
+    <div class="footer-box">
+      <h4>EXPLORE</h4>
+      <a href="index.html">Home</a>
+      <a href="projects.html">Projects</a>
+      <a href="certifications.html">Certifications</a>
+      <a href="about.html#consultation">Consultation</a>
+    </div>
+    <div class="footer-box">
+      <h4>CONNECT</h4>
+      <a href="https://www.linkedin.com/in/amanjot-singh-slach-55a63b234" target="_blank">
+        <i class="fab fa-linkedin"></i> <strong>LinkedIn</strong>
+      </a>
+      <p><i class="fas fa-envelope"></i> slachamanjotsingh@gmail.com</p>
+      <p><i class="fas fa-phone"></i> +91 991 115 5541</p>
+    </div>
+    <div class="footer-box">
+      <h4>SPECIALIZATIONS</h4>
+      <p>Trust &amp; Property Accounting</p>
+      <p>AppFolio &amp; Buildium Specialist</p>
+      <p>Platform Migrations</p>
+      <p>Month-End Close &amp; Reporting</p>
+    </div>
+    <div class="footer-box">
+      <h4>LOCATION</h4>
+      <p><i class="fas fa-map-marker-alt"></i> Mohali, Punjab, India</p>
+      <p>Full-Time Remote — US EST / PST</p>
+      <p>Available Immediately</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    © 2026 AmanJot Singh Slach &nbsp;|&nbsp; Property Management Accountant &nbsp;·&nbsp; CPA Candidate
+  </div>
+</footer>
 
-    <script>
-        // Mobile Navigation Toggle
-        const menuToggle = document.getElementById('menuToggle');
-        const mobileNav = document.getElementById('mobileNav');
+<script>
+// Mobile nav
+const toggle = document.getElementById('menuToggle');
+const mobileNav = document.getElementById('mobileNav');
+if (toggle && mobileNav) {
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    const open = mobileNav.classList.toggle('open');
+    toggle.innerHTML = open ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
+  });
+  document.addEventListener('click', (e) => {
+    if (!toggle.contains(e.target) && !mobileNav.contains(e.target)) {
+      mobileNav.classList.remove('open');
+      toggle.innerHTML = '<i class="fas fa-bars"></i>';
+    }
+  });
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+    mobileNav.classList.remove('open');
+    toggle.innerHTML = '<i class="fas fa-bars"></i>';
+  }));
+}
 
-        if (menuToggle && mobileNav) {
-            const setMobileNavState = (isOpen) => {
-                mobileNav.classList.toggle('active', isOpen);
-                menuToggle.innerHTML = isOpen
-                    ? '<i class="fas fa-times"></i>'
-                    : '<i class="fas fa-bars"></i>';
-                menuToggle.setAttribute('aria-expanded', String(isOpen));
-            };
+// Scroll-reveal
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach((entry, i) => {
+    if (entry.isIntersecting) {
+      setTimeout(() => entry.target.classList.add('visible'), i * 80);
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: 0.1 });
 
-            const closeMobileNav = () => setMobileNavState(false);
-
-            menuToggle.addEventListener('click', (event) => {
-                event.stopPropagation();
-                const shouldOpen = !mobileNav.classList.contains('active');
-                setMobileNavState(shouldOpen);
-            });
-
-            document.addEventListener('click', (event) => {
-                if (!menuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
-                    closeMobileNav();
-                }
-            });
-
-            mobileNav.querySelectorAll('a').forEach((link) => {
-                link.addEventListener('click', closeMobileNav);
-            });
-
-            document.addEventListener('keydown', (event) => {
-                if (event.key === 'Escape') {
-                    closeMobileNav();
-                }
-            });
-        }
-
-    </script>
-
-    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-    <script>
-        document.querySelectorAll('h1, h2').forEach((heading) => {
-            heading.setAttribute('data-aos', 'fade-up');
-        });
-
-        document.querySelectorAll('p').forEach((paragraph, index) => {
-            paragraph.setAttribute('data-aos', 'fade-up');
-            paragraph.setAttribute('data-aos-delay', String(80 + (index % 3) * 40));
-        });
-
-        document.querySelectorAll('#about, .about-section, .about-container, .profile-section').forEach((aboutContainer) => {
-            aboutContainer.setAttribute('data-aos', 'fade-left');
-        });
-
-        document.querySelectorAll('.project-card, .portfolio-card, .project-entry, .certification-card').forEach((projectCard, index) => {
-            projectCard.setAttribute('data-aos', 'zoom-in');
-            projectCard.setAttribute('data-aos-delay', String((index % 4) * 60));
-        });
-
-        document.querySelectorAll('#contact, .contact-section').forEach((contactSection) => {
-            contactSection.setAttribute('data-aos', 'fade-up');
-        });
-
-        AOS.init({
-            duration: 800,
-            easing: 'ease-in-out',
-            offset: 120,
-            once: true
-        });
-    </script>
-
+document.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+</script>
 </body>
 </html>
