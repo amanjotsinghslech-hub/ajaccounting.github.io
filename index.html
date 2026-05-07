@@ -34,7 +34,6 @@ body {
   padding-top: 68px;
 }
 
-/* ─── NOISE TEXTURE OVERLAY ─── */
 body::before {
   content: '';
   position: fixed;
@@ -68,7 +67,6 @@ header {
   justify-content: space-between;
 }
 
-/* Logo / Name Badge */
 .nav-brand {
   display: flex;
   align-items: center;
@@ -98,9 +96,7 @@ header {
   color: var(--text);
   line-height: 1.1;
 }
-.brand-text span {
-  color: var(--gold);
-}
+.brand-text span { color: var(--gold); }
 
 .nav-links {
   display: flex;
@@ -137,27 +133,41 @@ header {
   font-size: 1.3rem;
   cursor: pointer;
   padding: 0.4rem;
+  z-index: 1001;
 }
 .nav-mobile {
   display: none;
   position: absolute;
   top: 68px; left: 0; right: 0;
-  background: var(--dark-2);
+  background: rgba(15,19,24,0.98);
+  backdrop-filter: blur(20px);
   border-bottom: 1px solid var(--border-soft);
   padding: 1.2rem 2rem;
   flex-direction: column;
-  gap: 0.7rem;
+  gap: 0.4rem;
+  box-shadow: 0 8px 32px rgba(0,0,0,0.5);
 }
 .nav-mobile.open { display: flex; }
 .nav-mobile a {
   color: var(--text-muted);
   text-decoration: none;
-  font-size: 0.95rem;
+  font-size: 1rem;
   font-weight: 500;
-  padding: 0.5rem 0;
+  padding: 0.65rem 0;
   border-bottom: 1px solid var(--border-soft);
+  transition: color 0.2s;
 }
+.nav-mobile a:last-child { border-bottom: none; }
 .nav-mobile a:hover, .nav-mobile a.active { color: var(--gold); }
+.nav-mobile .nav-cta-mobile {
+  margin-top: 0.5rem;
+  background: var(--gold);
+  color: #080A0C !important;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 700 !important;
+  border-bottom: none !important;
+}
 
 /* ─── HERO ─── */
 .hero {
@@ -172,8 +182,6 @@ header {
   gap: 5rem;
   z-index: 1;
 }
-
-/* Radial glow background */
 .hero::before {
   content: '';
   position: absolute;
@@ -185,7 +193,6 @@ header {
   pointer-events: none;
 }
 
-/* LEFT — text */
 .hero-text { position: relative; z-index: 2; }
 
 .hero-availability {
@@ -243,7 +250,6 @@ header {
   margin-bottom: 2rem;
 }
 
-/* Bullet points */
 .hero-bullets {
   list-style: none;
   margin-bottom: 2.2rem;
@@ -267,7 +273,6 @@ header {
 }
 .hero-bullets li strong { color: var(--text); }
 
-/* Cert badges */
 .cert-badges {
   display: flex;
   flex-wrap: wrap;
@@ -289,7 +294,6 @@ header {
 }
 .cert-badge i { font-size: 0.65rem; }
 
-/* CTA buttons */
 .hero-ctas {
   display: flex;
   flex-wrap: wrap;
@@ -335,7 +339,6 @@ header {
   transform: translateY(-2px);
 }
 
-/* CV download */
 .cv-download {
   display: inline-flex;
   align-items: center;
@@ -360,7 +363,6 @@ header {
   position: relative;
   width: clamp(280px, 35vw, 440px);
 }
-/* Gold ring */
 .photo-frame::before {
   content: '';
   position: absolute;
@@ -389,7 +391,6 @@ header {
   box-shadow: 0 24px 64px rgba(0,0,0,0.6);
 }
 
-/* Floating stat cards */
 .stat-float {
   position: absolute;
   background: var(--dark-2);
@@ -414,20 +415,10 @@ header {
   font-weight: 500;
   white-space: nowrap;
 }
-.stat-float.top-left {
-  top: 8%;
-  left: -14%;
-}
-.stat-float.bottom-right {
-  bottom: 10%;
-  right: -12%;
-}
-.stat-float.bottom-left {
-  bottom: 25%;
-  left: -16%;
-}
+.stat-float.top-left { top: 8%; left: -14%; }
+.stat-float.bottom-right { bottom: 10%; right: -12%; }
+.stat-float.bottom-left { bottom: 25%; left: -16%; }
 
-/* LinkedIn floating badge */
 .linkedin-float {
   position: absolute;
   top: -4%;
@@ -484,7 +475,7 @@ header {
 .ribbon-item .dot { color: var(--gold); font-size: 0.5rem; }
 .ribbon-item span { color: var(--gold-light); }
 
-/* ─── ACHIEVEMENTS / STATS STRIP ─── */
+/* ─── STATS STRIP ─── */
 .stats-strip {
   max-width: 1280px;
   margin: 5rem auto 0;
@@ -527,7 +518,7 @@ header {
   margin-top: 0.2rem;
 }
 
-/* ─── WHAT I BRING TO YOUR TEAM ─── */
+/* ─── SECTIONS ─── */
 .section {
   max-width: 1280px;
   margin: 0 auto;
@@ -559,6 +550,7 @@ header {
   line-height: 1.65;
 }
 
+/* ─── EXPERTISE CARDS — enhanced hover ─── */
 .expertise-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -570,21 +562,46 @@ header {
   border: 1px solid var(--border-soft);
   border-radius: 16px;
   padding: 2rem;
-  transition: border-color 0.25s, transform 0.2s;
+  transition: border-color 0.3s, transform 0.3s cubic-bezier(0.22,1,0.36,1), box-shadow 0.3s, background 0.3s;
   position: relative;
   overflow: hidden;
+  cursor: default;
 }
+
+/* Animated gold shimmer bar on top */
 .exp-card::before {
   content: '';
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0; left: -100%; right: 100%;
   height: 2px;
-  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  background: linear-gradient(90deg, transparent, var(--gold), var(--gold-light), transparent);
+  transition: left 0.55s ease, right 0.55s ease;
+}
+.exp-card:hover::before {
+  left: 0;
+  right: 0;
+}
+
+/* Gold glow overlay */
+.exp-card::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 16px;
+  background: radial-gradient(ellipse at 50% 0%, rgba(227,191,77,0.07) 0%, transparent 65%);
   opacity: 0;
   transition: opacity 0.3s;
+  pointer-events: none;
 }
-.exp-card:hover { border-color: var(--border); transform: translateY(-3px); }
-.exp-card:hover::before { opacity: 1; }
+
+.exp-card:hover {
+  border-color: rgba(227,191,77,0.35);
+  transform: translateY(-6px) scale(1.015);
+  box-shadow: 0 16px 48px rgba(0,0,0,0.35), 0 0 0 1px rgba(227,191,77,0.12);
+  background: #131820;
+}
+.exp-card:hover::after { opacity: 1; }
+
 .exp-icon {
   width: 44px; height: 44px;
   background: var(--gold-dim);
@@ -595,21 +612,48 @@ header {
   color: var(--gold);
   font-size: 1.1rem;
   margin-bottom: 1.2rem;
+  transition: background 0.3s, color 0.3s, transform 0.3s;
 }
+.exp-card:hover .exp-icon {
+  background: rgba(227,191,77,0.25);
+  transform: scale(1.1);
+}
+
 .exp-card h3 {
   font-size: 1.05rem;
   font-weight: 600;
   color: var(--text);
   margin-bottom: 0.6rem;
   line-height: 1.3;
+  transition: color 0.2s;
 }
+.exp-card:hover h3 { color: var(--gold-light); }
+
 .exp-card p {
   font-size: 0.87rem;
   color: var(--text-muted);
   line-height: 1.65;
+  transition: color 0.2s;
+}
+.exp-card:hover p { color: rgba(238,240,242,0.75); }
+
+/* Arrow sweep on hover */
+.exp-arrow {
+  position: absolute;
+  bottom: 1.2rem;
+  right: 1.4rem;
+  color: var(--gold);
+  font-size: 0.8rem;
+  opacity: 0;
+  transform: translateX(-8px);
+  transition: opacity 0.3s, transform 0.3s cubic-bezier(0.22,1,0.36,1);
+}
+.exp-card:hover .exp-arrow {
+  opacity: 1;
+  transform: translateX(0);
 }
 
-/* ─── EXPERIENCE TIMELINE ─── */
+/* ─── TIMELINE — collapsed with floating summary ─── */
 .timeline-section {
   background: var(--dark-2);
   border-top: 1px solid var(--border-soft);
@@ -638,7 +682,7 @@ header {
 .timeline-item {
   position: relative;
   padding-left: 2.5rem;
-  margin-bottom: 3rem;
+  margin-bottom: 2.4rem;
 }
 .timeline-item:last-child { margin-bottom: 0; }
 .timeline-dot {
@@ -664,37 +708,184 @@ header {
   font-weight: 600;
   color: var(--text);
   margin-bottom: 0.2rem;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
 }
+
+/* Clickable role trigger */
+.role-trigger {
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  font: inherit;
+  background: none;
+  border: none;
+  padding: 0;
+  text-align: left;
+  transition: color 0.2s;
+}
+.role-trigger:hover { color: var(--gold); }
+.role-trigger .hint-icon {
+  font-size: 0.72rem;
+  color: var(--gold);
+  opacity: 0.6;
+  transition: opacity 0.2s, transform 0.2s;
+}
+.role-trigger:hover .hint-icon {
+  opacity: 1;
+  transform: scale(1.2);
+}
+
+/* Hint label below role */
+.role-hint {
+  font-size: 0.73rem;
+  color: rgba(227,191,77,0.5);
+  font-weight: 400;
+  letter-spacing: 0.3px;
+  margin-bottom: 0.5rem;
+  font-style: italic;
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+.role-hint i { font-size: 0.65rem; }
+
 .timeline-company {
   font-size: 0.87rem;
   color: var(--text-muted);
-  margin-bottom: 0.8rem;
 }
 .timeline-company em {
   color: rgba(238,240,242,0.55);
   font-style: normal;
 }
-.timeline-bullets {
+
+/* ─── FLOATING SUMMARY POPUP ─── */
+.summary-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9000;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+.summary-overlay.active { display: flex; }
+
+/* Backdrop blur layer */
+.summary-backdrop {
+  position: absolute;
+  inset: 0;
+  background: rgba(8,10,12,0.7);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+.summary-box {
+  position: relative;
+  z-index: 1;
+  background: var(--dark-3);
+  border: 1px solid rgba(227,191,77,0.3);
+  border-radius: 18px;
+  padding: 2rem 2.2rem;
+  max-width: 520px;
+  width: 100%;
+  box-shadow: 0 24px 72px rgba(0,0,0,0.7), 0 0 0 1px rgba(227,191,77,0.08);
+  animation: popIn 0.3s cubic-bezier(0.22,1,0.36,1);
+  max-height: 90vh;
+  overflow-y: auto;
+}
+@keyframes popIn {
+  from { opacity: 0; transform: scale(0.92) translateY(16px); }
+  to   { opacity: 1; transform: scale(1) translateY(0); }
+}
+
+.summary-box-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 0.4rem;
+}
+.summary-box-role {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--gold-light);
+  line-height: 1.2;
+}
+.summary-close-btn {
+  background: rgba(255,255,255,0.06);
+  border: 1px solid var(--border-soft);
+  color: var(--text-muted);
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  font-size: 0.8rem;
+  transition: background 0.2s, color 0.2s;
+}
+.summary-close-btn:hover {
+  background: rgba(227,191,77,0.15);
+  color: var(--gold);
+}
+.summary-box-company {
+  font-size: 0.83rem;
+  color: var(--text-muted);
+  margin-bottom: 0.3rem;
+}
+.summary-box-date {
+  font-size: 0.72rem;
+  font-weight: 600;
+  color: var(--gold);
+  letter-spacing: 0.8px;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.summary-box-divider {
+  width: 40px;
+  height: 1.5px;
+  background: var(--gold);
+  margin-bottom: 1.2rem;
+  opacity: 0.5;
+  border-radius: 2px;
+}
+
+.summary-bullets {
   list-style: none;
   display: flex;
   flex-direction: column;
-  gap: 0.4rem;
+  gap: 0.7rem;
 }
-.timeline-bullets li {
-  font-size: 0.88rem;
-  color: rgba(238,240,242,0.72);
-  padding-left: 1rem;
+.summary-bullets li {
+  font-size: 0.9rem;
+  color: rgba(238,240,242,0.82);
+  padding-left: 1.2rem;
   position: relative;
-  line-height: 1.55;
+  line-height: 1.6;
 }
-.timeline-bullets li::before {
+.summary-bullets li::before {
   content: '→';
   position: absolute;
   left: 0;
   color: var(--gold);
-  font-size: 0.7rem;
-  top: 0.15rem;
+  font-size: 0.75rem;
+  top: 0.18rem;
 }
+
+/* Scrollbar for summary box */
+.summary-box::-webkit-scrollbar { width: 4px; }
+.summary-box::-webkit-scrollbar-track { background: transparent; }
+.summary-box::-webkit-scrollbar-thumb { background: rgba(227,191,77,0.3); border-radius: 2px; }
 
 /* ─── TESTIMONIALS ─── */
 .testimonials-section {
@@ -770,7 +961,7 @@ header {
   margin-bottom: 0.6rem;
 }
 
-/* ─── TOOLS STRIP ─── */
+/* ─── TOOLS ─── */
 .tools-section {
   background: var(--dark-2);
   border-top: 1px solid var(--border-soft);
@@ -798,10 +989,7 @@ header {
   font-weight: 500;
   transition: border-color 0.2s, color 0.2s;
 }
-.tool-tag:hover {
-  border-color: var(--border);
-  color: var(--gold-light);
-}
+.tool-tag:hover { border-color: var(--border); color: var(--gold-light); }
 
 /* ─── CTA BANNER ─── */
 .cta-banner {
@@ -939,14 +1127,43 @@ header {
   .timeline::before { display: none; }
   .timeline-item { padding-left: 0; }
   .timeline-dot { display: none; }
+  .summary-box { padding: 1.5rem 1.6rem; }
+  .summary-box-role { font-size: 1.2rem; }
 }
 @media (max-width: 480px) {
   .stats-strip { grid-template-columns: 1fr 1fr; }
   .cta-inner { padding: 2rem 1.5rem; }
+  .summary-box { padding: 1.4rem; }
+}
+
+/* Touch-friendly tap area on mobile */
+@media (hover: none) {
+  .exp-card:active {
+    border-color: rgba(227,191,77,0.35);
+    transform: translateY(-3px) scale(1.01);
+    background: #131820;
+  }
 }
 </style>
 </head>
 <body>
+
+<!-- ─── FLOATING SUMMARY OVERLAY ─── -->
+<div class="summary-overlay" id="summaryOverlay" role="dialog" aria-modal="true" aria-label="Role summary">
+  <div class="summary-backdrop" id="summaryBackdrop"></div>
+  <div class="summary-box" id="summaryBox">
+    <div class="summary-box-header">
+      <div class="summary-box-role" id="summaryRole"></div>
+      <button class="summary-close-btn" id="summaryClose" aria-label="Close">
+        <i class="fas fa-times"></i>
+      </button>
+    </div>
+    <div class="summary-box-company" id="summaryCompany"></div>
+    <div class="summary-box-date" id="summaryDate"></div>
+    <div class="summary-box-divider"></div>
+    <ul class="summary-bullets" id="summaryBullets"></ul>
+  </div>
+</div>
 
 <!-- ─── NAVBAR ─── -->
 <header>
@@ -962,22 +1179,21 @@ header {
       <a href="certifications.html">Certifications</a>
       <a href="about.html#consultation" class="nav-cta">Hire Me</a>
     </nav>
-    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu">
+    <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false">
       <i class="fas fa-bars"></i>
     </button>
   </div>
-  <nav class="nav-mobile" id="mobileNav">
+  <nav class="nav-mobile" id="mobileNav" aria-label="Mobile navigation">
     <a href="index.html" class="active">Home</a>
     <a href="about.html">About</a>
     <a href="projects.html">Projects</a>
     <a href="certifications.html">Certifications</a>
-    <a href="about.html#consultation">Hire Me</a>
+    <a href="about.html#consultation" class="nav-cta-mobile">Hire Me</a>
   </nav>
 </header>
 
 <!-- ─── HERO ─── -->
 <section class="hero">
-  <!-- LEFT -->
   <div class="hero-text">
     <div class="hero-availability">
       <span class="dot"></span>
@@ -1026,8 +1242,6 @@ header {
   <div class="hero-photo-col">
     <div class="photo-frame">
       <img src="profile.png" alt="AmanJot Singh Slach" class="hero-photo">
-
-      <!-- Floating stats -->
       <div class="stat-float top-left">
         <span class="num">5+</span>
         <span class="lbl">Years Experience</span>
@@ -1040,8 +1254,6 @@ header {
         <span class="num">15+</span>
         <span class="lbl">US Portfolios Managed</span>
       </div>
-
-      <!-- LinkedIn badge -->
       <a href="https://www.linkedin.com/in/amanjot-singh-slach-55a63b234" target="_blank" class="linkedin-float">
         <i class="fab fa-linkedin"></i> LinkedIn
       </a>
@@ -1052,7 +1264,6 @@ header {
 <!-- ─── TICKER RIBBON ─── -->
 <div class="ribbon-wrapper">
   <div class="ribbon-track">
-    <!-- Duplicated for seamless loop -->
     <span class="ribbon-item"><span>AppFolio</span> <span class="dot">◆</span></span>
     <span class="ribbon-item"><span>Buildium</span> <span class="dot">◆</span></span>
     <span class="ribbon-item"><span>Trust Accounting</span> <span class="dot">◆</span></span>
@@ -1115,31 +1326,37 @@ header {
       <div class="exp-icon"><i class="fas fa-building"></i></div>
       <h3>Property Trust Accounting</h3>
       <p>Full-cycle trust accounting compliance for operating, security deposit, and owner contribution accounts. Audit-ready reconciliations every month, no exceptions.</p>
+      <span class="exp-arrow"><i class="fas fa-arrow-right"></i></span>
     </div>
     <div class="exp-card fade-up">
       <div class="exp-icon"><i class="fas fa-sync-alt"></i></div>
       <h3>Month-End Close & Reporting</h3>
       <p>Structured close processes that cut cycle time. Owner-ready financial packages, investor statements, and variance reports delivered on schedule.</p>
+      <span class="exp-arrow"><i class="fas fa-arrow-right"></i></span>
     </div>
     <div class="exp-card fade-up">
       <div class="exp-icon"><i class="fas fa-exchange-alt"></i></div>
       <h3>Platform Migrations</h3>
       <p>Led 20+ LLC migrations from QuickBooks Online to AppFolio — data mapping, COA restructuring, opening balance validation, and post-migration reconciliation.</p>
+      <span class="exp-arrow"><i class="fas fa-arrow-right"></i></span>
     </div>
     <div class="exp-card fade-up">
       <div class="exp-icon"><i class="fas fa-file-invoice-dollar"></i></div>
       <h3>1099 & Tax Compliance</h3>
       <p>Filed 100+ 1099-MISC / NEC forms annually via Track1099. Zero IRS rejections, zero amendments across all filing years. Vendor classification and year-end prep handled end-to-end.</p>
+      <span class="exp-arrow"><i class="fas fa-arrow-right"></i></span>
     </div>
     <div class="exp-card fade-up">
       <div class="exp-icon"><i class="fas fa-history"></i></div>
       <h3>Books Restoration</h3>
       <p>Restored and reconciled up to 5 years of unreconciled books for multiple clients. Eliminated investor reporting gaps and restored financial confidence.</p>
+      <span class="exp-arrow"><i class="fas fa-arrow-right"></i></span>
     </div>
     <div class="exp-card fade-up">
       <div class="exp-icon"><i class="fas fa-users-cog"></i></div>
       <h3>AR Management & Vendor Ops</h3>
       <p>Reduced outstanding receivables by 25% through structured follow-up protocols. Full Bill.com and Hubdoc vendor payment management across all portfolios.</p>
+      <span class="exp-arrow"><i class="fas fa-arrow-right"></i></span>
     </div>
   </div>
 </section>
@@ -1149,44 +1366,64 @@ header {
   <div class="timeline-inner">
     <span class="section-label fade-up">Work History</span>
     <h2 class="section-title fade-up">Professional Experience</h2>
+    <p class="section-subtitle fade-up" style="margin-bottom:0.5rem;">Tap any role title to read full details.</p>
 
     <div class="timeline">
+
+      <!-- JOB 1 -->
       <div class="timeline-item fade-up">
         <div class="timeline-dot"></div>
         <div class="timeline-date">Dec 2024 – Present</div>
-        <div class="timeline-role">Senior Accountant</div>
+        <div class="timeline-role">
+          <button class="role-trigger"
+            data-role="Senior Accountant"
+            data-company="MKVS &amp; Co. — CPA Firm · Remote, US Property Management"
+            data-date="Dec 2024 – Present"
+            data-bullets='["End-to-end trust accounting, bookkeeping &amp; financial reporting for 15+ US rental portfolios across AppFolio, Buildium &amp; QuickBooks Online","Led full migration of 20+ LLCs from QBO to AppFolio — data mapping, COA restructuring, opening balances &amp; post-migration reconciliation","Prepare monthly Balance Sheets and P&amp;L statements; analyse variances and deliver clear commentary for owner and investor review","Conduct weekly AP and AR reviews — processing vendor bills, clearing aged payables, chasing outstanding receivables, presenting a clean aging report every Friday","Lead weekly client check-in calls translating financial data into plain-language insights for non-accountant property owners","Reconcile 60+ bank and credit card accounts monthly; maintain zero unreconciled balances","Filed 100+ 1099-MISC/NEC forms annually via Track1099 — zero IRS rejections, zero amendments","Cut month-end close from 15 to 11 days (35% improvement) across all portfolios"]'>
+            Senior Accountant
+            <i class="fas fa-plus-circle hint-icon"></i>
+          </button>
+        </div>
+        <div class="role-hint"><i class="fas fa-hand-pointer"></i> Tap to view full details</div>
         <div class="timeline-company">MKVS &amp; Co. — CPA Firm &nbsp;<em>· Remote, US Property Management</em></div>
-        <ul class="timeline-bullets">
-          <li>End-to-end trust accounting, bookkeeping &amp; financial reporting for 15+ US rental portfolios across AppFolio, Buildium &amp; QuickBooks Online</li>
-          <li>Led full migration of 20+ LLCs from QBO to AppFolio — data mapping, COA restructuring, opening balances &amp; post-migration reconciliation</li>
-          <li>Filed 100+ 1099-MISC/NEC forms annually — zero IRS rejections, zero amendments across all years</li>
-          <li>Cut month-end close from 15 to 11 days (35% improvement) across all portfolios</li>
-        </ul>
       </div>
 
+      <!-- JOB 2 -->
       <div class="timeline-item fade-up">
         <div class="timeline-dot"></div>
         <div class="timeline-date">Jan 2021 – Dec 2024</div>
-        <div class="timeline-role">Accountant</div>
+        <div class="timeline-role">
+          <button class="role-trigger"
+            data-role="Accountant"
+            data-company="Mayank Malik &amp; Associates — CPA Firm · Remote, US Clients"
+            data-date="Jan 2021 – Dec 2024"
+            data-bullets='["Full-cycle bookkeeping &amp; month-end close for US clients across E-commerce, legal &amp; construction sectors","Managed full-cycle AP/AR, Balance Sheet and P&amp;L preparation across QuickBooks Online, Xero, and Wave","Handled bulk sales entry for e-commerce clients on Shopify, Amazon, and Etsy — recording platform fees, refunds, and COGS","Reconciled e-commerce payment gateway settlements (PayPal, Stripe, Amazon Pay) against bank deposits","Restored &amp; reconciled up to 5 years of unreconciled accounts for multiple clients","Handled WA SOS multi-state compliance and prepared audit schedules that reduced auditor queries by ~30%","Reduced outstanding AR by 25% via structured follow-up &amp; escalation workflows","Automated transaction categorisation via QBO integrations — cut manual processing time by 20%"]'>
+            Accountant
+            <i class="fas fa-plus-circle hint-icon"></i>
+          </button>
+        </div>
+        <div class="role-hint"><i class="fas fa-hand-pointer"></i> Tap to view full details</div>
         <div class="timeline-company">Mayank Malik &amp; Associates — CPA Firm &nbsp;<em>· Remote, US Clients</em></div>
-        <ul class="timeline-bullets">
-          <li>Full-cycle bookkeeping &amp; month-end close for US clients across E-commerce, legal &amp; construction sectors</li>
-          <li>Restored &amp; reconciled up to 5 years of unreconciled accounts for multiple clients</li>
-          <li>Reduced outstanding AR by 25% via structured follow-up &amp; escalation workflows</li>
-          <li>Automated transaction categorisation via QBO integrations — cut manual processing time by 20%</li>
-        </ul>
       </div>
 
+      <!-- JOB 3 -->
       <div class="timeline-item fade-up">
         <div class="timeline-dot"></div>
         <div class="timeline-date">Feb 2020 – Dec 2020</div>
-        <div class="timeline-role">Property Management Accountant</div>
+        <div class="timeline-role">
+          <button class="role-trigger"
+            data-role="Property Management Accountant"
+            data-company="True Ledgers Bookkeepers · Remote, US Property Management"
+            data-date="Feb 2020 – Dec 2020"
+            data-bullets='["Full-cycle remote bookkeeping and AP/AR support for US landlords and property management operators","Maintained compliance-ready digital records for lease files, vendor contracts, and maintenance logs; tracked renewals and schedules via Trello and Asana","Managed tenant and landlord communications across US time zones, ensuring timely responses and strong stakeholder relationships"]'>
+            Property Management Accountant
+            <i class="fas fa-plus-circle hint-icon"></i>
+          </button>
+        </div>
+        <div class="role-hint"><i class="fas fa-hand-pointer"></i> Tap to view full details</div>
         <div class="timeline-company">True Ledgers Bookkeepers &nbsp;<em>· Remote, US Property Management</em></div>
-        <ul class="timeline-bullets">
-          <li>Full-cycle remote accounting &amp; admin support for US landlords and property managers</li>
-          <li>Managed tenant &amp; landlord communications across US time zones with consistent response standards</li>
-        </ul>
       </div>
+
     </div>
   </div>
 </div>
@@ -1210,7 +1447,6 @@ header {
         </div>
       </div>
     </div>
-
     <div class="testi-card fade-up">
       <div class="testi-stars">★★★★★</div>
       <span class="testi-quote">"</span>
@@ -1223,7 +1459,6 @@ header {
         </div>
       </div>
     </div>
-
     <div class="testi-card fade-up">
       <div class="testi-stars">★★★★★</div>
       <span class="testi-quote">"</span>
@@ -1286,7 +1521,7 @@ header {
       </a>
       <div class="cta-contact-line">
         <i class="fas fa-phone" style="color:var(--gold);font-size:0.75rem;"></i>
-        <a href="tel:+919911155541">+91 991 115 5541</a>
+        <a href="tel:+919911155541">+91 991-115-5541</a>
       </div>
     </div>
   </div>
@@ -1308,7 +1543,7 @@ header {
         <i class="fab fa-linkedin"></i> <strong>LinkedIn</strong>
       </a>
       <p><i class="fas fa-envelope"></i> slachamanjotsingh@gmail.com</p>
-      <p><i class="fas fa-phone"></i> +91 991 115 5541</p>
+      <p><i class="fas fa-phone"></i> +91 991-115-5541</p>
     </div>
     <div class="footer-box">
       <h4>SPECIALIZATIONS</h4>
@@ -1330,28 +1565,95 @@ header {
 </footer>
 
 <script>
-// Mobile nav
+/* ─── MOBILE NAV ─── */
 const toggle = document.getElementById('menuToggle');
 const mobileNav = document.getElementById('mobileNav');
+
 if (toggle && mobileNav) {
-  toggle.addEventListener('click', (e) => {
-    e.stopPropagation();
-    const open = mobileNav.classList.toggle('open');
-    toggle.innerHTML = open ? '<i class="fas fa-times"></i>' : '<i class="fas fa-bars"></i>';
-  });
-  document.addEventListener('click', (e) => {
-    if (!toggle.contains(e.target) && !mobileNav.contains(e.target)) {
-      mobileNav.classList.remove('open');
-      toggle.innerHTML = '<i class="fas fa-bars"></i>';
-    }
-  });
-  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', () => {
+  const openMenu = () => {
+    mobileNav.classList.add('open');
+    toggle.innerHTML = '<i class="fas fa-times"></i>';
+    toggle.setAttribute('aria-expanded', 'true');
+  };
+  const closeMenu = () => {
     mobileNav.classList.remove('open');
     toggle.innerHTML = '<i class="fas fa-bars"></i>';
-  }));
+    toggle.setAttribute('aria-expanded', 'false');
+  };
+
+  toggle.addEventListener('click', (e) => {
+    e.stopPropagation();
+    mobileNav.classList.contains('open') ? closeMenu() : openMenu();
+  });
+
+  document.addEventListener('click', (e) => {
+    if (!toggle.contains(e.target) && !mobileNav.contains(e.target)) {
+      closeMenu();
+    }
+  });
+
+  mobileNav.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMenu));
 }
 
-// Scroll-reveal
+/* ─── FLOATING SUMMARY POPUP ─── */
+const overlay  = document.getElementById('summaryOverlay');
+const backdrop = document.getElementById('summaryBackdrop');
+const box      = document.getElementById('summaryBox');
+const closeBtn = document.getElementById('summaryClose');
+const roleEl   = document.getElementById('summaryRole');
+const companyEl= document.getElementById('summaryCompany');
+const dateEl   = document.getElementById('summaryDate');
+const bulletsEl= document.getElementById('summaryBullets');
+
+function openSummary(btn) {
+  const role    = btn.getAttribute('data-role');
+  const company = btn.getAttribute('data-company');
+  const date    = btn.getAttribute('data-date');
+  const bullets = JSON.parse(btn.getAttribute('data-bullets'));
+
+  roleEl.innerHTML    = role;
+  companyEl.innerHTML = company;
+  dateEl.textContent  = date;
+
+  bulletsEl.innerHTML = bullets.map(b => `<li>${b}</li>`).join('');
+
+  overlay.classList.add('active');
+  document.body.style.overflow = 'hidden';
+
+  // Focus the close button for accessibility
+  setTimeout(() => closeBtn.focus(), 50);
+}
+
+function closeSummary() {
+  overlay.classList.remove('active');
+  document.body.style.overflow = '';
+}
+
+// All role trigger buttons
+document.querySelectorAll('.role-trigger').forEach(btn => {
+  btn.addEventListener('click', (e) => {
+    e.stopPropagation();
+    openSummary(btn);
+  });
+});
+
+// Close on backdrop click
+backdrop.addEventListener('click', closeSummary);
+
+// Close button
+closeBtn.addEventListener('click', closeSummary);
+
+// Close on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape' && overlay.classList.contains('active')) {
+    closeSummary();
+  }
+});
+
+// Prevent clicks inside box from closing
+box.addEventListener('click', (e) => e.stopPropagation());
+
+/* ─── SCROLL REVEAL ─── */
 const observer = new IntersectionObserver((entries) => {
   entries.forEach((entry, i) => {
     if (entry.isIntersecting) {
