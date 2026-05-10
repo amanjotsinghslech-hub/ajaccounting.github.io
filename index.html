@@ -366,4 +366,506 @@ nav{position:fixed;top:0;left:0;right:0;z-index:600;height:58px;
 .tcn{font-size:.82rem;font-weight:600;color:var(--paper);line-height:1.2;}
 .tct{font-family:var(--fm);font-size:.56rem;letter-spacing:1.5px;color:var(--muted);text-transform:uppercase;}
 .tc.feat{grid-column:span 2;background:rgba(201,168,76,.07);border:1px solid var(--border);}
-.tc
+.tc.feat .tcn{font-size:.95rem;font-family:var(--fd);font-weight:700;}
+@media(max-width:800px){.tbt{grid-template-columns:repeat(2,1fr);}.tc.feat{grid-column:span 2;}}
+@media(max-width:440px){.tbt{grid-template-columns:1fr 1fr;}}
+
+/* ══════════════════════════════
+   TESTIMONIALS
+══════════════════════════════ */
+#testimonials{background:var(--ink-3);padding:clamp(3rem,6vw,5.5rem) clamp(1.5rem,4vw,4.5rem);}
+.testg{display:grid;grid-template-columns:repeat(3,1fr);gap:1.1rem;margin-top:2.2rem;}
+.testc{background:var(--ink-2);border:1px solid var(--bs);border-radius:11px;
+  padding:1.6rem;position:relative;overflow:hidden;transition:border-color .3s,transform .3s;}
+.testc:hover{border-color:var(--border);transform:translateY(-4px);}
+.testc::before{content:'';position:absolute;top:0;left:0;right:0;height:2px;
+  background:linear-gradient(90deg,transparent,var(--gold),transparent);
+  opacity:0;transition:opacity .3s;}
+.testc:hover::before{opacity:1;}
+.tstars{color:var(--gold);font-size:.63rem;letter-spacing:1px;margin-bottom:.65rem;}
+.tqm{font-family:var(--fd);font-size:2.8rem;line-height:.38;color:var(--gold);
+  opacity:.28;display:block;margin-bottom:.85rem;}
+.ttxt{font-size:.82rem;line-height:1.7;color:rgba(242,237,228,.78);
+  font-style:italic;margin-bottom:1.3rem;}
+.tauth{display:flex;align-items:center;gap:.65rem;}
+.tav{width:36px;height:36px;border-radius:50%;background:var(--gold-dim);
+  border:1.5px solid var(--border);display:flex;align-items:center;justify-content:center;
+  font-family:var(--fd);font-weight:700;font-size:.95rem;color:var(--gold);flex-shrink:0;}
+.tname{font-size:.8rem;font-weight:700;color:var(--paper);}
+.trole{font-size:.68rem;color:var(--muted-2);margin-top:.08rem;}
+@media(max-width:800px){.testg{grid-template-columns:1fr;}}
+
+/* ══════════════════════════════
+   CERTS PREVIEW
+══════════════════════════════ */
+#certs{background:var(--paper-2);padding:clamp(3rem,6vw,5.5rem) clamp(1.5rem,4vw,4.5rem);}
+.certg{display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;margin-top:2.2rem;}
+.certc{background:var(--paper);border:1px solid rgba(10,10,10,.08);border-radius:8px;
+  padding:1.2rem 1.3rem;display:flex;align-items:center;gap:.9rem;
+  transition:transform .2s,box-shadow .2s;}
+.certc:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(10,10,10,.1);}
+.certci{width:34px;height:34px;background:rgba(154,122,46,.12);border-radius:7px;
+  display:flex;align-items:center;justify-content:center;
+  color:var(--gold-dk);font-size:.88rem;flex-shrink:0;}
+.certn{font-size:.8rem;font-weight:700;color:var(--ink);line-height:1.3;}
+.certs2{font-size:.62rem;color:var(--muted);margin-top:.15rem;font-family:var(--fm);}
+@media(max-width:700px){.certg{grid-template-columns:1fr 1fr;}}
+@media(max-width:420px){.certg{grid-template-columns:1fr;}}
+
+/* ══════════════════════════════
+   CTA BANNER
+══════════════════════════════ */
+#cta{background:var(--ink);padding:clamp(4rem,8vw,8rem) clamp(1.5rem,4vw,4.5rem);
+  text-align:center;position:relative;overflow:hidden;}
+#cta::before{content:'';position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);
+  width:600px;height:600px;
+  background:radial-gradient(circle,rgba(201,168,76,.07) 0%,transparent 65%);pointer-events:none;}
+.ctaey{font-family:var(--fm);font-size:.6rem;letter-spacing:3.5px;text-transform:uppercase;
+  color:var(--gold);margin-bottom:1rem;}
+.ctah{font-family:var(--fd);font-size:clamp(2rem,4.5vw,4.2rem);font-weight:900;
+  line-height:.95;letter-spacing:-2px;color:var(--paper);margin-bottom:1.2rem;}
+.ctah em{font-style:italic;color:var(--gold);}
+.ctasub{font-size:.9rem;color:var(--muted-2);line-height:1.65;max-width:440px;margin:0 auto 2.2rem;}
+.ctabtns{display:flex;gap:.8rem;justify-content:center;flex-wrap:wrap;}
+.ctaph{margin-top:1.4rem;font-family:var(--fm);font-size:.68rem;letter-spacing:.8px;color:var(--muted);}
+.ctaph a{color:var(--gold);text-decoration:none;}
+
+/* ══════════════════════════════
+   FOOTER
+══════════════════════════════ */
+footer{background:var(--paper-2);color:var(--ink);
+  padding:clamp(3rem,5.5vw,5rem) clamp(1.5rem,4.5vw,5rem) 2rem;}
+.fgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:2.2rem;margin-bottom:2.2rem;padding-bottom:2.2rem;
+  border-bottom:1px solid rgba(10,10,10,.1);}
+.fc h5{font-family:var(--fm);font-size:.58rem;letter-spacing:3px;text-transform:uppercase;
+  color:var(--gold-dk);margin-bottom:.9rem;}
+.fc a,.fc p{display:block;font-size:.83rem;color:#3A3530;text-decoration:none;
+  margin:.4rem 0;transition:color .2s;}
+.fc a:hover{color:var(--gold-dk);}
+.fbot{display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap;}
+.fcopy{font-size:.72rem;color:var(--muted);font-family:var(--fm);}
+.ftop{display:inline-flex;align-items:center;gap:.35rem;font-family:var(--fm);
+  font-size:.6rem;letter-spacing:1.5px;text-transform:uppercase;
+  color:var(--gold-dk);text-decoration:none;transition:color .2s;}
+.ftop:hover{color:var(--gold);}
+</style>
+</head>
+<body>
+
+<div class="grain"></div>
+<div id="prog"></div>
+
+<!-- LOADER -->
+<div class="loader" id="loader">
+  <div class="loader-name">AmanJot <span>Slach</span></div>
+  <div class="loader-bar"></div>
+  <div class="loader-sub">Property Management Accountant</div>
+</div>
+
+<!-- ROLE POPUP -->
+<div class="rolo" id="rolo" role="dialog" aria-modal="true">
+  <div class="robd" id="robd"></div>
+  <div class="robx" id="robx">
+    <div class="robh">
+      <div class="robt" id="robt"></div>
+      <button class="rocl" id="rocl" aria-label="Close"><i class="fas fa-times"></i></button>
+    </div>
+    <div class="robco" id="robco"></div>
+    <div class="robdate" id="robdate"></div>
+    <div class="robdiv"></div>
+    <ul class="robul" id="robul"></ul>
+  </div>
+</div>
+
+<!-- MOBILE NAV PANEL -->
+<div class="mp" id="mp">
+  <button class="mc" id="mc"><i class="fas fa-times"></i></button>
+  <a href="index.html"          onclick="closeMp()">Home</a>
+  <a href="about.html"          onclick="closeMp()">About</a>
+  <a href="projects.html"       onclick="closeMp()">Projects</a>
+  <a href="certifications.html" onclick="closeMp()">Certifications</a>
+  <a href="about.html#contact"  onclick="closeMp()">Hire Me</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nw"><div class="nb">AJ</div>AmanJot Singh Slach</a>
+  <div class="nl">
+    <a href="about.html">About</a>
+    <a href="projects.html">Projects</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="about.html#contact" class="cta">Hire Me</a>
+  </div>
+  <button class="nh" id="nh"><i class="fas fa-bars"></i></button>
+</nav>
+
+<!-- ═══════════════════ ① HERO ═══════════════════ -->
+<section id="hero">
+  <div class="hl">
+    <div class="hwm">5+</div>
+    <div class="htag">Property Management Accountant</div>
+    <h1 class="hname">AmanJot<br>Singh <em>Slach</em></h1>
+    <div class="havail"><span class="pulse"></span>Open to Full-Time Remote · US EST / PST</div>
+    <div class="hctas">
+      <a href="about.html#contact" class="btn-g"><i class="fas fa-paper-plane"></i>Get In Touch</a>
+      <a href="about.html" class="btn-o"><i class="fas fa-user"></i>My Story</a>
+    </div>
+  </div>
+  <div class="hr">
+    <img src="profile.png" alt="AmanJot Singh Slach" class="hphoto" id="hphoto">
+    <div class="hov"></div>
+    <a href="https://www.linkedin.com/in/amanjot-singh-slach-55a63b234" target="_blank" class="hli">
+      <i class="fab fa-linkedin"></i>LinkedIn
+    </a>
+    <div class="hstamp">CPA Candidate · AppFolio Specialist · Remote-Ready 2026</div>
+    <div class="hstats">
+      <div class="hsc"><span class="hn">35%</span><span class="hl2">Faster Close</span></div>
+      <div class="hsc"><span class="hn">100+</span><span class="hl2">Zero-Error 1099s</span></div>
+      <div class="hsc"><span class="hn">20+</span><span class="hl2">Migrations</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="mqw"><div class="mqt">
+  <span class="mqi">AppFolio Specialist <span class="mqs">◆</span></span>
+  <span class="mqi">Trust Accounting <span class="mqs">◆</span></span>
+  <span class="mqi">Buildium Certified <span class="mqs">◆</span></span>
+  <span class="mqi">Month-End Close <span class="mqs">◆</span></span>
+  <span class="mqi">QBO ProAdvisor <span class="mqs">◆</span></span>
+  <span class="mqi">1099 Compliance <span class="mqs">◆</span></span>
+  <span class="mqi">Platform Migrations <span class="mqs">◆</span></span>
+  <span class="mqi">Xero Advisor <span class="mqs">◆</span></span>
+  <span class="mqi">Full-Time Remote Ready <span class="mqs">◆</span></span>
+  <span class="mqi">AppFolio Specialist <span class="mqs">◆</span></span>
+  <span class="mqi">Trust Accounting <span class="mqs">◆</span></span>
+  <span class="mqi">Buildium Certified <span class="mqs">◆</span></span>
+  <span class="mqi">Month-End Close <span class="mqs">◆</span></span>
+  <span class="mqi">QBO ProAdvisor <span class="mqs">◆</span></span>
+  <span class="mqi">1099 Compliance <span class="mqs">◆</span></span>
+  <span class="mqi">Platform Migrations <span class="mqs">◆</span></span>
+  <span class="mqi">Xero Advisor <span class="mqs">◆</span></span>
+  <span class="mqi">Full-Time Remote Ready <span class="mqs">◆</span></span>
+</div></div>
+
+<!-- ═══════════════════ ② ABOUT / STATS ═══════════════════ -->
+<section id="about">
+  <div class="al">
+    <div class="s-label dk rv">About Me</div>
+    <h2 class="s-title op rv d1">I don't just close<br>books — I <em>build</em><br>systems.</h2>
+    <div class="abody rv d2">
+      <p>I'm a <span class="gd">Property Management Accountant</span> with 5+ years of hands-on experience across AppFolio, Buildium, Yardi, and QuickBooks Online.</p>
+      <p>I specialize in <span class="gd">trust accounting, month-end closes, and platform migrations</span> — working fully remote with US property teams from day one.</p>
+    </div>
+    <blockquote class="aquote rv d3">"Clean books aren't an outcome — they're a system. I build the system."</blockquote>
+    <a href="about.html" class="xlink dk rv d4" style="margin-top:1.6rem;">
+      Full Profile &amp; Story <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+  <div class="ar">
+    <div class="sr rv"><span class="sbig">35%</span><div class="sdesc">Faster Month-End Close</div><span class="ssub">15 → 11 days across 15+ US portfolios</span></div>
+    <div class="sr rv d1"><span class="sbig">2,500+</span><div class="sdesc">Transactions Reconciled Monthly</div><span class="ssub">60+ accounts — zero unreconciled balances</span></div>
+    <div class="sr rv d2"><span class="sbig">100+</span><div class="sdesc">1099 Forms — Zero IRS Rejections</div><span class="ssub">All years, zero amendments</span></div>
+    <div class="sr rv d3"><span class="sbig">5 Yrs</span><div class="sdesc">Unreconciled Books Restored</div><span class="ssub">Multi-year backlogs cleared for multiple clients</span></div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ③ EXPERTISE LEFT + TIMELINE RIGHT ═══════════════════ -->
+<section id="exp-tl">
+
+  <!-- LEFT — What I Bring -->
+  <div class="exp-left">
+    <div class="s-label rv">Core Expertise</div>
+    <h2 class="s-title rv d1">What I bring<br>to your <em>team</em></h2>
+
+    <div class="exp-cards rv d2">
+      <div class="ec">
+        <span class="ec-num">01</span>
+        <i class="fas fa-building-columns ec-icon"></i>
+        <div class="ec-title">Property Trust Accounting</div>
+        <div class="ec-body">Full-cycle compliance — operating, security deposit & owner accounts. Audit-ready every month.</div>
+      </div>
+      <div class="ec">
+        <span class="ec-num">02</span>
+        <i class="fas fa-chart-line ec-icon"></i>
+        <div class="ec-title">Month-End Close & Reporting</div>
+        <div class="ec-body">Structured close that cuts cycle time. Owner-ready packages delivered on schedule.</div>
+      </div>
+      <div class="ec">
+        <span class="ec-num">03</span>
+        <i class="fas fa-arrows-rotate ec-icon"></i>
+        <div class="ec-title">Platform Migrations</div>
+        <div class="ec-body">20+ LLC migrations QBO → AppFolio. Full data mapping, zero data loss.</div>
+      </div>
+      <div class="ec">
+        <span class="ec-num">04</span>
+        <i class="fas fa-file-invoice-dollar ec-icon"></i>
+        <div class="ec-title">1099 & Tax Compliance</div>
+        <div class="ec-body">100+ 1099 forms annually via Track1099. Zero IRS rejections across all years.</div>
+      </div>
+      <div class="ec">
+        <span class="ec-num">05</span>
+        <i class="fas fa-clock-rotate-left ec-icon"></i>
+        <div class="ec-title">Books Restoration</div>
+        <div class="ec-body">Restored up to 5 years of unreconciled books. Chaos to clean, every time.</div>
+      </div>
+      <div class="ec">
+        <span class="ec-num">06</span>
+        <i class="fas fa-users-gear ec-icon"></i>
+        <div class="ec-title">AR Management & Vendor Ops</div>
+        <div class="ec-body">Reduced receivables by 25%. Full Bill.com & Hubdoc vendor management.</div>
+      </div>
+    </div>
+
+    <a href="about.html" class="xlink lt rv d3" style="margin-top:1.5rem;">
+      See all services in detail <i class="fas fa-arrow-right"></i>
+    </a>
+  </div>
+
+  <!-- RIGHT — Work Timeline -->
+  <div class="tl-right">
+    <div class="s-label dk rv">Work History</div>
+    <h2 class="s-title op rv d1">5 years of<br><em>proven</em> results</h2>
+    <p class="rv d2" style="margin-top:.4rem;font-family:var(--fm);font-size:.58rem;color:var(--muted);letter-spacing:.8px;">
+      Tap any role to see full details
+    </p>
+
+    <div class="tlg">
+      <!-- JOB 1 -->
+       <div class="tli rv d1">
+        <div class="tldot"></div>
+        <div class="tlperiod">Dec 2024 — Present</div>
+        <button class="tlrole-btn"
+          data-role="Senior Accountant"
+          data-co="MKVS &amp; Co. — CPA Firm · Remote, US Property Management"
+          data-date="Dec 2024 – Present"
+          data-bullets='["End-to-end trust accounting for 15+ US rental portfolios across AppFolio, Buildium & QuickBooks Online","Led migration of 20+ LLCs from QBO to AppFolio — data mapping, COA restructuring, zero data loss","Monthly Balance Sheets and P&L with variance commentary for owner and investor review","Weekly AP/AR reviews — clearing aged payables, chasing receivables, clean aging report every Friday","Weekly client calls translating financials into plain-language insights for property owners","Reconciled 60+ bank accounts monthly — zero unreconciled balances across all portfolios","Filed 100+ 1099-MISC/NEC via Track1099 — zero IRS rejections across all years","Cut month-end close from 15 to 11 days (35% improvement)"]'>
+          <div class="tlrole">Senior Accountant</div>
+          <i class="fas fa-circle-plus tlplus"></i>
+        </button>
+        <div class="tlhint"><i class="fas fa-hand-pointer"></i>&nbsp;Tap for full details</div>
+        <div class="tlco">MKVS &amp; Co. — CPA Firm</div>
+        <div class="tlkeys">
+          <span class="tlkey"><i class="fas fa-check"></i>35% Faster Close</span>
+          <span class="tlkey"><i class="fas fa-check"></i>20+ Migrations</span>
+          <span class="tlkey"><i class="fas fa-check"></i>100+ 1099s</span>
+          <span class="tlkey"><i class="fas fa-check"></i>15+ Portfolios</span>
+        </div>
+      </div>
+
+      <!-- JOB 2 -->
+      <div class="tli rv d2">
+        <div class="tldot"></div>
+        <div class="tlperiod">Jan 2021 — Dec 2024</div>
+        <button class="tlrole-btn"
+          data-role="Accountant"
+          data-co="Mayank Malik &amp; Associates — CPA Firm · Remote, US Clients"
+          data-date="Jan 2021 – Dec 2024"
+          data-bullets='["Full-cycle bookkeeping & month-end close across e-commerce, legal & construction sectors","AP/AR, Balance Sheet and P&L preparation across QBO, Xero, and Wave","E-commerce reconciliation — Shopify, Amazon, Etsy, PayPal, Stripe vs bank","Restored & reconciled up to 5 years of unreconciled accounts for multiple clients","WA SOS multi-state compliance — audit schedules reduced auditor queries by ~30%","AR escalation workflows — reduced overdue receivables by 25% within 60 days","Automated categorisation via QBO integrations — cut manual time by 20%"]'>
+          <div class="tlrole">Accountant</div>
+          <i class="fas fa-circle-plus tlplus"></i>
+        </button>
+        <div class="tlhint"><i class="fas fa-hand-pointer"></i>&nbsp;Tap for full details</div>
+        <div class="tlco">Mayank Malik &amp; Associates — CPA Firm</div>
+        <div class="tlkeys">
+          <span class="tlkey"><i class="fas fa-check"></i>25% AR Reduction</span>
+          <span class="tlkey"><i class="fas fa-check"></i>5 Yrs Books Restored</span>
+          <span class="tlkey"><i class="fas fa-check"></i>20% Less Manual Work</span>
+        </div>
+      </div>
+
+      <!-- JOB 3 -->
+      <div class="tli rv d3">
+        <div class="tldot"></div>
+        <div class="tlperiod">Feb 2020 — Dec 2020</div>
+        <button class="tlrole-btn"
+          data-role="Property Management Accountant"
+          data-co="True Ledgers Bookkeepers · Remote, US Property Management"
+          data-date="Feb 2020 – Dec 2020"
+          data-bullets='["Full-cycle remote bookkeeping and AP/AR for US landlords and property managers","Compliance-ready digital records — lease files, vendor contracts, maintenance logs","Tracked renewal schedules via Trello and Asana across multiple client accounts","Managed tenant and landlord communications across US time zones with consistent standards"]'>
+          <div class="tlrole">Property Management Accountant</div>
+          <i class="fas fa-circle-plus tlplus"></i>
+        </button>
+        <div class="tlhint"><i class="fas fa-hand-pointer"></i>&nbsp;Tap for full details</div>
+        <div class="tlco">True Ledgers Bookkeepers</div>
+        <div class="tlkeys">
+          <span class="tlkey"><i class="fas fa-check"></i>US Property Management</span>
+          <span class="tlkey"><i class="fas fa-check"></i>Multi-Timezone Ops</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</section>
+
+<!-- ═══════════════════ ④ TOOLS ═══════════════════ -->
+<section id="tools">
+  <div class="s-label rv">Tech Stack</div>
+  <h2 class="s-title rv d1">Tools I work in <em>daily</em></h2>
+  <div class="tbt rv d2">
+    <div class="tc feat"><div class="tci"><i class="fas fa-building"></i></div><div class="tcn">AppFolio Property Manager</div><div class="tct">Certified Specialist</div></div>
+    <div class="tc feat"><div class="tci"><i class="fas fa-home"></i></div><div class="tcn">Buildium</div><div class="tct">Certified</div></div>
+    <div class="tc"><div class="tci"><i class="fas fa-calculator"></i></div><div class="tcn">QuickBooks Online</div><div class="tct">ProAdvisor</div></div>
+    <div class="tc"><div class="tci"><i class="fas fa-chart-bar"></i></div><div class="tcn">Xero</div><div class="tct">Advisor Certified</div></div>
+    <div class="tc"><div class="tci"><i class="fas fa-users"></i></div><div class="tcn">Gusto Payroll</div><div class="tct">Certified</div></div>
+    <div class="tc"><div class="tci"><i class="fas fa-file-invoice"></i></div><div class="tcn">Track1099</div><div class="tct">1099 Filing</div></div>
+    <div class="tc"><div class="tci"><i class="fas fa-credit-card"></i></div><div class="tcn">Bill.com</div><div class="tct">AP Automation</div></div>
+    <div class="tc"><div class="tci"><i class="fas fa-file-upload"></i></div><div class="tcn">Hubdoc</div><div class="tct">Document Capture</div></div>
+    <div class="tc"><div class="tci"><i class="fas fa-table"></i></div><div class="tcn">Excel — Advanced</div><div class="tct">Pivot, VLOOKUP, Macros</div></div>
+    <div class="tc"><div class="tci"><i class="fas fa-building-columns"></i></div><div class="tcn">Yardi</div><div class="tct">Property Management</div></div>
+    <div class="tc"><div class="tci"><i class="fas fa-bolt"></i></div><div class="tcn">Zapier</div><div class="tct">Automation</div></div>
+    <div class="tc"><div class="tci"><i class="fas fa-layer-group"></i></div><div class="tcn">Wave / Propertyware</div><div class="tct">Accounting</div></div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ⑤ TESTIMONIALS ═══════════════════ -->
+<section id="testimonials">
+  <div class="s-label rv">What Clients Say</div>
+  <h2 class="s-title rv d1">Results people <em>remember</em></h2>
+  <div class="testg">
+    <div class="testc rv d1">
+      <div class="tstars">★★★★★</div>
+      <span class="tqm">"</span>
+      <p class="ttxt">We were 4 months behind on AppFolio reconciliations and genuinely panicking. AmanJot cleared everything in six weeks, our close happened on time for the first time in two years, and he built a process so it stays that way.</p>
+      <div class="tauth">
+        <div class="tav">R</div>
+        <div><div class="tname">Rajiv Malhotra</div><div class="trole">Property Operations Manager · US Portfolio Owner</div></div>
+      </div>
+    </div>
+    <div class="testc rv d2">
+      <div class="tstars">★★★★★</div>
+      <span class="tqm">"</span>
+      <p class="ttxt">Migrating 18 LLCs from QuickBooks to AppFolio felt impossible before AmanJot. Every account mapped, every opening balance verified, full documentation on handover. Zero surprises — exactly what a CPA firm needs.</p>
+      <div class="tauth">
+        <div class="tav">M</div>
+        <div><div class="tname">Michael R.</div><div class="trole">Principal · MKVS & Co. CPA Firm</div></div>
+      </div>
+    </div>
+    <div class="testc rv d3">
+      <div class="tstars">★★★★★</div>
+      <span class="tqm">"</span>
+      <p class="ttxt">He caught a 3-year gap in our trust account that two other bookkeepers had missed. Fixed it completely, built a checklist so it never happens again. Weekly updates the entire time. Real ownership.</p>
+      <div class="tauth">
+        <div class="tav">S</div>
+        <div><div class="tname">Sundeep Arora</div><div class="trole">Real Estate Investor · 80-unit Portfolio</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════════════ ⑥ CERTS PREVIEW ═══════════════════ -->
+<section id="certs">
+  <div class="s-label dk rv">Credentials</div>
+  <h2 class="s-title op rv d1">Certified across<br><em>every platform</em> I use</h2>
+  <div class="certg">
+    <div class="certc rv d1"><div class="certci"><i class="fas fa-award"></i></div><div><div class="certn">AppFolio Specialist</div><div class="certs2">Certified · Active</div></div></div>
+    <div class="certc rv d2"><div class="certci"><i class="fas fa-award"></i></div><div><div class="certn">Buildium Certified</div><div class="certs2">Active</div></div></div>
+    <div class="certc rv d3"><div class="certci"><i class="fas fa-star"></i></div><div><div class="certn">QuickBooks ProAdvisor</div><div class="certs2">Intuit · Online & Desktop</div></div></div>
+    <div class="certc rv d1"><div class="certci"><i class="fas fa-star"></i></div><div><div class="certn">Xero Advisor Certified</div><div class="certs2">Active</div></div></div>
+    <div class="certc rv d2"><div class="certci"><i class="fas fa-users"></i></div><div><div class="certn">Gusto Payroll Specialist</div><div class="certs2">Payroll & HR</div></div></div>
+    <div class="certc rv d3"><div class="certci"><i class="fas fa-graduation-cap"></i></div><div><div class="certn">CPA Candidate (AICPA)</div><div class="certs2">Exam in progress · 18-month target</div></div></div>
+  </div>
+  <a href="certifications.html" class="xlink dk rv d4" style="margin-top:1.6rem;display:inline-flex;">
+    View all certifications &amp; credentials <i class="fas fa-arrow-right"></i>
+  </a>
+</section>
+
+<!-- ═══════════════════ ⑦ CTA ═══════════════════ -->
+<section id="cta">
+  <div class="ctaey rv">Available Now · Full-Time Remote</div>
+  <h2 class="ctah rv d1">Ready to work<br><em>from day one.</em></h2>
+  <p class="ctasub rv d2">Seeking a full-time remote role with a US property management company or real estate team. I take complete ownership — no hand-holding required.</p>
+  <div class="ctabtns rv d3">
+    <a href="about.html#contact" class="btn-g"><i class="fas fa-envelope"></i>Get In Touch</a>
+    <a href="https://www.linkedin.com/in/amanjot-singh-slach-55a63b234" target="_blank" class="btn-o"><i class="fab fa-linkedin"></i>LinkedIn</a>
+  </div>
+  <p class="ctaph rv d4"><i class="fas fa-phone" style="margin-right:.4rem;"></i><a href="tel:+919911155541">+91 991-115-5541</a></p>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="fgrid">
+    <div class="fc"><h5>Explore</h5>
+      <a href="index.html">Home</a><a href="about.html">About</a>
+      <a href="projects.html">Projects</a><a href="certifications.html">Certifications</a>
+    </div>
+    <div class="fc"><h5>Connect</h5>
+      <a href="https://www.linkedin.com/in/amanjot-singh-slach-55a63b234" target="_blank"><i class="fab fa-linkedin" style="margin-right:.35rem;"></i>LinkedIn</a>
+      <p><i class="fas fa-envelope" style="margin-right:.35rem;color:var(--gold-dk);"></i>slachamanjotsingh@gmail.com</p>
+      <p><i class="fas fa-phone" style="margin-right:.35rem;color:var(--gold-dk);"></i>+91 991-115-5541</p>
+    </div>
+    <div class="fc"><h5>Specialisations</h5>
+      <p>Trust & Property Accounting</p><p>AppFolio & Buildium Specialist</p>
+      <p>Platform Migrations</p><p>Month-End Close & 1099s</p>
+    </div>
+    <div class="fc"><h5>Location</h5>
+      <p>Mohali, Punjab, India</p><p>Full-Time Remote — US EST / PST</p>
+      <p>Available Immediately</p><p>MBA Finance · CPA Candidate</p>
+    </div>
+  </div>
+  <div class="fbot">
+    <div class="fcopy">© 2026 AmanJot Singh Slach · Property Management Accountant · CPA Candidate (AICPA)</div>
+    <a href="#hero" class="ftop"><i class="fas fa-arrow-up"></i>Back to top</a>
+  </div>
+</footer>
+
+<script>
+/* LOADER */
+window.addEventListener('load', () => {
+  setTimeout(() => {
+    document.getElementById('loader').classList.add('gone');
+    const p = document.getElementById('hphoto');
+    if(p) p.classList.add('loaded');
+  }, 1500);
+});
+
+/* PROGRESS */
+const prog = document.getElementById('prog');
+window.addEventListener('scroll', () => {
+  prog.style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100) + '%';
+}, { passive: true });
+
+/* MOBILE NAV */
+const nh = document.getElementById('nh');
+const mp = document.getElementById('mp');
+const mc = document.getElementById('mc');
+function openMp()  { mp.classList.add('open');    nh.innerHTML = '<i class="fas fa-times"></i>'; }
+function closeMp() { mp.classList.remove('open'); nh.innerHTML = '<i class="fas fa-bars"></i>';  }
+if(nh) nh.addEventListener('click', () => mp.classList.contains('open') ? closeMp() : openMp());
+if(mc) mc.addEventListener('click', closeMp);
+
+/* SCROLL REVEAL */
+const rvObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('up'); rvObs.unobserve(e.target); } });
+}, { threshold: 0.07 });
+document.querySelectorAll('.rv').forEach(el => rvObs.observe(el));
+
+/* ROLE POPUP */
+const rolo  = document.getElementById('rolo');
+const robd  = document.getElementById('robd');
+const robx  = document.getElementById('robx');
+const rocl  = document.getElementById('rocl');
+
+function openRole(btn) {
+  document.getElementById('robt').textContent    = btn.dataset.role;
+  document.getElementById('robco').innerHTML     = btn.dataset.co;
+  document.getElementById('robdate').textContent = btn.dataset.date;
+  const bullets = JSON.parse(btn.dataset.bullets);
+  document.getElementById('robul').innerHTML = bullets.map(b => `<li>${b}</li>`).join('');
+  rolo.classList.add('open');
+  document.body.style.overflow = 'hidden';
+  setTimeout(() => rocl.focus(), 50);
+}
+function closeRole() { rolo.classList.remove('open'); document.body.style.overflow = ''; }
+
+document.querySelectorAll('.tlrole-btn').forEach(btn => {
+  btn.addEventListener('click', e => { e.stopPropagation(); openRole(btn); });
+});
+robd.addEventListener('click', closeRole);
+rocl.addEventListener('click', closeRole);
+robx.addEventListener('click', e => e.stopPropagation());
+document.addEventListener('keydown', e => { if(e.key === 'Escape') closeRole(); });
+</script>
+</body>
+</html>
