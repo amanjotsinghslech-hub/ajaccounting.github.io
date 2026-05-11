@@ -1,876 +1,883 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Projects | AmanJot Singh Slach | Property Accounting Specialist</title>
-    <link rel="icon" type="image/png" href="profile.png">
-
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-    <style>
-        :root {
-            --primary: #E3BF4D;
-            --primary-dark: #C49A26;
-            --accent: #63B3ED;
-            --dark: #0A0A0A;
-            --light: #FFFFFF;
-            --card-bg: #14181D;
-            --text: #F0F0F0;
-            --text-light: #C2CAD5;
-            --border: #2A313A;
-            --footer-bg: #FFFFFF;
-            --footer-text: #333333;
-            --footer-light: #666666;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-            scroll-padding-top: 70px;
-        }
-
-        body {
-            font-family: 'Inter', sans-serif;
-            background: var(--dark);
-            color: var(--text);
-            line-height: 1.6;
-            padding-top: 70px;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-        }
-
-        .section {
-            padding: 3rem 0;
-        }
-
-        .text-center {
-            text-align: center;
-        }
-
-        header {
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            background: rgba(10, 10, 10, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border);
-            z-index: 1000;
-            height: 70px;
-            display: flex;
-            align-items: center;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            width: 100%;
-            margin: 0 auto;
-            padding: 0 1.5rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-weight: 700;
-            font-size: 1.2rem;
-            color: var(--text);
-            text-decoration: none;
-        }
-
-        .logo span {
-            color: var(--primary);
-        }
-
-        .nav-desktop {
-            display: flex;
-            gap: 2rem;
-        }
-
-        .nav-desktop a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.9rem;
-            transition: color 0.3s ease;
-        }
-
-        .nav-desktop a:hover {
-            color: var(--primary);
-        }
-
-        .menu-toggle {
-            display: none;
-            background: none;
-            border: none;
-            color: var(--text);
-            font-size: 1.4rem;
-            cursor: pointer;
-            padding: 0.5rem;
-        }
-
-        .nav-mobile {
-            display: none;
-            position: absolute;
-            top: 70px;
-            left: 0;
-            right: 0;
-            background: var(--card-bg);
-            border-bottom: 1px solid var(--border);
-            padding: 1rem;
-            flex-direction: column;
-            gap: 1rem;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-        }
-
-        .nav-mobile.active {
-            display: flex;
-        }
-
-        .nav-mobile a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-weight: 500;
-            padding: 0.5rem 0;
-            border-bottom: 1px solid var(--border);
-        }
-
-        .projects-hero {
-            padding-top: 30px;
-            padding-bottom: 2rem;
-            background: linear-gradient(135deg, #0A0A0A 0%, #050505 100%);
-        }
-
-        .projects-hero h1 {
-            font-size: clamp(1.9rem, 3vw, 2.5rem);
-            margin-bottom: 0.5rem;
-        }
-
-        .projects-hero h1 span {
-            color: var(--primary);
-        }
-
-        .projects-hero p {
-            max-width: 760px;
-            margin: 0 auto;
-            color: var(--text-light);
-        }
-
-        .search-panel {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1rem;
-            margin: 1.6rem auto 2rem;
-            max-width: 860px;
-        }
-
-        .search-panel h3 {
-            color: var(--primary);
-            margin-bottom: 0.7rem;
-            font-size: 1.1rem;
-        }
-
-        .project-search-input {
-            width: 100%;
-            padding: 0.8rem 0.9rem;
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            background: #0e1217;
-            color: var(--text);
-            font-size: 0.95rem;
-        }
-
-        .project-search-input:focus {
-            outline: 1px solid var(--primary);
-            border-color: var(--primary);
-        }
-
-        .search-note,
-        .search-results-note {
-            margin-top: 0.55rem;
-            color: var(--text-light);
-            font-size: 0.9rem;
-        }
-
-        .software-highlight-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
-            gap: 0.8rem;
-            margin-bottom: 2rem;
-        }
-
-        .software-highlight {
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            background: #11161b;
-            padding: 0.75rem 0.85rem;
-            display: flex;
-            align-items: center;
-            gap: 0.6rem;
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: var(--text);
-        }
-
-        .software-highlight.filter-btn {
-            width: 100%;
-            justify-content: center;
-            cursor: pointer;
-            transition: border-color 0.2s ease, background 0.2s ease;
-        }
-
-        .software-highlight.filter-btn:hover,
-        .software-highlight.filter-btn.active {
-            border-color: var(--primary);
-            background: rgba(227, 191, 77, 0.12);
-        }
-
-        .category-section {
-            margin-bottom: 2.1rem;
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 1.25rem;
-            background: rgba(20, 24, 29, 0.88);
-        }
-
-        .category-heading {
-            color: var(--primary);
-            margin-bottom: 0.45rem;
-            font-size: 1.4rem;
-        }
-
-        .category-intro {
-            color: var(--text-light);
-            margin-bottom: 1rem;
-        }
-
-        .project-cards {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 0.9rem;
-        }
-
-        .project-entry {
-            border: 1px solid var(--border);
-            border-left: 4px solid var(--primary);
-            border-radius: 10px;
-            padding: 0.95rem;
-            background: #11161b;
-        }
-
-        .project-entry h3 {
-            font-size: 1rem;
-            margin-bottom: 0.4rem;
-        }
-
-        .project-entry p {
-            color: var(--text-light);
-            font-size: 0.92rem;
-        }
-
-        .skill-tags {
-            margin-top: 0.7rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.45rem;
-        }
-
-        .tag {
-            font-size: 0.78rem;
-            border-radius: 999px;
-            padding: 0.25rem 0.6rem;
-            border: 1px solid rgba(227, 191, 77, 0.45);
-            color: var(--primary);
-            background: rgba(227, 191, 77, 0.08);
-        }
-
-        .coa-gallery {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 1rem;
-            margin-top: 1rem;
-        }
-
-        .coa-item {
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            background: #0f1318;
-            padding: 0.75rem;
-        }
-
-        .software-box {
-            border-radius: 8px;
-            border: 1px solid;
-            padding: 0.4rem 0.6rem;
-            text-align: center;
-            font-size: 0.82rem;
-            font-weight: 600;
-        }
-
-        .software-box.appfolio {
-            border-color: #35c47e;
-            color: #8df5bf;
-            background: rgba(53, 196, 126, 0.12);
-        }
-
-        .software-box.quickbooks {
-            border-color: #34a4f3;
-            color: #9ad8ff;
-            background: rgba(52, 164, 243, 0.12);
-        }
-
-        .software-box.zoho {
-            border-color: #ff6f61;
-            color: #ffb4ad;
-            background: rgba(255, 111, 97, 0.12);
-        }
-
-        .proof-note {
-            margin-top: 0.8rem;
-            color: var(--text-light);
-            font-size: 0.84rem;
-        }
-
-        .search-empty {
-            display: none;
-            padding: 0.9rem;
-            border: 1px solid var(--border);
-            border-radius: 8px;
-            background: #11161b;
-            color: var(--text-light);
-            margin-bottom: 1rem;
-        }
-
-        .footer-minimal {
-            background: var(--footer-bg);
-            border-top: 1px solid #E5E7EB;
-            padding: 3rem 0 2rem;
-        }
-
-        .footer-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 1rem;
-            display: grid;
-            grid-template-columns: 1fr;
-            gap: 2rem;
-            margin-bottom: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            .footer-content {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 2rem;
-            }
-        }
-
-        .footer-section h4 {
-            color: var(--footer-text);
-            margin-bottom: 1rem;
-            font-size: 1rem;
-            font-weight: 600;
-        }
-
-        .footer-links {
-            list-style: none;
-        }
-
-        .footer-links li {
-            margin-bottom: 0.6rem;
-            color: var(--footer-light);
-            font-size: 0.9rem;
-        }
-
-        .footer-links a {
-            color: var(--footer-light);
-            text-decoration: none;
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .footer-links a:hover {
-            color: var(--primary);
-        }
-
-        .copyright {
-            text-align: center;
-            padding-top: 1.5rem;
-            border-top: 1px solid #E5E7EB;
-            color: var(--footer-light);
-            font-size: 0.85rem;
-        }
-
-        @media (max-width: 768px) {
-            body {
-                padding-top: 60px;
-            }
-
-            header {
-                height: 60px;
-            }
-
-            .menu-toggle {
-                display: block;
-            }
-
-            .nav-desktop {
-                display: none;
-            }
-
-            .nav-mobile {
-                top: 60px;
-            }
-
-            .section {
-                padding: 2.2rem 0;
-            }
-        }
-    </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+<title>Projects | AmanJot Singh Slach — Property Management Accountant</title>
+<link rel="icon" type="image/png" href="profile.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Syne:wght@400;500;600;700;800&family=DM+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+<style>
+:root {
+  --ink:      #0A0A0A;
+  --ink-2:    #111111;
+  --ink-3:    #1A1A1A;
+  --paper:    #F2EDE4;
+  --paper-2:  #EAE4D9;
+  --gold:     #C9A84C;
+  --gold-lt:  #E2C87A;
+  --gold-dk:  #9A7A2E;
+  --gold-dim: rgba(201,168,76,0.10);
+  --muted:    #6B6560;
+  --muted-2:  #8A847D;
+  --border:   rgba(201,168,76,0.20);
+  --border-s: rgba(242,237,228,0.07);
+  --c-af:     #35c47e;   /* AppFolio green */
+  --c-qb:     #34a4f3;   /* QuickBooks blue */
+  --c-xr:     #13B5EA;   /* Xero teal */
+  --c-bd:     #FF6B35;   /* Buildium orange */
+  --c-zo:     #E8453C;   /* Zoho red */
+  --c-ai:     #A855F7;   /* AI purple */
+  --ff-d: 'Playfair Display', Georgia, serif;
+  --ff-u: 'Syne', sans-serif;
+  --ff-m: 'DM Mono', monospace;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; overflow-x: hidden; scroll-padding-top: 54px; }
+body { background: var(--ink); color: var(--paper); font-family: var(--ff-u); overflow-x: hidden; padding-top: 54px; }
+
+.grain {
+  position: fixed; inset: -50%; width: 200%; height: 200%;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 512 512' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
+  opacity: 0.03; pointer-events: none; z-index: 9000;
+  animation: grain .5s steps(2) infinite;
+}
+@keyframes grain {
+  0%{transform:translate(0,0)} 25%{transform:translate(-3%,-3%)}
+  50%{transform:translate(3%,0)} 75%{transform:translate(0,3%)} 100%{transform:translate(-3%,3%)}
+}
+
+.prog {
+  position: fixed; top: 0; left: 0; height: 2px; z-index: 8000; width: 0%;
+  background: linear-gradient(90deg, var(--gold-dk), var(--gold), var(--gold-lt));
+  pointer-events: none; transition: width .08s linear;
+}
+
+/* ── NAV ── */
+nav {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 600;
+  height: 54px; display: flex; align-items: center; padding: 0 2rem;
+  background: rgba(10,10,10,.93); backdrop-filter: blur(16px);
+  border-bottom: 1px solid var(--border-s); justify-content: space-between;
+}
+.nav-wordmark {
+  font-family: var(--ff-d); font-size: .88rem; font-weight: 700;
+  color: var(--paper); text-decoration: none; display: flex; align-items: center; gap: .45rem;
+}
+.nav-badge {
+  width: 24px; height: 24px; background: var(--gold); border-radius: 4px;
+  display: flex; align-items: center; justify-content: center;
+  font-size: .62rem; font-weight: 800; color: var(--ink); flex-shrink: 0;
+}
+.nav-links { display: flex; align-items: center; gap: 1.6rem; }
+.nav-links a {
+  color: var(--paper); text-decoration: none; font-size: .72rem;
+  font-weight: 600; letter-spacing: .8px; text-transform: uppercase; opacity: .5; transition: opacity .2s;
+}
+.nav-links a:hover, .nav-links a.active { opacity: 1; }
+.nav-cta { background: var(--gold) !important; color: var(--ink) !important; padding: .35rem 1rem; border-radius: 4px; opacity: 1 !important; font-weight: 700 !important; }
+.nav-hamburger { display: none; background: none; border: none; color: var(--paper); font-size: 1.1rem; padding: .3rem; }
+.mobile-panel {
+  display: none; position: fixed; inset: 0; background: var(--ink-2); z-index: 590;
+  flex-direction: column; justify-content: center; align-items: center; gap: 1.3rem; padding: 2rem;
+}
+.mobile-panel.open { display: flex; }
+.mobile-panel a {
+  font-family: var(--ff-d); font-size: clamp(1.5rem,5vw,2.2rem); font-weight: 700;
+  color: var(--paper); text-decoration: none; border-bottom: 1px solid var(--border-s);
+  width: 100%; text-align: center; padding-bottom: .9rem; transition: color .2s;
+}
+.mobile-panel a:last-child { border-bottom: none; }
+.mobile-panel a:hover { color: var(--gold); }
+.mobile-close { position: absolute; top: 1rem; right: 1rem; background: none; border: none; color: var(--paper); font-size: 1.1rem; }
+@media(max-width:720px) { nav { padding: 0 1.1rem; } .nav-links { display: none; } .nav-hamburger { display: block; } }
+
+/* ── UTILS ── */
+.s-label {
+  font-family: var(--ff-m); font-size: .58rem; letter-spacing: 3px; text-transform: uppercase;
+  color: var(--gold); display: flex; align-items: center; gap: .6rem; margin-bottom: .7rem;
+}
+.s-label::after { content: ''; flex: 1; max-width: 32px; height: 1px; background: var(--gold); opacity: .4; }
+.s-label.dk { color: var(--gold-dk); } .s-label.dk::after { background: var(--gold-dk); }
+.s-title { font-family: var(--ff-d); font-size: clamp(1.6rem,2.8vw,2.6rem); font-weight: 700; line-height: 1.1; letter-spacing: -.5px; }
+.s-title em { font-style: italic; color: var(--gold); }
+
+.rv { opacity: 0; transform: translateY(20px); transition: opacity .6s cubic-bezier(.22,1,.36,1), transform .6s cubic-bezier(.22,1,.36,1); }
+.rv.up { opacity: 1; transform: translateY(0); }
+.d1{transition-delay:.08s} .d2{transition-delay:.16s} .d3{transition-delay:.24s} .d4{transition-delay:.32s}
+
+.btn-gold {
+  background: var(--gold); color: var(--ink); padding: .6rem 1.4rem; border-radius: 4px;
+  font-size: .74rem; font-weight: 700; letter-spacing: .8px; text-transform: uppercase;
+  text-decoration: none; display: inline-flex; align-items: center; gap: .4rem;
+  transition: background .2s, transform .15s; font-family: var(--ff-u);
+}
+.btn-gold:hover { background: var(--gold-lt); transform: translateY(-2px); }
+.btn-ghost {
+  border: 1px solid rgba(242,237,228,.2); color: var(--paper); padding: .58rem 1.3rem;
+  border-radius: 4px; font-size: .74rem; font-weight: 600; letter-spacing: .8px; text-transform: uppercase;
+  text-decoration: none; display: inline-flex; align-items: center; gap: .4rem;
+  transition: border-color .2s, color .2s; font-family: var(--ff-u); background: transparent;
+}
+.btn-ghost:hover { border-color: var(--gold); color: var(--gold); }
+
+/* ── HERO ── */
+.page-hero {
+  background: var(--ink-2); padding: clamp(3rem,6vw,5.5rem) clamp(1.4rem,4vw,4rem) clamp(2.5rem,5vw,4rem);
+  border-bottom: 1px solid var(--border-s); position: relative; overflow: hidden;
+}
+.page-hero::after {
+  content: 'WORK'; position: absolute; right: -1rem; bottom: -1.5rem;
+  font-family: var(--ff-d); font-size: clamp(6rem,11vw,10rem); font-weight: 900;
+  color: transparent; -webkit-text-stroke: 1px rgba(201,168,76,.05);
+  pointer-events: none; line-height: 1; white-space: nowrap;
+}
+.page-hero-inner { max-width: 680px; }
+.hero-sub { font-size: .88rem; color: var(--muted-2); line-height: 1.7; margin-top: .9rem; max-width: 540px; }
+
+/* notice bar */
+.notice-bar {
+  margin-top: 1.5rem; background: rgba(201,168,76,.07); border: 1px solid var(--border);
+  border-radius: 7px; padding: .8rem 1.1rem; display: flex; align-items: center; gap: .75rem;
+  font-size: .78rem; color: rgba(242,237,228,.7); line-height: 1.5; max-width: 560px;
+}
+.notice-bar i { color: var(--gold); flex-shrink: 0; }
+
+/* ── FILTER BAR ── */
+.filter-bar {
+  background: var(--ink-3); border-bottom: 1px solid var(--border-s);
+  padding: 1rem clamp(1.4rem,4vw,4rem); position: sticky; top: 54px; z-index: 500;
+}
+.filter-inner { display: flex; align-items: center; gap: .6rem; flex-wrap: wrap; }
+.filter-label { font-family: var(--ff-m); font-size: .56rem; letter-spacing: 2px; text-transform: uppercase; color: var(--muted); margin-right: .2rem; }
+.filter-btn {
+  background: transparent; border: 1px solid var(--border-s); border-radius: 5px;
+  padding: .3rem .7rem; font-family: var(--ff-m); font-size: .6rem; letter-spacing: .8px;
+  text-transform: uppercase; color: var(--muted-2); transition: all .2s; white-space: nowrap;
+}
+.filter-btn:hover { border-color: var(--border); color: var(--paper); }
+.filter-btn.active { background: var(--gold-dim); border-color: var(--border); color: var(--gold-lt); }
+/* software colour pills */
+.sw-af { border-color: rgba(53,196,126,.3) !important; }
+.sw-af.active, .sw-af:hover { background: rgba(53,196,126,.1) !important; color: #8df5bf !important; border-color: rgba(53,196,126,.6) !important; }
+.sw-qb { border-color: rgba(52,164,243,.3) !important; }
+.sw-qb.active, .sw-qb:hover { background: rgba(52,164,243,.1) !important; color: #9ad8ff !important; border-color: rgba(52,164,243,.6) !important; }
+.sw-xr { border-color: rgba(19,181,234,.3) !important; }
+.sw-xr.active, .sw-xr:hover { background: rgba(19,181,234,.1) !important; color: #7de8ff !important; border-color: rgba(19,181,234,.6) !important; }
+.sw-bd { border-color: rgba(255,107,53,.3) !important; }
+.sw-bd.active, .sw-bd:hover { background: rgba(255,107,53,.1) !important; color: #ffb89a !important; border-color: rgba(255,107,53,.6) !important; }
+.sw-ai { border-color: rgba(168,85,247,.3) !important; }
+.sw-ai.active, .sw-ai:hover { background: rgba(168,85,247,.1) !important; color: #d8b4fe !important; border-color: rgba(168,85,247,.6) !important; }
+
+/* ── MAIN CONTENT ── */
+.projects-wrap { padding: clamp(2.5rem,5vw,5rem) clamp(1.4rem,4vw,4rem); }
+
+/* ── SECTION HEADER ── */
+.proj-section { margin-bottom: 3rem; }
+.proj-section-head {
+  display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;
+  padding-bottom: .9rem; border-bottom: 1px solid var(--border-s);
+}
+.proj-section-icon {
+  width: 36px; height: 36px; border-radius: 8px; background: var(--gold-dim);
+  display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: .9rem; flex-shrink: 0;
+}
+.proj-section-title { font-family: var(--ff-d); font-size: clamp(1.1rem,2vw,1.5rem); font-weight: 700; color: var(--paper); }
+.proj-section-sub { font-size: .76rem; color: var(--muted-2); margin-top: .15rem; }
+
+/* ── CASE STUDY CARDS ── */
+.case-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; }
+@media(max-width:900px) { .case-grid { grid-template-columns: repeat(2,1fr); } }
+@media(max-width:560px) { .case-grid { grid-template-columns: 1fr; } }
+
+.case-card {
+  background: var(--ink-3); border: 1px solid var(--border-s); border-radius: 10px;
+  padding: 1.4rem; display: flex; flex-direction: column; gap: .7rem;
+  transition: border-color .3s, transform .25s; position: relative; overflow: hidden;
+}
+.case-card::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0; transition: opacity .3s;
+}
+.case-card:hover { border-color: var(--border); transform: translateY(-3px); }
+.case-card:hover::before { opacity: 1; }
+.case-card.featured { grid-column: span 2; background: rgba(201,168,76,.04); border-color: var(--border); }
+.case-card.featured::before { opacity: .5; }
+@media(max-width:900px) { .case-card.featured { grid-column: span 2; } }
+@media(max-width:560px) { .case-card.featured { grid-column: span 1; } }
+
+/* software pill */
+.sw-pill {
+  display: inline-flex; align-items: center; gap: .3rem; border-radius: 4px;
+  padding: .18rem .55rem; font-family: var(--ff-m); font-size: .54rem; letter-spacing: .8px;
+  text-transform: uppercase; font-weight: 600; width: fit-content; border: 1px solid;
+}
+.pill-af { background: rgba(53,196,126,.08); border-color: rgba(53,196,126,.35); color: #8df5bf; }
+.pill-qb { background: rgba(52,164,243,.08); border-color: rgba(52,164,243,.35); color: #9ad8ff; }
+.pill-xr { background: rgba(19,181,234,.08); border-color: rgba(19,181,234,.35); color: #7de8ff; }
+.pill-bd { background: rgba(255,107,53,.08); border-color: rgba(255,107,53,.35); color: #ffb89a; }
+.pill-zo { background: rgba(232,69,60,.08); border-color: rgba(232,69,60,.35); color: #ffb4ad; }
+.pill-ai { background: rgba(168,85,247,.08); border-color: rgba(168,85,247,.35); color: #d8b4fe; }
+.pill-gs { background: rgba(255,197,61,.08); border-color: rgba(255,197,61,.35); color: #ffe8a3; }
+.pills-row { display: flex; flex-wrap: wrap; gap: .3rem; }
+
+.case-title { font-family: var(--ff-d); font-size: .95rem; font-weight: 700; color: var(--paper); line-height: 1.25; }
+.case-desc { font-size: .76rem; color: var(--muted-2); line-height: 1.6; flex: 1; }
+
+/* outcome pills */
+.outcomes { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .2rem; }
+.outcome {
+  display: inline-flex; align-items: center; gap: .3rem;
+  background: var(--gold-dim); border: 1px solid var(--border); border-radius: 4px;
+  padding: .2rem .5rem; font-size: .66rem; color: var(--gold-lt); font-weight: 600; font-family: var(--ff-u);
+}
+.outcome i { font-size: .5rem; color: var(--gold); }
+
+/* process steps inline */
+.case-steps {
+  display: flex; flex-direction: column; gap: .4rem;
+  border-top: 1px solid var(--border-s); padding-top: .6rem;
+}
+.case-step { display: flex; align-items: flex-start; gap: .5rem; font-size: .73rem; color: rgba(242,237,228,.6); line-height: 1.4; }
+.case-step-num { font-family: var(--ff-m); font-size: .56rem; color: var(--gold); flex-shrink: 0; margin-top: .12rem; }
+
+/* ── WIDE CASE STUDY (featured row) ── */
+.wide-case {
+  background: var(--ink-3); border: 1px solid var(--border); border-radius: 12px;
+  padding: 1.8rem; margin-bottom: 1.2rem; display: grid; grid-template-columns: 1fr 1fr; gap: 2rem;
+  position: relative; overflow: hidden;
+}
+.wide-case::before {
+  content: ''; position: absolute; left: 0; top: 0; bottom: 0; width: 3px;
+  background: linear-gradient(to bottom, var(--gold), transparent);
+}
+.wide-case-label { font-family: var(--ff-m); font-size: .54rem; letter-spacing: 2px; text-transform: uppercase; color: var(--gold); margin-bottom: .4rem; }
+.wide-case-title { font-family: var(--ff-d); font-size: clamp(1rem,1.8vw,1.35rem); font-weight: 700; color: var(--paper); line-height: 1.2; margin-bottom: .5rem; }
+.wide-case-desc { font-size: .8rem; color: var(--muted-2); line-height: 1.65; }
+.wide-case-right { display: flex; flex-direction: column; gap: .8rem; justify-content: center; }
+.wc-metric { border-bottom: 1px solid var(--border-s); padding-bottom: .7rem; }
+.wc-metric:last-child { border-bottom: none; padding-bottom: 0; }
+.wc-metric-num { font-family: var(--ff-d); font-size: 1.6rem; font-weight: 900; color: var(--gold); line-height: 1; }
+.wc-metric-label { font-size: .72rem; color: var(--muted-2); margin-top: .1rem; }
+@media(max-width:680px) {
+  .wide-case { grid-template-columns: 1fr; gap: 1.2rem; }
+  .wide-case-right { flex-direction: row; flex-wrap: wrap; }
+  .wc-metric { border-bottom: none; padding-bottom: 0; border-right: 1px solid var(--border-s); padding-right: .8rem; }
+  .wc-metric:last-child { border-right: none; padding-right: 0; }
+}
+
+/* ── DIVIDER between accounting and tech ── */
+.section-divider {
+  background: var(--paper-2); padding: clamp(2.5rem,5vw,4.5rem) clamp(1.4rem,4vw,4rem);
+  display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; align-items: center;
+}
+.sd-text .sd-title { font-family: var(--ff-d); font-size: clamp(1.4rem,2.5vw,2.2rem); font-weight: 700; color: var(--ink); line-height: 1.15; }
+.sd-text .sd-title em { font-style: italic; color: var(--gold-dk); }
+.sd-text .sd-desc { font-size: .86rem; color: var(--muted); line-height: 1.7; margin-top: .8rem; }
+.sd-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: rgba(10,10,10,.1); border-radius: 8px; overflow: hidden; border: 1px solid rgba(10,10,10,.1); }
+.sd-stat { background: var(--paper); padding: 1.2rem 1.4rem; }
+.sd-stat:hover { background: var(--paper-2); }
+.sd-n { font-family: var(--ff-d); font-size: 1.8rem; font-weight: 900; color: var(--gold-dk); line-height: 1; display: block; }
+.sd-l { font-size: .74rem; color: var(--muted); margin-top: .25rem; line-height: 1.4; }
+@media(max-width:720px) { .section-divider { grid-template-columns: 1fr; } }
+
+/* ── AI / TECH PROJECT CARDS ── */
+.ai-section { background: var(--ink-2); padding: clamp(2.5rem,5vw,5rem) clamp(1.4rem,4vw,4rem); }
+.ai-intro-bar {
+  background: rgba(168,85,247,.06); border: 1px solid rgba(168,85,247,.2);
+  border-radius: 8px; padding: 1rem 1.2rem; margin-bottom: 2rem;
+  display: flex; align-items: center; gap: .9rem;
+  font-size: .8rem; color: rgba(242,237,228,.7); line-height: 1.6;
+}
+.ai-intro-bar i { color: #d8b4fe; font-size: 1rem; flex-shrink: 0; }
+
+.ai-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 1.2rem; }
+@media(max-width:900px) { .ai-grid { grid-template-columns: repeat(2,1fr); } }
+@media(max-width:520px) { .ai-grid { grid-template-columns: 1fr; } }
+
+.ai-card {
+  background: var(--ink-3); border: 1px solid var(--border-s); border-radius: 10px;
+  padding: 1.4rem; display: flex; flex-direction: column; gap: .65rem;
+  transition: border-color .3s, transform .25s; position: relative; overflow: hidden;
+}
+.ai-card::after {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, rgba(168,85,247,.6), transparent);
+  opacity: 0; transition: opacity .3s;
+}
+.ai-card:hover { border-color: rgba(168,85,247,.3); transform: translateY(-3px); }
+.ai-card:hover::after { opacity: 1; }
+.ai-card.featured-ai { grid-column: span 2; background: rgba(168,85,247,.04); border-color: rgba(168,85,247,.2); }
+.ai-card.featured-ai::after { opacity: .4; }
+@media(max-width:900px) { .ai-card.featured-ai { grid-column: span 2; } }
+@media(max-width:520px) { .ai-card.featured-ai { grid-column: span 1; } }
+
+.ai-icon {
+  width: 32px; height: 32px; background: rgba(168,85,247,.12); border-radius: 7px;
+  display: flex; align-items: center; justify-content: center; color: #d8b4fe; font-size: .8rem;
+}
+.ai-title { font-family: var(--ff-d); font-size: .95rem; font-weight: 700; color: var(--paper); line-height: 1.2; }
+.ai-desc { font-size: .76rem; color: var(--muted-2); line-height: 1.6; flex: 1; }
+.ai-tech-pills { display: flex; flex-wrap: wrap; gap: .3rem; margin-top: .2rem; }
+.ai-tech-pill {
+  font-family: var(--ff-m); font-size: .54rem; letter-spacing: .6px; text-transform: uppercase;
+  background: rgba(168,85,247,.08); border: 1px solid rgba(168,85,247,.25);
+  border-radius: 3px; padding: .15rem .45rem; color: #d8b4fe;
+}
+.ai-outcome {
+  display: inline-flex; align-items: center; gap: .3rem;
+  background: rgba(168,85,247,.08); border: 1px solid rgba(168,85,247,.2);
+  border-radius: 4px; padding: .2rem .5rem; font-size: .66rem; color: #d8b4fe; font-weight: 600;
+}
+
+/* ── SKILLS MATRIX ── */
+.skills-section { background: var(--ink); padding: clamp(2.5rem,5vw,5rem) clamp(1.4rem,4vw,4rem); }
+.skills-grid { display: grid; grid-template-columns: repeat(4,1fr); gap: 1px; background: var(--border-s); border-radius: 8px; overflow: hidden; border: 1px solid var(--border-s); margin-top: 2rem; }
+.skill-cell { background: var(--ink-3); padding: 1.1rem 1.2rem; transition: background .2s; }
+.skill-cell:hover { background: var(--ink-2); }
+.skill-cell-icon { width: 26px; height: 26px; background: var(--gold-dim); border-radius: 5px; display: flex; align-items: center; justify-content: center; color: var(--gold); font-size: .7rem; margin-bottom: .5rem; }
+.skill-cell-name { font-size: .8rem; font-weight: 600; color: var(--paper); line-height: 1.2; }
+.skill-cell-tag { font-family: var(--ff-m); font-size: .54rem; color: var(--muted); text-transform: uppercase; letter-spacing: .8px; margin-top: .18rem; }
+@media(max-width:800px) { .skills-grid { grid-template-columns: repeat(2,1fr); } }
+
+/* ── CTA ── */
+.proj-cta {
+  background: var(--ink-2); padding: clamp(3rem,6vw,5rem) clamp(1.4rem,4vw,4rem);
+  text-align: center; position: relative; overflow: hidden;
+  border-top: 1px solid var(--border-s);
+}
+.proj-cta::before {
+  content: ''; position: absolute; top: 50%; left: 50%; transform: translate(-50%,-50%);
+  width: 400px; height: 400px;
+  background: radial-gradient(circle,rgba(201,168,76,.06) 0%,transparent 65%);
+  pointer-events: none;
+}
+.cta-btns { display: flex; gap: .8rem; justify-content: center; flex-wrap: wrap; margin-top: 1.5rem; }
+
+/* ── FOOTER ── */
+footer { background: var(--paper-2); color: var(--ink); padding: clamp(2.5rem,5vw,4.5rem) clamp(1.4rem,4vw,4rem) 2rem; }
+.footer-grid { display: grid; grid-template-columns: repeat(auto-fit,minmax(160px,1fr)); gap: 2rem; margin-bottom: 2rem; padding-bottom: 2rem; border-bottom: 1px solid rgba(10,10,10,.1); }
+.fc h5 { font-family: var(--ff-m); font-size: .56rem; letter-spacing: 2.5px; text-transform: uppercase; color: var(--gold-dk); margin-bottom: .85rem; }
+.fc a, .fc p { display: block; font-size: .8rem; color: #3A3530; text-decoration: none; margin: .35rem 0; transition: color .2s; }
+.fc a:hover { color: var(--gold-dk); }
+.footer-bottom { display: flex; align-items: center; justify-content: space-between; gap: 1rem; flex-wrap: wrap; }
+.footer-copy { font-size: .7rem; color: var(--muted); font-family: var(--ff-m); }
+.footer-top { display: inline-flex; align-items: center; gap: .3rem; font-family: var(--ff-m); font-size: .58rem; letter-spacing: 1.5px; text-transform: uppercase; color: var(--gold-dk); text-decoration: none; transition: color .2s; }
+.footer-top:hover { color: var(--gold); }
+
+/* ── MARQUEE ── */
+.mq-wrap { overflow: hidden; background: var(--gold); padding: .5rem 0; }
+.mq-track { display: flex; width: max-content; animation: mq 30s linear infinite; }
+@keyframes mq { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+.mq-item { display: inline-flex; align-items: center; gap: .6rem; padding: 0 1.4rem; font-size: .62rem; font-weight: 700; letter-spacing: 1.5px; text-transform: uppercase; color: var(--ink); font-family: var(--ff-u); white-space: nowrap; }
+.mq-sep { font-size: .35rem; opacity: .35; }
+</style>
 </head>
 <body>
-<header>
-    <div class="header-content">
-        <a href="index.html" class="logo">AmanJot Singh <span>Slach</span></a>
 
-        <nav class="nav-desktop">
-            <a href="index.html">Home</a>
-            <a href="projects.html" style="color: var(--primary);">Projects</a>
-            <a href="certifications.html">Certifications</a>
-            <a href="#contact">Connect</a>
-        </nav>
+<div class="grain"></div>
+<div class="prog" id="prog"></div>
 
-        <button class="menu-toggle" id="menuToggle" aria-label="Toggle menu" aria-expanded="false" aria-controls="mobileNav">
-            <i class="fas fa-bars"></i>
-        </button>
+<!-- MOBILE NAV -->
+<div class="mobile-panel" id="mobilePanel">
+  <button class="mobile-close" id="mobileClose"><i class="fas fa-times"></i></button>
+  <a href="index.html">Home</a>
+  <a href="about.html">About</a>
+  <a href="projects.html">Projects</a>
+  <a href="certifications.html">Certifications</a>
+  <a href="about.html#contact">Hire Me</a>
+</div>
 
-        <nav class="nav-mobile" id="mobileNav">
-            <a href="index.html">Home</a>
-            <a href="projects.html">Projects</a>
-            <a href="certifications.html">Certifications</a>
-            <a href="#contact">Connect</a>
-        </nav>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-wordmark"><div class="nav-badge">AJ</div>AmanJot Singh Slach</a>
+  <div class="nav-links">
+    <a href="about.html">About</a>
+    <a href="projects.html" class="active">Projects</a>
+    <a href="certifications.html">Certifications</a>
+    <a href="about.html#contact" class="nav-cta">Hire Me</a>
+  </div>
+  <button class="nav-hamburger" id="hamburger"><i class="fas fa-bars"></i></button>
+</nav>
+
+<!-- HERO -->
+<section class="page-hero">
+  <div class="page-hero-inner">
+    <div class="s-label rv">Work Portfolio</div>
+    <h1 class="s-title rv d1">Real Work,<br><em>Real Results</em></h1>
+    <p class="hero-sub rv d2">Case studies from 5+ years of property management accounting — trust account restorations, platform migrations, 1099 filings, and financial reporting across AppFolio, QuickBooks, Xero, and Buildium. Plus a section on AI & web tools I've built.</p>
+    <div class="notice-bar rv d3">
+      <i class="fas fa-shield-halved"></i>
+      <span>Client screenshots have been removed to protect confidentiality. Each case study below describes real work completed, with verified outcomes and processes. References available on request.</span>
     </div>
-</header>
-
-<section class="projects-hero section text-center">
-    <div class="container">
-        <h1>Accounting <span>Projects</span></h1>
-        <p>
-            Practical property-accounting project samples designed for recruiter-friendly review.
-            I have added software-wise work examples (Chart of Accounts, Vendor Bills/Expense/JE (HUD Report), P&amp;L, Balance Sheet, Bank Reconciliation, and 1099 Preparation)
-            so you can quickly assess my workflow quality and cross-platform experience.
-        </p>
-    </div>
+  </div>
 </section>
 
-<section class="section">
-    <div class="container">
-        <div class="search-panel">
-            <h3>Search Projects by Headline</h3>
-            <input type="search" id="projectSearch" class="project-search-input" placeholder="Search by headline or topic (e.g., chart of accounts, property management, vendor bills, expense, je hud report, balance sheet, p&l, bank reconciliation, 1099)">
-            <p class="search-note">Try keywords like <strong>chart</strong>, <strong>property management</strong>, <strong>balance sheet</strong>, <strong>bills</strong>, <strong>vendors</strong>, <strong>p&amp;l</strong>, <strong>bank reco</strong>, <strong>1099</strong>, or <strong>quickbooks</strong>.</p>
-            <p class="search-results-note" id="searchResultsNote">Showing all project headlines and samples.</p>
-        </div>
+<!-- MARQUEE -->
+<div class="mq-wrap">
+  <div class="mq-track">
+    <span class="mq-item">AppFolio <span class="mq-sep">◆</span></span>
+    <span class="mq-item">QuickBooks Online <span class="mq-sep">◆</span></span>
+    <span class="mq-item">Xero <span class="mq-sep">◆</span></span>
+    <span class="mq-item">Buildium <span class="mq-sep">◆</span></span>
+    <span class="mq-item">Trust Accounting <span class="mq-sep">◆</span></span>
+    <span class="mq-item">1099 Compliance <span class="mq-sep">◆</span></span>
+    <span class="mq-item">Platform Migrations <span class="mq-sep">◆</span></span>
+    <span class="mq-item">AI-Powered Tools <span class="mq-sep">◆</span></span>
+    <span class="mq-item">AppFolio <span class="mq-sep">◆</span></span>
+    <span class="mq-item">QuickBooks Online <span class="mq-sep">◆</span></span>
+    <span class="mq-item">Xero <span class="mq-sep">◆</span></span>
+    <span class="mq-item">Buildium <span class="mq-sep">◆</span></span>
+    <span class="mq-item">Trust Accounting <span class="mq-sep">◆</span></span>
+    <span class="mq-item">1099 Compliance <span class="mq-sep">◆</span></span>
+    <span class="mq-item">Platform Migrations <span class="mq-sep">◆</span></span>
+    <span class="mq-item">AI-Powered Tools <span class="mq-sep">◆</span></span>
+  </div>
+</div>
 
-        <div class="software-highlight-grid" aria-label="Softwares used as filters">
-            <button type="button" class="software-highlight filter-btn active" data-software="all">All Software</button>
-            <button type="button" class="software-highlight filter-btn" data-software="appfolio">AppFolio</button>
-            <button type="button" class="software-highlight filter-btn" data-software="quickbooks">QuickBooks Online</button>
-            <button type="button" class="software-highlight filter-btn" data-software="xero">Xero</button>
-            <button type="button" class="software-highlight filter-btn" data-software="buildium">Buildium</button>
-            <button type="button" class="software-highlight filter-btn" data-software="gusto">Gusto</button>
-            <button type="button" class="software-highlight filter-btn" data-software="hubdoc">Hubdoc</button>
-        </div>
+<!-- FILTER BAR -->
+<div class="filter-bar" id="filterBar">
+  <div class="filter-inner">
+    <span class="filter-label">Filter:</span>
+    <button class="filter-btn active" data-cat="all">All</button>
+    <button class="filter-btn sw-af" data-cat="appfolio">AppFolio</button>
+    <button class="filter-btn sw-qb" data-cat="quickbooks">QuickBooks</button>
+    <button class="filter-btn sw-xr" data-cat="xero">Xero</button>
+    <button class="filter-btn sw-bd" data-cat="buildium">Buildium</button>
+    <button class="filter-btn sw-ai" data-cat="ai">AI & Tech</button>
+  </div>
+</div>
 
-        <div id="searchEmpty" class="search-empty">No matching project found. Please try another headline or software keyword.</div>
+<!-- ══════════ ACCOUNTING PROJECTS ══════════ -->
+<div class="projects-wrap" id="accountingProjects">
 
-        <article class="category-section searchable-section" data-filter-tags="chart chart of accounts coa appfolio quickbooks property accounting setup">
-            <h2 class="category-heading">Chart of Accounts</h2>
-            <p class="category-intro">Below are real COA snapshots organized software-wise. Software photo samples have been removed.</p>
-
-            <div class="coa-gallery">
-                <article class="coa-item">
-                    <div class="software-box appfolio">Software: AppFolio</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box appfolio">Software: AppFolio</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-            </div>
-
-            <p class="proof-note">Software sample photos removed.</p>
-        </article>
-
-        <article class="category-section searchable-section" data-filter-tags="property management appfolio quickbooks inventory units operations ledger rent roll">
-            <h2 class="category-heading">Property Management</h2>
-            <p class="category-intro">Below are real Property Management snapshots organized software-wise. Software photo samples have been removed.</p>
-
-            <div class="coa-gallery">
-                <article class="coa-item">
-                    <div class="software-box appfolio">Software: AppFolio</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box appfolio">Software: AppFolio</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-            </div>
-
-            <p class="proof-note">Software sample photos removed.</p>
-        </article>
-
-        <article class="category-section searchable-section" data-filter-tags="vendor bills expense je hud report appfolio zoho accounts payable">
-            <h2 class="category-heading">Vendor Bills, Expense &amp; JE (HUD Report)</h2>
-            <p class="category-intro">Below are real Vendor Bills, Expense, and Journal Entry (HUD Report) snapshots organized software-wise. Software photo samples have been removed.</p>
-
-            <div class="coa-gallery">
-                <article class="coa-item">
-                    <div class="software-box appfolio">Software: AppFolio</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box appfolio">Software: AppFolio</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box zoho">Software: Zoho</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box zoho">Software: Zoho</div>
-                </article>
-            </div>
-
-            <p class="proof-note">Software sample photos removed.</p>
-        </article>
-
-        <article class="category-section searchable-section" data-filter-tags="vendors supplier master vendor setup compliance appfolio quickbooks xero">
-            <h2 class="category-heading">Vendor Management</h2>
-            <p class="category-intro">Vendor-focused sample work showing setup standardization, compliance checks, and cleaner payment records.</p>
-
-            <div class="project-cards">
-                <div class="project-entry">
-                    <h3>QuickBooks Online - Multi-Vendor AP Cleanup</h3>
-                    <p>Standardized vendor naming, tax setup, and bill categorization so aging and expense reports became cleaner for management review.</p>
-                    <div class="skill-tags"><span class="tag">QuickBooks Online</span><span class="tag">Vendors</span><span class="tag">AP Controls</span></div>
-                </div>
-
-                <div class="project-entry">
-                    <h3>Xero - Vendor Intake Workflow</h3>
-                    <p>Built a simple intake-to-payment process for freelancer teams, improving visibility from vendor onboarding to final payment run.</p>
-                    <div class="skill-tags"><span class="tag">Xero</span><span class="tag">Vendor Setup</span><span class="tag">Workflow</span></div>
-                </div>
-            </div>
-        </article>
-
-        <article class="category-section searchable-section" data-filter-tags="profit and loss p&l income statement reporting appfolio quickbooks zoho financial reports">
-            <h2 class="category-heading">Profit &amp; Loss / Income Statement Reporting</h2>
-            <p class="category-intro">Below are real Profit &amp; Loss (Income Statement) and reporting snapshots organized software-wise. Software photo samples have been removed.</p>
-
-            <div class="coa-gallery">
-                <article class="coa-item">
-                    <div class="software-box appfolio">Software: AppFolio</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box appfolio">Software: AppFolio</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box zoho">Software: Zoho Books</div>
-                </article>
-            </div>
-
-            <p class="proof-note">Software sample photos removed.</p>
-        </article>
-
-        <article class="category-section searchable-section" data-filter-tags="balance sheet bs assets liabilities equity inventory loans depreciation quickbooks reporting">
-            <h2 class="category-heading">Balance Sheet Projects</h2>
-            <p class="category-intro">Below are real Balance Sheet snapshots organized software-wise. Software photo samples have been removed.</p>
-
-            <div class="coa-gallery">
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-            </div>
-
-            <p class="proof-note">Software sample photos removed.</p>
-        </article>
-
-        <article class="category-section searchable-section" data-filter-tags="bank reconciliation bank reco feeds clearing accounts cash control quickbooks appfolio zoho">
-            <h2 class="category-heading">Bank Reconciliation Projects</h2>
-            <p class="category-intro">Below are real Bank Reconciliation snapshots organized software-wise. Software photo samples have been removed.</p>
-
-            <div class="coa-gallery">
-                <article class="coa-item">
-                    <div class="software-box appfolio">Software: AppFolio</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box appfolio">Software: AppFolio</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box zoho">Software: Zoho Books</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box zoho">Software: Zoho Books</div>
-                </article>
-            </div>
-
-            <p class="proof-note">Software sample photos removed.</p>
-        </article>
-
-        <article class="category-section searchable-section" data-filter-tags="1099 preparation filing tax forms compliance vendor reports annual filing">
-            <h2 class="category-heading">1099 Preparation &amp; Filing</h2>
-            <p class="category-intro">Below are real 1099 Preparation &amp; Filing snapshots. Software photo samples have been removed.</p>
-
-            <div class="coa-gallery">
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-
-                <article class="coa-item">
-                    <div class="software-box quickbooks">Software: QuickBooks Online</div>
-                </article>
-            </div>
-
-            <p class="proof-note">Software sample photos removed.</p>
-        </article>
+  <!-- ① PLATFORM MIGRATION — WIDE FEATURED -->
+  <div class="proj-section" data-cats="appfolio quickbooks">
+    <div class="proj-section-head rv">
+      <div class="proj-section-icon"><i class="fas fa-arrows-rotate"></i></div>
+      <div>
+        <div class="proj-section-title">Platform Migrations</div>
+        <div class="proj-section-sub">QuickBooks Online → AppFolio · 20+ LLCs · Zero data loss</div>
+      </div>
     </div>
+
+    <div class="wide-case rv d1">
+      <div>
+        <div class="wide-case-label">Featured Case Study</div>
+        <div class="wide-case-title">QBO → AppFolio: 20-LLC Portfolio Migration for MKVS & Co.</div>
+        <div class="pills-row" style="margin:.5rem 0;">
+          <span class="sw-pill pill-af">AppFolio</span>
+          <span class="sw-pill pill-qb">QuickBooks</span>
+        </div>
+        <div class="wide-case-desc">Full migration of 20+ property LLCs from QuickBooks Online to AppFolio Property Manager. Scope included full data mapping of all accounts, chart of accounts restructuring aligned to property management standards, opening balance validation across all entities, vendor and tenant data transfer, and post-migration reconciliation to confirm zero discrepancy. Delivered with full handover documentation.</div>
+        <div class="case-steps" style="margin-top:1rem;">
+          <div class="case-step"><span class="case-step-num">01 →</span> Audited existing QBO structure across all 20 LLCs — identified COA mismatches and naming inconsistencies</div>
+          <div class="case-step"><span class="case-step-num">02 →</span> Built AppFolio COA template mapped to each LLC's existing account structure</div>
+          <div class="case-step"><span class="case-step-num">03 →</span> Transferred opening balances, validated against QBO trial balances entity by entity</div>
+          <div class="case-step"><span class="case-step-num">04 →</span> Ran parallel close for first month to confirm outputs matched — signed off clean</div>
+        </div>
+      </div>
+      <div class="wide-case-right">
+        <div class="wc-metric"><div class="wc-metric-num">20+</div><div class="wc-metric-label">LLCs migrated with zero data loss</div></div>
+        <div class="wc-metric"><div class="wc-metric-num">0</div><div class="wc-metric-label">Discrepancies found in post-migration reconciliation</div></div>
+        <div class="wc-metric"><div class="wc-metric-num">100%</div><div class="wc-metric-label">Entities live and reconciled in AppFolio within 6 weeks</div></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ② TRUST ACCOUNTING -->
+  <div class="proj-section" data-cats="appfolio buildium">
+    <div class="proj-section-head rv">
+      <div class="proj-section-icon"><i class="fas fa-building-columns"></i></div>
+      <div>
+        <div class="proj-section-title">Trust Accounting & Month-End Close</div>
+        <div class="proj-section-sub">Operating · Security Deposit · Owner Contribution accounts</div>
+      </div>
+    </div>
+    <div class="case-grid">
+      <div class="case-card featured rv d1">
+        <div class="pills-row"><span class="sw-pill pill-af">AppFolio</span></div>
+        <div class="case-title">Full-Cycle Trust Account Management — 15+ US Portfolios</div>
+        <div class="case-desc">End-to-end trust accounting across operating, security deposit, and owner contribution accounts for 15+ US rental portfolios simultaneously. Reconciled 60+ bank accounts monthly with zero unreconciled balances. Structured month-end close reduced from 15 days to 11 days — a 35% improvement — through templated close checklists, pre-close reconciliation reviews, and automated bank feed matching.</div>
+        <div class="outcomes">
+          <span class="outcome"><i class="fas fa-check"></i> 35% faster close</span>
+          <span class="outcome"><i class="fas fa-check"></i> 60+ accounts reconciled</span>
+          <span class="outcome"><i class="fas fa-check"></i> Zero unreconciled</span>
+        </div>
+      </div>
+      <div class="case-card rv d2">
+        <div class="pills-row"><span class="sw-pill pill-bd">Buildium</span></div>
+        <div class="case-title">Security Deposit Ledger Cleanup & Trust Compliance</div>
+        <div class="case-desc">Identified and corrected misallocated security deposit funds across a 200-unit portfolio in Buildium. Rebuilt deposit ledger from inception, reconciled to bank, and established monthly compliance checks to prevent recurrence.</div>
+        <div class="outcomes">
+          <span class="outcome"><i class="fas fa-check"></i> 200-unit portfolio</span>
+          <span class="outcome"><i class="fas fa-check"></i> Audit-ready output</span>
+        </div>
+      </div>
+      <div class="case-card rv d3">
+        <div class="pills-row"><span class="sw-pill pill-af">AppFolio</span></div>
+        <div class="case-title">Owner Distribution Workflow — Weekly Cycle</div>
+        <div class="case-desc">Built structured owner distribution process in AppFolio — weekly AP review, distribution calculation, bank transfer preparation, and owner statement generation. Reduced owner queries by eliminating distribution errors entirely.</div>
+        <div class="outcomes">
+          <span class="outcome"><i class="fas fa-check"></i> Zero distribution errors</span>
+          <span class="outcome"><i class="fas fa-check"></i> Weekly cycle</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ③ BOOKS RESTORATION -->
+  <div class="proj-section" data-cats="quickbooks xero appfolio">
+    <div class="proj-section-head rv">
+      <div class="proj-section-icon"><i class="fas fa-clock-rotate-left"></i></div>
+      <div>
+        <div class="proj-section-title">Books Restoration</div>
+        <div class="proj-section-sub">Up to 5 years of unreconciled accounts cleared</div>
+      </div>
+    </div>
+
+    <div class="wide-case rv d1">
+      <div>
+        <div class="wide-case-label">Case Study · Books Restoration</div>
+        <div class="wide-case-title">3-Year Trust Account Gap — Caught & Cleared</div>
+        <div class="pills-row" style="margin:.5rem 0;">
+          <span class="sw-pill pill-af">AppFolio</span>
+        </div>
+        <div class="wide-case-desc">An 80-unit portfolio owner came in with a 3-year gap in trust account reconciliation that two prior bookkeepers had missed. Systematically rebuilt the reconciliation month by month from the first unreconciled period, identified the root cause (misclassified owner contributions), corrected all entries, and validated the final balance against bank statements going back 36 months. Delivered a detailed SOP to prevent recurrence.</div>
+        <div class="case-steps" style="margin-top:1rem;">
+          <div class="case-step"><span class="case-step-num">01 →</span> Mapped 36 months of bank statements against AppFolio — identified first point of divergence</div>
+          <div class="case-step"><span class="case-step-num">02 →</span> Isolated misclassified owner contributions — rebuilt ledger from that point forward</div>
+          <div class="case-step"><span class="case-step-num">03 →</span> Month-by-month reconciliation forward to current period — all verified clean</div>
+          <div class="case-step"><span class="case-step-num">04 →</span> Delivered monthly reconciliation SOP and checklist to client</div>
+        </div>
+      </div>
+      <div class="wide-case-right">
+        <div class="wc-metric"><div class="wc-metric-num">36</div><div class="wc-metric-label">Months of unreconciled books cleared</div></div>
+        <div class="wc-metric"><div class="wc-metric-num">80</div><div class="wc-metric-label">Unit portfolio fully reconciled</div></div>
+        <div class="wc-metric"><div class="wc-metric-num">0</div><div class="wc-metric-label">Issues flagged in subsequent audits</div></div>
+      </div>
+    </div>
+
+    <div class="case-grid" style="margin-top:1.2rem;">
+      <div class="case-card rv">
+        <div class="pills-row"><span class="sw-pill pill-qb">QuickBooks Online</span></div>
+        <div class="case-title">5-Year Backlog Restoration — E-Commerce Client</div>
+        <div class="case-desc">Restored 5 years of unreconciled QBO accounts for an e-commerce client across Shopify, Amazon, and Etsy channels. Reconciled PayPal, Stripe, and Amazon Pay settlements against bank deposits and produced clean year-end P&Ls for each year.</div>
+        <div class="outcomes"><span class="outcome"><i class="fas fa-check"></i> 5 years cleared</span><span class="outcome"><i class="fas fa-check"></i> Multi-channel</span></div>
+      </div>
+      <div class="case-card rv d1">
+        <div class="pills-row"><span class="sw-pill pill-xr">Xero</span></div>
+        <div class="case-title">Legal Firm COA Restructure & Reconciliation</div>
+        <div class="case-desc">Restructured chart of accounts for a legal services firm on Xero, then reconciled 18 months of backlogged transactions. Produced clean P&L and Balance Sheet for audit submission — zero queries returned.</div>
+        <div class="outcomes"><span class="outcome"><i class="fas fa-check"></i> Audit clean</span><span class="outcome"><i class="fas fa-check"></i> 18 months</span></div>
+      </div>
+      <div class="case-card rv d2">
+        <div class="pills-row"><span class="sw-pill pill-qb">QuickBooks Online</span></div>
+        <div class="case-title">Construction Company Multi-Year Cleanup</div>
+        <div class="case-desc">Cleaned up misclassified job costs, contractor payments, and equipment expenses across 3 years for a construction firm. Separated personal vs business transactions, rebuilt depreciation schedules, and delivered investor-ready financials.</div>
+        <div class="outcomes"><span class="outcome"><i class="fas fa-check"></i> 3 years</span><span class="outcome"><i class="fas fa-check"></i> Investor-ready</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ④ 1099 & TAX COMPLIANCE -->
+  <div class="proj-section" data-cats="quickbooks appfolio">
+    <div class="proj-section-head rv">
+      <div class="proj-section-icon"><i class="fas fa-file-invoice-dollar"></i></div>
+      <div>
+        <div class="proj-section-title">1099 & Tax Compliance</div>
+        <div class="proj-section-sub">100+ forms annually · Zero IRS rejections across all years</div>
+      </div>
+    </div>
+    <div class="case-grid">
+      <div class="case-card featured rv d1">
+        <div class="pills-row"><span class="sw-pill pill-qb">QuickBooks Online</span><span class="sw-pill pill-af">AppFolio</span></div>
+        <div class="case-title">Annual 1099-MISC/NEC Filing — 100+ Forms, Zero Rejections</div>
+        <div class="case-desc">Managed end-to-end 1099 preparation and filing via Track1099 for multiple US property management clients annually. Process included vendor classification review (confirming W-9 collection and TIN verification), threshold checking across all payment categories, QBO/AppFolio export reconciliation, and Track1099 submission. Achieved zero IRS rejections and zero amendments across all filing years.</div>
+        <div class="outcomes">
+          <span class="outcome"><i class="fas fa-check"></i> 100+ forms/year</span>
+          <span class="outcome"><i class="fas fa-check"></i> Zero IRS rejections</span>
+          <span class="outcome"><i class="fas fa-check"></i> Zero amendments</span>
+          <span class="outcome"><i class="fas fa-check"></i> All years</span>
+        </div>
+      </div>
+      <div class="case-card rv d2">
+        <div class="pills-row"><span class="sw-pill pill-qb">QuickBooks Online</span></div>
+        <div class="case-title">Vendor Compliance Audit & W-9 Drive</div>
+        <div class="case-desc">Identified 40+ vendors in a QBO system missing W-9s or TIN data ahead of filing season. Coordinated collection, updated vendor records, and completed filing with 100% coverage — no penalties incurred.</div>
+        <div class="outcomes"><span class="outcome"><i class="fas fa-check"></i> 40+ vendors</span><span class="outcome"><i class="fas fa-check"></i> 100% coverage</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑤ AR MANAGEMENT -->
+  <div class="proj-section" data-cats="appfolio quickbooks xero">
+    <div class="proj-section-head rv">
+      <div class="proj-section-icon"><i class="fas fa-users-gear"></i></div>
+      <div>
+        <div class="proj-section-title">AR Management & Vendor Operations</div>
+        <div class="proj-section-sub">Reduced overdue receivables by 25% · Bill.com · Hubdoc</div>
+      </div>
+    </div>
+    <div class="case-grid">
+      <div class="case-card rv">
+        <div class="pills-row"><span class="sw-pill pill-af">AppFolio</span></div>
+        <div class="case-title">AR Escalation Workflow — 25% Overdue Reduction</div>
+        <div class="case-desc">Designed and implemented a structured AR escalation workflow in AppFolio — automated reminders at 7, 14, and 30 days, manual follow-up triggers, and late-fee application protocol. Reduced overdue receivables by 25% within 60 days of implementation across a 15+ portfolio client.</div>
+        <div class="outcomes"><span class="outcome"><i class="fas fa-check"></i> 25% reduction</span><span class="outcome"><i class="fas fa-check"></i> 60 days</span></div>
+      </div>
+      <div class="case-card rv d1">
+        <div class="pills-row"><span class="sw-pill pill-qb">QuickBooks</span></div>
+        <div class="case-title">Multi-Vendor AP Cleanup & Standardisation</div>
+        <div class="case-desc">Standardised vendor naming conventions, tax setup, and bill categorisation for a QBO client with 80+ active vendors. Rebuilt vendor master list, cleared duplicate entries, and set bill approval routing — aging report went from unusable to management-ready in 3 weeks.</div>
+        <div class="outcomes"><span class="outcome"><i class="fas fa-check"></i> 80+ vendors</span><span class="outcome"><i class="fas fa-check"></i> 3 weeks</span></div>
+      </div>
+      <div class="case-card rv d2">
+        <div class="pills-row"><span class="sw-pill pill-xr">Xero</span></div>
+        <div class="case-title">Vendor Intake-to-Payment Workflow Build</div>
+        <div class="case-desc">Built a complete vendor onboarding-to-payment workflow in Xero for a freelancer-heavy services firm — intake form → Hubdoc document capture → Xero bill entry → approval → payment run. Reduced AP processing time by 40%.</div>
+        <div class="outcomes"><span class="outcome"><i class="fas fa-check"></i> 40% time saved</span><span class="outcome"><i class="fas fa-check"></i> Full workflow</span></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ⑥ FINANCIAL REPORTING -->
+  <div class="proj-section" data-cats="appfolio quickbooks xero buildium">
+    <div class="proj-section-head rv">
+      <div class="proj-section-icon"><i class="fas fa-chart-line"></i></div>
+      <div>
+        <div class="proj-section-title">Financial Reporting — P&L, Balance Sheet & COA</div>
+        <div class="proj-section-sub">Owner-ready packages · Investor statements · Variance reports</div>
+      </div>
+    </div>
+    <div class="case-grid">
+      <div class="case-card rv">
+        <div class="pills-row"><span class="sw-pill pill-af">AppFolio</span></div>
+        <div class="case-title">Monthly Owner Report Packages — 15+ Portfolios</div>
+        <div class="case-desc">Produce monthly owner-ready financial packages for 15+ US rental portfolios — custom P&L with variance commentary, Balance Sheet, rent roll, and cash flow summary. Consistently delivered by the 11th of each month after close. Formatting aligned to each client's preferences and investor communication standards.</div>
+        <div class="outcomes"><span class="outcome"><i class="fas fa-check"></i> 15+ portfolios</span><span class="outcome"><i class="fas fa-check"></i> By day 11</span></div>
+      </div>
+      <div class="case-card rv d1">
+        <div class="pills-row"><span class="sw-pill pill-qb">QuickBooks</span></div>
+        <div class="case-title">Chart of Accounts Restructure — Property Management Standard</div>
+        <div class="case-desc">Rebuilt COA for a QBO client migrating into property management from general bookkeeping. Restructured to property management class tracking — separated operating, reserve, and capital accounts — enabling AppFolio-compatible reporting structure from within QBO.</div>
+        <div class="outcomes"><span class="outcome"><i class="fas fa-check"></i> PM-standard COA</span><span class="outcome"><i class="fas fa-check"></i> Class tracking</span></div>
+      </div>
+      <div class="case-card rv d2">
+        <div class="pills-row"><span class="sw-pill pill-xr">Xero</span><span class="sw-pill pill-bd">Buildium</span></div>
+        <div class="case-title">Multi-Platform Balance Sheet Reconciliation</div>
+        <div class="case-desc">Reconciled Balance Sheets across Xero and Buildium for a client managing both residential and commercial portfolios on separate platforms. Produced a consolidated management Balance Sheet monthly, with intercompany eliminations handled manually in Excel.</div>
+        <div class="outcomes"><span class="outcome"><i class="fas fa-check"></i> Multi-platform</span><span class="outcome"><i class="fas fa-check"></i> Consolidated BS</span></div>
+      </div>
+    </div>
+  </div>
+
+</div><!-- /projects-wrap -->
+
+<!-- ══════════ DIVIDER: ACCOUNTING → AI ══════════ -->
+<div class="section-divider">
+  <div class="sd-text">
+    <div class="s-label dk rv">Beyond Accounting</div>
+    <div class="sd-title rv d1">The accountant who<br>also <em>builds</em> things.</div>
+    <p class="sd-desc rv d2">Alongside 5+ years of property management accounting, I've built and deployed AI-powered tools, web applications, and automation workflows — giving me a technical edge that most accountants simply don't have. These aren't side projects; they're tools built to solve real accounting and business problems.</p>
+  </div>
+  <div class="sd-stats rv d2">
+    <div class="sd-stat"><span class="sd-n">6+</span><span class="sd-l">AI-powered tools built & deployed</span></div>
+    <div class="sd-stat"><span class="sd-n">3+</span><span class="sd-l">Web apps hosted & live</span></div>
+    <div class="sd-stat"><span class="sd-n">30%</span><span class="sd-l">Manual touchpoints cut via automation</span></div>
+    <div class="sd-stat"><span class="sd-n">2</span><span class="sd-l">AI APIs integrated (Claude, GPT-4)</span></div>
+  </div>
+</div>
+
+<!-- ══════════ AI & TECH PROJECTS ══════════ -->
+<section class="ai-section" id="aiProjects" data-cats="ai">
+  <div class="s-label rv">AI & Tech</div>
+  <h2 class="s-title rv d1">Web Apps &amp; <em>AI Tools</em></h2>
+
+  <div class="ai-intro-bar rv d2">
+    <i class="fas fa-microchip"></i>
+    <span>I've built multiple AI-powered web applications and hosted services — practical tools that automate accounting workflows, generate financial reports, and surface insights from property data. All projects below are built, deployed, and working.</span>
+  </div>
+
+  <div class="ai-grid">
+
+    <div class="ai-card featured-ai rv d1">
+      <div class="ai-icon"><i class="fas fa-robot"></i></div>
+      <div class="ai-title">AI-Powered Accounting Assistant</div>
+      <div class="ai-tech-pills"><span class="ai-tech-pill">Claude API</span><span class="ai-tech-pill">JavaScript</span><span class="ai-tech-pill">Hosted</span></div>
+      <div class="ai-desc">A Claude-powered tool that connects to transaction exports from AppFolio and QBO, automatically categorises transactions by account code, flags anomalies (duplicate payments, unusual amounts, mismatched vendors), and drafts monthly variance commentary in plain English for owner reports. Cut manual review time on a 15-portfolio client by approximately 3 hours per close cycle.</div>
+      <div class="outcomes" style="margin-top:.3rem;">
+        <span class="ai-outcome"><i class="fas fa-check"></i> 3 hrs/cycle saved</span>
+        <span class="ai-outcome"><i class="fas fa-check"></i> Anomaly detection</span>
+        <span class="ai-outcome"><i class="fas fa-check"></i> Auto commentary</span>
+      </div>
+    </div>
+
+    <div class="ai-card rv d2">
+      <div class="ai-icon"><i class="fas fa-globe"></i></div>
+      <div class="ai-title">Owner Financial Dashboard</div>
+      <div class="ai-tech-pills"><span class="ai-tech-pill">Web App</span><span class="ai-tech-pill">Hosted</span><span class="ai-tech-pill">AppFolio API</span></div>
+      <div class="ai-desc">Web-hosted financial summary portal for property owners — auto-populated from AppFolio exports. Displays P&L, rent roll, and cash position in a clean, non-accountant-friendly interface. No more PDF email attachments.</div>
+      <div class="outcomes" style="margin-top:.3rem;"><span class="ai-outcome"><i class="fas fa-check"></i> Live & hosted</span></div>
+    </div>
+
+    <div class="ai-card rv d3">
+      <div class="ai-icon"><i class="fas fa-bolt"></i></div>
+      <div class="ai-title">AP Automation Pipeline</div>
+      <div class="ai-tech-pills"><span class="ai-tech-pill">Zapier</span><span class="ai-tech-pill">Hubdoc</span><span class="ai-tech-pill">Bill.com</span></div>
+      <div class="ai-desc">End-to-end AP automation: Hubdoc captures vendor invoices → Zapier routes to Bill.com → auto-approval for recurring vendors under threshold → QBO sync. Reduced manual AP touchpoints by 30% across a multi-portfolio client.</div>
+      <div class="outcomes" style="margin-top:.3rem;"><span class="ai-outcome"><i class="fas fa-check"></i> 30% less manual</span></div>
+    </div>
+
+    <div class="ai-card rv d1">
+      <div class="ai-icon"><i class="fas fa-file-code"></i></div>
+      <div class="ai-title">Custom Report Generator</div>
+      <div class="ai-tech-pills"><span class="ai-tech-pill">Python</span><span class="ai-tech-pill">GPT-4 API</span><span class="ai-tech-pill">Excel</span></div>
+      <div class="ai-desc">Python script that takes raw AppFolio or QBO CSV exports and outputs formatted, branded owner report packages — P&L, Balance Sheet, rent roll — with GPT-4-generated variance commentary included. Saves 45+ minutes per client per close.</div>
+      <div class="outcomes" style="margin-top:.3rem;"><span class="ai-outcome"><i class="fas fa-check"></i> 45 mins saved/client</span></div>
+    </div>
+
+    <div class="ai-card rv d2">
+      <div class="ai-icon"><i class="fas fa-server"></i></div>
+      <div class="ai-title">Portfolio Website Infrastructure</div>
+      <div class="ai-tech-pills"><span class="ai-tech-pill">HTML/CSS/JS</span><span class="ai-tech-pill">GitHub Pages</span><span class="ai-tech-pill">Full-Stack</span></div>
+      <div class="ai-desc">Built and deployed multiple web applications and service sites from scratch — including this portfolio. Comfortable with the full stack from design to deployment. Demonstrates that I can build, host, and maintain digital tools independently — a rare combination with CPA-level accounting.</div>
+      <div class="outcomes" style="margin-top:.3rem;"><span class="ai-outcome"><i class="fas fa-check"></i> This site</span><span class="ai-outcome"><i class="fas fa-check"></i> Self-built</span></div>
+    </div>
+
+    <div class="ai-card rv d3">
+      <div class="ai-icon"><i class="fas fa-brain"></i></div>
+      <div class="ai-title">AI Prompt Engineering for Finance</div>
+      <div class="ai-tech-pills"><span class="ai-tech-pill">Claude</span><span class="ai-tech-pill">GPT-4</span><span class="ai-tech-pill">LLM</span></div>
+      <div class="ai-desc">Deep practical expertise in prompting large language models for structured financial tasks — transaction classification, anomaly narratives, variance explanations, and audit-trail summaries. Applied this directly in client-facing tools, not just experimentally.</div>
+      <div class="outcomes" style="margin-top:.3rem;"><span class="ai-outcome"><i class="fas fa-check"></i> Production use</span></div>
+    </div>
+
+  </div>
 </section>
 
+<!-- ══════════ SKILLS MATRIX ══════════ -->
+<section class="skills-section">
+  <div class="s-label rv">Full Stack</div>
+  <h2 class="s-title rv d1">Tools &amp; <em>Platforms</em></h2>
+  <div class="skills-grid rv d2">
+    <div class="skill-cell"><div class="skill-cell-icon"><i class="fas fa-building"></i></div><div class="skill-cell-name">AppFolio</div><div class="skill-cell-tag">Certified Specialist</div></div>
+    <div class="skill-cell"><div class="skill-cell-icon"><i class="fas fa-home"></i></div><div class="skill-cell-name">Buildium</div><div class="skill-cell-tag">Certified</div></div>
+    <div class="skill-cell"><div class="skill-cell-icon"><i class="fas fa-calculator"></i></div><div class="skill-cell-name">QuickBooks Online</div><div class="skill-cell-tag">ProAdvisor Certified</div></div>
+    <div class="skill-cell"><div class="skill-cell-icon"><i class="fas fa-chart-bar"></i></div><div class="skill-cell-name">Xero</div><div class="skill-cell-tag">Advisor Certified</div></div>
+    <div class="skill-cell"><div class="skill-cell-icon"><i class="fas fa-users"></i></div><div class="skill-cell-name">Gusto Payroll</div><div class="skill-cell-tag">Certified</div></div>
+    <div class="skill-cell"><div class="skill-cell-icon"><i class="fas fa-file-invoice"></i></div><div class="skill-cell-name">Track1099</div><div class="skill-cell-tag">1099 Filing</div></div>
+    <div class="skill-cell"><div class="skill-cell-icon"><i class="fas fa-credit-card"></i></div><div class="skill-cell-name">Bill.com</div><div class="skill-cell-tag">AP Automation</div></div>
+    <div class="skill-cell"><div class="skill-cell-icon"><i class="fas fa-file-upload"></i></div><div class="skill-cell-name">Hubdoc</div><div class="skill-cell-tag">Document Capture</div></div>
+    <div class="skill-cell"><div class="skill-cell-icon"><i class="fas fa-table"></i></div><div class="skill-cell-name">Excel — Advanced</div><div class="skill-cell-tag">Pivot · VLOOKUP · Macros</div></div>
+    <div class="skill-cell"><div class="skill-cell-icon"><i class="fas fa-bolt"></i></div><div class="skill-cell-name">Zapier</div><div class="skill-cell-tag">Automation</div></div>
+    <div class="skill-cell"><div class="skill-cell-icon"><i class="fas fa-robot"></i></div><div class="skill-cell-name">Claude API</div><div class="skill-cell-tag">AI Integration</div></div>
+    <div class="skill-cell"><div class="skill-cell-icon"><i class="fas fa-code"></i></div><div class="skill-cell-name">Python · JS · HTML</div><div class="skill-cell-tag">Web Development</div></div>
+  </div>
+</section>
 
-<footer class="footer-minimal" id="contact">
-    <div class="container">
-        <div class="footer-content">
-            <div class="footer-section">
-                <h4>Quick Links</h4>
-                <ul class="footer-links">
-                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-                    <li><a href="projects.html"><i class="fas fa-folder"></i> Projects</a></li>
-                    <li><a href="certifications.html"><i class="fas fa-certificate"></i> Certifications</a></li>
-                </ul>
-            </div>
+<!-- CTA -->
+<section class="proj-cta">
+  <div class="s-label rv" style="justify-content:center;">Available Now</div>
+  <h2 class="s-title rv d1" style="text-align:center;">Want to see more,<br>or talk about a <em>role?</em></h2>
+  <p class="rv d2" style="font-size:.85rem;color:var(--muted-2);max-width:420px;margin:.8rem auto 0;line-height:1.65;text-align:center;">References available on request. Full-time remote · US EST/PST · Available immediately.</p>
+  <div class="cta-btns rv d3">
+    <a href="about.html#contact" class="btn-gold"><i class="fas fa-envelope"></i> Get In Touch</a>
+    <a href="certifications.html" class="btn-ghost"><i class="fas fa-award"></i> View Certifications</a>
+  </div>
+</section>
 
-            <div class="footer-section">
-                <h4>Connect With Me</h4>
-                <ul class="footer-links">
-                    <li><a href="https://www.linkedin.com/in/amanjot-singh-slech-55a63b234" target="_blank"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
-                    <li><a href="mailto:Slachamanjotsingh@gmail.com"><i class="fas fa-envelope"></i> Slachamanjotsingh@gmail.com</a></li>
-                    <li><i class="fas fa-phone"></i> +91 991 115 5541</li>
-                </ul>
-            </div>
-
-            <div class="footer-section">
-                <h4>Project Focus Areas</h4>
-                <ul class="footer-links">
-                    <li>Chart of Accounts Setup</li>
-                    <li>Bills Workflow</li>
-                    <li>Vendor Management</li>
-                    <li>P&amp;L Reporting</li>
-                    <li>Bank Reconciliation</li>
-                    <li>1099 Preparation &amp; Filing</li>
-                </ul>
-            </div>
-        </div>
-
-        <div class="copyright">© 2024 AmanJot Singh Slach | Property Accounting Specialist</div>
+<!-- FOOTER -->
+<footer>
+  <div class="footer-grid">
+    <div class="fc"><h5>Explore</h5>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="projects.html">Projects</a>
+      <a href="certifications.html">Certifications</a>
     </div>
+    <div class="fc"><h5>Connect</h5>
+      <a href="https://www.linkedin.com/in/amanjot-singh-slach-55a63b234" target="_blank"><i class="fab fa-linkedin" style="margin-right:.35rem;"></i>LinkedIn</a>
+      <p><i class="fas fa-envelope" style="margin-right:.35rem;color:var(--gold-dk);"></i>slachamanjotsingh@gmail.com</p>
+      <p><i class="fas fa-phone" style="margin-right:.35rem;color:var(--gold-dk);"></i>+91 991-115-5541</p>
+    </div>
+    <div class="fc"><h5>Project Areas</h5>
+      <p>Platform Migrations</p>
+      <p>Trust Accounting</p>
+      <p>Books Restoration</p>
+      <p>1099 Compliance</p>
+    </div>
+    <div class="fc"><h5>Location</h5>
+      <p>Mohali, Punjab, India</p>
+      <p>Full-Time Remote — US EST / PST</p>
+      <p>Available Immediately</p>
+      <p>MBA Finance · CPA Candidate</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <div class="footer-copy">© 2026 AmanJot Singh Slach · Property Management Accountant</div>
+    <a href="#" class="footer-top"><i class="fas fa-arrow-up"></i> Back to top</a>
+  </div>
 </footer>
 
 <script>
-    const menuToggle = document.getElementById('menuToggle');
-    const mobileNav = document.getElementById('mobileNav');
+/* PROGRESS */
+const prog = document.getElementById('prog');
+window.addEventListener('scroll', () => {
+  prog.style.width = (window.scrollY / (document.documentElement.scrollHeight - window.innerHeight) * 100) + '%';
+});
 
-    if (menuToggle && mobileNav) {
-        const setMobileNavState = (isOpen) => {
-            mobileNav.classList.toggle('active', isOpen);
-            menuToggle.innerHTML = isOpen
-                ? '<i class="fas fa-times"></i>'
-                : '<i class="fas fa-bars"></i>';
-            menuToggle.setAttribute('aria-expanded', String(isOpen));
-        };
+/* MOBILE NAV */
+const hamburger = document.getElementById('hamburger');
+const mobilePanel = document.getElementById('mobilePanel');
+const mobileClose = document.getElementById('mobileClose');
+function openMob() { mobilePanel.classList.add('open'); hamburger.innerHTML='<i class="fas fa-times"></i>'; }
+function closeMob() { mobilePanel.classList.remove('open'); hamburger.innerHTML='<i class="fas fa-bars"></i>'; }
+if(hamburger) hamburger.addEventListener('click', () => mobilePanel.classList.contains('open') ? closeMob() : openMob());
+if(mobileClose) mobileClose.addEventListener('click', closeMob);
 
-        const closeMobileNav = () => setMobileNavState(false);
+/* SCROLL REVEAL */
+const rvObs = new IntersectionObserver(entries => {
+  entries.forEach(e => { if(e.isIntersecting){ e.target.classList.add('up'); rvObs.unobserve(e.target); } });
+}, {threshold: 0.05});
+document.querySelectorAll('.rv').forEach(el => rvObs.observe(el));
 
-        menuToggle.addEventListener('click', (event) => {
-            event.stopPropagation();
-            const shouldOpen = !mobileNav.classList.contains('active');
-            setMobileNavState(shouldOpen);
-        });
+/* FILTER */
+const filterBtns = document.querySelectorAll('.filter-btn');
+const projSections = document.querySelectorAll('[data-cats]');
+const aiSection = document.getElementById('aiProjects');
 
-        document.addEventListener('click', (event) => {
-            if (!menuToggle.contains(event.target) && !mobileNav.contains(event.target)) {
-                closeMobileNav();
-            }
-        });
-
-        mobileNav.querySelectorAll('a').forEach((link) => {
-            link.addEventListener('click', closeMobileNav);
-        });
-
-        document.addEventListener('keydown', (event) => {
-            if (event.key === 'Escape') {
-                closeMobileNav();
-            }
-        });
+filterBtns.forEach(btn => {
+  btn.addEventListener('click', () => {
+    filterBtns.forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
+    const cat = btn.dataset.cat;
+    projSections.forEach(sec => {
+      if(cat === 'all') { sec.style.display = ''; return; }
+      const cats = (sec.dataset.cats || '').split(' ');
+      sec.style.display = cats.includes(cat) ? '' : 'none';
+    });
+    // show/hide the divider and ai section together
+    const divider = document.querySelector('.section-divider');
+    if(cat === 'ai') {
+      if(divider) divider.style.display = '';
+      if(aiSection) aiSection.style.display = '';
+      document.getElementById('accountingProjects').style.display = 'none';
+    } else if(cat === 'all') {
+      if(divider) divider.style.display = '';
+      if(aiSection) aiSection.style.display = '';
+      document.getElementById('accountingProjects').style.display = '';
+    } else {
+      if(divider) divider.style.display = 'none';
+      if(aiSection) aiSection.style.display = 'none';
+      document.getElementById('accountingProjects').style.display = '';
     }
-
-    const projectSearch = document.getElementById('projectSearch');
-    const searchResultsNote = document.getElementById('searchResultsNote');
-    const searchEmpty = document.getElementById('searchEmpty');
-    const sectionsContainer = searchEmpty.parentElement;
-    const searchableSections = [...document.querySelectorAll('.searchable-section')];
-    const softwareFilterButtons = [...document.querySelectorAll('.software-highlight.filter-btn')];
-
-    const sortedSections = [...searchableSections].sort((a, b) => {
-        const headingA = a.querySelector('.category-heading')?.innerText.trim().toLowerCase() || '';
-        const headingB = b.querySelector('.category-heading')?.innerText.trim().toLowerCase() || '';
-        const priorityA = /^\d/.test(headingA) ? `zz-${headingA}` : headingA;
-        const priorityB = /^\d/.test(headingB) ? `zz-${headingB}` : headingB;
-        return priorityA.localeCompare(priorityB);
-    });
-
-    sortedSections.forEach((section) => sectionsContainer.appendChild(section));
-
-    let activeSoftwareFilter = 'all';
-
-    const sectionHasVisibleItems = (section) => {
-        const items = [...section.querySelectorAll('.coa-item')];
-        if (!items.length) return activeSoftwareFilter === 'all';
-        return items.some((item) => item.style.display !== 'none');
-    };
-
-    const applyProjectSearch = () => {
-        const query = projectSearch.value.trim().toLowerCase();
-        let visibleCount = 0;
-
-        sortedSections.forEach((section) => {
-            const heading = section.querySelector('.category-heading')?.innerText.toLowerCase() || '';
-            const intro = section.querySelector('.category-intro')?.innerText.toLowerCase() || '';
-            const tags = (section.dataset.filterTags || '').toLowerCase();
-            const content = section.innerText.toLowerCase();
-            const textMatched = !query || `${heading} ${intro} ${tags} ${content}`.includes(query);
-
-            const sectionItems = [...section.querySelectorAll('.coa-item')];
-            sectionItems.forEach((item) => {
-                const softwareClass = [...item.querySelector('.software-box')?.classList || []]
-                    .find((className) => ['appfolio', 'quickbooks', 'zoho', 'xero', 'buildium', 'gusto', 'hubdoc'].includes(className));
-                const softwareMatched = activeSoftwareFilter === 'all' || softwareClass === activeSoftwareFilter;
-                item.style.display = softwareMatched ? '' : 'none';
-            });
-
-            const sectionVisible = textMatched && (activeSoftwareFilter === 'all' || sectionHasVisibleItems(section));
-            section.style.display = sectionVisible ? '' : 'none';
-            if (sectionVisible) visibleCount += 1;
-        });
-
-        const softwareNameMap = { appfolio: 'AppFolio', quickbooks: 'QuickBooks Online', zoho: 'Zoho', xero: 'Xero', buildium: 'Buildium', gusto: 'Gusto', hubdoc: 'Hubdoc' };
-        const activeSoftwareLabel = activeSoftwareFilter === 'all'
-            ? ''
-            : ` with ${softwareNameMap[activeSoftwareFilter] || activeSoftwareFilter} samples`;
-
-        if (!query && activeSoftwareFilter === 'all') {
-            searchResultsNote.textContent = 'Showing all project headlines and samples.';
-            searchEmpty.style.display = 'none';
-        } else if (visibleCount > 0) {
-            const queryLabel = query ? ` for "${projectSearch.value.trim()}"` : '';
-            searchResultsNote.textContent = `Found ${visibleCount} matching headline${visibleCount > 1 ? 's' : ''}${queryLabel}${activeSoftwareLabel}.`;
-            searchEmpty.style.display = 'none';
-        } else {
-            searchResultsNote.textContent = 'No matching headline found.';
-            searchEmpty.style.display = 'block';
-        }
-    };
-
-    softwareFilterButtons.forEach((button) => {
-        button.addEventListener('click', () => {
-            activeSoftwareFilter = button.dataset.software || 'all';
-            softwareFilterButtons.forEach((btn) => btn.classList.toggle('active', btn === button));
-            applyProjectSearch();
-        });
-    });
-
-    projectSearch.addEventListener('input', applyProjectSearch);
-    applyProjectSearch();
+  });
+});
 </script>
 </body>
 </html>
